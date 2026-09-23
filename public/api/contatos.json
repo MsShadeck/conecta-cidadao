@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nome": "SAMU", "telefone": "192", "descricao": "Atendimento móvel de urgência para emergências médicas.", "categoria": "saude" },
+  { "id": 2, "nome": "Disque Saúde", "telefone": "136", "descricao": "Informações sobre o SUS, doenças, vacinação e campanhas.", "categoria": "saude" },
+  { "id": 3, "nome": "CVV — Centro de Valorização da Vida", "telefone": "188", "descricao": "Apoio emocional e prevenção do suicídio, 24 horas, ligação gratuita.", "categoria": "saude" },
+  { "id": 4, "nome": "Polícia Militar", "telefone": "190", "descricao": "Emergências policiais: crimes em andamento e situações de risco.", "categoria": "seguranca" },
+  { "id": 5, "nome": "Corpo de Bombeiros", "telefone": "193", "descricao": "Incêndios, resgates, salvamentos e acidentes.", "categoria": "seguranca" },
+  { "id": 6, "nome": "Polícia Civil", "telefone": "197", "descricao": "Informações e denúncias à polícia judiciária.", "categoria": "seguranca" },
+  { "id": 7, "nome": "Guarda Municipal", "telefone": "153", "descricao": "Proteção de bens, serviços e espaços públicos do município.", "categoria": "seguranca" },
+  { "id": 8, "nome": "Defesa Civil", "telefone": "199", "descricao": "Enchentes, deslizamentos, quedas de árvore e outros desastres.", "categoria": "seguranca" },
+  { "id": 9, "nome": "Central de Atendimento à Mulher", "telefone": "180", "descricao": "Denúncias e orientação sobre violência contra a mulher.", "categoria": "seguranca" },
+  { "id": 10, "nome": "Disque Direitos Humanos", "telefone": "100", "descricao": "Denúncias de violações de direitos humanos, inclusive contra crianças e idosos.", "categoria": "seguranca" }
+]

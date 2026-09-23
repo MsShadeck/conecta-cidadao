@@ -1,0 +1,171 @@
+/* ============================================================
+   BuscaOverlay.css — Janela de busca sobreposta (BuscaOverlay.jsx)
+============================================================ */
+
+/* Camada escurecida que cobre a janela inteira. */
+.busca-fundo {
+  position: fixed;
+  inset: 0; /* atalho para top/right/bottom/left: 0 */
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;  /* painel próximo ao topo, não centralizado */
+  justify-content: center;
+  /* Distância do topo proporcional à altura da janela, com limites. */
+  padding: clamp(48px, 12vh, 110px) 20px 20px;
+  background: rgba(0, 60, 120, 0.26);
+  backdrop-filter: blur(4px); /* desfoca a página por trás */
+  animation: busca-aparece 0.18s ease-out;
+}
+
+/* Painel branco com o campo e a lista de resultados. */
+.busca-painel {
+  width: min(560px, 100%); /* 560px no desktop; largura total no celular */
+  background: var(--branco);
+  border-radius: 22px;
+  box-shadow: var(--sombra-alta);
+  overflow: hidden;
+  animation: busca-sobe 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* Linha do topo: lupa + input + botão "Esc". */
+.busca-campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 14px 20px;
+  border-bottom: 1px solid var(--linha);
+  color: var(--azul-acento); /* cor herdada pelo SVG via currentColor */
+}
+
+.busca-campo svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+}
+
+/* Campo sem aparência própria: o painel inteiro já faz o papel de caixa. */
+.busca-input {
+  flex: 1; /* ocupa todo o espaço entre a lupa e o botão Esc */
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15.5px;
+  color: var(--tinta);
+}
+
+.busca-input::placeholder {
+  color: var(--tinta-fraca);
+}
+
+/* Botão "Esc": lembra o atalho e também funciona como botão de fechar. */
+.busca-fechar {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--tinta-fraca);
+  background: var(--azul-nevoa);
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: color var(--transicao), background var(--transicao);
+}
+
+.busca-fechar:hover {
+  color: var(--azul-marca);
+  background: #dcf0f8;
+}
+
+/* Lista de resultados com altura limitada e rolagem própria. */
+.busca-lista {
+  list-style: none;
+  max-height: min(56vh, 420px);
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Cada resultado é um botão de largura total. */
+.busca-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  border-radius: 14px;
+  transition: background var(--transicao);
+}
+
+/* Item destacado — pelas setas do teclado ou pelo mouse. */
+.busca-item--ativo {
+  background: var(--azul-nevoa);
+}
+
+/* Miniatura da foto do local. */
+.busca-miniatura {
+  width: 52px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--azul-nevoa);
+}
+
+/* Variante para categorias: em vez de foto, um selo colorido com o ícone. */
+.busca-miniatura--icone {
+  display: grid;
+  place-items: center;
+  background: var(--cat-fundo, var(--azul-nevoa));
+}
+
+.busca-miniatura--icone img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Coluna com nome e detalhe. min-width: 0 é necessário para que o texto
+   possa encolher e as reticências abaixo funcionem dentro do flex. */
+.busca-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+/* Nome em uma linha só: o que não couber vira "..." no final. */
+.busca-nome {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--tinta);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Detalhe na cor da categoria (data-categoria fica no botão do item). */
+.busca-detalhe {
+  font-size: 12.5px;
+  color: var(--cat-tinta, var(--tinta-fraca));
+}
+
+/* Mensagem de "nenhum resultado". */
+.busca-vazio {
+  padding: 26px 24px 30px;
+  font-size: 14px;
+  color: var(--tinta-media);
+  text-align: center;
+}
+
+/* O fundo escuro surge em fade... */
+@keyframes busca-aparece {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ...e o painel desce 10px ao mesmo tempo. */
+@keyframes busca-sobe {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

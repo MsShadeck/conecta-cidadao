@@ -1,0 +1,129 @@
+/* ============================================================
+   Cabecalho.css — Barra superior (componente Cabecalho.jsx)
+============================================================ */
+
+/* Faixa que acompanha a rolagem: a barra "gruda" no topo da janela. */
+.cabecalho-area {
+  position: sticky;
+  top: 0;
+  z-index: 90; /* acima do conteúdo, abaixo do overlay de busca (200) */
+  padding: 14px 0 10px;
+}
+
+/* Barra em formato de pílula: logo à esquerda, navegação à direita. */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* empurra os dois blocos para as pontas */
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.88); /* branco levemente translúcido */
+  backdrop-filter: blur(12px);           /* desfoca o que passa por trás */
+  border-radius: var(--raio-pilula);
+  padding: 8px 10px 8px 12px;
+  box-shadow: var(--sombra-baixa);
+}
+
+.cabecalho-marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--raio-pilula); /* acompanha o contorno de foco */
+}
+
+/* Círculo azul-claro atrás da logo. */
+.cabecalho-selo {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--azul-nevoa);
+  display: grid;
+  place-items: center;  /* centraliza nos dois eixos de uma vez */
+  flex-shrink: 0;       /* impede que o círculo seja achatado */
+}
+
+.cabecalho-selo img {
+  width: 30px;
+  height: auto;
+}
+
+/* "Conecta / Cidadão" em duas linhas (o <br /> está no JSX). */
+.cabecalho-nome {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--azul-marca);
+}
+
+.cabecalho-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cabecalho-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-marca);
+  padding: 8px 12px;
+  border-radius: var(--raio-pilula);
+  transition: background var(--transicao), color var(--transicao);
+}
+
+.cabecalho-link:hover {
+  background: var(--azul-nevoa);
+}
+
+/* Botão de busca: destacado com fundo próprio para se diferenciar dos links. */
+.cabecalho-busca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-marca);
+  background: var(--azul-nevoa);
+  padding: 9px 16px 9px 13px;
+  border-radius: var(--raio-pilula);
+  transition: background var(--transicao), transform var(--transicao);
+}
+
+.cabecalho-busca:hover {
+  background: #dcf0f8;
+}
+
+/* Leve encolhimento no clique: devolve a sensação de botão pressionado. */
+.cabecalho-busca:active {
+  transform: scale(0.97);
+}
+
+/* Tamanho do ícone SVG (que herda a cor do texto via currentColor). */
+.cabecalho-busca svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Celular: esconde a palavra "Buscar" e deixa só a lupa, liberando espaço. */
+@media (max-width: 520px) {
+  .cabecalho-atalho {
+    display: none;
+  }
+
+  .cabecalho-busca {
+    padding: 10px; /* vira um botão quadrado com o ícone centralizado */
+  }
+
+  .cabecalho-link {
+    padding: 8px 9px;
+    font-size: 13.5px;
+  }
+}
+
+/* Links extras (Telefones e Lembretes): somem em telas estreitas para a barra
+   não quebrar; no celular eles ficam no rodapé. */
+@media (max-width: 720px) {
+  .cabecalho-link--extra {
+    display: none;
+  }
+}

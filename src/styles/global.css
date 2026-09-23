@@ -1,0 +1,295 @@
+/* ============================================================
+   global.css — Estilos que valem para o site inteiro.
+   Importado uma única vez em src/main.jsx.
+
+   Organização do arquivo:
+     1. TOKENS     — variáveis de cor, sombra, raio e transição
+     2. RESET      — normaliza o comportamento padrão do navegador
+     3. ESTRUTURA  — container, área de conteúdo e acessibilidade
+     4. TIPOGRAFIA — classes de texto reutilizadas nas páginas
+============================================================ */
+
+/* ============================================================
+   1. TOKENS — a mesma paleta do projeto original, agora centralizada
+
+   Custom properties (--nome) declaradas no :root valem no documento todo.
+   Mudando o valor aqui, a alteração se propaga para todos os arquivos CSS.
+============================================================ */
+
+:root {
+  /* Informa ao navegador que o site foi pensado para tema claro
+     (evita inversões automáticas em campos e barras de rolagem). */
+  color-scheme: light;
+
+  /* Azuis da marca */
+  --azul-fundo: #c9e8f5;
+  --azul-nevoa: #eaf6fb;
+  --azul-marca: #1a6faf;
+  --azul-acento: #3a8fd4;
+  --azul-suave: #5a9ec9;
+
+  /* Texto — da cor mais forte (títulos) à mais fraca (legendas) */
+  --tinta: #1a1a2e;
+  --tinta-media: #3a3a5c;
+  --tinta-fraca: #7c86a3;
+
+  /* Superfícies */
+  --branco: #ffffff;
+  --linha: #e4eef5;
+
+  /* Sombras — três níveis de elevação: repouso, hover e overlay */
+  --sombra-baixa: 0 1px 2px rgba(0, 60, 120, 0.06), 0 4px 14px rgba(0, 60, 120, 0.07);
+  --sombra-media: 0 10px 28px rgba(0, 90, 160, 0.16);
+  --sombra-alta: 0 18px 50px rgba(0, 60, 120, 0.22);
+
+  /* Raios de borda */
+  --raio-card: 18px;
+  --raio-pilula: 999px; /* valor alto = lados perfeitamente arredondados */
+
+  /* Ritmo — mesma duração e curva em todas as animações do site */
+  --transicao: 0.2s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* Cores de cada serviço (já existiam nas tags da página Sobre).
+
+   Truque central do projeto: o seletor de atributo [data-categoria='...']
+   redefine --cat-fundo e --cat-tinta naquele elemento. Como variáveis CSS são
+   herdadas, todo filho passa a usar a cor da categoria automaticamente —
+   sem precisar de uma classe diferente para cada serviço. */
+[data-categoria='saude'] {
+  --cat-fundo: #d4edda;
+  --cat-tinta: #1a6f3a;
+}
+[data-categoria='seguranca'] {
+  --cat-fundo: #fde8d8;
+  --cat-tinta: #a0460a;
+}
+[data-categoria='educacao'] {
+  --cat-fundo: #d8eafd;
+  --cat-tinta: #1a4faf;
+}
+[data-categoria='lazer'] {
+  --cat-fundo: #e8d8fd;
+  --cat-tinta: #6a1aaf;
+}
+
+/* ============================================================
+   2. RESET & BASE — zera diferenças entre navegadores
+============================================================ */
+
+/* Vale para todos os elementos, inclusive pseudoelementos. */
+*,
+*::before,
+*::after {
+  /* border-box: padding e borda entram na largura declarada,
+     o que torna o cálculo de tamanhos muito mais previsível. */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Impede o iOS de aumentar a fonte sozinho ao girar a tela. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* Poppins vem do Google Fonts (index.html); as demais são alternativas
+     caso a fonte não carregue. */
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--tinta);
+  background-color: var(--azul-fundo);
+  /* Degradê do topo claro para o azul da marca nos primeiros 420px. */
+  background-image: linear-gradient(180deg, var(--azul-nevoa) 0%, var(--azul-fundo) 420px);
+  background-repeat: no-repeat;
+  /* min-height + flex-column: com a área de conteúdo em flex:1, o rodapé fica
+     sempre embaixo, mesmo em páginas curtas. */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+/* O <div id="root"> fica entre o body e o Layout; precisa repassar o flex. */
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+img {
+  max-width: 100%; /* nunca estoura o container */
+  display: block;  /* remove o espaço em branco abaixo de imagens inline */
+}
+
+/* Botões nascem sem estilo próprio: cada componente define o seu. */
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--azul-marca);
+  text-decoration: none;
+}
+
+/* Acessibilidade: contorno visível de foco apenas para quem navega por
+   teclado. O :focus-visible evita que o contorno apareça em cliques de mouse. */
+:focus-visible {
+  outline: 3px solid var(--azul-acento);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ============================================================
+   3. ESTRUTURA
+============================================================ */
+
+/* Largura máxima de 1080px, com 20px de respiro de cada lado em telas
+   estreitas. min() escolhe automaticamente o menor dos dois valores. */
+.container {
+  width: min(1080px, 100% - 40px);
+  margin-inline: auto; /* centraliza horizontalmente */
+}
+
+.conteudo {
+  flex: 1; /* ocupa o espaço livre e empurra o rodapé para baixo */
+  padding-bottom: 56px;
+}
+
+/* Link "Pular para o conteúdo": fica escondido acima da tela (top negativo)
+   e desce para a área visível somente quando recebe foco pelo Tab. */
+.pular-para-conteudo {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 300; /* acima de tudo, inclusive do overlay de busca */
+  background: var(--branco);
+  color: var(--azul-marca);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: var(--raio-pilula);
+  box-shadow: var(--sombra-media);
+  transition: top var(--transicao);
+}
+
+.pular-para-conteudo:focus {
+  top: 16px;
+}
+
+/* ============================================================
+   4. TIPOGRAFIA COMPARTILHADA — classes usadas por várias páginas
+============================================================ */
+
+.titulo-pagina {
+  /* clamp(mínimo, ideal, máximo): a fonte acompanha a largura da tela sem
+     ficar pequena demais no celular nem enorme no monitor. */
+  font-size: clamp(27px, 4.2vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.02em; /* títulos grandes pedem letras um pouco mais juntas */
+  line-height: 1.18;
+  color: var(--tinta);
+}
+
+.texto-apoio {
+  font-size: 15px;
+  color: var(--tinta-media);
+  line-height: 1.65;
+  /* 54ch ≈ 54 caracteres por linha: medida confortável de leitura. */
+  max-width: 54ch;
+}
+
+/* Etiqueta/pílula ("6 locais", "Saúde"). As variáveis --cat-* mudam conforme o
+   data-categoria do elemento pai; o segundo valor do var() é o padrão azul,
+   usado quando não há categoria definida. */
+.etiqueta {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 3px 12px;
+  border-radius: var(--raio-pilula);
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
+}
+
+/* Acessibilidade: respeita quem configurou o sistema para reduzir animações
+   (útil para pessoas com sensibilidade a movimento). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   5. COMPONENTES DAS ATIVIDADES DA AULA — usados nas páginas
+      Telefones úteis, Lembretes e no bloco de sugestões das categorias
+============================================================ */
+
+/* Topo das páginas novas (mesmo ritmo do topo da página Sobre). */
+.pagina-topo {
+  padding: clamp(24px, 5vw, 44px) 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cartão branco que envolve o conteúdo (mesmo estilo do .sobre-card). */
+.painel {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: clamp(20px, 4vw, 32px);
+  box-shadow: var(--sombra-baixa);
+}
+
+/* Campo de texto no formato pílula. */
+.campo {
+  font-size: 14.5px;
+  padding: 11px 18px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-pilula);
+  background: var(--azul-nevoa);
+  transition: border-color var(--transicao), background var(--transicao);
+}
+
+.campo:focus-within {
+  border-color: var(--azul-acento);
+  background: var(--branco);
+}
+
+input.campo:focus-visible {
+  outline: none; /* a borda azul do :focus-within já indica o foco */
+}
+
+/* Botão principal azul da marca. */
+.botao-primario {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--branco);
+  background: var(--azul-marca);
+  padding: 11px 22px;
+  border-radius: var(--raio-pilula);
+  transition: background var(--transicao), transform var(--transicao);
+}
+
+.botao-primario:hover {
+  background: var(--azul-acento);
+}
+
+.botao-primario:active {
+  transform: scale(0.97);
+}

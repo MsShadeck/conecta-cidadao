@@ -1,0 +1,39 @@
+/* ============================================================
+   Aviso.css — Mensagem temporária "toast" (componente Aviso.jsx)
+============================================================ */
+
+/* Faixa fixa na parte de baixo da janela, sempre montada (mesmo vazia). */
+.aviso-area {
+  position: fixed;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center; /* centraliza a mensagem horizontalmente */
+  /* Deixa o clique "atravessar" a faixa e chegar ao que está embaixo:
+     sem isso, a área invisível bloquearia os cards. */
+  pointer-events: none;
+  z-index: 250;
+  padding: 0 16px;
+}
+
+/* A pílula azul com o texto do aviso. */
+.aviso {
+  background: var(--azul-marca);
+  color: var(--branco);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: var(--raio-pilula);
+  box-shadow: var(--sombra-media);
+  animation: aviso-entra 0.26s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* Entrada: surge subindo 14px. Só o "from" é declarado — o "to" é o
+   estado normal do elemento, que o navegador assume sozinho. */
+@keyframes aviso-entra {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}

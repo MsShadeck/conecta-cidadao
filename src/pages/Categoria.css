@@ -1,0 +1,51 @@
+/* ============================================================
+   Categoria.css — Páginas de serviço (Categoria.jsx)
+============================================================ */
+
+/* Cabeçalho da página: chips, título com etiqueta e resumo. */
+.categoria-topo {
+  padding: 18px 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Título e etiqueta lado a lado; flex-wrap deixa a etiqueta cair para baixo
+   quando o nome do serviço não deixa espaço. */
+.categoria-titulo-area {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+/* Aproxima o resumo do título, compensando o gap de 14px do container. */
+.categoria-topo .texto-apoio {
+  margin-top: -6px;
+}
+
+/* Grade dos cards de locais.
+   auto-fill (em vez de auto-fit) preserva as colunas vazias, mantendo a
+   largura dos cards constante mesmo com poucos itens. */
+.grade-locais {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* Celular: cards menores, mantendo dois por linha em vez de um só gigante. */
+@media (max-width: 520px) {
+  .grade-locais {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Bloco "Esta página foi útil?" + sugestões, abaixo da grade de locais. */
+.categoria-extra {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}

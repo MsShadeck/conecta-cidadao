@@ -1,0 +1,65 @@
+/* ============================================================
+   Lembretes.css — Página "Meus lembretes" (Lembretes.jsx)
+============================================================ */
+
+.lembretes {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lembretes-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lembretes-input {
+  flex: 1 1 260px;
+}
+
+.lembretes-total {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-marca);
+}
+
+.lembretes-vazio {
+  font-size: 14px;
+  color: var(--tinta-fraca);
+}
+
+.lembretes-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.lembrete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 4px;
+  font-size: 14.5px;
+  color: var(--tinta);
+  border-bottom: 1px solid var(--linha);
+}
+
+.lembrete:last-child {
+  border-bottom: none;
+}
+
+.lembrete-remover {
+  font-size: 13px;
+  font-weight: 500;
+  color: #a0460a;
+  padding: 6px 12px;
+  border-radius: var(--raio-pilula);
+  flex-shrink: 0;
+  transition: background var(--transicao);
+}
+
+.lembrete-remover:hover {
+  background: #fde8d8;
+}

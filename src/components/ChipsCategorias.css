@@ -1,0 +1,57 @@
+/* ============================================================
+   ChipsCategorias.css — Atalhos entre categorias (ChipsCategorias.jsx)
+============================================================ */
+
+/* Fila horizontal que rola de lado quando não cabe na tela. */
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none; /* esconde a barra de rolagem no Firefox */
+}
+
+/* Mesmo efeito nos navegadores baseados em Chromium e no Safari. */
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;   /* mantém o tamanho e permite a rolagem lateral */
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--tinta-media);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 8px 16px 8px 12px;
+  border-radius: var(--raio-pilula);
+  transition: background var(--transicao), color var(--transicao), box-shadow var(--transicao);
+}
+
+/* Ícone apagado nos chips inativos, para o chip ativo se destacar. */
+.chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.55;
+  transition: opacity var(--transicao);
+}
+
+.chip:hover {
+  background: var(--branco);
+  color: var(--tinta);
+}
+
+/* Modificador aplicado pelo NavLink na categoria aberta: assume as cores
+   daquele serviço (variáveis vindas do data-categoria). */
+.chip--ativo {
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+  box-shadow: var(--sombra-baixa);
+}
+
+.chip--ativo img {
+  opacity: 1;
+}

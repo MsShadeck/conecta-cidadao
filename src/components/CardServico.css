@@ -1,0 +1,76 @@
+/* ============================================================
+   CardServico.css — Card de categoria da Home (CardServico.jsx)
+============================================================ */
+
+.card-servico {
+  display: flex;
+  flex-direction: column;   /* ícone, nome, resumo e etiqueta empilhados */
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--branco);
+  border-radius: 22px;
+  padding: 22px 22px 20px;
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta);      /* anula o azul padrão de links */
+  position: relative;       /* referência para a faixa ::after abaixo */
+  overflow: hidden;         /* a faixa não escapa dos cantos arredondados */
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+/* Faixa colorida na base do card, criada só pelo CSS (sem elemento no JSX).
+   Fica invisível em repouso e aparece no hover. */
+.card-servico::after {
+  content: '';                /* obrigatório para o pseudoelemento existir */
+  position: absolute;
+  inset: auto 0 0 0;          /* topo automático; grudado nas outras 3 bordas */
+  height: 4px;
+  background: var(--cat-tinta); /* cor da categoria, vinda do data-categoria */
+  opacity: 0;
+  transition: opacity var(--transicao);
+}
+
+/* Hover: o card sobe e ganha sombra mais forte (sensação de elevação). */
+.card-servico:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+}
+
+.card-servico:hover::after {
+  opacity: 1;
+}
+
+/* Quadrado arredondado com o ícone, pintado com o tom claro da categoria. */
+.card-servico-icone {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: var(--cat-fundo);
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+
+.card-servico-icone img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain; /* mostra o ícone inteiro, sem cortar */
+}
+
+.card-servico-nome {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* flex:1 faz o resumo ocupar a sobra vertical, de modo que a etiqueta fique
+   alinhada na base mesmo quando os textos têm tamanhos diferentes. */
+.card-servico-resumo {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--tinta-media);
+  flex: 1;
+}
+
+.card-servico-contagem {
+  margin-top: 6px;
+}

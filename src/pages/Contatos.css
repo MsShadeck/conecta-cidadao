@@ -1,0 +1,99 @@
+/* ============================================================
+   Contatos.css — Página "Telefones úteis" (Contatos.jsx,
+   ListaContatos.jsx e BarraBusca.jsx)
+============================================================ */
+
+.contatos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Busca e botão Recarregar lado a lado; no celular o botão desce. */
+.contatos-controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* O <label> faz o papel da caixa (classe .campo) e o input fica sem borda,
+   assim a lupa aparece "dentro" do campo. */
+.contatos-busca {
+  flex: 1 1 260px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--tinta-fraca);
+}
+
+.contatos-busca svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.contatos-busca input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--tinta);
+}
+
+.contatos-aviso {
+  font-size: 14.5px;
+  color: var(--tinta-media);
+  padding: 8px 2px;
+}
+
+.contatos-aviso--erro {
+  color: #a0460a;
+}
+
+.contatos-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+.contato {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-card);
+}
+
+/* Número em destaque dentro de um selo com a cor da categoria. */
+.contato-telefone {
+  min-width: 64px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 14px;
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
+  flex-shrink: 0;
+}
+
+.contato-nome {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.contato-descricao {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--tinta-media);
+}
+
+@media (max-width: 520px) {
+  .contatos-lista {
+    grid-template-columns: 1fr;
+  }
+}

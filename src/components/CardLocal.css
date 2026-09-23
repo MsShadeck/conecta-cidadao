@@ -1,0 +1,56 @@
+/* ============================================================
+   CardLocal.css — Card de uma unidade (CardLocal.jsx)
+============================================================ */
+
+.card-local {
+  display: flex;
+  flex-direction: column;
+  text-align: left;    /* <button> vem centralizado por padrão */
+  background: var(--branco);
+  border-radius: var(--raio-card);
+  overflow: hidden;    /* recorta a foto nos cantos arredondados */
+  box-shadow: var(--sombra-baixa);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.card-local:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+/* Clique: o card desce um pouco e encolhe de leve. */
+.card-local:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Moldura da foto: o overflow prende o zoom da imagem dentro dela. */
+.card-local-moldura {
+  display: block;
+  overflow: hidden;
+  background: var(--azul-nevoa); /* cor de espera enquanto a foto carrega */
+}
+
+.card-local-imagem {
+  width: 100%;
+  /* aspect-ratio reserva o espaço antes do download, evitando que o layout
+     "pule"; object-fit: cover preenche a moldura sem distorcer a foto. */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* Zoom suave da foto quando o mouse está sobre o card (note o seletor:
+   o hover é no card, mas quem se move é a imagem). */
+.card-local:hover .card-local-imagem {
+  transform: scale(1.05);
+}
+
+.card-local-nome {
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--tinta);
+  padding: 13px 15px 15px;
+  /* Filete superior na cor da categoria — o detalhe que liga o card ao serviço. */
+  border-top: 3px solid var(--cat-fundo, var(--azul-nevoa));
+}

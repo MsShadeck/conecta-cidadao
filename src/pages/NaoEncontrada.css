@@ -1,0 +1,31 @@
+/* ============================================================
+   NaoEncontrada.css — Página 404 (NaoEncontrada.jsx)
+============================================================ */
+
+/* Bastante respiro vertical: a página tem pouco conteúdo e o espaço em branco
+   evita que ela pareça quebrada. */
+.nao-encontrada {
+  padding: clamp(40px, 9vw, 90px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* tudo alinhado à esquerda, inclusive o botão */
+  gap: 14px;
+}
+
+/* Botão de volta ao início, em destaque com o azul da marca. */
+.nao-encontrada-botao {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--branco);
+  background: var(--azul-marca);
+  padding: 12px 24px;
+  border-radius: var(--raio-pilula);
+  box-shadow: var(--sombra-baixa);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.nao-encontrada-botao:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}

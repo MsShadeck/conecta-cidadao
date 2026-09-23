@@ -1,0 +1,119 @@
+/* ============================================================
+   Sobre.css — Página "Sobre nós" (Sobre.jsx)
+============================================================ */
+
+.sobre-topo {
+  padding: clamp(24px, 5vw, 44px) 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Duas colunas: o texto do projeto ocupa ~1,55x a largura da lista da equipe.
+   minmax(0, ...) evita que conteúdos longos estourem a coluna.
+   align-items: start impede que a coluna menor estique até a altura da maior. */
+.sobre-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.sobre-card {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: var(--sombra-baixa);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Logo centralizada: margin auto nas laterais faz a centralização. */
+.sobre-logo {
+  width: min(280px, 80%);
+  height: auto;
+  margin: 0 auto 6px;
+}
+
+.sobre-subtitulo {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--azul-marca);
+  text-align: center;
+}
+
+/* Modificador para o subtítulo da coluna da equipe, alinhado à esquerda. */
+.sobre-subtitulo--esquerda {
+  text-align: left;
+  color: var(--tinta);
+  margin-bottom: 14px;
+}
+
+/* Entrelinha maior (1.75) para facilitar a leitura dos parágrafos longos. */
+.sobre-texto {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--tinta-media);
+}
+
+/* Destaque do nome do projeto dentro do texto. */
+.sobre-texto strong {
+  font-weight: 600;
+  color: var(--azul-marca);
+}
+
+.sobre-equipe {
+  background: var(--branco);
+  border-radius: 24px;
+  padding: clamp(22px, 3.5vw, 30px);
+  box-shadow: var(--sombra-baixa);
+}
+
+.sobre-lista {
+  list-style: none; /* remove os marcadores padrão da <ul> */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sobre-membro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--linha);
+}
+
+/* Tira a linha do último integrante, para não sobrar um traço solto no fim. */
+.sobre-membro:last-child {
+  border-bottom: none;
+}
+
+/* Círculo com as iniciais (ex.: "MS"). */
+.sobre-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #d8eafd;
+  color: var(--azul-marca);
+  font-size: 14px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0; /* o círculo não pode ser achatado por nomes longos */
+}
+
+.sobre-nome {
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--tinta);
+}
+
+/* Tablet e celular: as duas colunas viram uma só, empilhadas. */
+@media (max-width: 800px) {
+  .sobre-grade {
+    grid-template-columns: 1fr;
+  }
+}

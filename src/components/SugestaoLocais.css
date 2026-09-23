@@ -1,0 +1,40 @@
+/* ============================================================
+   SugestaoLocais.css — "Sugira um local" (SugestaoLocais.jsx)
+   As classes .campo e .botao-primario ficam no global.css porque
+   também são usadas nas páginas Telefones úteis e Lembretes.
+============================================================ */
+
+.sugestao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sugestao-titulo {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.sugestao-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sugestao-input {
+  flex: 1 1 220px;
+}
+
+.sugestao-vazio {
+  font-size: 14px;
+  color: var(--tinta-fraca);
+}
+
+/* Cada sugestão vira uma etiqueta na cor da categoria. */
+.sugestao-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

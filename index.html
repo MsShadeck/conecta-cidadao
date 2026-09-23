@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  index.html — Única página HTML do projeto.
+
+  O site é uma SPA (Single Page Application): o navegador carrega este arquivo
+  uma vez e, a partir daí, o React troca o conteúdo da <div id="root"> conforme
+  a rota. O lang="pt-br" informa o idioma a leitores de tela e buscadores.
+-->
+<html lang="pt-br">
+  <head>
+    <!-- Acentuação correta (á, ç, ã). -->
+    <meta charset="UTF-8" />
+    <!-- Responsividade: faz o celular usar a largura real da tela em vez de
+         simular um monitor e diminuir tudo. Sem esta linha o CSS responsivo
+         não funciona no celular. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título padrão da aba; as páginas o substituem pelo hook useTituloPagina. -->
+    <title>Conecta Cidadão</title>
+
+    <!-- Descrição usada por buscadores e por prévias de link em redes sociais. -->
+    <meta
+      name="description"
+      content="Serviços públicos de saúde, segurança, educação e lazer reunidos em um só lugar."
+    />
+    <!-- Colore a barra do navegador no celular com o azul da marca. -->
+    <meta name="theme-color" content="#c9e8f5" />
+    <!-- Ícone exibido na aba (favicon). -->
+    <link rel="icon" type="image/png" href="/img/interface/logo.png" />
+
+    <!-- preconnect: abre a conexão com o Google Fonts antes de a fonte ser
+         pedida, reduzindo o tempo de carregamento. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonte Poppins nos pesos usados no projeto (400, 500 e 600).
+         display=swap mostra uma fonte substituta enquanto a Poppins carrega,
+         evitando texto invisível. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Contêiner vazio: todo o conteúdo é inserido aqui pelo React
+         (ver createRoot em src/main.jsx). -->
+    <div id="root"></div>
+    <!-- type="module" permite import/export no navegador; o Vite processa
+         este arquivo e gera o pacote final na build. -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
