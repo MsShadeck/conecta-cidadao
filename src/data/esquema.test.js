@@ -78,6 +78,31 @@ describe('locais.json', () => {
   });
 });
 
+describe('checklist.json (Primeiros passos)', () => {
+  const { grupos, itens } = ler('checklist.json');
+  const idsGrupos = new Set(grupos.map((g) => g.id));
+
+  it('todo item tem título, explicação, grupo válido e fonte', () => {
+    for (const item of itens) {
+      expect(item.titulo, item.id).toBeTruthy();
+      expect(item.oQueE && item.porQue && item.comoFazer, item.id).toBeTruthy();
+      expect(idsGrupos.has(item.grupo), item.id).toBe(true);
+      expect(item.fonte.length > 0 && item.fonte.every(ehUrl), item.id).toBe(true);
+      expect(
+        item.links.every((l) => ehUrl(l.url)),
+        item.id
+      ).toBe(true);
+    }
+  });
+
+  it('documentos só como lista (com fonte) ou null; perfil conhecido', () => {
+    for (const item of itens) {
+      expect(item.documentos === null || Array.isArray(item.documentos), item.id).toBe(true);
+      expect([null, 'criancas', 'carro', 'pet'].includes(item.perfil), item.id).toBe(true);
+    }
+  });
+});
+
 describe('contatos.json, servicos-online.json e feriados.json', () => {
   it('todo telefone tem fonte', () => {
     for (const contato of ler('contatos.json').contatos) {

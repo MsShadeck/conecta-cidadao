@@ -116,7 +116,8 @@ export default function Lembretes() {
   const [parametros] = useSearchParams();
   const { dados } = useDados('/api/locais.json');
 
-  const [tarefa, setTarefa] = useState('');
+  // ?texto=... (vindo do "Criar lembrete" do checklist) já preenche o campo.
+  const [tarefa, setTarefa] = useState(() => parametros.get('texto') ?? '');
   const [data, setData] = useState('');
   const [hora, setHora] = useState('');
   // ?local=ubs-cecap (vindo do botão "Criar lembrete" da página do local) já

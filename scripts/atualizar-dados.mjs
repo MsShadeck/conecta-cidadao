@@ -453,7 +453,9 @@ out tags center;`;
       unidos.push({
         ...extra,
         categoria,
-        endereco: extra.endereco ? { ...interpretarEndereco(extra.endereco), cep: extra.cep ?? null } : null,
+        endereco: extra.endereco
+          ? { ...interpretarEndereco(extra.endereco), cep: extra.cep ?? null }
+          : null,
         enderecoTexto: extra.endereco ?? null,
         telefones: extra.telefones ?? [],
         // Lista de telefones escrita na curadoria (mesmo vazia) não é completada pelo OSM.
@@ -506,7 +508,8 @@ out tags center;`;
         local.endereco = candidato.endereco;
         local.enderecoTexto = `${candidato.endereco.logradouro}${candidato.endereco.numero ? `, ${candidato.endereco.numero}` : ''}`;
       }
-      if (local.telefones.length === 0 && !local.telefonesDaCuradoria) local.telefones = candidato.telefones;
+      if (local.telefones.length === 0 && !local.telefonesDaCuradoria)
+        local.telefones = candidato.telefones;
       if (local.usarHorarioOsm && candidato.horarioOsm) {
         local.horarioTexto = candidato.horarioOsm;
         local.horarios = interpretarHorarioOsm(candidato.horarioOsm);
@@ -731,7 +734,7 @@ async function gerarFeriados() {
 
 /** Contatos e serviços online: só copiam a curadoria, carimbando a data. */
 async function gerarArquivosCurados() {
-  for (const nome of ['contatos', 'servicos-online']) {
+  for (const nome of ['contatos', 'servicos-online', 'checklist']) {
     const dados = await lerJson(path.join(PASTA_CURADORIA, 'extras', `${nome}.json`));
     delete dados._comentario;
     await gravarJson(`${nome}.json`, { atualizadoEm: HOJE, ...dados });

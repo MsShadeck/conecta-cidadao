@@ -1,17 +1,80 @@
 /* ============================================================
-   PrimeirosPassos.css — Página "/primeiros-passos" (PrimeirosPassos.jsx)
+   PrimeirosPassos.css — Checklist da mudança (PrimeirosPassos.jsx)
 ============================================================ */
 
-.passos-progresso {
+.passos-perfil {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   font-size: 0.875rem;
+}
+
+.passos-perfil legend {
   font-weight: 600;
-  color: var(--azul-marca);
+  margin-bottom: 6px;
+}
+
+.passos-perfil label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 6px 14px;
+  border-radius: var(--raio-pilula);
+  background: var(--branco);
+  cursor: pointer;
+}
+
+.passos-perfil input,
+.passo-feito input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--cat-tinta, var(--azul-marca));
+}
+
+.passos-progresso-area {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.passos-barra {
+  width: min(320px, 100%);
+  height: 12px;
+  accent-color: var(--cat-tinta);
+}
+
+.passos-progresso {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 .passos {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.passos-grupo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.passos-grupo-titulo svg {
+  color: var(--cat-tinta);
+}
+
+.passos-lista {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: 16px;
 }
 
@@ -24,25 +87,41 @@
   border: 2px solid transparent;
 }
 
-/* Passo concluído: borda verde (além da caixa marcada, que é a pista principal). */
+/* Feito: borda na cor da seção e título riscado (além da caixa marcada). */
 .passo--feito {
-  border-color: #b6dfc2;
+  border-color: var(--cat-fundo);
+}
+
+.passo--feito h3 {
+  text-decoration: line-through;
+  color: var(--tinta-media);
 }
 
 .passo-topo {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.passo-icone {
-  font-size: 1.75rem;
-}
-
-.passo-topo h2 {
+.passo-topo h3 {
   font-size: 1.0313rem;
   font-weight: 600;
   line-height: 1.35;
+}
+
+.passo-detalhes dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cat-tinta, var(--tinta-media));
+  margin-top: 8px;
+}
+
+.passo-detalhes dd ul {
+  margin-left: 18px;
 }
 
 .passo-acoes {
@@ -56,18 +135,63 @@
   padding: 8px 14px;
 }
 
+.passo-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid var(--linha);
+  padding-top: 10px;
+}
+
 .passo-feito {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.875rem;
-  font-weight: 500;
-  min-height: 32px;
+  font-weight: 600;
+  min-height: 40px;
   cursor: pointer;
 }
 
-.passo-feito input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--azul-marca);
+.passo-lembrete {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Folha de impressão ("Imprimir / salvar PDF")
+   Só o checklist, em preto e branco, sem menus, botões nem mapas.
+============================================================ */
+@media print {
+  .cabecalho-area,
+  .rodape,
+  .aviso-area,
+  .pular-para-conteudo,
+  .sem-impressao,
+  .passo-acoes {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000;
+  }
+
+  .painel,
+  .passo {
+    box-shadow: none !important;
+    border: 1px solid #999999 !important;
+    break-inside: avoid; /* não corta um item no meio entre duas páginas */
+  }
+
+  .passos-lista {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  a {
+    color: #000000;
+  }
 }

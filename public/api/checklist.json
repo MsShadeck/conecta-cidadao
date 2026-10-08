@@ -1,0 +1,574 @@
+{
+ "atualizadoEm": "2026-10-08",
+ "grupos": [
+  {
+   "id": "saude",
+   "nome": "Saúde",
+   "categoria": "saude"
+  },
+  {
+   "id": "educacao",
+   "nome": "Escola e creche",
+   "categoria": "educacao"
+  },
+  {
+   "id": "casa",
+   "nome": "Casa",
+   "categoria": "bairro"
+  },
+  {
+   "id": "documentos",
+   "nome": "Documentos",
+   "categoria": "cidadania"
+  },
+  {
+   "id": "cidade",
+   "nome": "Cidade",
+   "categoria": "servicos"
+  },
+  {
+   "id": "pets",
+   "nome": "Pets",
+   "categoria": "lazer"
+  }
+ ],
+ "itens": [
+  {
+   "id": "ubs-cartao-sus",
+   "grupo": "saude",
+   "titulo": "Encontre a sua UBS e faça o Cartão SUS",
+   "oQueE": "As Unidades Básicas de Saúde (UBS) fazem consultas, vacinas e exames básicos. Elas também emitem o Cartão SUS.",
+   "porQue": "É pela UBS que você marca consultas e recebe vacinas e remédios da rede pública.",
+   "comoFazer": "Vá a uma UBS com seus documentos e peça a emissão ou atualização do Cartão SUS. A Prefeitura não publica qual UBS atende cada bairro: o site mostra a mais próxima, e a própria UBS confirma se ela é a de referência do seu endereço.",
+   "online": false,
+   "documentos": null,
+   "prazo": null,
+   "pagina": {
+    "nome": "UBS mais perto de mim",
+    "rota": "/meu-bairro"
+   },
+   "links": [
+    {
+     "nome": "Cartão Nacional de Saúde (Prefeitura)",
+     "url": "https://www.indaiatuba.sp.gov.br/saude/cartao-nacional-de-saude/"
+    },
+    {
+     "nome": "Lista oficial de UBS",
+     "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/saude/cartao-nacional-de-saude/",
+    "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-i/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "cartão sus",
+    "ubs",
+    "posto de saúde",
+    "cadastro",
+    "cns"
+   ]
+  },
+  {
+   "id": "creche",
+   "grupo": "educacao",
+   "titulo": "Inscreva a criança na creche municipal",
+   "oQueE": "Inscrição para vaga em creche da rede municipal, a partir dos 4 meses completos da criança.",
+   "porQue": "As vagas são distribuídas a partir das inscrições: quanto antes, melhor.",
+   "comoFazer": "A inscrição pode ser feita em qualquer creche, de preferência na mais próxima de casa (Secretaria de Educação). Segundo a imprensa (setembro/2026), as inscrições de creche para 2027 vão de 05/10 a 15/12/2026; confirme na creche.",
+   "online": false,
+   "documentos": null,
+   "prazo": "Para 2027: 05/10 a 15/12/2026, segundo a imprensa — confirme na creche.",
+   "pagina": {
+    "nome": "Creches perto de mim",
+    "rota": "/meu-bairro"
+   },
+   "links": [
+    {
+     "nome": "Perguntas frequentes da Educação",
+     "url": "https://www.educmunicipal.indaiatuba.sp.gov.br/perguntas-frequentes"
+    },
+    {
+     "nome": "Unidades escolares",
+     "url": "https://www.educmunicipal.indaiatuba.sp.gov.br/unidades-escolares"
+    }
+   ],
+   "fonte": [
+    "https://www.educmunicipal.indaiatuba.sp.gov.br/perguntas-frequentes",
+    "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/regiao-de-campinas/2026/09/315761-educacao-abre-inscricoes-para-novos-alunos-da-rede-em-2027.html"
+   ],
+   "perfil": "criancas",
+   "palavrasChave": [
+    "creche",
+    "vaga",
+    "inscrição",
+    "berçário",
+    "matrícula"
+   ]
+  },
+  {
+   "id": "escola",
+   "grupo": "educacao",
+   "titulo": "Matrícula ou transferência para escola municipal (EMEB)",
+   "oQueE": "Inscrição na pré-escola ou no ensino fundamental da rede municipal, ou transferência de outra cidade.",
+   "porQue": "Garante a vaga na escola mais perto da nova casa.",
+   "comoFazer": "Procure a escola de interesse. Com o endereço novo atualizado, a inscrição é feita como transferência (Secretaria de Educação). Segundo a imprensa (setembro/2026), as inscrições de pré-escola e fundamental para 2027 terminaram em 18/09; novas inscrições a partir de 08/01/2027, conforme as vagas.",
+   "online": false,
+   "documentos": null,
+   "prazo": "Para 2027, novas inscrições a partir de 08/01/2027, segundo a imprensa — confirme na escola.",
+   "pagina": {
+    "nome": "Escolas perto de mim",
+    "rota": "/meu-bairro"
+   },
+   "links": [
+    {
+     "nome": "Perguntas frequentes da Educação",
+     "url": "https://www.educmunicipal.indaiatuba.sp.gov.br/perguntas-frequentes"
+    },
+    {
+     "nome": "Secretaria de Educação — (19) 3801-9191",
+     "url": "https://www.indaiatuba.sp.gov.br/educacao/"
+    }
+   ],
+   "fonte": [
+    "https://www.educmunicipal.indaiatuba.sp.gov.br/perguntas-frequentes",
+    "https://www.indaiatuba.sp.gov.br/educacao/",
+    "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/regiao-de-campinas/2026/09/315761-educacao-abre-inscricoes-para-novos-alunos-da-rede-em-2027.html"
+   ],
+   "perfil": "criancas",
+   "palavrasChave": [
+    "matrícula",
+    "transferência escolar",
+    "escola",
+    "emeb",
+    "vaga"
+   ]
+  },
+  {
+   "id": "agua",
+   "grupo": "casa",
+   "titulo": "Passe a conta de água para o seu nome (SAAE)",
+   "oQueE": "Alteração da titularidade da ligação de água e esgoto no SAAE de Indaiatuba.",
+   "porQue": "A conta e os avisos chegam em nome de quem mora no imóvel.",
+   "comoFazer": "Pelo serviço online do SAAE (sem login): preencha os dados e anexe os documentos. Para inquilino, use o serviço \"Alteração de inquilino responsável\".",
+   "online": true,
+   "documentos": [
+    "Escritura, matrícula ou contrato de compra e venda",
+    "CPF e RG",
+    "Formulário de autorização do SAAE (ou o de herdeiros, em caso de falecimento do proprietário)",
+    "Arquivos em PDF ou imagem, até 10 MB cada"
+   ],
+   "prazo": "10 dias úteis (SAAE).",
+   "links": [
+    {
+     "nome": "Alteração de titularidade (SAAE)",
+     "url": "https://saae.sp.gov.br/servicos/servicos-online/alteracao-de-titularidade"
+    },
+    {
+     "nome": "Alteração de inquilino responsável (SAAE)",
+     "url": "https://saae.sp.gov.br/servicos/servicos-online/alteracao-de-inquilino-responsavel"
+    }
+   ],
+   "fonte": [
+    "https://saae.sp.gov.br/servicos/servicos-online/alteracao-de-titularidade"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "água",
+    "esgoto",
+    "saae",
+    "titularidade",
+    "transferir água",
+    "conta de água"
+   ]
+  },
+  {
+   "id": "energia",
+   "grupo": "casa",
+   "titulo": "Passe a conta de luz para o seu nome (CPFL)",
+   "oQueE": "Troca de titularidade da conta de energia. Em Indaiatuba, a distribuidora é a CPFL (CPFL Piratininga, segundo a imprensa).",
+   "porQue": "A conta passa a sair no seu nome, e você responde só pelo consumo a partir da mudança.",
+   "comoFazer": "Pelo site ou pelos canais da CPFL. Os documentos e o passo a passo estão na página oficial de troca de titularidade.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Troca de titularidade (CPFL)",
+     "url": "https://www.cpfl.com.br/troca-de-titularidade"
+    }
+   ],
+   "fonte": [
+    "https://www.cpfl.com.br/troca-de-titularidade",
+    "https://brasilenergia.com.br/energia/distribuicao/cpfl-piratininga-alcanca-2-milhoes-de-clientes"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "energia",
+    "luz",
+    "cpfl",
+    "titularidade",
+    "conta de luz"
+   ]
+  },
+  {
+   "id": "iptu",
+   "grupo": "casa",
+   "titulo": "IPTU: atualize o endereço do carnê e ative o IPTU Digital",
+   "oQueE": "O IPTU é cobrado anualmente pela Prefeitura. Dá para receber o carnê por e-mail (IPTU Digital) e emitir as guias pelo portal Minha Indaiatuba.",
+   "porQue": "Sem o endereço atualizado, o carnê pode não chegar e a parcela atrasar (com multa e juros).",
+   "comoFazer": "Para mudar o endereço ou o responsável pelo carnê, fale com o Departamento de Cadastro Imobiliário: engenharia.entrega@indaiatuba.sp.gov.br ou (19) 3834-9181. Para o IPTU Digital, preencha o formulário de cadastramento de e-mail.",
+   "online": true,
+   "documentos": null,
+   "prazo": "Pedidos feitos até 28 de novembro valem para o carnê do ano seguinte (Prefeitura).",
+   "links": [
+    {
+     "nome": "Perguntas frequentes do IPTU",
+     "url": "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/perguntas-frequentes-iptu/"
+    },
+    {
+     "nome": "Cadastramento de e-mail e IPTU Digital",
+     "url": "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/cadastramento-email/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/perguntas-frequentes-iptu/",
+    "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/cadastramento-email/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "iptu",
+    "carnê",
+    "imposto",
+    "iptu digital"
+   ]
+  },
+  {
+   "id": "coleta",
+   "grupo": "casa",
+   "titulo": "Descubra o dia da coleta de lixo",
+   "oQueE": "Coleta domiciliar de lixo e pontos de entrega de recicláveis (Ilhas Ecológicas).",
+   "porQue": "Lixo na calçada fora do dia e do horário se acumula e atrapalha a coleta.",
+   "comoFazer": "Coloque o lixo só no dia e no horário do seu bairro. Período diurno: de segunda a sábado, a partir das 6h. Período noturno: de segunda a sexta a partir das 17h e aos sábados a partir das 16h. A Prefeitura publica a lista dos locais que mudaram de programação em 2026; para os demais, informe-se na SEMURB: (19) 3825-5410.",
+   "online": false,
+   "documentos": null,
+   "prazo": null,
+   "pagina": {
+    "nome": "Ver no Meu bairro",
+    "rota": "/meu-bairro"
+   },
+   "links": [
+    {
+     "nome": "Coleta domiciliar (Prefeitura)",
+     "url": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+    },
+    {
+     "nome": "Coleta seletiva e Ilhas Ecológicas",
+     "url": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-seletiva/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-seletiva/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "coleta de lixo",
+    "lixo",
+    "reciclagem",
+    "coleta seletiva",
+    "ilha ecológica"
+   ]
+  },
+  {
+   "id": "iluminacao",
+   "grupo": "casa",
+   "titulo": "Saiba como pedir conserto de iluminação pública",
+   "oQueE": "Lâmpada de poste apagada ou piscando na sua rua.",
+   "porQue": "O pedido é feito pela internet, sem precisar ir à Prefeitura.",
+   "comoFazer": "Registre o pedido no sistema de atendimento da iluminação pública (Geolux), linkado pela Prefeitura.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Iluminação pública (Geolux)",
+     "url": "http://atendimento.geolux.com.br/indaiatuba/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "iluminação",
+    "poste",
+    "lâmpada",
+    "luz da rua"
+   ]
+  },
+  {
+   "id": "titulo-eleitor",
+   "grupo": "documentos",
+   "titulo": "Transfira o título de eleitor para Indaiatuba",
+   "oQueE": "Mudança do domicílio eleitoral para votar em Indaiatuba.",
+   "porQue": "Você passa a votar na nova cidade e evita viajar ou justificar a ausência.",
+   "comoFazer": "Pelo Autoatendimento Eleitoral do TSE, no serviço \"Transferir título eleitoral\" (o próprio serviço lista os documentos). A lei eleitoral não recebe pedidos de transferência nos 150 dias antes de uma eleição.",
+   "online": true,
+   "documentos": null,
+   "prazo": "Fechado nos 150 dias anteriores a cada eleição (Lei 9.504/1997, art. 91).",
+   "links": [
+    {
+     "nome": "Autoatendimento Eleitoral (TSE)",
+     "url": "https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral"
+    },
+    {
+     "nome": "Cartório Eleitoral — (19) 3834-6378",
+     "url": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+    }
+   ],
+   "fonte": [
+    "https://www.tse.jus.br/servicos-eleitorais/autoatendimento-eleitoral",
+    "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "título de eleitor",
+    "transferir título",
+    "domicílio eleitoral",
+    "tse",
+    "votar"
+   ]
+  },
+  {
+   "id": "cnh-veiculo",
+   "grupo": "documentos",
+   "titulo": "Atualize o endereço da CNH e do veículo",
+   "oQueE": "Alteração de endereço no cadastro do Detran-SP (habilitação e veículo).",
+   "porQue": "Multas e avisos chegam no endereço cadastrado.",
+   "comoFazer": "No portal do Detran-SP (entrando com a conta gov.br), procure \"Alteração de endereço\" na área de habilitação e na de veículos. Se o serviço online não atender o seu caso, agende no Poupatempo.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Detran-SP",
+     "url": "https://www.detran.sp.gov.br/"
+    },
+    {
+     "nome": "Poupatempo",
+     "url": "https://www.poupatempo.sp.gov.br/"
+    }
+   ],
+   "fonte": [
+    "https://www.detran.sp.gov.br/",
+    "https://www.poupatempo.sp.gov.br/"
+   ],
+   "perfil": "carro",
+   "palavrasChave": [
+    "cnh",
+    "carteira de motorista",
+    "veículo",
+    "detran",
+    "endereço",
+    "documento do carro"
+   ]
+  },
+  {
+   "id": "junta-militar",
+   "grupo": "documentos",
+   "titulo": "Comunique a mudança à Junta Militar (se tiver obrigação militar)",
+   "oQueE": "Transferência de residência no cadastro do serviço militar.",
+   "porQue": "A Prefeitura orienta que qualquer mudança de residência seja comunicada à junta de serviço militar mais próxima, assim que ocorrer.",
+   "comoFazer": "A Junta de Serviço Militar de Indaiatuba (no Ponto Cidadão) faz a transferência pelo sistema do Exército e regulariza a situação militar. Telefone: (19) 3816-9267.",
+   "online": false,
+   "documentos": null,
+   "prazo": "Assim que a mudança ocorrer (Prefeitura).",
+   "pagina": {
+    "nome": "Ponto Cidadão",
+    "rota": "/cidadania/ponto-cidadao"
+   },
+   "links": [
+    {
+     "nome": "Transferência de residência (Junta Militar)",
+     "url": "https://www.indaiatuba.sp.gov.br/gabinete-do-prefeito/junta-militar/transferencia-de-residencia/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/gabinete-do-prefeito/junta-militar/transferencia-de-residencia/",
+    "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "junta militar",
+    "alistamento",
+    "reservista",
+    "serviço militar"
+   ]
+  },
+  {
+   "id": "minha-indaiatuba",
+   "grupo": "cidade",
+   "titulo": "Crie o acesso ao portal Minha Indaiatuba",
+   "oQueE": "Portal de serviços online da Prefeitura (IPTU, certidões, solicitações), com login pela conta gov.br.",
+   "porQue": "Muita coisa da Prefeitura se resolve por ele, sem ir a um balcão.",
+   "comoFazer": "Entre no portal com a conta gov.br. A Prefeitura tem um tutorial de acesso.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Minha Indaiatuba",
+     "url": "https://minha.indaiatuba.sp.gov.br/"
+    },
+    {
+     "nome": "Tutorial de acesso",
+     "url": "https://minha.indaiatuba.sp.gov.br/tutorial/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/cadastramento-email/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "minha indaiatuba",
+    "gov.br",
+    "portal",
+    "serviços online"
+   ]
+  },
+  {
+   "id": "telefones",
+   "grupo": "cidade",
+   "titulo": "Salve os telefones úteis no celular",
+   "oQueE": "Emergências (192, 190, 193, 153, 199), Disque Prefeitura, Ouvidoria e SAAE.",
+   "porQue": "A central telefônica da Prefeitura é o Disque Prefeitura (19) 3834-9000, e reclamações vão para a Ouvidoria, 0800 770 7702.",
+   "comoFazer": "Abra a página de telefones úteis e salve os números que você mais vai usar.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "pagina": {
+    "nome": "Telefones úteis",
+    "rota": "/contatos"
+   },
+   "links": [
+    {
+     "nome": "Telefones úteis (Prefeitura)",
+     "url": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "telefone",
+    "ouvidoria",
+    "disque prefeitura",
+    "emergência"
+   ]
+  },
+  {
+   "id": "cartao-sou",
+   "grupo": "cidade",
+   "titulo": "Faça o cartão SOU do ônibus",
+   "oQueE": "Cartão do transporte coletivo municipal (SOU Indaiatuba).",
+   "porQue": "A primeira via é gratuita, e o cartão é recarregado para usar nos ônibus.",
+   "comoFazer": "No guichê da SOU Indaiatuba, no Ponto Cidadão (Rua Vinte e Quatro de Maio, 1.670), de segunda a sexta, das 9h às 17h. Telefone (19) 3518-7808, WhatsApp (19) 97414-9323.",
+   "online": false,
+   "documentos": [
+    "RG",
+    "CPF",
+    "Comprovante de endereço"
+   ],
+   "prazo": null,
+   "pagina": {
+    "nome": "Ônibus e bike",
+    "rota": "/mobilidade"
+   },
+   "links": [
+    {
+     "nome": "Ponto Cidadão (Prefeitura)",
+     "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+    },
+    {
+     "nome": "Horários e previsão de chegada",
+     "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/horarios-de-onibus/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+   ],
+   "perfil": null,
+   "palavrasChave": [
+    "cartão sou",
+    "ônibus",
+    "passe",
+    "transporte",
+    "bilhete"
+   ]
+  },
+  {
+   "id": "castracao",
+   "grupo": "pets",
+   "titulo": "Cadastre seu cão ou gato para castração gratuita",
+   "oQueE": "O Centro de Reabilitação Animal da Prefeitura faz castração gratuita de cães e gatos de moradores da cidade.",
+   "porQue": "Castração gratuita para animais de moradores de Indaiatuba.",
+   "comoFazer": "Cadastro de castração de segunda a sexta, das 10h às 16h, no Centro de Reabilitação Animal (Rua Safira, 120). Telefone (19) 3936-2782.",
+   "online": false,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Centro de Reabilitação Animal",
+     "url": "https://www.indaiatuba.sp.gov.br/urbanismo/reabilitacao-animal/"
+    },
+    {
+     "nome": "Pets para adoção",
+     "url": "https://www.indaiatuba.sp.gov.br/urbanismo/reabilitacao-animal/adocao-de-animais/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/urbanismo/reabilitacao-animal/"
+   ],
+   "perfil": "pet",
+   "palavrasChave": [
+    "castração",
+    "cachorro",
+    "gato",
+    "pet",
+    "animal",
+    "adoção"
+   ]
+  },
+  {
+   "id": "vacina-raiva",
+   "grupo": "pets",
+   "titulo": "Vacina contra raiva para cães e gatos",
+   "oQueE": "Vacinação antirrábica oferecida pela Prefeitura, com inscrição pelo site.",
+   "porQue": "A vacina contra a raiva protege o animal e a família.",
+   "comoFazer": "Acompanhe a página de inscrição da Vigilância Epidemiológica. Em 08/10/2026 as vagas estavam preenchidas, com aviso de novas inscrições em breve.",
+   "online": true,
+   "documentos": null,
+   "prazo": null,
+   "links": [
+    {
+     "nome": "Inscrição para a vacina contra raiva",
+     "url": "https://www.indaiatuba.sp.gov.br/saude/vigilancia-em-saude/vigilancia-epidemiologica/vacinacao-contra-raiva/"
+    }
+   ],
+   "fonte": [
+    "https://www.indaiatuba.sp.gov.br/saude/vigilancia-em-saude/vigilancia-epidemiologica/vacinacao-contra-raiva/"
+   ],
+   "perfil": "pet",
+   "palavrasChave": [
+    "vacina",
+    "raiva",
+    "antirrábica",
+    "cachorro",
+    "gato"
+   ]
+  }
+ ]
+}

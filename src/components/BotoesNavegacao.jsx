@@ -29,6 +29,7 @@ export default function BotoesNavegacao({
   const nome = local.nome ?? 'o local';
 
   // Atributos comuns: nova aba e sem passar informações da página para o site de destino.
+  // Os aria-label começam pelo texto visível do botão (WCAG 2.5.3) e dizem o destino.
   const externo = { target: '_blank', rel: 'noopener noreferrer' };
 
   if (compacto) {
@@ -37,7 +38,7 @@ export default function BotoesNavegacao({
         <a
           className="navegacao-botao navegacao-botao--waze"
           href={linkWaze(local)}
-          aria-label={`Abrir rota até ${nome} no Waze`}
+          aria-label={`Waze: rota de carro até ${nome}`}
           {...externo}
         >
           Waze
@@ -45,7 +46,7 @@ export default function BotoesNavegacao({
         <a
           className="navegacao-botao"
           href={linkGoogleMaps(local, modoPadrao, origem)}
-          aria-label={`Abrir rota até ${nome} no Google Maps (${MODOS_GOOGLE[modoPadrao].toLowerCase()})`}
+          aria-label={`Google Maps: rota até ${nome}, ${MODOS_GOOGLE[modoPadrao].toLowerCase()}`}
           {...externo}
         >
           Google Maps
@@ -59,7 +60,7 @@ export default function BotoesNavegacao({
       <a
         className="navegacao-botao navegacao-botao--waze"
         href={linkWaze(local)}
-        aria-label={`Abrir rota até ${nome} no Waze (de carro)`}
+        aria-label={`Ir com Waze de carro até ${nome}`}
         {...externo}
       >
         Ir com Waze <small>de carro</small>
@@ -71,7 +72,7 @@ export default function BotoesNavegacao({
             key={modo}
             className="navegacao-botao"
             href={linkGoogleMaps(local, modo, origem)}
-            aria-label={`Abrir rota até ${nome} no Google Maps, ${rotulo.toLowerCase()}`}
+            aria-label={`${rotulo} até ${nome}, pelo Google Maps`}
             {...externo}
           >
             {rotulo}
