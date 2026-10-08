@@ -20,6 +20,7 @@ import EstadoDados from '../components/EstadoDados.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
 import BotaoUtil from '../components/BotaoUtil.jsx';
 import MapaPreguicoso from '../components/mapa/MapaPreguicoso.jsx';
+import MapaWaze from '../components/MapaWaze.jsx';
 import { formatarData } from '../utils/datas.js';
 import './Categoria.css'; // reaproveita o topo (.categoria-topo) das páginas de categoria
 import '../components/PlanejadorRota.css'; // legenda de cores (.planejador-legenda)
@@ -151,6 +152,21 @@ export default function Mobilidade() {
                   </li>
                 ))}
               </ul>
+            </section>
+
+            {/* Trânsito agora: Waze iFrame com a visão geral da cidade (sem pin). */}
+            <section className="mobilidade-mapa" aria-labelledby="t-transito">
+              <h2 id="t-transito" className="mobilidade-subtitulo">
+                Trânsito agora
+              </h2>
+              <MapaWaze
+                lat={-23.09}
+                lng={-47.22}
+                zoom={13}
+                pin={false}
+                titulo="Mapa do Waze com o trânsito de Indaiatuba agora"
+                altura={380}
+              />
             </section>
 
             {/* ------------------------- Mapa ------------------------- */}

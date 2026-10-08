@@ -1,19 +1,22 @@
 /**
  * PlanejadorRota.jsx — Bloco "Como chegar" (página do local e /como-chegar).
  *
- * Origem: a localização ou o CEP da pessoa (SeletorOrigem).
- * Destino: um local do site.
+ * O site NÃO desenha rotas: quem leva a pessoa até o lugar é o Waze ou o
+ * Google Maps, que ela já usa no celular. No Google Maps, o modo "De ônibus"
+ * mostra as linhas reais de Indaiatuba, os horários e a tarifa.
  *
- * As rotas a pé e de bicicleta vêm de /api/rota, que usa o roteamento do
- * Indaiatuba Integra sobre as ruas reais (OpenStreetMap). Na rota de bike,
- * cada trecho é colorido pela infraestrutura: ciclovia, ciclofaixa, rua
- * compartilhada ou via sem infraestrutura.
- *
- * Ônibus: não existem dados abertos de linhas e horários de Indaiatuba, então
- * o bloco não inventa uma linha. Ele leva à previsão oficial da operadora.
+ * Se a pessoa informar de onde sai (localização ou CEP), o Google Maps já abre
+ * com a rota completa; sem isso, ele usa a localização atual do aparelho.
  *
  * @param {{destino: object}} props - um local de /api/locais.json
  */
+
+/* VERSÃO ANTERIOR (v2) — rota desenhada no próprio site
+   Calculava a rota a pé e de bicicleta com o roteamento do Indaiatuba Integra
+   (/api/rota) e desenhava o traçado num mapa Leaflet. Foi substituída pelos
+   botões do Waze e do Google Maps (v3). A função api/rota.js continua no
+   projeto, mas a interface não a usa mais.
+   (Os fechamentos de comentário abaixo levam uma barra invertida extra.)
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -23,7 +26,7 @@ import MapaPreguicoso from './mapa/MapaPreguicoso.jsx';
 import { distanciaMetros, formatarDistancia } from '../utils/geo.js';
 import './PlanejadorRota.css';
 
-/** Cores dos trechos de bicicleta, por infraestrutura (mesma legenda do Integra). */
+/** Cores dos trechos de bicicleta, por infraestrutura (mesma legenda do Integra). *\/
 export const CORES_INFRA = {
   ciclovia: { cor: '#1a7f37', nome: 'Ciclovia' },
   ciclofaixa: { cor: '#3fa34d', nome: 'Ciclofaixa' },
@@ -128,7 +131,7 @@ export default function PlanejadorRota({ destino }) {
 
       {origem && dados && (
         <>
-          {/* Opções de trajeto: botões de alternância que trocam o desenho do mapa. */}
+          {/* Opções de trajeto: botões de alternância que trocam o desenho do mapa. *\/}
           <div className="planejador-opcoes" role="group" aria-label="Escolha como ir">
             <button
               type="button"
@@ -220,6 +223,45 @@ export default function PlanejadorRota({ destino }) {
           </p>
         </>
       )}
+    </div>
+  );
+}
+*/
+
+// VERSÃO ATIVA (v3) — botões de navegação externa.
+import { useOrigem } from '../context/AppContext.jsx';
+import SeletorOrigem from './SeletorOrigem.jsx';
+import BotoesNavegacao from './BotoesNavegacao.jsx';
+import { podeNavegar } from '../utils/navegacao.js';
+import './PlanejadorRota.css';
+
+export default function PlanejadorRota({ destino }) {
+  const { origem } = useOrigem();
+
+  if (!podeNavegar(destino)) {
+    return (
+      <p className="nao-disponivel">
+        Informação não disponível — a fonte não informa o endereço nem a localização deste local.
+        Confira no órgão responsável.
+      </p>
+    );
+  }
+
+  return (
+    <div className="planejador">
+      <BotoesNavegacao local={destino} origem={origem} />
+      <p className="info-fonte">
+        De ônibus: o Google Maps mostra as linhas de Indaiatuba, onde embarcar e o horário. Para a
+        previsão oficial de chegada nos pontos, veja a página Ônibus e bike.
+      </p>
+      <details className="planejador-origem">
+        <summary>Sair de outro lugar (opcional)</summary>
+        <SeletorOrigem titulo="De onde você sai?" />
+        <p className="info-fonte">
+          Com o ponto de partida, o Google Maps já abre a rota completa. A sua localização e o seu
+          CEP não são enviados a este site: só ficam no seu navegador.
+        </p>
+      </details>
     </div>
   );
 }

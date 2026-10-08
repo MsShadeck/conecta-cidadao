@@ -18,6 +18,7 @@ import EstadoDados from '../components/EstadoDados.jsx';
 import SeletorOrigem from '../components/SeletorOrigem.jsx';
 import SeloAberto from '../components/SeloAberto.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
+import BotoesNavegacao from '../components/BotoesNavegacao.jsx';
 import './PertoDeMim.css';
 
 /** O que a pessoa costuma procurar primeiro, e como reconhecer nos dados. */
@@ -80,7 +81,7 @@ export default function PertoDeMim() {
                     <p className="nao-disponivel">Nenhum local com posição no mapa.</p>
                   ) : (
                     <ol>
-                      {r.locais.map((l, i) => (
+                      {r.locais.map((l) => (
                         <li key={l.id} data-categoria={l.categoria}>
                           <Link to={`/${l.categoria}/${l.id}`} className="perto-nome">
                             {l.nome}
@@ -90,14 +91,7 @@ export default function PertoDeMim() {
                             {l.endereco?.bairro ? ` · ${l.endereco.bairro}` : ''}
                           </span>
                           <SeloAberto horarios={l.horarios} />
-                          {i === 0 && (
-                            <Link
-                              className="botao-secundario perto-rota"
-                              to={`/como-chegar?destino=${l.id}`}
-                            >
-                              Como chegar
-                            </Link>
-                          )}
+                          <BotoesNavegacao local={l} compacto />
                         </li>
                       ))}
                     </ol>

@@ -3,7 +3,8 @@
  *
  * Ex.: /saude/ubs-jd-california. Mostra tudo o que as fontes informam sobre o
  * lugar: endereço, telefones clicáveis, horários com o selo "Aberto agora",
- * serviços, mini-mapa, "Como chegar", a fonte e a data de atualização.
+ * serviços, mapa ao vivo do Waze, "Como chegar" (Waze e Google Maps), a fonte
+ * e a data de atualização.
  *
  * Campo sem fonte aparece como "Informação não disponível", nunca com um valor
  * chutado.
@@ -13,13 +14,13 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { buscarCategoria } from '../data/servicos.js';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
-import { linkMapa } from '../utils/geo.js';
 import { textoDias } from '../utils/horario.js';
 import Foto from '../components/Foto.jsx';
 import SeloAberto from '../components/SeloAberto.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
 import EstadoDados from '../components/EstadoDados.jsx';
 import PlanejadorRota from '../components/PlanejadorRota.jsx';
+import MapaWaze from '../components/MapaWaze.jsx';
 import BotaoUtil from '../components/BotaoUtil.jsx';
 import EmergenciaRapida from '../components/EmergenciaRapida.jsx';
 import './Local.css';
@@ -126,9 +127,7 @@ function DetalheLocal({ local, categoria }) {
           {local.coordenadas?.aproximada && (
             <p className="local-dica">A posição no mapa é aproximada (pela rua, sem o número).</p>
           )}
-          <a className="botao-secundario" href={linkMapa(local)} target="_blank" rel="noreferrer">
-            Abrir no mapa
-          </a>
+          {/* "Abrir no mapa" virou os botões Waze/Google Maps do bloco Como chegar. */}
         </section>
 
         <section className="painel local-bloco" aria-labelledby="t-telefones">
@@ -195,6 +194,18 @@ function DetalheLocal({ local, categoria }) {
           </p>
         </section>
       </div>
+
+      {/* Mapa ao vivo do Waze centralizado no local (um pin, com o trânsito). */}
+      {local.coordenadas && (
+        <section className="local-mapa" aria-label="Mapa">
+          <MapaWaze
+            lat={local.coordenadas.lat}
+            lng={local.coordenadas.lng}
+            zoom={16}
+            titulo={`Mapa do Waze centralizado em ${local.nome}`}
+          />
+        </section>
+      )}
 
       <section className="painel local-bloco local-como-chegar" aria-labelledby="t-chegar">
         <h2 id="t-chegar">Como chegar</h2>

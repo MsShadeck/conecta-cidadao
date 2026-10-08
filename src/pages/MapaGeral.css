@@ -140,3 +140,10 @@
     max-height: none;
   }
 }
+
+/* Cada item: botão "mostrar no mapa", link de detalhes e botões Waze/Google. */
+.mapa-geral-lista li {
+  flex-wrap: wrap;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--linha);
+}

@@ -29,13 +29,3 @@ export function ordenarPorDistancia(locais, origem) {
     .map((local) => ({ ...local, distancia: distanciaMetros(origem, local.coordenadas) }))
     .sort((a, b) => a.distancia - b.distancia);
 }
-
-/** Link para abrir o local no OpenStreetMap (funciona em qualquer aparelho). */
-export function linkMapa(local) {
-  if (local.coordenadas) {
-    const { lat, lng } = local.coordenadas;
-    return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=18/${lat}/${lng}`;
-  }
-  const busca = `${local.enderecoTexto ?? local.nome}, Indaiatuba, SP`;
-  return `https://www.openstreetmap.org/search?query=${encodeURIComponent(busca)}`;
-}

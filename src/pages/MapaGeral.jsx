@@ -22,6 +22,7 @@ import EstadoDados from '../components/EstadoDados.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
 import SeletorOrigem from '../components/SeletorOrigem.jsx';
 import MapaPreguicoso from '../components/mapa/MapaPreguicoso.jsx';
+import BotoesNavegacao from '../components/BotoesNavegacao.jsx';
 import './Categoria.css'; // contagem (.categoria-contagem)
 import './MapaGeral.css';
 
@@ -161,6 +162,7 @@ export default function MapaGeral() {
                     <Link to={`/${l.categoria}/${l.id}`} className="mapa-geral-detalhes">
                       Detalhes
                     </Link>
+                    <BotoesNavegacao local={l} compacto />
                   </li>
                 ))}
               </ul>

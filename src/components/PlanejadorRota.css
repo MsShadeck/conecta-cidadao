@@ -77,3 +77,21 @@
   border-radius: 3px;
   vertical-align: middle;
 }
+
+/* "Sair de outro lugar": recolhido por padrão (<details>). */
+.planejador-origem {
+  border-top: 1px solid var(--linha);
+  padding-top: 12px;
+}
+
+.planejador-origem summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--azul-marca);
+  min-height: 32px;
+}
+
+.planejador-origem[open] summary {
+  margin-bottom: 12px;
+}

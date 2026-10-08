@@ -1,0 +1,69 @@
+/* ============================================================
+   BotoesNavegacao.css — "Ir com Waze" / "Ir com Google Maps"
+============================================================ */
+
+.navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.navegacao-google {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.navegacao-rotulo {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--tinta-media);
+}
+
+/* Botão com área de toque de pelo menos 44px (recomendação para celular). */
+.navegacao-botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: var(--raio-pilula);
+  border: 1.5px solid var(--azul-marca);
+  background: var(--branco);
+  color: var(--azul-marca);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navegacao-botao:hover {
+  background: var(--azul-nevoa);
+}
+
+.navegacao-botao small {
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+/* Waze: botão preenchido, para diferenciar do Google Maps. */
+.navegacao-botao--waze {
+  background: var(--azul-marca);
+  color: var(--texto-sobre-marca);
+}
+
+.navegacao-botao--waze:hover {
+  background: var(--azul-acento);
+}
+
+/* Versão compacta (listas): botões menores. */
+.navegacao--compacta {
+  gap: 6px;
+}
+
+.navegacao--compacta .navegacao-botao {
+  min-height: 36px;
+  padding: 5px 12px;
+  font-size: 0.8125rem;
+}
