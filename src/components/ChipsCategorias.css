@@ -33,13 +33,13 @@
     box-shadow var(--transicao);
 }
 
-/* Ícone apagado nos chips inativos, para o chip ativo se destacar. */
-.chip img {
+/* Ícone SVG na cor da categoria (--cat-tinta), com opacidade total: a cor da
+   categoria tem contraste AA sobre o fundo do chip nos dois temas. */
+.chip svg {
   width: 18px;
   height: 18px;
-  object-fit: contain;
-  opacity: 0.55;
-  transition: opacity var(--transicao);
+  flex-shrink: 0;
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 .chip:hover {
@@ -56,8 +56,8 @@
   box-shadow: var(--sombra-baixa);
 }
 
-.chip--ativo img {
-  opacity: 1;
+.chip--ativo svg {
+  color: currentColor;
 }
 
 /* Dentro de um painel branco, o chip inativo precisa de fundo próprio para aparecer. */

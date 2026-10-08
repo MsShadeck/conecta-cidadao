@@ -11,22 +11,34 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useBusca } from '../context/AppContext.jsx';
 import IconeLupa from './IconeLupa.jsx';
 import PreferenciasTela from './PreferenciasTela.jsx';
+import IconeCategoria from './IconeCategoria.jsx';
 import './Cabecalho.css';
 
-/** Destinos do menu. Ficam numa lista para o menu do celular e o da barra usarem os mesmos. */
+/**
+ * Barra do topo: só o caminho de quem está chegando à cidade (poucas
+ * entradas, para caber no celular). O resto do site fica no Menu.
+ */
 const LINKS_PRINCIPAIS = [
-  { rota: '/mapa', nome: 'Mapa' },
+  { rota: '/primeiros-passos', nome: 'Primeiros passos' },
+  { rota: '/meu-bairro', nome: 'Meu bairro' },
   { rota: '/mobilidade', nome: 'Ônibus e bike' },
-  { rota: '/servicos-online', nome: 'Serviços online' },
-  { rota: '/contatos', nome: 'Telefones' },
+  { rota: '/mapa', nome: 'Mapa' },
 ];
 
+/** Menu completo, na ordem da jornada de quem acabou de se mudar. */
 const LINKS_MENU = [
   { rota: '/', nome: 'Início' },
-  { rota: '/primeiros-passos', nome: 'Primeiros passos (novo na cidade)' },
-  { rota: '/perto-de-mim', nome: 'O que tem perto de mim' },
+  { rota: '/primeiros-passos', nome: 'Primeiros passos', icone: 'passos' },
+  { rota: '/meu-bairro', nome: 'Meu bairro', icone: 'bairro' },
+  { rota: '/servicos', nome: 'Serviços públicos', icone: 'servicos' },
+  { rota: '/dia-a-dia', nome: 'Dia a dia (mercados, farmácias...)', icone: 'dia-a-dia' },
+  { rota: '/mobilidade', nome: 'Ônibus e bike', icone: 'mobilidade' },
+  { rota: '/lazer', nome: 'Lazer e cultura', icone: 'lazer' },
+  { rota: '/conheca', nome: 'Conheça Indaiatuba', icone: 'conheca' },
+  { rota: '/mapa', nome: 'Mapa' },
   { rota: '/como-chegar', nome: 'Como chegar' },
-  ...LINKS_PRINCIPAIS,
+  { rota: '/servicos-online', nome: 'Serviços online' },
+  { rota: '/contatos', nome: 'Telefones úteis' },
   { rota: '/lembretes', nome: 'Lembretes' },
   { rota: '/sobre', nome: 'Sobre' },
 ];
@@ -137,7 +149,13 @@ export default function Cabecalho() {
             <ul>
               {LINKS_MENU.map((link) => (
                 <li key={link.rota}>
-                  <NavLink to={link.rota} end className="menu-celular-link">
+                  <NavLink
+                    to={link.rota}
+                    end
+                    className="menu-celular-link"
+                    data-categoria={link.icone}
+                  >
+                    {link.icone && <IconeCategoria slug={link.icone} tamanho={20} />}
                     {link.nome}
                   </NavLink>
                 </li>

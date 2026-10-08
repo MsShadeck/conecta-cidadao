@@ -21,6 +21,7 @@ import useDados from '../hooks/useDados.js';
 import { buscarTudo } from '../utils/busca.js';
 import IconeLupa from './IconeLupa.jsx';
 import Foto from './Foto.jsx';
+import IconeCategoria from './IconeCategoria.jsx';
 import './BuscaOverlay.css';
 
 export default function BuscaOverlay() {
@@ -58,7 +59,6 @@ export default function BuscaOverlay() {
             detalhe: categoria.resumo,
             rota: categoria.rota,
             categoriaSlug: categoria.slug,
-            icone: categoria.icone,
           })),
         },
       ];
@@ -236,7 +236,11 @@ export default function BuscaOverlay() {
                               className="busca-miniatura busca-miniatura--icone"
                               aria-hidden="true"
                             >
-                              {item.icone ? <img src={item.icone} alt="" /> : SIMBOLOS[item.tipo]}
+                              {item.tipo === 'categoria' ? (
+                                <IconeCategoria slug={item.categoriaSlug} />
+                              ) : (
+                                SIMBOLOS[item.tipo]
+                              )}
                             </span>
                           )}
                           <span className="busca-texto">

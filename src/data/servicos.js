@@ -13,7 +13,7 @@
  *   slug   → identificador sem acento, usado na URL e no atributo data-categoria (cores do CSS)
  *   nome   → texto exibido ao usuário
  *   rota   → caminho registrado no App.jsx
- *   icone  → imagem da pasta public/ (caminho começa em "/" = raiz do site)
+ *   (ícone) → desenhado em SVG pelo componente IconeCategoria, a partir do slug
  *   resumo → frase curta mostrada no card da Home
  */
 
@@ -24,42 +24,36 @@ export const categorias = [
     slug: 'saude',
     nome: 'Saúde',
     rota: '/saude',
-    icone: '/img/interface/pequeno/cuidados-de-saude.png',
     resumo: 'UBS, UPA 24h, hospitais, CAPS e farmácias municipais.',
   },
   {
     slug: 'educacao',
     nome: 'Educação',
     rota: '/educacao',
-    icone: '/img/interface/pequeno/universidade.png',
     resumo: 'Escolas municipais (EMEBs), creches, faculdades e escolas técnicas.',
   },
   {
     slug: 'seguranca',
     nome: 'Segurança',
     rota: '/seguranca',
-    icone: '/img/interface/pequeno/social-security.png',
     resumo: 'Guarda Civil, Defesa Civil, Bombeiros e telefones de emergência.',
   },
   {
     slug: 'lazer',
     nome: 'Lazer e cultura',
     rota: '/lazer',
-    icone: '/img/interface/pequeno/bicicleta.png',
     resumo: 'Parques, museus, cultura, esporte e shoppings.',
   },
   {
     slug: 'cidadania',
     nome: 'Cidadania',
     rota: '/cidadania',
-    icone: '/img/interface/cidadania.svg',
     resumo: 'Prefeitura, Ponto Cidadão, Poupatempo, CRAS e Conselho Tutelar.',
   },
   {
     slug: 'mobilidade',
     nome: 'Ônibus e bike',
     rota: '/mobilidade',
-    icone: '/img/interface/onibus.svg',
     resumo: 'Terminais, cartão SOU, previsão oficial dos ônibus, Ecobike e ciclovias.',
   },
 ];

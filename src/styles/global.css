@@ -89,6 +89,27 @@
   --cat-fundo: #e8d8fd;
   --cat-tinta: #6a1aaf;
 }
+/* Seções da jornada de quem está chegando (v3). */
+[data-categoria='passos'] {
+  --cat-fundo: #dceffa;
+  --cat-tinta: #0b5a8a;
+}
+[data-categoria='bairro'] {
+  --cat-fundo: #fbe0ea;
+  --cat-tinta: #9c1f55;
+}
+[data-categoria='dia-a-dia'] {
+  --cat-fundo: #e7f1d3;
+  --cat-tinta: #49650f;
+}
+[data-categoria='conheca'] {
+  --cat-fundo: #e3e3fb;
+  --cat-tinta: #3b3bb0;
+}
+[data-categoria='servicos'] {
+  --cat-fundo: #e2ecf3;
+  --cat-tinta: #2c5470;
+}
 /* Categorias novas da v2. */
 [data-categoria='cidadania'] {
   --cat-fundo: #d3f0ec;
@@ -502,6 +523,26 @@ a.botao-primario {
     --cat-fundo: #123430;
     --cat-tinta: #86ddd2;
   }
+  :root:not([data-tema='claro']) [data-categoria='passos'] {
+    --cat-fundo: #13283a;
+    --cat-tinta: #8ccaf5;
+  }
+  :root:not([data-tema='claro']) [data-categoria='bairro'] {
+    --cat-fundo: #3a1626;
+    --cat-tinta: #f5a8c6;
+  }
+  :root:not([data-tema='claro']) [data-categoria='dia-a-dia'] {
+    --cat-fundo: #22301a;
+    --cat-tinta: #bfe08a;
+  }
+  :root:not([data-tema='claro']) [data-categoria='conheca'] {
+    --cat-fundo: #1f1f45;
+    --cat-tinta: #b9b9ff;
+  }
+  :root:not([data-tema='claro']) [data-categoria='servicos'] {
+    --cat-fundo: #1a2836;
+    --cat-tinta: #a9c8de;
+  }
   :root:not([data-tema='claro']) [data-categoria='mobilidade'] {
     --cat-fundo: #3a2c10;
     --cat-tinta: #f2c96b;
@@ -555,21 +596,39 @@ a.botao-primario {
   --cat-fundo: #123430;
   --cat-tinta: #86ddd2;
 }
+:root[data-tema='escuro'] [data-categoria='passos'] {
+  --cat-fundo: #13283a;
+  --cat-tinta: #8ccaf5;
+}
+:root[data-tema='escuro'] [data-categoria='bairro'] {
+  --cat-fundo: #3a1626;
+  --cat-tinta: #f5a8c6;
+}
+:root[data-tema='escuro'] [data-categoria='dia-a-dia'] {
+  --cat-fundo: #22301a;
+  --cat-tinta: #bfe08a;
+}
+:root[data-tema='escuro'] [data-categoria='conheca'] {
+  --cat-fundo: #1f1f45;
+  --cat-tinta: #b9b9ff;
+}
+:root[data-tema='escuro'] [data-categoria='servicos'] {
+  --cat-fundo: #1a2836;
+  --cat-tinta: #a9c8de;
+}
 :root[data-tema='escuro'] [data-categoria='mobilidade'] {
   --cat-fundo: #3a2c10;
   --cat-tinta: #f2c96b;
 }
 
-/* Os ícones PNG das categorias são azuis sobre transparente: no escuro, um
-   fundo claro arredondado mantém o desenho visível. */
+/* O logo (PNG azul) fica num selo claro no tema escuro para continuar visível.
+   Os ícones das categorias são SVG com currentColor e não precisam disso. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-tema='claro']) .cabecalho-selo,
-  :root:not([data-tema='claro']) .card-servico-icone {
+  :root:not([data-tema='claro']) .cabecalho-selo {
     background: #dbeaf5;
   }
 }
-:root[data-tema='escuro'] .cabecalho-selo,
-:root[data-tema='escuro'] .card-servico-icone {
+:root[data-tema='escuro'] .cabecalho-selo {
   background: #dbeaf5;
 }
 

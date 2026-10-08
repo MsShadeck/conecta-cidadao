@@ -1,0 +1,35 @@
+/* ============================================================
+   ServicosPublicos.css — Página "/servicos" (ServicosPublicos.jsx)
+============================================================ */
+
+.servicos-publicos-atalhos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.servicos-publicos-atalho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 64px;
+  padding: 14px 18px;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta-media);
+  font-size: 0.875rem;
+}
+
+.servicos-publicos-atalho svg {
+  color: var(--cat-tinta, var(--azul-marca));
+  flex-shrink: 0;
+}
+
+.servicos-publicos-atalho strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--azul-marca);
+}

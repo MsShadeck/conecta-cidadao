@@ -31,6 +31,10 @@ export default function Rodape() {
               {categoria.nome}
             </Link>
           ))}
+          <Link to="/primeiros-passos">Primeiros passos</Link>
+          <Link to="/meu-bairro">Meu bairro</Link>
+          <Link to="/dia-a-dia">Dia a dia</Link>
+          <Link to="/conheca">Conheça Indaiatuba</Link>
           <Link to="/contatos">Telefones úteis</Link>
           <Link to="/lembretes">Lembretes</Link>
           <Link to="/sobre">Sobre nós</Link>

@@ -166,10 +166,6 @@
   box-shadow: var(--sombra-media);
 }
 
-.home-atalho-icone {
-  font-size: 1.625rem;
-}
-
 .home-atalho strong {
   font-size: 0.9375rem;
   color: var(--azul-marca);
@@ -182,4 +178,63 @@
 
 .home-clima {
   margin-top: 18px;
+}
+
+/* Dois caminhos principais: botões grandes na cor de cada seção. */
+.home-caminhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.home-caminho {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 84px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  background: var(--cat-fundo);
+  color: var(--tinta);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  box-shadow: var(--sombra-baixa);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.home-caminho:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.home-caminho svg {
+  color: var(--cat-tinta);
+  flex-shrink: 0;
+}
+
+.home-caminho strong {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--cat-tinta);
+}
+
+/* Campo "CEP ou bairro" + botão. */
+.home-cep {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: min(620px, 100%);
+}
+
+.home-cep .campo-busca {
+  flex: 1 1 240px;
+  background: var(--branco);
+}
+
+/* Ícone dos atalhos na cor da seção. */
+.home-atalho svg {
+  color: var(--cat-tinta, var(--azul-marca));
 }

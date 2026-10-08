@@ -135,10 +135,8 @@
   font-size: 1.25rem;
 }
 
-.busca-miniatura--icone img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+.busca-miniatura--icone svg {
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 /* Coluna com nome e detalhe. min-width: 0 é necessário para que o texto

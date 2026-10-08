@@ -30,6 +30,7 @@ const MapaGeral = lazy(() => import('./pages/MapaGeral.jsx'));
 const PertoDeMim = lazy(() => import('./pages/PertoDeMim.jsx'));
 const ServicosOnline = lazy(() => import('./pages/ServicosOnline.jsx'));
 const PrimeirosPassos = lazy(() => import('./pages/PrimeirosPassos.jsx'));
+const ServicosPublicos = lazy(() => import('./pages/ServicosPublicos.jsx'));
 
 /** Mensagem exibida enquanto o arquivo da página chega. */
 function CarregandoPagina() {
@@ -56,6 +57,10 @@ export default function App() {
                 Cada filha é desenhada no <Outlet /> que existe dentro do Layout. */}
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
+
+              {/* Serviços públicos: agrupa as categorias abaixo (que continuam
+                  com os mesmos endereços, para não quebrar links antigos). */}
+              <Route path="/servicos" element={<ServicosPublicos />} />
 
               {/* As categorias reaproveitam o MESMO componente Categoria.
                   O que muda é a prop "slug", usada para filtrar os locais. */}

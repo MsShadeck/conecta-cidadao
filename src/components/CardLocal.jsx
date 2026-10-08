@@ -12,12 +12,11 @@
 import { Link } from 'react-router-dom';
 import Foto from './Foto.jsx';
 import SeloAberto from './SeloAberto.jsx';
-import { buscarCategoria } from '../data/servicos.js';
+import IconeCategoria from './IconeCategoria.jsx';
 import { formatarDistancia } from '../utils/geo.js';
 import './CardLocal.css';
 
 export default function CardLocal({ local, distancia }) {
-  const categoria = buscarCategoria(local.categoria);
   return (
     // data-categoria: a borda e o selo do tipo herdam a cor do serviço.
     <Link
@@ -32,7 +31,7 @@ export default function CardLocal({ local, distancia }) {
         ) : (
           // Sem foto: o ícone da categoria num fundo colorido (decorativo).
           <span className="card-local-imagem card-local-sem-foto" aria-hidden="true">
-            <img src={categoria?.icone} alt="" width="56" height="56" />
+            <IconeCategoria slug={local.categoria} tamanho={48} />
           </span>
         )}
       </span>

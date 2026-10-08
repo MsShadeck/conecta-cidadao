@@ -218,3 +218,15 @@
   font-size: 0.875rem;
   font-weight: 600;
 }
+
+/* Itens do menu com ícone da seção (na cor da seção). */
+.menu-celular-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-celular-link svg {
+  color: var(--cat-tinta, var(--azul-marca));
+  flex-shrink: 0;
+}

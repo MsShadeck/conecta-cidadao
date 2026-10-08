@@ -7,6 +7,7 @@
 
 import { NavLink } from 'react-router-dom';
 import { categorias } from '../data/servicos.js';
+import IconeCategoria from './IconeCategoria.jsx';
 import './ChipsCategorias.css';
 
 export default function ChipsCategorias() {
@@ -23,7 +24,7 @@ export default function ChipsCategorias() {
           // O chip da página aberta ganha a classe extra e fica destacado.
           className={({ isActive }) => (isActive ? 'chip chip--ativo' : 'chip')}
         >
-          <img src={categoria.icone} alt="" />
+          <IconeCategoria slug={categoria.slug} tamanho={18} />
           {categoria.nome}
         </NavLink>
       ))}

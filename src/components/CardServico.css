@@ -52,10 +52,9 @@
   margin-bottom: 4px;
 }
 
-.card-servico-icone img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain; /* mostra o ícone inteiro, sem cortar */
+/* O SVG herda a cor da categoria (stroke="currentColor"). */
+.card-servico-icone {
+  color: var(--cat-tinta);
 }
 
 .card-servico-nome {

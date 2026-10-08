@@ -1,91 +1,158 @@
 /**
  * Home.jsx — Página inicial ("/").
  *
- * Blocos: chamada com o botão de busca, atalhos para quem acabou de chegar,
- * tempo agora (Open-Meteo), faixa da marca e a grade com as categorias.
+ * Pensada para quem está se mudando para Indaiatuba:
+ *  1. chamada "Chegou agora? Comece por aqui" com dois caminhos (o que
+ *     resolver e o que tem no meu bairro);
+ *  2. campo "Digite seu CEP ou bairro", que leva ao Meu bairro;
+ *  3. o bairro salvo (se a pessoa já salvou um) com os serviços mais próximos;
+ *  4. atalhos das seções, tempo agora, diferenças para quem vem de São Paulo
+ *     e a grade com as categorias de serviço público.
  */
 
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { categorias } from '../data/servicos.js';
 import { useBusca } from '../context/AppContext.jsx';
-import { Link } from 'react-router-dom';
 import CardServico from '../components/CardServico.jsx';
 import Clima from '../components/Clima.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
+import IconeCategoria from '../components/IconeCategoria.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
+import { limparCep } from '../utils/cep.js';
 import './Home.css';
 
-/** Atalhos da Home: o que quem acabou de chegar mais procura. */
+/** Atalhos das seções, na ordem da jornada de quem acabou de chegar. */
 const ATALHOS = [
   {
-    rota: '/primeiros-passos',
-    icone: '🧭',
-    titulo: 'Primeiros passos',
-    texto: 'Cartão SUS, escola, cartão do ônibus e mais.',
+    rota: '/servicos',
+    slug: 'servicos',
+    titulo: 'Serviços públicos',
+    texto: 'UBS, escolas, creches, segurança e cidadania.',
   },
   {
-    rota: '/perto-de-mim',
-    icone: '📍',
-    titulo: 'O que tem perto de mim',
-    texto: 'UBS, escola, CRAS e terminal mais próximos.',
+    rota: '/dia-a-dia',
+    slug: 'dia-a-dia',
+    titulo: 'Dia a dia',
+    texto: 'Mercados, padarias, farmácias e restaurantes.',
   },
   {
-    rota: '/mapa',
-    icone: '🗺️',
-    titulo: 'Mapa dos serviços',
-    texto: 'Todos os locais públicos no mapa.',
+    rota: '/mobilidade',
+    slug: 'mobilidade',
+    titulo: 'Ônibus e bike',
+    texto: 'Cartão SOU, terminais, Ecobike e ciclovias.',
+  },
+  {
+    rota: '/lazer',
+    slug: 'lazer',
+    titulo: 'Lazer e cultura',
+    texto: 'Parques, museus, shoppings e esporte.',
+  },
+  {
+    rota: '/conheca',
+    slug: 'conheca',
+    titulo: 'Conheça Indaiatuba',
+    texto: 'A cidade para quem vem de fora.',
   },
   {
     rota: '/servicos-online',
-    icone: '💻',
+    slug: 'servicos',
     titulo: 'Serviços online',
-    texto: 'IPTU, vacina, multas e outros links oficiais.',
+    texto: 'IPTU, vacina, multas e links oficiais.',
   },
 ];
 
 export default function Home() {
+  useTituloPagina(
+    'Conecta Cidadão — Guia para quem está chegando a Indaiatuba',
+    'Mudou para Indaiatuba? O que resolver primeiro, o que tem perto de casa, ônibus, serviços públicos e o comércio do dia a dia.'
+  );
   const { abrirBusca } = useBusca();
+  const navigate = useNavigate();
+  const [entrada, setEntrada] = useState('');
+
   // Contagem real de locais por categoria, a partir de /api/locais.json.
   const { dados } = useDados('/api/locais.json');
   const totais = {};
   for (const local of dados?.locais ?? [])
     totais[local.categoria] = (totais[local.categoria] ?? 0) + 1;
-  // Define o título da aba do navegador para esta página.
-  useTituloPagina('Conecta Cidadão — Serviços públicos de Indaiatuba');
+
+  /** CEP (8 números) vai como ?cep=; qualquer outro texto é tratado como bairro. */
+  function irParaMeuBairro(evento) {
+    evento.preventDefault();
+    const texto = entrada.trim();
+    if (!texto) return navigate('/meu-bairro');
+    const cep = limparCep(texto);
+    navigate(cep ? `/meu-bairro?cep=${cep}` : `/meu-bairro?bairro=${encodeURIComponent(texto)}`);
+  }
 
   return (
     <>
       <section className="container home-topo">
         {/* Só um <h1> por página: é o título principal do documento. */}
-        <h1 className="titulo-pagina">Os serviços públicos de Indaiatuba em um só lugar</h1>
+        <h1 className="titulo-pagina">Chegou agora em Indaiatuba? Comece por aqui</h1>
         <p className="texto-apoio">
-          Postos de saúde, escolas, segurança, lazer, ônibus e serviços online da Prefeitura, com
-          endereço, telefone e como chegar. Feito para quem mora ou acabou de chegar na cidade.
+          O que resolver na mudança, o que tem perto da sua casa, como funciona o ônibus e onde
+          ficam os serviços públicos e o comércio do dia a dia. Tudo com a fonte de cada informação.
         </p>
+
+        {/* Os dois caminhos principais, em botões grandes (fáceis de tocar no celular). */}
+        <div className="home-caminhos">
+          <Link to="/primeiros-passos" className="home-caminho" data-categoria="passos">
+            <IconeCategoria slug="passos" tamanho={30} />
+            <span>
+              <strong>Ver o que preciso resolver</strong>
+              Cartão SUS, escola, água, título de eleitor...
+            </span>
+          </Link>
+          <Link to="/meu-bairro" className="home-caminho" data-categoria="bairro">
+            <IconeCategoria slug="bairro" tamanho={30} />
+            <span>
+              <strong>Descobrir meu bairro</strong>
+              UBS, escola, mercado e ônibus perto de casa
+            </span>
+          </Link>
+        </div>
+
+        <form className="home-cep" onSubmit={irParaMeuBairro} role="search" aria-label="Meu bairro">
+          <label className="campo campo-busca">
+            <IconeLupa />
+            <input
+              type="text"
+              inputMode="text"
+              placeholder="Digite seu CEP ou bairro"
+              aria-label="Digite seu CEP ou bairro"
+              value={entrada}
+              onChange={(e) => setEntrada(e.target.value)}
+            />
+          </label>
+          <button type="submit" className="botao-primario">
+            Ver meu bairro
+          </button>
+        </form>
 
         {/* Parece um campo de texto, mas é um botão: clicar abre o overlay de
             busca, que tem o input de verdade. Evita dois campos concorrentes. */}
         <button type="button" className="home-busca" onClick={abrirBusca}>
           <IconeLupa />
-          <span className="home-busca-texto">Buscar uma unidade, escola ou parque</span>
+          <span className="home-busca-texto">
+            Buscar no site: UBS, matrícula, título de eleitor...
+          </span>
           {/* <kbd> é a tag semântica para teclas do teclado. */}
           <kbd className="home-busca-atalho">Ctrl K</kbd>
         </button>
       </section>
 
-      {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
-      {/* Atalhos pensados para quem acabou de se mudar para Indaiatuba. */}
       <section className="container home-atalhos" aria-labelledby="titulo-atalhos">
         <h2 id="titulo-atalhos" className="home-servicos-titulo">
-          Novo em Indaiatuba?
+          Explore a cidade
         </h2>
         <ul className="home-atalhos-lista">
           {ATALHOS.map((atalho) => (
             <li key={atalho.rota}>
-              <Link to={atalho.rota} className="home-atalho">
-                <span className="home-atalho-icone" aria-hidden="true">
-                  {atalho.icone}
-                </span>
+              <Link to={atalho.rota} className="home-atalho" data-categoria={atalho.slug}>
+                <IconeCategoria slug={atalho.slug} tamanho={26} />
                 <strong>{atalho.titulo}</strong>
                 <span>{atalho.texto}</span>
               </Link>
@@ -98,6 +165,7 @@ export default function Home() {
         <Clima />
       </div>
 
+      {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
       <section className="container home-marca">
         <img
           src="/img/interface/pequeno/logo.png"
@@ -116,7 +184,7 @@ export default function Home() {
       </section>
 
       <section className="container home-servicos">
-        <h2 className="home-servicos-titulo">Escolha o serviço desejado</h2>
+        <h2 className="home-servicos-titulo">Todas as categorias</h2>
         <div className="grade-servicos">
           {/* map() transforma cada categoria dos dados em um card na tela.
               Acrescentar uma categoria em servicos.js já faz surgir o card aqui. */}

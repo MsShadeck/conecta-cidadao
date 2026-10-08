@@ -65,7 +65,6 @@ export function buscarTudo(termo, { locais = [], contatos = [], servicos = [] } 
         detalhe: c.resumo,
         rota: c.rota,
         categoriaSlug: c.slug,
-        icone: c.icone,
       })),
     });
   }
