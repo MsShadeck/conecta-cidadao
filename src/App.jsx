@@ -26,6 +26,10 @@ const Lembretes = lazy(() => import('./pages/Lembretes.jsx'));
 const NaoEncontrada = lazy(() => import('./pages/NaoEncontrada.jsx'));
 const Mobilidade = lazy(() => import('./pages/Mobilidade.jsx'));
 const ComoChegar = lazy(() => import('./pages/ComoChegar.jsx'));
+const MapaGeral = lazy(() => import('./pages/MapaGeral.jsx'));
+const PertoDeMim = lazy(() => import('./pages/PertoDeMim.jsx'));
+const ServicosOnline = lazy(() => import('./pages/ServicosOnline.jsx'));
+const PrimeirosPassos = lazy(() => import('./pages/PrimeirosPassos.jsx'));
 
 /** Mensagem exibida enquanto o arquivo da página chega. */
 function CarregandoPagina() {
@@ -65,6 +69,12 @@ export default function App() {
                   cartão SOU, Ecobike e ciclovias. */}
               <Route path="/mobilidade" element={<Mobilidade />} />
               <Route path="/como-chegar" element={<ComoChegar />} />
+
+              {/* Recursos para quem mora ou acabou de chegar na cidade. */}
+              <Route path="/mapa" element={<MapaGeral />} />
+              <Route path="/perto-de-mim" element={<PertoDeMim />} />
+              <Route path="/servicos-online" element={<ServicosOnline />} />
+              <Route path="/primeiros-passos" element={<PrimeirosPassos />} />
 
               <Route path="/sobre" element={<Sobre />} />
 

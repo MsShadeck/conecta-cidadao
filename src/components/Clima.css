@@ -1,0 +1,67 @@
+/* ============================================================
+   Clima.css — Widget de tempo da Home (Clima.jsx)
+============================================================ */
+
+.clima {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--branco);
+  border-radius: 22px;
+  padding: 18px 22px;
+  box-shadow: var(--sombra-baixa);
+}
+
+.clima-agora {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.clima-simbolo {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.clima-titulo {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--tinta-media);
+}
+
+.clima-temperatura {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.clima-detalhe {
+  font-size: 13.5px;
+  color: var(--tinta-media);
+}
+
+.clima-aviso {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  background: #fdefc8;
+  color: #5c3b00;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.clima-aviso a {
+  font-weight: 600;
+  color: #5c3b00;
+  text-decoration: underline;
+}
+
+.clima-fonte {
+  font-size: 12px;
+  color: var(--tinta-media);
+}
+
+.clima-fonte a {
+  text-decoration: underline;
+}

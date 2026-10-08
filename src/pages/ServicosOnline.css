@@ -1,0 +1,53 @@
+/* ============================================================
+   ServicosOnline.css — Página "/servicos-online" (ServicosOnline.jsx)
+============================================================ */
+
+.servicos-online {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.servicos-online-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.servico-online {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-card);
+  color: var(--tinta);
+  transition:
+    border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.servico-online:hover {
+  border-color: var(--azul-acento);
+  box-shadow: var(--sombra-baixa);
+}
+
+.servico-online strong {
+  font-size: 15px;
+  color: var(--azul-marca);
+}
+
+.servico-online span {
+  font-size: 13.5px;
+  color: var(--tinta-media);
+  line-height: 1.55;
+}
+
+.servico-online .servico-online-site {
+  margin-top: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--azul-marca);
+}

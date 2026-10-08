@@ -1,0 +1,62 @@
+/* ============================================================
+   PertoDeMim.css — Página "/perto-de-mim" (PertoDeMim.jsx)
+============================================================ */
+
+.perto {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.perto-grade {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.perto-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.perto-cartao h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.perto-cartao ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.perto-cartao ol li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-left: 12px;
+  border-left: 3px solid var(--cat-fundo, var(--azul-nevoa));
+}
+
+.perto-nome {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--tinta);
+  text-decoration: underline;
+}
+
+.perto-detalhe {
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.perto-rota {
+  margin-top: 4px;
+  font-size: 13px;
+  padding: 7px 14px;
+}

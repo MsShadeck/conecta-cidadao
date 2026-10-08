@@ -1,0 +1,142 @@
+/* ============================================================
+   MapaGeral.css — Página "/mapa" (MapaGeral.jsx)
+============================================================ */
+
+.mapa-geral {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mapa-geral-controles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mapa-geral-camadas {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mapa-geral-camadas legend {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.mapa-geral-camada {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--raio-pilula);
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+  cursor: pointer;
+  min-height: 40px;
+}
+
+.mapa-geral-camada input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--cat-tinta);
+}
+
+/* Bolinha com a cor da categoria (a mesma do alfinete no mapa). */
+.mapa-geral-cor {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cat-tinta, var(--azul-marca));
+  flex-shrink: 0;
+}
+
+.mapa-geral-bairro button {
+  color: var(--azul-marca);
+  text-decoration: underline;
+}
+
+/* Mapa e lista lado a lado no computador; um embaixo do outro no celular. */
+.mapa-geral-corpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 16px;
+  align-items: start;
+}
+
+.mapa-geral-lista {
+  background: var(--branco);
+  border-radius: var(--raio-card);
+  box-shadow: var(--sombra-baixa);
+  padding: 14px;
+  max-height: 560px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mapa-geral-lista ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mapa-geral-lista li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mapa-geral-item {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 13.5px;
+}
+
+.mapa-geral-item .mapa-geral-cor {
+  margin-top: 5px;
+}
+
+.mapa-geral-item strong {
+  display: block;
+  font-weight: 500;
+}
+
+.mapa-geral-item small {
+  color: var(--tinta-media);
+  font-size: 12px;
+}
+
+.mapa-geral-item:hover,
+.mapa-geral-item--ativo {
+  background: var(--azul-nevoa);
+}
+
+.mapa-geral-detalhes {
+  font-size: 12.5px;
+  text-decoration: underline;
+  padding: 8px 4px;
+}
+
+@media (max-width: 860px) {
+  .mapa-geral-corpo {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa-geral-lista {
+    max-height: none;
+  }
+}

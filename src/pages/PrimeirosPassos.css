@@ -1,0 +1,73 @@
+/* ============================================================
+   PrimeirosPassos.css — Página "/primeiros-passos" (PrimeirosPassos.jsx)
+============================================================ */
+
+.passos-progresso {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--azul-marca);
+}
+
+.passos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.passo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  border: 2px solid transparent;
+}
+
+/* Passo concluído: borda verde e marca no título (além da caixa marcada). */
+.passo--feito {
+  border-color: #b6dfc2;
+}
+
+.passo-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.passo-icone {
+  font-size: 28px;
+}
+
+.passo-topo h2 {
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.passo-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.passo-acoes .botao-secundario {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.passo-feito {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 32px;
+  cursor: pointer;
+}
+
+.passo-feito input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--azul-marca);
+}

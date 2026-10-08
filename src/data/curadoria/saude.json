@@ -28,7 +28,8 @@
     },
     {
       "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/upa/",
-      "nome": "UPA 24h Dr. Paulo Kóide – Morada do Sol"
+      "nome": "UPA 24h Dr. Paulo Kóide – Morada do Sol",
+      "id": "upa-24h"
     }
   ],
   "extras": [

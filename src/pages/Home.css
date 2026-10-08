@@ -133,3 +133,53 @@
     display: none;
   }
 }
+
+/* Atalhos "Novo em Indaiatuba?". */
+.home-atalhos {
+  margin-top: clamp(30px, 5vw, 44px);
+}
+
+.home-atalhos-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.home-atalho {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 16px 18px;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.home-atalho:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+.home-atalho-icone {
+  font-size: 26px;
+}
+
+.home-atalho strong {
+  font-size: 15px;
+  color: var(--azul-marca);
+}
+
+.home-atalho span:last-child {
+  font-size: 13px;
+  color: var(--tinta-media);
+}
+
+.home-clima {
+  margin-top: 18px;
+}

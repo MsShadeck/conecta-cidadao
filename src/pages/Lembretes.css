@@ -63,3 +63,73 @@
 .lembrete-remover:hover {
   background: #fde8d8;
 }
+
+/* Campos do formulário com o rótulo em cima (versão com data e local). */
+.lembretes-form {
+  align-items: flex-end;
+}
+
+.lembretes-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--tinta-media);
+  flex: 0 1 170px;
+}
+
+.lembretes-campo--texto {
+  flex: 1 1 240px;
+}
+
+.lembretes-campo .campo {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.lembretes-dica {
+  font-size: 13.5px;
+  color: var(--tinta-media);
+}
+
+.lembretes-barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.lembrete-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lembrete-texto small {
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.lembrete-texto a {
+  text-decoration: underline;
+}
+
+.lembrete-acoes {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.lembrete-calendario {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--azul-marca);
+  padding: 6px 12px;
+  border-radius: var(--raio-pilula);
+}
+
+.lembrete-calendario:hover {
+  background: var(--azul-nevoa);
+}

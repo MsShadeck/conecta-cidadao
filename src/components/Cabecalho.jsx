@@ -22,6 +22,7 @@ const LINKS_PRINCIPAIS = [
 
 const LINKS_MENU = [
   { rota: '/', nome: 'Início' },
+  { rota: '/primeiros-passos', nome: 'Primeiros passos (novo na cidade)' },
   { rota: '/perto-de-mim', nome: 'O que tem perto de mim' },
   { rota: '/como-chegar', nome: 'Como chegar' },
   ...LINKS_PRINCIPAIS,

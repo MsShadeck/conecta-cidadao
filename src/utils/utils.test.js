@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { agoraEmIndaiatuba, situacaoAgora, textoDias } from './horario.js';
 import { distanciaMetros, formatarDistancia, ordenarPorDistancia } from './geo.js';
 import { buscarTudo } from './busca.js';
+import { gerarIcs } from './ics.js';
 
 const SEG_SEX_7_17 = {
   faixas: [{ dias: ['seg', 'ter', 'qua', 'qui', 'sex'], abre: '07:00', fecha: '17:00' }],
@@ -148,5 +149,31 @@ describe('buscarTudo', () => {
   });
   it('termo vazio não devolve nada', () => {
     expect(buscarTudo('  ', { locais })).toEqual([]);
+  });
+});
+
+describe('gerarIcs', () => {
+  const agora = new Date('2026-10-08T12:00:00Z');
+  it('gera evento de dia inteiro e evento com horário, com local', () => {
+    const ics = gerarIcs(
+      [
+        {
+          id: 'a',
+          texto: 'Vacina, gripe',
+          data: '2026-10-12',
+          local: { nome: 'UBS X', enderecoTexto: 'Rua Y, 10' },
+        },
+        { id: 'b', texto: 'Matrícula', data: '2026-10-13', hora: '09:30' },
+        { id: 'c', texto: 'Sem data' },
+      ],
+      agora
+    );
+    expect(ics).toContain('DTSTART;VALUE=DATE:20261012\r\nDTEND;VALUE=DATE:20261013');
+    expect(ics).toContain('SUMMARY:Vacina\\, gripe');
+    expect(ics).toContain('LOCATION:UBS X - Rua Y\\, 10');
+    expect(ics).toContain('DTSTART:20261013T093000\r\nDTEND:20261013T103000');
+    expect(ics).toContain('DTSTAMP:20261008T120000Z');
+    expect(ics).not.toContain('Sem data');
+    expect(ics.startsWith('BEGIN:VCALENDAR\r\n')).toBe(true);
   });
 });

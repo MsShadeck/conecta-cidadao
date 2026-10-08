@@ -1,17 +1,47 @@
 /**
  * Home.jsx — Página inicial ("/").
  *
- * Blocos: chamada com o botão de busca, faixa da marca (Conecta Cidadão —
- * Indaiatuba) e a grade com as categorias de serviço.
+ * Blocos: chamada com o botão de busca, atalhos para quem acabou de chegar,
+ * tempo agora (Open-Meteo), faixa da marca e a grade com as categorias.
  */
 
 import { categorias } from '../data/servicos.js';
 import { useBusca } from '../context/AppContext.jsx';
+import { Link } from 'react-router-dom';
 import CardServico from '../components/CardServico.jsx';
+import Clima from '../components/Clima.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
 import './Home.css';
+
+/** Atalhos da Home: o que quem acabou de chegar mais procura. */
+const ATALHOS = [
+  {
+    rota: '/primeiros-passos',
+    icone: '🧭',
+    titulo: 'Primeiros passos',
+    texto: 'Cartão SUS, escola, cartão do ônibus e mais.',
+  },
+  {
+    rota: '/perto-de-mim',
+    icone: '📍',
+    titulo: 'O que tem perto de mim',
+    texto: 'UBS, escola, CRAS e terminal mais próximos.',
+  },
+  {
+    rota: '/mapa',
+    icone: '🗺️',
+    titulo: 'Mapa dos serviços',
+    texto: 'Todos os locais públicos no mapa.',
+  },
+  {
+    rota: '/servicos-online',
+    icone: '💻',
+    titulo: 'Serviços online',
+    texto: 'IPTU, vacina, multas e outros links oficiais.',
+  },
+];
 
 export default function Home() {
   const { abrirBusca } = useBusca();
@@ -44,6 +74,30 @@ export default function Home() {
       </section>
 
       {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
+      {/* Atalhos pensados para quem acabou de se mudar para Indaiatuba. */}
+      <section className="container home-atalhos" aria-labelledby="titulo-atalhos">
+        <h2 id="titulo-atalhos" className="home-servicos-titulo">
+          Novo em Indaiatuba?
+        </h2>
+        <ul className="home-atalhos-lista">
+          {ATALHOS.map((atalho) => (
+            <li key={atalho.rota}>
+              <Link to={atalho.rota} className="home-atalho">
+                <span className="home-atalho-icone" aria-hidden="true">
+                  {atalho.icone}
+                </span>
+                <strong>{atalho.titulo}</strong>
+                <span>{atalho.texto}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="container home-clima">
+        <Clima />
+      </div>
+
       <section className="container home-marca">
         <img
           src="/img/interface/logo.png"
