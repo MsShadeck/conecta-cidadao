@@ -16,17 +16,16 @@ export function limparCep(texto) {
 }
 
 const ehIndaiatuba = (cidade) =>
-  (cidade ?? '')
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase() === 'indaiatuba';
+  (cidade ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase() === 'indaiatuba';
 
 // Ponto genérico que a BrasilAPI devolve para todos os CEPs da cidade (conferido em 10/2026).
 const CENTRO_GENERICO = { lat: -23.08842, lng: -47.2119 };
 
 /** A coordenada é a genérica do município (e não a da rua)? */
 export function ehCoordenadaGenerica(lat, lng) {
-  return Math.abs(lat - CENTRO_GENERICO.lat) < 0.0005 && Math.abs(lng - CENTRO_GENERICO.lng) < 0.0005;
+  return (
+    Math.abs(lat - CENTRO_GENERICO.lat) < 0.0005 && Math.abs(lng - CENTRO_GENERICO.lng) < 0.0005
+  );
 }
 
 // Retângulo de Indaiatuba (malha do IBGE), usado para limitar a busca de endereço.
@@ -55,7 +54,13 @@ async function enderecoDoCep(cep, signal) {
   try {
     const d = await json(`https://brasilapi.com.br/api/cep/v2/${cep}`, signal);
     const { latitude, longitude } = d.location?.coordinates ?? {};
-    return { rua: d.street, bairro: d.neighborhood, cidade: d.city, lat: Number(latitude), lng: Number(longitude) };
+    return {
+      rua: d.street,
+      bairro: d.neighborhood,
+      cidade: d.city,
+      lat: Number(latitude),
+      lng: Number(longitude),
+    };
   } catch (erro) {
     if (erro.name === 'AbortError') throw erro;
   }
@@ -94,7 +99,8 @@ export async function localizarCep(texto, signal) {
     .filter((t, i, lista) => t && lista.indexOf(t) === i);
   for (const busca of tentativas) {
     const lugar = await nominatim(busca, signal);
-    if (lugar) return { lat: Number(lugar.lat), lng: Number(lugar.lon), rotulo, bairro, aproximada: true };
+    if (lugar)
+      return { lat: Number(lugar.lat), lng: Number(lugar.lon), rotulo, bairro, aproximada: true };
   }
 
   if (bairro) return { lat: null, lng: null, rotulo, bairro, aproximada: true };

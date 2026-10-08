@@ -20,7 +20,7 @@ const FONTES = [
   {
     nome: 'Prefeitura de Indaiatuba',
     url: 'https://www.indaiatuba.sp.gov.br/',
-    uso: 'Endereço, telefone, horário e serviços de cada unidade (fichas oficiais), telefones úteis, Ecobike, cartão SOU e links dos serviços online.',
+    uso: 'Endereço, telefone, horário e serviços de cada unidade (fichas oficiais), checklist da mudança, coleta de lixo por bairro, Ponto Verde, telefones úteis, Ecobike, cartão SOU e links dos serviços online.',
     licenca:
       'Informação pública. Coletada uma vez, página por página, com intervalo entre os acessos; sempre citada como fonte.',
   },
@@ -33,7 +33,7 @@ const FONTES = [
   {
     nome: 'OpenStreetMap',
     url: 'https://www.openstreetmap.org/copyright',
-    uso: 'Mapa de fundo, posição de escolas, parques e terminais, ruas e ciclovias usadas no "Como chegar".',
+    uso: 'Mapa de fundo, posição de escolas, parques e terminais, ciclovias, os pontos de referência dos bairros e o comércio do Dia a dia (mercados, padarias, farmácias...). Dados colaborativos: qualquer pessoa pode corrigir.',
     licenca: '© OpenStreetMap contributors, licença ODbL.',
   },
   {
@@ -43,21 +43,35 @@ const FONTES = [
     licenca:
       'Política de uso do Nominatim: no máximo 1 consulta por segundo, com resultados guardados.',
   },
+  // v2: "Indaiatuba Integra" calculava as rotas no próprio site. Na v3 a navegação
+  // vai para o Waze e o Google Maps (ver README); o código continua em api/rota.js.
+  // {
+  //   nome: 'Indaiatuba Integra',
+  //   uso: 'Cálculo das rotas a pé e de bicicleta pelas ruas reais (algoritmo do projeto Integra, da mesma equipe).',
+  //   licenca: 'Projeto da equipe. Só os dados reais do OpenStreetMap são usados; nada simulado.',
+  // },
   {
-    nome: 'Indaiatuba Integra',
-    uso: 'Cálculo das rotas a pé e de bicicleta pelas ruas reais (algoritmo do projeto Integra, da mesma equipe).',
-    licenca: 'Projeto da equipe. Só os dados reais do OpenStreetMap são usados; nada simulado.',
+    nome: 'Waze',
+    url: 'https://www.waze.com/',
+    uso: 'Mapa com trânsito ao vivo (iFrame oficial, um ponto por mapa) e o botão "Ir com Waze" para a rota de carro.',
+    licenca: 'Recursos públicos do Waze para sites (iFrame e links), sem chave de API.',
+  },
+  {
+    nome: 'Google Maps',
+    url: 'https://www.google.com/maps',
+    uso: 'Botão "Google Maps" com a rota a pé, de bicicleta, de carro ou de ônibus (linhas e horários do Google).',
+    licenca: 'Links públicos do Google Maps (sem chave de API e sem mapa embutido).',
   },
   {
     nome: 'IBGE',
     url: 'https://servicodados.ibge.gov.br/api/docs/',
-    uso: 'Contorno do município no mapa.',
+    uso: 'Contorno do município no mapa, população, área e densidade (Censo 2022 e estimativa mais recente).',
     licenca: 'Dados abertos do IBGE.',
   },
   {
     nome: 'BrasilAPI e ViaCEP',
     url: 'https://brasilapi.com.br/',
-    uso: 'Feriados nacionais e conversão de CEP em localização.',
+    uso: 'Feriados nacionais e rua e bairro de cada CEP (a localização no mapa vem do Nominatim).',
     licenca: 'APIs públicas e gratuitas.',
   },
   {

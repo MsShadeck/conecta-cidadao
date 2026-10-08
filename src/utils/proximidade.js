@@ -11,7 +11,13 @@ import { normalizar } from './texto.js';
 
 /** O que a pessoa costuma procurar perto de casa, em blocos. */
 export const NECESSIDADES = [
-  { id: 'ubs', bloco: 'publicos', titulo: 'Posto de saúde (UBS)', categoria: 'saude', filtro: (l) => l.tipo === 'UBS' },
+  {
+    id: 'ubs',
+    bloco: 'publicos',
+    titulo: 'Posto de saúde (UBS)',
+    categoria: 'saude',
+    filtro: (l) => l.tipo === 'UBS',
+  },
   {
     id: 'urgencia',
     bloco: 'publicos',
@@ -19,17 +25,88 @@ export const NECESSIDADES = [
     categoria: 'saude',
     filtro: (l) => ['Pronto atendimento 24h', 'Hospital'].includes(l.tipo),
   },
-  { id: 'escola', bloco: 'publicos', titulo: 'Escola municipal (EMEB)', categoria: 'educacao', filtro: (l) => l.tipo === 'EMEB' },
-  { id: 'creche', bloco: 'publicos', titulo: 'Creche', categoria: 'educacao', filtro: (l) => l.tipo === 'Creche' },
-  { id: 'seguranca', bloco: 'publicos', titulo: 'Segurança', categoria: 'seguranca', filtro: (l) => l.categoria === 'seguranca' },
-  { id: 'cras', bloco: 'publicos', titulo: 'Assistência social (CRAS)', categoria: 'cidadania', filtro: (l) => l.tipo === 'CRAS' },
-  { id: 'terminal', bloco: 'onibus', titulo: 'Terminal de ônibus', categoria: 'mobilidade', filtro: (l) => l.tipo === 'Terminal de ônibus' },
-  { id: 'mercado', bloco: 'dia', titulo: 'Mercado', categoria: 'dia-a-dia', comercio: true, filtro: (c) => c.grupo === 'mercados' },
-  { id: 'padaria', bloco: 'dia', titulo: 'Padaria', categoria: 'dia-a-dia', comercio: true, filtro: (c) => c.grupo === 'padarias' },
-  { id: 'farmacia', bloco: 'dia', titulo: 'Farmácia', categoria: 'dia-a-dia', comercio: true, filtro: (c) => c.grupo === 'farmacias' },
-  { id: 'restaurante', bloco: 'dia', titulo: 'Restaurante ou lanche', categoria: 'dia-a-dia', comercio: true, filtro: (c) => c.grupo === 'restaurantes' },
-  { id: 'feira', bloco: 'dia', titulo: 'Feira', categoria: 'dia-a-dia', comercio: true, filtro: (c) => c.grupo === 'feiras' },
-  { id: 'parque', bloco: 'lazer', titulo: 'Parque', categoria: 'lazer', filtro: (l) => l.tipo === 'Parque' },
+  {
+    id: 'escola',
+    bloco: 'publicos',
+    titulo: 'Escola municipal (EMEB)',
+    categoria: 'educacao',
+    filtro: (l) => l.tipo === 'EMEB',
+  },
+  {
+    id: 'creche',
+    bloco: 'publicos',
+    titulo: 'Creche',
+    categoria: 'educacao',
+    filtro: (l) => l.tipo === 'Creche',
+  },
+  {
+    id: 'seguranca',
+    bloco: 'publicos',
+    titulo: 'Segurança',
+    categoria: 'seguranca',
+    filtro: (l) => l.categoria === 'seguranca',
+  },
+  {
+    id: 'cras',
+    bloco: 'publicos',
+    titulo: 'Assistência social (CRAS)',
+    categoria: 'cidadania',
+    filtro: (l) => l.tipo === 'CRAS',
+  },
+  {
+    id: 'terminal',
+    bloco: 'onibus',
+    titulo: 'Terminal de ônibus',
+    categoria: 'mobilidade',
+    filtro: (l) => l.tipo === 'Terminal de ônibus',
+  },
+  {
+    id: 'mercado',
+    bloco: 'dia',
+    titulo: 'Mercado',
+    categoria: 'dia-a-dia',
+    comercio: true,
+    filtro: (c) => c.grupo === 'mercados',
+  },
+  {
+    id: 'padaria',
+    bloco: 'dia',
+    titulo: 'Padaria',
+    categoria: 'dia-a-dia',
+    comercio: true,
+    filtro: (c) => c.grupo === 'padarias',
+  },
+  {
+    id: 'farmacia',
+    bloco: 'dia',
+    titulo: 'Farmácia',
+    categoria: 'dia-a-dia',
+    comercio: true,
+    filtro: (c) => c.grupo === 'farmacias',
+  },
+  {
+    id: 'restaurante',
+    bloco: 'dia',
+    titulo: 'Restaurante ou lanche',
+    categoria: 'dia-a-dia',
+    comercio: true,
+    filtro: (c) => c.grupo === 'restaurantes',
+  },
+  {
+    id: 'feira',
+    bloco: 'dia',
+    titulo: 'Feira',
+    categoria: 'dia-a-dia',
+    comercio: true,
+    filtro: (c) => c.grupo === 'feiras',
+  },
+  {
+    id: 'parque',
+    bloco: 'lazer',
+    titulo: 'Parque',
+    categoria: 'lazer',
+    filtro: (l) => l.tipo === 'Parque',
+  },
 ];
 
 /**
@@ -39,7 +116,10 @@ export const NECESSIDADES = [
 export function maisProximos({ locais = [], comercio = [] }, ponto, quantidade = 2) {
   return NECESSIDADES.map((n) => ({
     ...n,
-    itens: ordenarPorDistancia((n.comercio ? comercio : locais).filter(n.filtro), ponto).slice(0, quantidade),
+    itens: ordenarPorDistancia((n.comercio ? comercio : locais).filter(n.filtro), ponto).slice(
+      0,
+      quantidade
+    ),
   })).filter((n) => n.itens.length > 0);
 }
 

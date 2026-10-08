@@ -23,14 +23,20 @@ export default function SeuBairro() {
 
   const perto = useMemo(() => {
     if (!salvo || !locais.dados || !comercio.dados) return [];
-    return maisProximos({ locais: locais.dados.locais, comercio: comercio.dados.itens }, salvo, 1).filter((n) =>
-      NA_HOME.includes(n.id)
-    );
+    return maisProximos(
+      { locais: locais.dados.locais, comercio: comercio.dados.itens },
+      salvo,
+      1
+    ).filter((n) => NA_HOME.includes(n.id));
   }, [salvo, locais.dados, comercio.dados]);
 
   if (!salvo) return null;
   return (
-    <section className="container home-seu-bairro" data-categoria="bairro" aria-labelledby="titulo-seu-bairro">
+    <section
+      className="container home-seu-bairro"
+      data-categoria="bairro"
+      aria-labelledby="titulo-seu-bairro"
+    >
       <div className="home-seu-bairro-topo">
         <h2 id="titulo-seu-bairro" className="home-servicos-titulo">
           <IconeCategoria slug="bairro" />
@@ -46,7 +52,12 @@ export default function SeuBairro() {
               <span className="home-seu-bairro-tipo">{n.titulo}</span>
               <strong>{item.nome}</strong>
               <span className="info-fonte">{formatarDistancia(item.distancia)} em linha reta</span>
-              <BotoesNavegacao local={item} compacto modoPadrao={item.distancia < 1500 ? 'walking' : 'transit'} origem={salvo} />
+              <BotoesNavegacao
+                local={item}
+                compacto
+                modoPadrao={item.distancia < 1500 ? 'walking' : 'transit'}
+                origem={salvo}
+              />
             </li>
           );
         })}

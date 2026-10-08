@@ -37,7 +37,8 @@ const BLOCOS = [
 ];
 
 // Retângulo de Indaiatuba (IBGE): a localização do aparelho precisa cair dentro dele.
-const dentroDeIndaiatuba = ({ lat, lng }) => lat > -23.226 && lat < -22.997 && lng > -47.306 && lng < -47.083;
+const dentroDeIndaiatuba = ({ lat, lng }) =>
+  lat > -23.226 && lat < -22.997 && lng > -47.306 && lng < -47.083;
 
 export default function MeuBairro() {
   const { slug } = useParams();
@@ -56,7 +57,9 @@ export default function MeuBairro() {
 
   const bairroDaPagina = slug ? listaBairros.find((b) => b.slug === slug) : null;
   useTituloPagina(
-    bairroDaPagina ? `${bairroDaPagina.nome} — Meu bairro — Conecta Cidadão` : 'Meu bairro — Conecta Cidadão',
+    bairroDaPagina
+      ? `${bairroDaPagina.nome} — Meu bairro — Conecta Cidadão`
+      : 'Meu bairro — Conecta Cidadão',
     bairroDaPagina
       ? `O que tem perto de ${bairroDaPagina.nome}, em Indaiatuba: UBS, escola, creche, mercado, farmácia, ônibus e parques.`
       : 'Digite seu CEP ou bairro e veja a UBS, a escola, o mercado, a farmácia e o ônibus mais perto de casa em Indaiatuba.'
@@ -81,8 +84,16 @@ export default function MeuBairro() {
         if (r.lat === null) {
           // A rua não está no mapa: usa o ponto do bairro do CEP, se ele estiver na lista.
           const doCep = procurarBairro(listaBairros, r.bairro);
-          if (!doCep) throw new Error('Não achamos esse CEP no mapa. Tente o nome do bairro ou a sua localização.');
-          usarPonto({ ...doCep.coordenadas, rotulo: `CEP ${texto} — ${r.rotulo} (centro do bairro)`, bairro: doCep.nome, aproximada: true });
+          if (!doCep)
+            throw new Error(
+              'Não achamos esse CEP no mapa. Tente o nome do bairro ou a sua localização.'
+            );
+          usarPonto({
+            ...doCep.coordenadas,
+            rotulo: `CEP ${texto} — ${r.rotulo} (centro do bairro)`,
+            bairro: doCep.nome,
+            aproximada: true,
+          });
           return;
         }
         usarPonto({ ...r, rotulo: `CEP ${texto} — ${r.rotulo}` });
@@ -90,7 +101,12 @@ export default function MeuBairro() {
       }
       const bairro = procurarBairro(listaBairros, texto);
       if (bairro) {
-        usarPonto({ ...bairro.coordenadas, rotulo: bairro.nome, bairro: bairro.nome, aproximada: true });
+        usarPonto({
+          ...bairro.coordenadas,
+          rotulo: bairro.nome,
+          bairro: bairro.nome,
+          aproximada: true,
+        });
         return;
       }
       setStatus({ tipo: 'carregando', texto: 'Procurando o endereço...' });
@@ -104,7 +120,12 @@ export default function MeuBairro() {
   useEffect(() => {
     if (!listaBairros.length || ponto) return;
     if (bairroDaPagina) {
-      usarPonto({ ...bairroDaPagina.coordenadas, rotulo: bairroDaPagina.nome, bairro: bairroDaPagina.nome, aproximada: true });
+      usarPonto({
+        ...bairroDaPagina.coordenadas,
+        rotulo: bairroDaPagina.nome,
+        bairro: bairroDaPagina.nome,
+        aproximada: true,
+      });
     } else if (parametros.get('cep') || parametros.get('bairro')) {
       pesquisar(parametros.get('cep') ?? parametros.get('bairro'));
     } else if (salvo) {
@@ -125,14 +146,26 @@ export default function MeuBairro() {
     setStatus({ tipo: 'carregando', texto: 'Pedindo a sua localização ao navegador...' });
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
-        const novo = { lat: coords.latitude, lng: coords.longitude, rotulo: 'Sua localização atual', aproximada: coords.accuracy > 200 };
+        const novo = {
+          lat: coords.latitude,
+          lng: coords.longitude,
+          rotulo: 'Sua localização atual',
+          aproximada: coords.accuracy > 200,
+        };
         if (!dentroDeIndaiatuba(novo)) {
-          setStatus({ tipo: 'erro', texto: 'Você parece estar fora de Indaiatuba. Digite um CEP ou bairro da cidade.' });
+          setStatus({
+            tipo: 'erro',
+            texto: 'Você parece estar fora de Indaiatuba. Digite um CEP ou bairro da cidade.',
+          });
           return;
         }
         usarPonto(novo);
       },
-      () => setStatus({ tipo: 'erro', texto: 'Não foi possível usar a localização. Digite o CEP ou o bairro.' }),
+      () =>
+        setStatus({
+          tipo: 'erro',
+          texto: 'Não foi possível usar a localização. Digite o CEP ou o bairro.',
+        }),
       { enableHighAccuracy: true, timeout: 15000 }
     );
   }
@@ -154,8 +187,8 @@ export default function MeuBairro() {
       <section className="container pagina-topo">
         <h1 className="titulo-pagina">{bairroDaPagina ? bairroDaPagina.nome : 'Meu bairro'}</h1>
         <p className="texto-apoio">
-          Digite o CEP, o endereço ou o bairro onde você mora (ou vai morar) e veja o que tem perto: posto
-          de saúde, escola, mercado, farmácia, ônibus e parques.
+          Digite o CEP, o endereço ou o bairro onde você mora (ou vai morar) e veja o que tem perto:
+          posto de saúde, escola, mercado, farmácia, ônibus e parques.
         </p>
 
         <form
@@ -195,14 +228,17 @@ export default function MeuBairro() {
         </form>
 
         {status && (
-          <p className={`bairro-status bairro-status--${status.tipo}`} role={status.tipo === 'erro' ? 'alert' : 'status'}>
+          <p
+            className={`bairro-status bairro-status--${status.tipo}`}
+            role={status.tipo === 'erro' ? 'alert' : 'status'}
+          >
             {status.texto}
           </p>
         )}
         <p className="info-fonte">
-          Privacidade: o CEP, o endereço e a sua localização ficam só no seu navegador. Eles são enviados
-          apenas para localizar o ponto (BrasilAPI, ViaCEP ou OpenStreetMap) e não são guardados por este
-          site.
+          Privacidade: o CEP, o endereço e a sua localização ficam só no seu navegador. Eles são
+          enviados apenas para localizar o ponto (BrasilAPI, ViaCEP ou OpenStreetMap) e não são
+          guardados por este site.
         </p>
       </section>
 
@@ -235,19 +271,39 @@ export default function MeuBairro() {
                 type="button"
                 className={ehSalvo ? 'botao-secundario' : 'botao-primario'}
                 aria-pressed={Boolean(ehSalvo)}
-                onClick={() => setSalvo(ehSalvo ? null : { ...ponto, bairro: bairro?.porNome ? bairro.bairro.nome : (ponto.bairro ?? null) })}
+                onClick={() =>
+                  setSalvo(
+                    ehSalvo
+                      ? null
+                      : {
+                          ...ponto,
+                          bairro: bairro?.porNome ? bairro.bairro.nome : (ponto.bairro ?? null),
+                        }
+                  )
+                }
               >
                 {ehSalvo ? 'Salvo como meu bairro ✓' : 'Salvar como meu bairro'}
               </button>
             </div>
 
-            <MapaWaze lat={ponto.lat} lng={ponto.lng} zoom={15} titulo={`Mapa do Waze centralizado em ${ponto.rotulo}`} altura={320} />
+            <MapaWaze
+              lat={ponto.lat}
+              lng={ponto.lng}
+              zoom={15}
+              titulo={`Mapa do Waze centralizado em ${ponto.rotulo}`}
+              altura={320}
+            />
 
             {BLOCOS.map((bloco) => {
               const doBloco = resultado.filter((n) => n.bloco === bloco.id);
               if (!doBloco.length && bloco.id !== 'onibus') return null;
               return (
-                <section key={bloco.id} className="bairro-bloco" data-categoria={bloco.categoria} aria-labelledby={`b-${bloco.id}`}>
+                <section
+                  key={bloco.id}
+                  className="bairro-bloco"
+                  data-categoria={bloco.categoria}
+                  aria-labelledby={`b-${bloco.id}`}
+                >
                   <h2 id={`b-${bloco.id}`} className="bairro-bloco-titulo">
                     <IconeCategoria slug={bloco.categoria} />
                     {bloco.titulo}
@@ -256,11 +312,18 @@ export default function MeuBairro() {
                   {bloco.id === 'onibus' && terminalCentral && (
                     <div className="painel bairro-onibus">
                       <p>
-                        Até o <strong>Terminal Central</strong>: {formatarDistancia(distanciaMetros(ponto, terminalCentral.coordenadas))} em
-                        linha reta. O Google Maps mostra qual linha pegar, onde embarcar e o horário.
+                        Até o <strong>Terminal Central</strong>:{' '}
+                        {formatarDistancia(distanciaMetros(ponto, terminalCentral.coordenadas))} em
+                        linha reta. O Google Maps mostra qual linha pegar, onde embarcar e o
+                        horário.
                       </p>
                       <div className="bairro-onibus-links">
-                        <a className="botao-primario" href={linkGoogleMaps(terminalCentral, 'transit', ponto)} target="_blank" rel="noopener noreferrer">
+                        <a
+                          className="botao-primario"
+                          href={linkGoogleMaps(terminalCentral, 'transit', ponto)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           De ônibus até o Terminal Central (Google Maps)
                         </a>
                         <Link className="botao-secundario" to="/mobilidade">
@@ -272,17 +335,27 @@ export default function MeuBairro() {
 
                   {bloco.id === 'dia' && (
                     <p className="info-fonte">
-                      {comercio.dados.aviso} Fonte: {comercio.dados.credito}. Sem ranking nem destaque pago.
+                      {comercio.dados.aviso} Fonte: {comercio.dados.credito}. Sem ranking nem
+                      destaque pago.
                     </p>
                   )}
 
                   <div className="bairro-grade">
                     {doBloco.map((n) => (
-                      <div key={n.id} className="painel bairro-necessidade" data-categoria={n.categoria}>
+                      <div
+                        key={n.id}
+                        className="painel bairro-necessidade"
+                        data-categoria={n.categoria}
+                      >
                         <h3>{n.titulo}</h3>
                         <ul>
                           {n.itens.map((item) => (
-                            <ItemProximo key={item.id} item={item} ponto={ponto} comercio={Boolean(n.comercio)} />
+                            <ItemProximo
+                              key={item.id}
+                              item={item}
+                              ponto={ponto}
+                              comercio={Boolean(n.comercio)}
+                            />
                           ))}
                         </ul>
                       </div>
@@ -302,18 +375,23 @@ export default function MeuBairro() {
                     endereço pode estar no bairro vizinho, com outro dia de coleta. */}
                 {bairro?.porNome && bairro.bairro.coleta ? (
                   <p>
-                    Segundo a Prefeitura, para <strong>{bairro.bairro.coleta.localidade}</strong>, a partir de{' '}
-                    {bairro.bairro.coleta.vigencia}: {bairro.bairro.coleta.programacao}.
+                    Segundo a Prefeitura, para <strong>{bairro.bairro.coleta.localidade}</strong>, a
+                    partir de {bairro.bairro.coleta.vigencia}: {bairro.bairro.coleta.programacao}.
                   </p>
                 ) : (
                   <p>
-                    Informação não disponível para este bairro — a Prefeitura publica só os locais que mudaram de
-                    programação. Confira na SEMURB: <a href="tel:1938255410">(19) 3825-5410</a>.
+                    Informação não disponível para este bairro — a Prefeitura publica só os locais
+                    que mudaram de programação. Confira na SEMURB:{' '}
+                    <a href="tel:1938255410">(19) 3825-5410</a>.
                   </p>
                 )}
                 <p className="info-fonte">
                   {bairros.dados.coletaGeral.horarios}{' '}
-                  <a href={bairros.dados.coletaGeral.fonte} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={bairros.dados.coletaGeral.fonte}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Fonte: Prefeitura
                   </a>
                 </p>

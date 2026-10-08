@@ -52,7 +52,10 @@ export default function Conheca() {
       })),
     [bairros.dados]
   );
-  const camadas = useMemo(() => (limite ? [{ geojson: limite, cor: '#3b3bb0', titulo: 'Limite do município' }] : []), [limite]);
+  const camadas = useMemo(
+    () => (limite ? [{ geojson: limite, cor: '#3b3bb0', titulo: 'Limite do município' }] : []),
+    [limite]
+  );
 
   const ibge = cidade.dados?.ibge;
 
@@ -61,8 +64,8 @@ export default function Conheca() {
       <section className="container pagina-topo">
         <h1 className="titulo-pagina">Conheça Indaiatuba</h1>
         <p className="texto-apoio">
-          Uma cidade do interior de São Paulo, na Região Metropolitana de Campinas. Aqui estão os números
-          oficiais, os bairros no mapa e o que muda para quem vem da capital.
+          Uma cidade do interior de São Paulo, na Região Metropolitana de Campinas. Aqui estão os
+          números oficiais, os bairros no mapa e o que muda para quem vem da capital.
         </p>
       </section>
 
@@ -74,7 +77,9 @@ export default function Conheca() {
             </h2>
             <div className="painel conheca-tabela-area">
               <table className="conheca-tabela">
-                <caption className="somente-leitor">Indaiatuba e São Paulo (capital), segundo o IBGE</caption>
+                <caption className="somente-leitor">
+                  Indaiatuba e São Paulo (capital), segundo o IBGE
+                </caption>
                 <thead>
                   <tr>
                     <th scope="col">Dado (ano)</th>
@@ -95,7 +100,11 @@ export default function Conheca() {
                         <td>
                           {numero(ind.valor, linha.casas)} {linha.unidade}
                         </td>
-                        <td>{sp ? `${numero(sp.valor, linha.casas)} ${linha.unidade}` : 'Informação não disponível'}</td>
+                        <td>
+                          {sp
+                            ? `${numero(sp.valor, linha.casas)} ${linha.unidade}`
+                            : 'Informação não disponível'}
+                        </td>
                       </tr>
                     );
                   })}
@@ -122,8 +131,9 @@ export default function Conheca() {
             Os bairros no mapa
           </h2>
           <p className="info-fonte">
-            Contorno do município: IBGE. Bairros: © OpenStreetMap contributors — são pontos de referência, não os
-            limites oficiais dos bairros. Toque em um bairro para ver o que tem perto.
+            Contorno do município: IBGE. Bairros: © OpenStreetMap contributors — são pontos de
+            referência, não os limites oficiais dos bairros. Toque em um bairro para ver o que tem
+            perto.
           </p>
           <MapaPreguicoso
             marcadores={marcadores}
@@ -136,7 +146,11 @@ export default function Conheca() {
         </section>
 
         {cidade.dados?.diferencas && (
-          <section className="container conheca-bloco" id="diferencas" aria-labelledby="titulo-diferencas">
+          <section
+            className="container conheca-bloco"
+            id="diferencas"
+            aria-labelledby="titulo-diferencas"
+          >
             <h2 id="titulo-diferencas" className="conheca-titulo">
               Diferenças para quem vem de São Paulo
             </h2>

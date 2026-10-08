@@ -19,11 +19,36 @@ const LIMITE_COMERCIO = 8;
 
 // Páginas da v3 que não são categorias de locais (aparecem junto com as categorias).
 export const PAGINAS = [
-  { slug: 'passos', nome: 'Primeiros passos', resumo: 'O que resolver ao se mudar: cartão SUS, escola, água, luz, título de eleitor', rota: '/primeiros-passos' },
-  { slug: 'bairro', nome: 'Meu bairro', resumo: 'O que tem perto de casa pelo CEP ou bairro: UBS, escola, mercado, ônibus', rota: '/meu-bairro' },
-  { slug: 'dia-a-dia', nome: 'Dia a dia', resumo: 'Mercados, padarias, farmácias, restaurantes, feiras, bancos e postos', rota: '/dia-a-dia' },
-  { slug: 'conheca', nome: 'Conheça Indaiatuba', resumo: 'A cidade em números, bairros no mapa e diferenças para quem vem de São Paulo', rota: '/conheca' },
-  { slug: 'servicos', nome: 'Serviços públicos', resumo: 'Saúde, educação, segurança e assistência social', rota: '/servicos' },
+  {
+    slug: 'passos',
+    nome: 'Primeiros passos',
+    resumo: 'O que resolver ao se mudar: cartão SUS, escola, água, luz, título de eleitor',
+    rota: '/primeiros-passos',
+  },
+  {
+    slug: 'bairro',
+    nome: 'Meu bairro',
+    resumo: 'O que tem perto de casa pelo CEP ou bairro: UBS, escola, mercado, ônibus',
+    rota: '/meu-bairro',
+  },
+  {
+    slug: 'dia-a-dia',
+    nome: 'Dia a dia',
+    resumo: 'Mercados, padarias, farmácias, restaurantes, feiras, bancos e postos',
+    rota: '/dia-a-dia',
+  },
+  {
+    slug: 'conheca',
+    nome: 'Conheça Indaiatuba',
+    resumo: 'A cidade em números, bairros no mapa e diferenças para quem vem de São Paulo',
+    rota: '/conheca',
+  },
+  {
+    slug: 'servicos',
+    nome: 'Serviços públicos',
+    resumo: 'Saúde, educação, segurança e assistência social',
+    rota: '/servicos',
+  },
 ];
 
 /** Todas as palavras do termo precisam aparecer no texto (busca "E"). */
@@ -61,14 +86,23 @@ export function pontuarLocal(local, palavras) {
  */
 export function buscarTudo(
   termo,
-  { locais = [], contatos = [], servicos = [], checklist = [], bairros: listaBairros = [], comercio = [] } = {}
+  {
+    locais = [],
+    contatos = [],
+    servicos = [],
+    checklist = [],
+    bairros: listaBairros = [],
+    comercio = [],
+  } = {}
 ) {
   const palavras = normalizar(termo).split(/\s+/).filter(Boolean);
   if (palavras.length === 0) return [];
   const grupos = [];
 
   // Categorias (ex.: "saude", "onibus").
-  const cats = [...categorias, ...PAGINAS].filter((c) => contemTodas(normalizar(`${c.nome} ${c.resumo}`), palavras));
+  const cats = [...categorias, ...PAGINAS].filter((c) =>
+    contemTodas(normalizar(`${c.nome} ${c.resumo}`), palavras)
+  );
   if (cats.length) {
     grupos.push({
       titulo: 'Categorias',
@@ -85,7 +119,10 @@ export function buscarTudo(
 
   // Primeiros passos: itens do checklist da mudança (título, explicação e palavras-chave).
   const passos = checklist.filter((item) =>
-    contemTodas(normalizar(`${item.titulo} ${item.oQueE} ${(item.palavrasChave ?? []).join(' ')}`), palavras)
+    contemTodas(
+      normalizar(`${item.titulo} ${item.oQueE} ${(item.palavrasChave ?? []).join(' ')}`),
+      palavras
+    )
   );
   if (passos.length) {
     grupos.push({

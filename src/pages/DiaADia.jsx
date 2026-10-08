@@ -58,8 +58,10 @@ export default function DiaADia() {
     const filtrados = dados.itens.filter(
       (item) =>
         (!grupo || item.grupo === grupo) &&
-        (!alvo || normalizar(`${item.nome} ${item.tipo} ${item.enderecoTexto ?? ''}`).includes(alvo)) &&
-        (!soAbertos || situacaoAgora(item.horarios, feriados.dados?.feriados ?? [], agora).estado === 'aberto')
+        (!alvo ||
+          normalizar(`${item.nome} ${item.tipo} ${item.enderecoTexto ?? ''}`).includes(alvo)) &&
+        (!soAbertos ||
+          situacaoAgora(item.horarios, feriados.dados?.feriados ?? [], agora).estado === 'aberto')
     );
     if (ordem === 'distancia' && ponto) return ordenarPorDistancia(filtrados, ponto);
     return [...filtrados].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
@@ -72,13 +74,16 @@ export default function DiaADia() {
       <section className="container pagina-topo">
         <h1 className="titulo-pagina">Dia a dia</h1>
         <p className="texto-apoio">
-          Mercados, padarias, farmácias, restaurantes, feiras, bancos, lotéricas e postos de combustível
-          de Indaiatuba. Sem ranking nem anúncio: a lista vai por nome ou pela distância de onde você está.
+          Mercados, padarias, farmácias, restaurantes, feiras, bancos, lotéricas e postos de
+          combustível de Indaiatuba. Sem ranking nem anúncio: a lista vai por nome ou pela distância
+          de onde você está.
         </p>
         <p className="dia-aviso" role="note">
-          <strong>{dados?.aviso ?? 'Dados colaborativos. Horários de estabelecimentos podem mudar.'}</strong>{' '}
-          Fonte: {dados?.credito ?? '© OpenStreetMap contributors (ODbL)'}. Encontrou um erro ou falta um
-          lugar? Qualquer pessoa pode corrigir no{' '}
+          <strong>
+            {dados?.aviso ?? 'Dados colaborativos. Horários de estabelecimentos podem mudar.'}
+          </strong>{' '}
+          Fonte: {dados?.credito ?? '© OpenStreetMap contributors (ODbL)'}. Encontrou um erro ou
+          falta um lugar? Qualquer pessoa pode corrigir no{' '}
           <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer">
             OpenStreetMap
           </a>
@@ -99,7 +104,12 @@ export default function DiaADia() {
                 onChange={(e) => mudar('q', e.target.value)}
               />
               {busca && (
-                <button type="button" className="campo-busca-limpar" onClick={() => mudar('q', '')} aria-label="Limpar busca">
+                <button
+                  type="button"
+                  className="campo-busca-limpar"
+                  onClick={() => mudar('q', '')}
+                  aria-label="Limpar busca"
+                >
                   ×
                 </button>
               )}
@@ -107,7 +117,11 @@ export default function DiaADia() {
             <div className="categoria-filtros-linha">
               <label className="filtro">
                 <span>Tipo</span>
-                <select className="campo" value={grupo} onChange={(e) => mudar('grupo', e.target.value)}>
+                <select
+                  className="campo"
+                  value={grupo}
+                  onChange={(e) => mudar('grupo', e.target.value)}
+                >
                   <option value="">Todos</option>
                   {dados?.grupos.map((g) => (
                     <option key={g.id} value={g.id}>
@@ -118,27 +132,39 @@ export default function DiaADia() {
               </label>
               <label className="filtro">
                 <span>Ordem</span>
-                <select className="campo" value={ordem} onChange={(e) => mudar('ordem', e.target.value)}>
+                <select
+                  className="campo"
+                  value={ordem}
+                  onChange={(e) => mudar('ordem', e.target.value)}
+                >
                   <option value="nome">Nome (A–Z)</option>
                   <option value="distancia" disabled={!ponto}>
-                    Mais perto {ponto ? `de ${salvo && !origem ? 'meu bairro' : 'mim'}` : '(escolha seu bairro)'}
+                    Mais perto{' '}
+                    {ponto
+                      ? `de ${salvo && !origem ? 'meu bairro' : 'mim'}`
+                      : '(escolha seu bairro)'}
                   </option>
                 </select>
               </label>
               <label className="filtro dia-aberto">
-                <input type="checkbox" checked={soAbertos} onChange={(e) => mudar('aberto', e.target.checked ? '1' : '')} />
+                <input
+                  type="checkbox"
+                  checked={soAbertos}
+                  onChange={(e) => mudar('aberto', e.target.checked ? '1' : '')}
+                />
                 <span>Só os abertos agora</span>
               </label>
             </div>
             {!ponto && (
               <p className="info-fonte">
-                Para ver o que fica mais perto, <Link to="/meu-bairro">informe seu CEP ou bairro em Meu bairro</Link>.
+                Para ver o que fica mais perto,{' '}
+                <Link to="/meu-bairro">informe seu CEP ou bairro em Meu bairro</Link>.
               </p>
             )}
             {soAbertos && (
               <p className="info-fonte">
-                Só {comHorario} dos {dados?.itens.length} lugares têm horário informado no OpenStreetMap; os
-                outros não aparecem com este filtro.
+                Só {comHorario} dos {dados?.itens.length} lugares têm horário informado no
+                OpenStreetMap; os outros não aparecem com este filtro.
               </p>
             )}
             <p className="categoria-contagem" role="status">
@@ -158,11 +184,19 @@ export default function DiaADia() {
 
           <ul className="dia-lista">
             {visiveis.map((item) => (
-              <ItemProximo key={item.id} item={item} ponto={ponto} comercio className="painel dia-item">
+              <ItemProximo
+                key={item.id}
+                item={item}
+                ponto={ponto}
+                comercio
+                className="painel dia-item"
+              >
                 {item.enderecoTexto && <p className="dia-endereco">{item.enderecoTexto}</p>}
                 {/* Horário em português quando a fonte é estruturada; senão, o texto como está no OSM. */}
                 {(item.horarios || item.horarioTexto) && (
-                  <p className="info-fonte">Horário: {textoHorario(item.horarios) ?? item.horarioTexto}</p>
+                  <p className="info-fonte">
+                    Horário: {textoHorario(item.horarios) ?? item.horarioTexto}
+                  </p>
                 )}
                 {item.telefones.length > 0 && (
                   <p className="info-fonte">

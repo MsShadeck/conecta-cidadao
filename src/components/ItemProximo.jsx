@@ -35,7 +35,10 @@ export default function ItemProximo({ item, ponto, comercio = false, className =
           </Link>
         )}
         <span className="item-proximo-detalhe">
-          {[item.tipo, item.distancia !== undefined && `${formatarDistancia(item.distancia)} em linha reta`]
+          {[
+            item.tipo,
+            item.distancia !== undefined && `${formatarDistancia(item.distancia)} em linha reta`,
+          ]
             .filter(Boolean)
             .join(' · ')}
         </span>
@@ -44,7 +47,12 @@ export default function ItemProximo({ item, ponto, comercio = false, className =
       {children}
       <BotoesNavegacao local={item} compacto modoPadrao={modo} origem={ponto} />
       {comercio && item.osm && (
-        <a className="item-proximo-osm" href={linkCorrigirOsm(item.osm)} target="_blank" rel="noopener noreferrer">
+        <a
+          className="item-proximo-osm"
+          href={linkCorrigirOsm(item.osm)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Corrigir no OpenStreetMap
         </a>
       )}

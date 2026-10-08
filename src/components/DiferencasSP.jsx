@@ -15,7 +15,11 @@ export default function DiferencasSP() {
   const { dados } = useDados('/api/cidade.json');
   if (!dados?.diferencas?.length) return null;
   return (
-    <section className="container home-diferencas" data-categoria="conheca" aria-labelledby="titulo-diferencas-sp">
+    <section
+      className="container home-diferencas"
+      data-categoria="conheca"
+      aria-labelledby="titulo-diferencas-sp"
+    >
       <div className="home-seu-bairro-topo">
         <h2 id="titulo-diferencas-sp" className="home-servicos-titulo">
           <IconeCategoria slug="conheca" />
