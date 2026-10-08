@@ -1,0 +1,69 @@
+/* ============================================================
+   DiaADia.css — Página Dia a dia (DiaADia.jsx)
+   Reaproveita os filtros de Categoria.css e o item de MeuBairro.css.
+============================================================ */
+
+.dia-aviso {
+  font-size: 0.875rem;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+}
+
+.dia-aviso a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.dia-aberto {
+  font-size: 0.875rem;
+  color: var(--tinta);
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-end;
+  min-height: 44px;
+}
+
+.dia-aberto input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--cat-tinta);
+}
+
+.dia-feiras {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 0.875rem;
+}
+
+.dia-feiras h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dia-feiras a {
+  text-decoration: underline;
+}
+
+.dia-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* .item-proximo tira a borda do último item; aqui cada um é um cartão. */
+.item-proximo.dia-item,
+.item-proximo.dia-item:last-child {
+  padding: 16px;
+  border: 1px solid var(--linha);
+}
+
+.dia-endereco {
+  font-size: 0.875rem;
+}

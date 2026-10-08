@@ -119,3 +119,13 @@ export function textoDias(dias) {
   if (dias.length > 2 && seguidos) return `${dias[0]}. a ${dias[dias.length - 1]}.`;
   return dias.map((d) => `${d}.`).join(', ');
 }
+
+/**
+ * Horário estruturado → texto curto em português.
+ * Ex.: "qua. a dom. 18:30 às 22:30". Sem faixas, devolve null.
+ */
+export function textoHorario(horarios) {
+  if (horarios?.vinteQuatroHoras) return 'Aberto 24 horas';
+  if (!horarios?.faixas?.length) return null;
+  return horarios.faixas.map((f) => `${textoDias(f.dias)} ${f.abre} às ${f.fecha}`).join('; ');
+}

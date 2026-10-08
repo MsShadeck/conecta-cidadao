@@ -31,6 +31,7 @@ const ServicosOnline = lazy(() => import('./pages/ServicosOnline.jsx'));
 const PrimeirosPassos = lazy(() => import('./pages/PrimeirosPassos.jsx'));
 const ServicosPublicos = lazy(() => import('./pages/ServicosPublicos.jsx'));
 const MeuBairro = lazy(() => import('./pages/MeuBairro.jsx'));
+const DiaADia = lazy(() => import('./pages/DiaADia.jsx'));
 
 /** Mensagem exibida enquanto o arquivo da página chega. */
 function CarregandoPagina() {
@@ -81,6 +82,7 @@ export default function App() {
                   /perto-de-mim (v2) continua funcionando e leva para lá; a página antiga
                   (pages/PertoDeMim.jsx) fica no projeto como referência das aulas. */}
               <Route path="/meu-bairro" element={<MeuBairro />} />
+              <Route path="/dia-a-dia" element={<DiaADia />} />
               <Route path="/bairros/:slug" element={<MeuBairro />} />
               <Route path="/perto-de-mim" element={<Navigate to="/meu-bairro" replace />} />
               <Route path="/servicos-online" element={<ServicosOnline />} />

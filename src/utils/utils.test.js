@@ -227,3 +227,15 @@ describe('cep', () => {
     expect(ehCoordenadaGenerica(-23.1203, -47.2245)).toBe(false);
   });
 });
+
+import { textoHorario } from './horario.js';
+
+describe('textoHorario', () => {
+  it('escreve as faixas em português', () => {
+    expect(textoHorario({ faixas: [{ dias: ['qua', 'qui', 'sex', 'sab', 'dom'], abre: '18:30', fecha: '22:30' }] })).toBe(
+      'qua. a dom. 18:30 às 22:30'
+    );
+    expect(textoHorario({ faixas: [], vinteQuatroHoras: true })).toBe('Aberto 24 horas');
+    expect(textoHorario(null)).toBeNull();
+  });
+});

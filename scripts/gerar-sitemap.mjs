@@ -14,6 +14,7 @@ const PAGINAS_FIXAS = [
   '/',
   '/primeiros-passos',
   '/meu-bairro',
+  '/dia-a-dia',
   '/servicos',
   '/mapa',
   '/como-chegar',
