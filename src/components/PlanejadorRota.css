@@ -1,0 +1,79 @@
+/* ============================================================
+   PlanejadorRota.css — Bloco "Como chegar" (PlanejadorRota.jsx)
+============================================================ */
+
+.planejador {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.planejador-opcoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.planejador-opcao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 2px solid var(--linha);
+  background: var(--branco);
+  font-size: 14px;
+  color: var(--tinta);
+}
+
+.planejador-opcao strong {
+  font-size: 15px;
+}
+
+/* Opção escolhida: borda e fundo da marca (e aria-pressed para o leitor de tela). */
+.planejador-opcao[aria-pressed='true'] {
+  border-color: var(--azul-marca);
+  background: var(--azul-nevoa);
+}
+
+.planejador-opcao--onibus a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.planejador-icone {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.planejador-detalhe {
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.planejador-aviso {
+  font-size: 13.5px;
+  background: #fdefc8;
+  color: #6e4600;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.planejador-legenda {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.planejador-legenda span {
+  display: inline-block;
+  width: 22px;
+  height: 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}

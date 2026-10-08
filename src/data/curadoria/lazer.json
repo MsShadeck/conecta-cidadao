@@ -1,0 +1,43 @@
+{
+  "_comentario": "Curadoria manual da categoria Lazer e Cultura.",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-ecologico/",
+      "id": "parque-ecologico",
+      "imagem": "/img/lazer/parque-eco.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-do-mirim/",
+      "id": "parque-mirim",
+      "imagem": "/img/lazer/parque-do-mirim.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-da-crianca-parque-aquatico/",
+      "id": "parque-da-crianca",
+      "imagem": "/img/lazer/parque-da-crianca.jpg",
+      "observacao": "O Parque Aquático precisa ser agendado (ficha oficial)."
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-pet/",
+      "id": "parque-pet",
+      "imagem": "/img/lazer/parque-pet.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/museu-da-agua/",
+      "id": "museu-da-agua",
+      "imagem": "/img/lazer/museu-da-agua.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/casarao-pau-preto/",
+      "id": "casarao-pau-preto",
+      "nome": "Casarão Pau Preto (Museu Antônio Reginaldo Geiss)",
+      "imagem": "/img/lazer/museu-casarao.jpg"
+    }
+  ],
+  "extras": [],
+  "pendentes": [],
+  "ignorar": [
+    "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/prefeitura-municipal-de-indaiatuba/",
+    "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/cras-campo-jardim-brasil/"
+  ]
+}

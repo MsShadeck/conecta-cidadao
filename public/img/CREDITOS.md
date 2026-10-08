@@ -44,6 +44,8 @@ a mesma origem.
 | `img/seguranca/dp-da-mulher.jpg`         | não registrada — conferir                                                  |
 | `img/seguranca/dp-do-municipio.jpg`      | não registrada — conferir                                                  |
 | `img/seguranca/guarda-municipal.jpg`     | não registrada — conferir                                                  |
+| `img/interface/onibus.svg`               | desenhado pela equipe (SVG próprio)                                        |
+| `img/interface/cidadania.svg`            | desenhado pela equipe (SVG próprio)                                        |
 | `img/interface/og-imagem.png`            | gerada pela equipe a partir de `logo.png` (`scripts/otimizar-imagens.mjs`) |
 
 Os ícones de `public/icones/` são gerados a partir de `img/interface/logo.png`.

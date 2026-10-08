@@ -1,0 +1,75 @@
+{
+  "_comentario": "Curadoria manual da categoria Cidadania e assistência (nova na v2): onde resolver documentos, emprego e assistência social.",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/pat/",
+      "id": "pat",
+      "nome": "PAT – Posto de Atendimento ao Trabalhador (no Ponto Cidadão)",
+      "endereco": "Rua Vinte e Quatro de Maio, 1670 - Centro",
+      "observacao": "A ficha do PAT cita a \"Avenida Presidente Vargas (antiga rodoviária), Ponto Cidadão\"; a página do Ponto Cidadão informa o endereço Rua Vinte e Quatro de Maio, nº 1.670.",
+      "fonteExtra": [
+        "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+      ]
+    }
+  ],
+  "extras": [
+    {
+      "id": "prefeitura",
+      "nome": "Prefeitura de Indaiatuba (Paço Municipal)",
+      "tipo": "Prefeitura",
+      "endereco": "Avenida Engenheiro Fábio Roberto Barnabé, 2800 - Jardim Esplanada II",
+      "cep": "13331-900",
+      "osm": "Prefeitura de Indaiatuba",
+      "telefones": ["(19) 3834-9000", "0800 770 7702"],
+      "horarioTexto": "De segunda a sexta das 8:00 às 17:00h",
+      "palavrasChave": ["paço municipal", "protocolo", "iptu", "ouvidoria", "prefeitura"],
+      "fonte": [
+        "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/prefeitura-municipal-de-indaiatuba/",
+        "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+      ]
+    },
+    {
+      "id": "ponto-cidadao",
+      "nome": "Ponto Cidadão",
+      "tipo": "Atendimento ao cidadão",
+      "endereco": "Rua Vinte e Quatro de Maio, 1670 - Centro",
+      "osm": "Terminal Central Prefeito Alberto Brizzola - Ponto Cidadão",
+      "telefones": ["(19) 3816-9254", "(19) 3816-9249", "(19) 3816-9267"],
+      "horarioTexto": "De segunda a sexta-feira, das 8h às 17h",
+      "servicos": [
+        "Procon – (19) 3816-9254",
+        "PAT – Posto de Atendimento ao Trabalhador – (19) 3816-9249",
+        "Banco do Povo Paulista – (19) 3816-9250",
+        "Junta de Serviço Militar (alistamento) – (19) 3816-9267",
+        "Dívida Ativa – (19) 3816-9272",
+        "Cartão de estacionamento para idosos e pessoas com deficiência",
+        "Emissão e recarga do cartão SOU do ônibus"
+      ],
+      "observacao": "Funciona no prédio da antiga Rodoviária, junto ao Terminal Central de ônibus. Cada serviço tem horário próprio: confira na página oficial.",
+      "palavrasChave": [
+        "procon",
+        "alistamento",
+        "junta militar",
+        "cartão sou",
+        "estacionamento idoso",
+        "emprego",
+        "banco do povo"
+      ],
+      "fonte": [
+        "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+      ]
+    },
+    {
+      "id": "poupatempo",
+      "nome": "Poupatempo Indaiatuba",
+      "tipo": "Poupatempo (Estado)",
+      "osm": "Poupatempo Indaiatuba",
+      "usarHorarioOsm": true,
+      "observacao": "Serviço do Governo do Estado (RG, carteira de trabalho, CNH etc.). Muitos serviços pedem agendamento pelo site ou app Poupatempo.",
+      "site": "https://www.poupatempo.sp.gov.br/",
+      "palavrasChave": ["rg", "identidade", "cnh", "carteira de motorista", "documentos"],
+      "fonte": ["https://www.openstreetmap.org/"]
+    }
+  ],
+  "pendentes": []
+}

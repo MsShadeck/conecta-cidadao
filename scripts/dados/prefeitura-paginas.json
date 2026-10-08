@@ -1,0 +1,2298 @@
+{
+  "coletadoEm": "2026-10-08",
+  "fonte": "https://www.indaiatuba.sp.gov.br",
+  "paginas": [
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/conselhos/1-conselho-tutelar/",
+      "titulo": "1º Conselho Tutelar",
+      "endereco": "Rua dos Ypês, 159",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19) 3894-2542",
+      "servicos": [],
+      "nomeNoMapa": "1º Conselho Tutelar"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/conselhos/2-conselho-tutelar/",
+      "titulo": "2º Conselho Tutelar",
+      "endereco": "Av. Manoel Ruz Peres, 3365 - Jardim João Pioli",
+      "horario": "De 2ª a 6ª feira, das 8h às 17h",
+      "telefone": "(19)3935-2735",
+      "servicos": [],
+      "nomeNoMapa": "2º Conselho Tutelar"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-1/",
+      "titulo": "CRAS 1",
+      "endereco": "Rua Augusto Brega, 452 - Jardim Oliveira Camargo",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "19-3875.5501",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social - I"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-2/",
+      "titulo": "CRAS 2",
+      "endereco": "Rodovia Lix da Cunha, 2900",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3834.7781",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social - II"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-3/",
+      "titulo": "CRAS 3",
+      "endereco": "Rua José Pioli, 96 (19) 3816-9374 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3935.7534",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social - III"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-4/",
+      "titulo": "CRAS 4",
+      "endereco": "Rua Jordalino Pietrobom, 1300",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3936.5521",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social - IV"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-5/",
+      "titulo": "CRAS 5",
+      "endereco": "Rua Lourenço Martins do Amaral, 241",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3825.2065",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social - V"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/cras-vi/",
+      "titulo": "CRAS VI",
+      "endereco": "Rua Benedita Carvalho, 213",
+      "horario": "De 2ª a 6ª feira, das 8h às 17h",
+      "telefone": "(19) 99773-1238",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência de Assistência Social VI - Parque Campo Bonito"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-basica/plantao-social/",
+      "titulo": "Plantão Social",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, 2800",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3834.9059",
+      "servicos": [],
+      "nomeNoMapa": "Plantão Social Acolhida"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/assistencia-social/protecao-especial/creas/",
+      "titulo": "CREAS",
+      "endereco": "Rua José Francisco Tuon, 121 - Bairro Santa Cruz",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19) 3875-9898",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência Especializado de Assistência Social"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/cultura/administrativo/biblioteca/",
+      "titulo": "Biblioteca",
+      "endereco": "Rua Jordalino Pietrobom, 1300",
+      "horario": "De 2ª a 6ª das 8h às 17h",
+      "telefone": "(19) 3935-2714",
+      "servicos": [],
+      "nomeNoMapa": "Sala de Leitura Laura Fahl"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/cultura/administrativo/centro-cultural-h.-pinto/",
+      "titulo": "Centro Cultural H. Pinto",
+      "endereco": "Av. Eng. Fabio Roberto Barnabé, 5924 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª das 8h às 17h",
+      "telefone": "(19) 3936-2584",
+      "servicos": [],
+      "nomeNoMapa": "Centro Cultural Hermenegildo Pinto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/cultura/administrativo/centro-cultural-w.-peres/",
+      "titulo": "Centro Cultural W. Peres",
+      "endereco": "Praça Dom Pedro II, s/nº - Centro",
+      "horario": "De 2ª a 6ª das 8h às 17h",
+      "telefone": "(19) 3825-2056",
+      "servicos": [],
+      "nomeNoMapa": "Centro Cultural Wanderley Peres"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/cultura/administrativo/centro-de-convencoes/",
+      "titulo": "Centro de Convenções",
+      "endereco": "Rua das Primaveras, 210 - Jardim Pompéia",
+      "horario": "De 2ª a 6ª das 8h às 17h",
+      "telefone": "(19) 3875-6144",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Convenções Aydil Pinesi Bonachella"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/pat/",
+      "titulo": "PAT",
+      "endereco": "Avenida Presidente Vargas ( antiga rodoviária ) , Ponto Cidadão - Ponto Cidadão",
+      "horario": "De segunda à sexta das 07h às 15h45",
+      "telefone": "(19)3816-9252",
+      "servicos": [],
+      "nomeNoMapa": "Posto de Atendimento ao Trabalhador"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/bosque-do-saber/",
+      "titulo": "Bosque do Saber",
+      "endereco": "Rua João Batista D’Alessandro, 610 - Jardim do Sol",
+      "horario": "Aos finais de semana e feriados, das 9:00 às 16:00h",
+      "telefone": "(19) 3875-7210",
+      "site": "www.indaiatuba.sp.gov.br/educacao/bosque-do-saber/",
+      "entrada": "Gratuita",
+      "servicos": [
+        "Estufa",
+        "Galpão e viveiro para mudas",
+        "Galpão de reciclagem de papel artesanal",
+        "Orquidário",
+        "Jardim das Borboletas",
+        "Área de alimentação",
+        "Parquinho",
+        "Jardim dos Beija-flores",
+        "Galpão de compostagem",
+        "Maquete de uma microbacia hidrográfica",
+        "Pomar orgânico",
+        "Horta orgânica",
+        "Trilha de cerca de 500 metros para caminhada na mata nativa"
+      ],
+      "nomeNoMapa": "Bosque do Saber"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/caixa-d-agua-do-casarao-pau-preto/",
+      "titulo": "Caixa d´água do Casarão Pau Preto",
+      "endereco": "Rua Pedro Gonçalves, 445 (em frente à sede do Sindicato dos Empregados do Comércio)",
+      "horario": "Aberto 24 horas",
+      "telefone": "(19) 3816-6961",
+      "site": "www.indaiatuba.sp.gov.br/cultura/turismo/pontos-turisticos/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Caixa d´água do Casarão Pau Preto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/casarao-pau-preto/",
+      "titulo": "Casarão Pau Preto",
+      "endereco": "Rua Pedro Gonçalves, 477",
+      "horario": "terça a sábado das 9:00 às 17:00h e aos domingos e feriados das 09:00 às 12:00h",
+      "telefone": "(19) 3816-6961 / (19) 99906-9434 whatsapp",
+      "site": "www.indaiatuba.sp.gov.br/cultura/turismo/pontos-turisticos/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Casarão Pau Preto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/cemiterio-da-candelaria-taipas-e-pedras/",
+      "titulo": "Cemitério da Candelária - Taipas e Pedras",
+      "endereco": "Rua Candelária, 1367/1473 - Centro",
+      "horario": "Todos os dias das 7:00 às 17:00h",
+      "telefone": "(19) 3835-6965",
+      "site": "https://www.indaiatuba.sp.gov.br/urbanismo/cemiterios/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Cemitério da Candelária - Taipas e Pedras"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/centro-esportivo-rei-pele/",
+      "titulo": "Centro Esportivo Rei Pelé",
+      "endereco": "Estrada General Motors - Caldeira",
+      "horario": "Sob Consulta",
+      "site": "Redes Sociais:",
+      "entrada": "Gratuita / Sob Consulta",
+      "servicos": [],
+      "nomeNoMapa": "Centro Esportivo Rei Pelé"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/chafariz/",
+      "titulo": "Chafariz",
+      "endereco": "Praça Elis Regina, s/n – Vila Sfeir",
+      "horario": "Aberto 24 horas",
+      "telefone": "(19) 3834-9000",
+      "site": "www.indaiatuba.sp.gov.br/cultura/turismo/pontos-turisticos/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Chafariz"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/colonia-alema-igreja-luterana-de-friburgo/",
+      "titulo": "Colônia Alemã - Igreja Luterana de Friburgo",
+      "endereco": "Estrada do Friburgo, s/n - CEP 13068-609 - Campinas (SP)",
+      "horario": "sob consulta / visitas agendadas",
+      "telefone": "(19) 99637-6912 / (19) 98129-8868",
+      "site": "Redes Sociais:",
+      "servicos": [],
+      "nomeNoMapa": "Colônia Alemã - Igreja Luterana de Friburgo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/colonia-suica-paroquia-nossa-senhora-de-lourdes/",
+      "titulo": "Colônia Suíça - Paróquia Nossa Senhora de Lourdes",
+      "endereco": "Alameda Antônio Ambiel, 817 – Helvetia - Rod. SP 75, saída 62",
+      "horario": "Área externa aberta ao público",
+      "telefone": "(19) 3875-1633 / (19) 99789-6916",
+      "site": "http://helvetia.org.br/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Colônia Suíça - Paróquia Nossa Senhora de Lourdes"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/complexo-cultural-viber-espaco-viber/",
+      "titulo": "Complexo Cultural Viber / Espaço Viber",
+      "endereco": "Rua Paraná - Cidade Nova II",
+      "horario": "De segunda-feira a sexta-feira das 08:00–21:00 Sábado das 09:00–12:00 - Sob Consulta",
+      "telefone": "(19) 3801-1340 - (19) 99915-7434",
+      "site": "https://cultura.indaiatuba.sp.gov.br/oficinas/polos/",
+      "entrada": "Gratuita / Sob Consulta",
+      "servicos": [],
+      "nomeNoMapa": "Complexo Cultural Viber / Espaço Viber"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/criarte-espaco-de-economia-criativa/",
+      "titulo": "Criarte - Espaço de Economia Criativa",
+      "endereco": "Rua Dom Pedro I, 41, Cidade Nova I",
+      "horario": "De 2ª a 6ª feira, das 08 às 17 horas.",
+      "telefone": "(19) 3825-2057",
+      "site": "https://cultura.indaiatuba.sp.gov.br/",
+      "servicos": [],
+      "nomeNoMapa": "Criarte - Espaço de Economia Criativa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/estacao-ferroviaria-de-itaici-estacao-cultural-itaici/",
+      "titulo": "Estação Ferroviária de Itaici / Estação Cultural Itaici",
+      "endereco": "Rua Francisco Araújo, 49",
+      "horario": "De segunda a sexta das 8:00 às 17:00h",
+      "telefone": "(19) 3835-6200",
+      "site": "http://www.estacoesferroviarias.com.br/i/itaici.htm",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Estação Ferroviária de Itaici / Estação Cultural Itaici"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/igreja-nossa-senhora-da-candelaria/",
+      "titulo": "Igreja Nossa Senhora da Candelária",
+      "endereco": "Praça Leonor Barros Camargo, s/n",
+      "horario": "Missas: Quinta e Sexta às 7h00 / Sábado às 18h00 / Domingo às 10h00 e 18h30. Fechado às segundas-feiras.",
+      "telefone": "(19) 3875-2108",
+      "site": "www.indaiatuba.sp.gov.br/cultura/turismo/pontos-turisticos/ arquidiocesecampinas.com/location/paroquia-nossa-senhora-da-candelaria/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Igreja Nossa Senhora da Candelária"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/mosteiro-de-itaici-vila-kostka/",
+      "titulo": "Mosteiro de Itaici - Vila Kostka",
+      "endereco": "Rodovia José Boldrini, 170 - Bairro de itaici",
+      "horario": "De segunda a sábado das 8:00 às 18:00h",
+      "telefone": "(19) 2107-8500",
+      "site": "www.itaici.org.br/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Mosteiro de Itaici - Vila Kostka"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/museu-da-agua/",
+      "titulo": "Museu da Água",
+      "endereco": "Rua do Museu, 205 - Bairro Tombadouro",
+      "horario": "De terça a domingo e feriados das 9:00 às 16:00h. Permanência Máxima: até às 17:00h. Segunda-Feira: fechado",
+      "telefone": "(19) 3834-9433",
+      "site": "museudaagua.sp.gov.br/",
+      "servicos": [],
+      "nomeNoMapa": "Museu da Água"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/museu-da-moto-honda-fan-club/",
+      "titulo": "Museu da Moto - Honda Fan Club",
+      "endereco": "Alameda Comendador Dr. Santoro Mirone, 1460 - Distrito Industrial João Narezzi",
+      "horario": "todos os sábados das 9:00 às 17:00h",
+      "telefone": "(19) 3198-2615 / (19) 3198-2600",
+      "site": "www.honda.com.br/motos/blog/museus-honda-parte-2-honda-fan-club-em-indaiatuba-sp",
+      "entrada": "Gratuita e os visitantes serão atendidos por ordem de chegada",
+      "servicos": [],
+      "nomeNoMapa": "Museu da Moto - Honda Fan Club"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/museu-do-brinquedo/",
+      "titulo": "Museu do Brinquedo",
+      "endereco": "Praça Newton Prado, 140 - Centro (próximo ao Museu Ferroviário)",
+      "horario": "De terça à sexta de 13:00 às 22:00h, sábado com café da manhã das 8:00 às 15:00h",
+      "site": "Redes Sociais:",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Museu do Brinquedo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/museu-ferroviario-estacao-indaiatuba-estacao-musical/",
+      "titulo": "Museu Ferroviário / Estação Indaiatuba / Estação Musical",
+      "endereco": "Praça Newton Prado, s/nº",
+      "horario": "Horário de Funcionamento: De segunda a sexta-feira das 8:00 às 12:00h e das 13:30 às 17:00h, sábados e domingos das 9:00 às 12:00h",
+      "telefone": "(19) 3816-4917",
+      "site": "fiec.com.br/site/museu; circuitodasfrutasoficial.sp.gov.br/local/museu-ferroviario/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Museu Ferroviário / Estação Indaiatuba / Estação Musical"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/nascente-do-corrego-belchior/",
+      "titulo": "Nascente do Córrego Belchior",
+      "endereco": "Av. Francisco Paula Leite, 399 (em frente ao HAOC)",
+      "horario": "Aberto 24 horas",
+      "telefone": "(19) 3834-9000",
+      "site": "www.indaiatuba.sp.gov.br/cultura/turismo/pontos-turisticos/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Nascente do Córrego Belchior"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-da-crianca-parque-aquatico/",
+      "titulo": "Parque da Criança / Parque Aquático",
+      "endereco": "Avenida Eng. Fábio Roberto Barnabé (altura do Jardim do Vale)",
+      "horario": "Parque da Criança de quarta à domingo, das 8:00 às 18:00h, inclusive aos feriados. Parque Aquático, que deve ser agendado, dividido em dois períodos, das 9:00 às 12:00h, e à tarde das 13:30 às 16:30h",
+      "telefone": "(19) 3816-6030",
+      "site": "www.indaiatuba.sp.gov.br/parque-da-crianca/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Parque da Criança / Parque Aquático"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-do-mirim/",
+      "titulo": "Parque do Mirim",
+      "endereco": "Estrada Dr. Rafael Elias José Aun, s/n - Jardim Reserva Bom Viver",
+      "horario": "Das 6:00 às 20:00h com permanência até as 21:00h",
+      "telefone": "(19) 99615-8035 / 0800 77 22 195",
+      "site": "saae.sp.gov.br/parque-do-mirim/",
+      "servicos": [
+        "Decks para pesca",
+        "Pedalinhos",
+        "Parquinho",
+        "Academia para a terceira idade",
+        "Pista de caminhada",
+        "Mirante",
+        "Quadras de vôlei de areia",
+        "Futebol society",
+        "Quadra poliesportiva com vista para a represa"
+      ],
+      "nomeNoMapa": "Parque do Mirim"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-ecologico/",
+      "titulo": "Parque Ecológico",
+      "endereco": "Avenida Engenheiro Fábio Roberto Barnabé, s/n",
+      "horario": "Área pública aberta",
+      "site": "www.indaiatuba.sp.gov.br/parque_ecologico_30_anos/",
+      "entrada": "Gratuita",
+      "servicos": [
+        "Bosques",
+        "Lagos",
+        "Jardins",
+        "Campos de futebol",
+        "Quadras de tênis e vôlei",
+        "Arena Futevôlei, Beach Tênis e Vôlei de Praia",
+        "Equipamentos de ginástica",
+        "Parque temático infantil",
+        "Teatro multidisciplinar",
+        "Playgrounds",
+        "Ciclovia",
+        "Área para Piquenique",
+        "Campo de Treinamento de Rugby",
+        "Velódromo (Ciclismo)",
+        "Pista de Cooper",
+        "Pista de Aeromodelismo",
+        "Pista de Skate Profissional",
+        "Pista oficial de Bicicross",
+        "Raia de Remo Olímpico",
+        "Quiosques de lanche",
+        "Pedalinhos",
+        "Praça de Eventos"
+      ],
+      "nomeNoMapa": "Parque Ecológico"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-pet/",
+      "titulo": "Parque Pet",
+      "endereco": "Avenida Eng. Fábio Roberto Barnabé (altura do Jardim Esplanada)",
+      "horario": "Área pública aberta",
+      "telefone": "(19) 3834-9000",
+      "site": "Redes Sociais:",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Parque Pet"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-tematico/",
+      "titulo": "Parque Temático",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé (altura do Bairro Monte Verde)",
+      "horario": "Área pública aberta",
+      "telefone": "(19) 3834-9000",
+      "site": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/parque-tematico/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Parque Temático"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/prefeitura-municipal-de-indaiatuba/",
+      "titulo": "Prefeitura Municipal de Indaiatuba",
+      "endereco": "Avenida Eng. Fábio Roberto Barnabé, 2800",
+      "horario": "De segunda a sexta das 8:00 às 17:00h",
+      "telefone": "(19) 3834-9000",
+      "site": "https://www.indaiatuba.sp.gov.br/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Prefeitura Municipal de Indaiatuba"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/rota-dos-cavaleiros-e-ciclistas/",
+      "titulo": "Rota dos Cavaleiros e Ciclistas",
+      "endereco": "Rota dos Cavaleiros - Jardim Europa, Indaiatuba - SP, 13331-070",
+      "horario": "Aberto 24 horas",
+      "site": "Redes Sociais:",
+      "servicos": [],
+      "nomeNoMapa": "Rota dos Cavaleiros e Ciclistas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/santuario-arquidiocesano-santa-rita-de-cassia/",
+      "titulo": "Santuário Arquidiocesano Santa Rita de Cássia",
+      "endereco": "Avenida Major Alfredo Camargo Fonseca, 399 - Cidade Nova I",
+      "horario": "Consulte o horário das Missas acessando: santaritaindaia.com.br/horarios-de-missas",
+      "telefone": "(19) 3875-3014",
+      "site": "santaritaindaia.com.br",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Santuário Arquidiocesano Santa Rita de Cássia"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/teatro-ciaei/",
+      "titulo": "Teatro CIAEI",
+      "endereco": "Avenida Eng. Fábio Roberto Barnabé, 3665 - Jardim Regina",
+      "horario": "Horários sob consulta no site cultura.indaiatuba.sp.gov.br/agenda, diretamente com o organizador do evento ou ligando ao PIT (19) 3875-6144",
+      "telefone": "(19) 3801-6415",
+      "site": "www.indaiatuba.sp.gov.br/educacao/planejamento-e-administracao/ciaei/",
+      "servicos": [],
+      "nomeNoMapa": "Teatro CIAEI"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/velodromo-municipal/",
+      "titulo": "Velódromo Municipal",
+      "endereco": "Rua Miguel Domingues, 790 - Jardim Regina",
+      "horario": "Horário de Funcionamento: De segunda a sexta das 8:00 às 17:00h",
+      "telefone": "(19) 3834-7472",
+      "site": "www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/velodromo-municipal/",
+      "entrada": "Gratuita",
+      "servicos": [],
+      "nomeNoMapa": "Velódromo Municipal"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/alice-de-mattos-wolf/",
+      "titulo": "Alice de Mattos Wolf",
+      "endereco": "Rua Cássio Fonseca , 50",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3834-8961",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Alice de Mattos Wolf"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/amiguinhos-de-jesus/",
+      "titulo": "Amiguinhos de Jesus",
+      "endereco": "Rua Zephiro Puccinelli, 671",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3935-2790",
+      "servicos": [],
+      "nomeNoMapa": "Creche Amiguinhos de Jesus"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/ana-maria-pigatto/",
+      "titulo": "Ana Maria Pigatto",
+      "endereco": "Rua Luiza da Rocha Ribeiro, 429 - Jardim Morumbi",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3835-5617",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Ana Maria Pigatto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/benedito-antonio-misko/",
+      "titulo": "Benedito Antônio Misko",
+      "endereco": "Avenida Domingos Ferrarezzi, 585 - Jardim Portal do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3834-2700",
+      "servicos": [],
+      "nomeNoMapa": "Creche Benedito Antônio Misko"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/casa-jesus-de-nazare/",
+      "titulo": "Casa Jesus de Nazaré",
+      "endereco": "Rua Alameda da Criança , 105 - Vila Vitória",
+      "horario": "Das 7h às 17h",
+      "telefone": "(19) 3875-6584",
+      "servicos": [],
+      "nomeNoMapa": "Casa da Criança Jesus de Nazaré"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/dalva-denny/",
+      "titulo": "Dalva Denny",
+      "endereco": "Rua Tereza Bonito, 181 Quadra N - Quadra N",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3875-1444",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Dalva Coltro Denny"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/dom-paulo-de-tarso-campos/",
+      "titulo": "Dom Paulo de Tarso Campos",
+      "endereco": "Rua Jorge Alves Brown, 162 - Jardim Bela Vista",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3801-3178",
+      "servicos": [],
+      "nomeNoMapa": "Creche Dom Paulo de Tarso Campos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/esmeralda-martini-paula/",
+      "titulo": "Esmeralda Martini Paula",
+      "endereco": "Rua José de Campos Bueno, 325",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3935-2737",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Esmeralda Martini Paula"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/francisca-do-amaral/",
+      "titulo": "Francisca do Amaral",
+      "endereco": "Rua Rosa Casagrande Scachetti, s/n - Bairro Santa Cruz",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3835-4366",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Francisca do Amaral"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/francisca-nadir-ferreira-menk/",
+      "titulo": "Francisca Nadir Ferreira Menk",
+      "endereco": "Rua Sapucaia, 118",
+      "horario": "De 2ª a 6ª feira, das 7h00 às 16h00",
+      "telefone": "(19)3916-1455",
+      "servicos": [],
+      "nomeNoMapa": "Creche Francisca Nadir Ferreira Menk"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/frederico-ozanam/",
+      "titulo": "Frederico Ozanam",
+      "endereco": "Rua Arthur Barbarini, s/n - Park Comercial de Indaiatuba",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3935-6766",
+      "servicos": [],
+      "nomeNoMapa": "Creche Antonio Frederico Ozanam"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/galdino-augusto-l.-chagas/",
+      "titulo": "Galdino Augusto L. Chagas",
+      "endereco": "Rua Yoriko Gonçalves , 190",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3801-5197",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof. Galdino Augusto L. Chagas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/jacomo-nazario/",
+      "titulo": "Jácomo Nazário",
+      "endereco": "Rua Antônio Magnusson, s/n",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3801-5694",
+      "servicos": [],
+      "nomeNoMapa": "Creche Dr. Jácomo Nazário"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/janette-vieira-vaqueiro/",
+      "titulo": "Janette Vieira Vaqueiro",
+      "endereco": "Rua Alexandre Ratti, 28 - Vila Brizzola",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3834-8966",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof.ª Janette Vieira Vaqueiro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/joanna-gurgel/",
+      "titulo": "Joanna Gurgel",
+      "endereco": "Rua José Fanger, s/n",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3834-5371",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof.ª Joanna Gurgel"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/jorge-alves-brown/",
+      "titulo": "Jorge Alves Brown",
+      "endereco": "Rua Tamoio, 726 - Jardim Camargo Andrade",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3834-8968",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Jorge Alves Brown"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/jose-balduino-de-campos/",
+      "titulo": "José Balduíno de Campos",
+      "endereco": "Rua Carlos Canova , 600",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3834-8959",
+      "servicos": [],
+      "nomeNoMapa": "Creche José Balduíno de Campos - CAIC"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/jose-pavani/",
+      "titulo": "José Pavani",
+      "endereco": "Rua Maria Lyra Groff, s/n",
+      "horario": "De 2ª a 6ª feira, das 7h00 às 16h00",
+      "telefone": "(19)3835-4828",
+      "servicos": [],
+      "nomeNoMapa": "Creche José Pavani"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/lauro-fonseca-de-souza/",
+      "titulo": "Lauro Fonseca de Souza",
+      "endereco": "Rua Custódio Cândido Carneiro, 1363 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3936-4351",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Lauro Fonseca de Souza"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/lourdes-falleiros-pedro/",
+      "titulo": "Lourdes Falleiros Pedro",
+      "endereco": "Rua José Maria Almeida, 63",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3834-7385",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Lourdes Falleiros Pedro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/luciana-candido-carneiro/",
+      "titulo": "Luciana Cândido Carneiro",
+      "endereco": "Rua Oswaldo Groff, 531",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3825-1606",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Luciana Cândido Carneiro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/mae-rainha/",
+      "titulo": "Mãe Rainha",
+      "endereco": "Rua Amadeu Ernesto Tachinardi, 71 - Itaici",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3816-8494",
+      "servicos": [],
+      "nomeNoMapa": "Creche Mãe Rainha"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/maria-aparecida-misurini/",
+      "titulo": "maria-aparecida-misurini",
+      "endereco": "Rua Itaquera, 480",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "19) 3801-3666",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Maria Aparecida Misurini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/maria-das-dores-tasca-mendes/",
+      "titulo": "Maria das Dores Tasca Mendes",
+      "endereco": "Rua Guaianazes , 31 - Jardim Paulista II",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3894-1578",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Maria das Dores Tasca Mendes"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/maria-estella-amistalden/",
+      "titulo": "Maria Estella Amistalden",
+      "endereco": "Rua Dr. Renato Riggio , 319 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3935-7879",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Maria Estella Amstalden - ASSEVIN"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/marina-dias-de-carvalho-macedo/",
+      "titulo": "Marina Dias de Carvalho Macedo",
+      "endereco": "Rua José Francisco Ceccon , 725",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3835-5871",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Marina Dias de Carvalho Macedo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/martha-steiner-fruet/",
+      "titulo": "Martha Steiner Fruet",
+      "endereco": "Rua Pedro Savian, 164 - Jardim Adriana",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19) 3885-5883",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Martha Steiner Fruet - PAJEM"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/morivaldo-a.-de-morais/",
+      "titulo": "Morivaldo A. de Morais",
+      "endereco": "Estrada do Badin, s/n",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3875-1275",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Morivaldo Antonio de Morais"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/nizio-vieira/",
+      "titulo": "Nízio Vieira",
+      "endereco": "Rua Jordalino Pietrobom, 297 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3935-8414",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Nízio Vieira"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/oswaldo-antonio-tuon/",
+      "titulo": "Oswaldo Antonio Tuon",
+      "endereco": "Rua José Carlos Wolf , 1424 - Jardim Alice",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3834-8973",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof. Oswaldo Antonio Tuon"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/pedacinho-do-ceu/",
+      "titulo": "Pedacinho do Céu",
+      "endereco": "Rua 11 de Junho, 2781 - Vila Furlan",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3329-4596",
+      "servicos": [],
+      "nomeNoMapa": "Creche Pedacinho do Céu - Casa da Providência"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/pingo-de-gente/",
+      "titulo": "Pingo de Gente",
+      "endereco": "Rua Abraão João Ferrarezzi, s/n",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3801-3849",
+      "servicos": [],
+      "nomeNoMapa": "Creche Pingo de Gente"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/rosinha-candello/",
+      "titulo": "Rosinha Candello",
+      "endereco": "Rua João Martini , 925",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3935-6184",
+      "servicos": [],
+      "nomeNoMapa": "Creche Dona Rosinha Candello"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/sao-jose-de-anchieta/",
+      "titulo": "São José de Anchieta",
+      "endereco": "Rua Antônio Mazetto Filho , 245 - Bairro Tombadouro",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3935-6708",
+      "servicos": [],
+      "nomeNoMapa": "Creche São José de Anchieta"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/sao-vicente-de-paulo/",
+      "titulo": "São Vicente de Paulo",
+      "endereco": "Rua Tenente Cel. Nézio Rita de Toledo Filho, 82 - Jardim dos Colibris",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3936-3700",
+      "servicos": [],
+      "nomeNoMapa": "Creche São Vicente de Paulo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/silvia-lucia-silva-pinto/",
+      "titulo": "Silvia Lúcia Silva Pinto",
+      "endereco": "Rua Carlos Alberto Garcia, 1211",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3816-8108",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Silvia Lúcia Silva Pinto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/unidades-escolares/",
+      "titulo": "Unidades Escolares",
+      "telefone": "(19)3916-1455",
+      "servicos": [],
+      "nomeNoMapa": "Unidades Escolares"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/vania-ap.-martim-de-melo/",
+      "titulo": "Vania Ap. Martim de Melo",
+      "endereco": "Rua Compositor João Canova, 303",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3834-3999",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Vania Aparecida Martim de Melo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/vera-lucia-tachinardi-mizurini/",
+      "titulo": "vera-lucia-tachinardi-mizurini",
+      "endereco": "Rodovia Cônego Cyriaco Scaranelo Pires, 4735 - Bairro Mato Dentro",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19) 3825-1365",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Vera Lúcia Tachinardi Mizurini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/creche/vera-t.-m.-belluomini/",
+      "titulo": "Vera T. M. Belluomini",
+      "endereco": "Rua Jorge da Cruz Pereira , 38",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3816-5470",
+      "servicos": [],
+      "nomeNoMapa": "Creche Prof.ª Vera Tosca Magnusson Belluomini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/archimedes-prandini/",
+      "titulo": "Archimedes Prandini",
+      "endereco": "Praça da Liberdade, s/n",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3835-4844",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Archimedes Prandini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/aurea-fernandes-correa/",
+      "titulo": "Áurea Fernandes Corrêa",
+      "endereco": "Rua Regente Feijó, 6 - Cidade Nova",
+      "horario": "08:00 às 12:00 - 13:00 às 17:00",
+      "telefone": "(19) 97106-4115",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Áurea Fernandes Corrêa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/doardo-borsari/",
+      "titulo": "Doardo Borsari",
+      "endereco": "Rodovia José Boldrini, s/n° - Bairro Videira",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00",
+      "telefone": "(19)3894-8304",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Doardo Borsari"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/dom-ildefonso-stehle/",
+      "titulo": "Dom Ildefonso Stehle",
+      "endereco": "Rua Tereza Bonito, s/n°",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00 hs",
+      "telefone": "(19)3835-7215",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Dom Ildefonso Stehle"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/elvira-maria-maffei/",
+      "titulo": "Elvira Maria Maffei",
+      "endereco": "Rua Helena Tomasi, 107 - Jardim Rêmulo Zoppi",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3835-4888",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Elvira Maria Maffei"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/francisca-lucinda-bueno/",
+      "titulo": "Francisca Lucinda Bueno",
+      "endereco": "Rua Nabor Pires de Camargo, 382",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3834-7565",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Francisca Lucinda Bueno"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/galdino-augusto-l.-chagas/",
+      "titulo": "Galdino Augusto L. Chagas",
+      "endereco": "Rua Yoriko Gonçalves , 190",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3801-5197",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof. Galdino Augusto L. Chagas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/janette-vieira-vaqueiro/",
+      "titulo": "Janette Vieira Vaqueiro",
+      "endereco": "Rua Alexandre Ratti, 28",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3834-8966",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof.ª Janette Vieira Vaqueiro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/joanna-gurgel/",
+      "titulo": "Joanna Gurgel",
+      "endereco": "Rua José Fanger, s/n° - Parque Residencial Indaiá",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "(19)3834-5371",
+      "servicos": [],
+      "nomeNoMapa": "EMEB / Creche Prof.ª Joanna Gurgel"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/joao-emilio-angelieri/",
+      "titulo": "João Emílio Angelieri",
+      "endereco": "Rua Teotônio Vilela, 136",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3835-6300",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. João Emílio Angelieri"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/m.-jose-a.-s.-martinhao/",
+      "titulo": "M. José A. S. Martinhão",
+      "endereco": "Rua Adhemar João Moller, 125",
+      "horario": "De 2ª a 6ª feira, das 7h00 às 16h00",
+      "telefone": "(19) 3885-3401",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Professora Maria José Arruda Salvadori Martinhão"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-cecilia-ifanger/",
+      "titulo": "Maria Cecília Ifanger",
+      "endereco": "Rua Perdiz, 302",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00",
+      "telefone": "(19)3875-2336",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Cecília Ifanger"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-conceicao-giacomini-bega/",
+      "titulo": "Maria Conceição Giacomini Bega",
+      "endereco": "Av. Conceição, s/n",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3875-9510",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Conceição Giacomini Bega"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-ignez-pinezzi/",
+      "titulo": "Maria Ignêz Pinezzi",
+      "endereco": "Rua Antônio Magnusson, 82",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00 hs",
+      "telefone": "(19)3875-2290",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Ignêz Pinezzi"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-joao-de-campos/",
+      "titulo": "Maria João de Campos",
+      "endereco": "Praça Ana Maria Ambiel Barnabé, s/n",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3875-6204",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Maria João de Campos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-jose-ambiel-marachini/",
+      "titulo": "Maria José Ambiel Marachini",
+      "endereco": "Rua Jabaquara, 20",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3816-1132",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria José Ambiel Marachini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-jose-de-campos/",
+      "titulo": "Maria José de Campos",
+      "endereco": "Rua Edson Ferrari , 776 - Jardim Tancredo Neves",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3875-1833",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria José de Campos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-nazareth-pimental/",
+      "titulo": "Maria Nazareth Pimental",
+      "endereco": "Rua Cel. Júlio Pereira de Brum, 55",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19) 99954-9245",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Nazareth Pimentel"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/miyoji-takahara/",
+      "titulo": "Miyoji Takahara",
+      "endereco": "Rua Colômbia, 600 - Jardim América",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3875-7476",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Miyoji Takahara"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/nizio-vieira/",
+      "titulo": "Nízio Vieira",
+      "endereco": "Rua Jordalino Pietrobom, 297 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3935-2741",
+      "servicos": [],
+      "nomeNoMapa": "EMEB do Complexo Educacional Prof. Nízio Vieira - Unidade Infantil"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/parque-das-nacoes/",
+      "titulo": "Parque das Nações",
+      "endereco": "Rua Engenheiro Francisco Marcos Inglês de Souza, s/n°",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3935-2758",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Leonardo Braz Zuppa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/patrocinia-robles-provenza/",
+      "titulo": "Patrocínia Robles Provenza",
+      "endereco": "Rua Antônio Cantelli, 1375",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3935-1140",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Patrocínia Robles Provenza"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/renata-g.-b.-anadao/",
+      "titulo": "Renata G. B. Anadão",
+      "endereco": "Rua Antonio Quinteiro , S/Nº - Jardim Morumbi",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00",
+      "telefone": "3835-6197",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Renata Guimarães Brandão Anadão"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/sinesia-martini/",
+      "titulo": "Sinésia Martini",
+      "endereco": "Praça Votura , s/n",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3801-4144",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Sinésia Martini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/suelyterezinha-amstalden/",
+      "titulo": "SuelyTerezinha Amstalden",
+      "endereco": "Rua Lucio Artoni, s/n°",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3894-5798",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Suely Terezinha Amstalden"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/sylvia-t.-c.-sannazzaro/",
+      "titulo": "Sylvia T. C. Sannazzaro",
+      "endereco": "Rua Antonio Mazeto Filho, 245 - Bairro Tombadouro",
+      "horario": "De Segunda à Sexta Das 7:00 às 16:00",
+      "telefone": "3816-5320",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Sylvia T. de Camargo Sannazzaro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/unidades-escolares/",
+      "titulo": "Unidades Escolares",
+      "telefone": "(19) 97106-4115",
+      "servicos": [],
+      "nomeNoMapa": "Unidades Escolares"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/vera-t.-m.-belluomini/",
+      "titulo": "Vera T. M. Belluomini",
+      "endereco": "Rua Jorge da Cruz Pereira , 38 - Núcleo Residencial Aldrovandi",
+      "horario": "Das 7h às 16h",
+      "telefone": "(19) 3816-5470",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Vera Tosca Magnusson Belluomini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/walda-maria-stocco-prandini/",
+      "titulo": "Walda Maria Stocco Prandini",
+      "endereco": "Rua Sapucaia, 72 - Parque Campo Bonito",
+      "horario": "De 2ª a 6ª feira, das 8h às 12h e das 13h às 17h",
+      "telefone": "(19)3935-2738",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Walda Maria Stocco Prandini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/yolanda-steffen/",
+      "titulo": "Yolanda Steffen",
+      "endereco": "Rua Alzira Barnabé, 118 - Jardim Tropical",
+      "horario": "De 2ª a 6ª feira, das 7h às 12h e das 13h às 18h",
+      "telefone": "(19) 3825-0293",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Yolanda Steffen"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/antonio-luiz-balaminuti/",
+      "titulo": "Antônio Luiz Balaminuti",
+      "endereco": "Rua Ricieri Delboni, 310",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "3835-4839",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Antonio Luiz Balaminuti"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/apae-indaiatuba/",
+      "titulo": "APAE Indaiatuba",
+      "endereco": "Alameda Comendador Dr. Santoro Mirone, S/N - Bairro Pimenta, Indaiatuba/SP",
+      "horario": "Das 07h30 às 11h30 e das 13h às 17h",
+      "telefone": "(19) 3935-0043",
+      "servicos": [],
+      "nomeNoMapa": "Escola de Educação Especial da APAE Indaiatuba"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/aparecido-batista-dos-santos/",
+      "titulo": "Aparecido Batista dos Santos",
+      "endereco": "Rua Luiz Delboni, S/Nº",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3825-2053",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Aparecido Batista dos Santos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/aurea-fernandes-correa/",
+      "titulo": "Áurea Fernandes Corrêa",
+      "endereco": "Rua Regente Feijó, 6 - Cidade Nova",
+      "horario": "08:00 às 12:00 - 13:00 às 17:00",
+      "telefone": "(19) 97106-4115",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Áurea Fernandes Corrêa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/aurea-moreira-da-costa/",
+      "titulo": "Áurea Moreira da Costa",
+      "endereco": "Rua Cinco de Julho, 1555",
+      "horario": "07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3875-3691",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Áurea Moreira da Costa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/cleonice-lemos-naressi/",
+      "titulo": "Cleonice Lemos Naressi",
+      "endereco": "Rua Ten. Cel. Nézio Rita de Toledo Filho, S/N",
+      "horario": "De 2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19) 3936-1282",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Cleonice Lemos Naressi"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/doardo-borsari/",
+      "titulo": "Doardo Borsari",
+      "endereco": "Rodovia José Boldrini, S/Nº - Bairro Videira",
+      "horario": "07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "3894-8304",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Doardo Borsari"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/dom-ildefonso-stehle/",
+      "titulo": "Dom Ildefonso Stehle",
+      "endereco": "Rua Tereza Bonito, s/n° - Jardim Brasil",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00",
+      "telefone": "3835-7215",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Dom Ildefonso Stehle"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/elizabeth-de-l.-c.-sigrist/",
+      "titulo": "Elizabeth de L. C. Sigrist",
+      "endereco": "Rua Irineu Rocha Ribeiro , 95 - Jardim Morada do Sol",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3935-2794",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Elizabeth de Lourdes C. Sigrist"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/escola-ambiental/",
+      "titulo": "Escola Ambiental",
+      "endereco": "Rua João Batista D'Alessandro, 610 - Jardim do Sol",
+      "horario": "De 2ª a 6ª feira, das 7h00 às 18h00",
+      "telefone": "(19)3875-7210",
+      "servicos": [],
+      "nomeNoMapa": "Escola Ambiental Bosque do Saber"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/joao-batista-de-macedo/",
+      "titulo": "João Batista de Macedo",
+      "endereco": "Av. Domingos Ferrarezzi, 415 - Jardim Monte Verde",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3825-2018",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. João Batista de Macedo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/joao-marinho-filho/",
+      "titulo": "João Marinho Filho",
+      "endereco": "Rua Espírito Santo, 152",
+      "horario": "De 2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3825-0580",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. João Marinho Filho"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/larua-falh-correa/",
+      "titulo": "Larua Falh Corrêa",
+      "endereco": "Rua: José Francisco Ceccon , 236",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00",
+      "telefone": "(19) 3801-3498",
+      "servicos": [],
+      "nomeNoMapa": "EMEB do Complexo Educacional Prof.ª Laura Falh Corrêa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/leonel-j.-v.-ribeiro/",
+      "titulo": "Leonel J. V. Ribeiro",
+      "endereco": "Rua Angelo Stocco, 513",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3935-7590",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Leonel José Vitorino Ribeiro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/luiz-c.-batista-de-moura/",
+      "titulo": "Luiz C. Batista de Moura",
+      "endereco": "Rua Antônio Cantelli, 1315 - Jardim São Conrado",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3935-5794",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Luiz Carlos Batista de Moura"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/m.-albertina-bannwart-berdu/",
+      "titulo": "M. Albertina Bannwart Berdu",
+      "endereco": "Av. Angelo Bertelli Neto, 992",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3885-0302",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Albertina Bannwart Berdu"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/m.-jose-a.-s.-martinhao/",
+      "titulo": "M. José A. S. Martinhão",
+      "endereco": "Rua Adhemar João Moller, 125",
+      "horario": "De 2ª a 6ª feira, das 7h00 às 16h00",
+      "telefone": "(19) 3885-3401",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Professora Maria José Arruda Salvadori Martinhão"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-benedicta-guimaraes/",
+      "titulo": "Maria Benedicta Guimarães",
+      "endereco": "Rua José da Silva Maciel, S/Nº",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3935-2769",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Benedicta Guimarães"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-cecilia-ifanger/",
+      "titulo": "Maria Cecília Ifanger",
+      "endereco": "Rua Perdiz, 302 - Jardim Dom Bosco",
+      "horario": "07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "3875-2336",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Cecília Ifanger"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-helena-da-costa-e-silva/",
+      "titulo": "Maria Helena da Costa e Silva",
+      "endereco": "Rua Sapucaia , 240 - Parque Campo Bonito",
+      "horario": "07:00 às 12:00 – 13:00 às 18:00",
+      "telefone": "(19) 3816-1470",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Helena da Costa e Silva"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-ignez-pinezzi/",
+      "titulo": "Maria Ignêz Pinezzi",
+      "endereco": "Rua Antonio Magnusson, 82 - Jardim João Pioli",
+      "horario": "07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3875-2290",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria Ignêz Pinezzi"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-jose-ambiel-marachini/",
+      "titulo": "Maria José Ambiel Marachini",
+      "endereco": "Rua Jabaquara, 20 - Jardim Paulista II",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "3816-1132",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria José Ambiel Marachini"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-jose-de-campos/",
+      "titulo": "Maria José de Campos",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Maria José de Campos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/miyoji-takahara/",
+      "titulo": "Miyoji Takahara",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Miyoji Takahara"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/nizio-vieira/",
+      "titulo": "Nízio Vieira",
+      "endereco": "Rua Jordalino Pietrobom, 297",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3935-7412",
+      "servicos": [],
+      "nomeNoMapa": "EMEB do Complexo Educacional Prof. Nízio Vieira - Unidade Fundamental"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/osorio-germando-e-silva-filho/",
+      "titulo": "Osório Germando e Silva Filho",
+      "endereco": "Rua Silvestre Berti, 310",
+      "horario": "2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3875-4873",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Osório Germano e Silva Filho"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/pe.-joaquim-aparecido-rocha/",
+      "titulo": "Pe. Joaquim Aparecido Rocha",
+      "endereco": "Rua José Carlos Wolf, S/Nº",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3885-5660",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Padre Joaquim Aparecido Rocha"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/renata-g.-b.-anadao/",
+      "titulo": "Renata G. B. Anadão",
+      "endereco": "Rua Antonio Quinteiro, S/Nº - Jardim Morumbi",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "3835-6197",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Renata Guimarães Brandão Anadão"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/sergio-mario-de-almeida/",
+      "titulo": "Sérgio Mário de Almeida",
+      "endereco": "Rua Zelindo Bernardinetti, 141",
+      "horario": "De 2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3875-4101",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Sérgio Mário de Almeida"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/sylvia-t.-c.-sannazzaro/",
+      "titulo": "Sylvia T. C. Sannazzaro",
+      "endereco": "Rua Antonio Mazeto Filho, 245 - Bairro Tombadouro",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "3816-5320",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Sylvia T. de Camargo Sannazzaro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/unidades-escolares/",
+      "titulo": "Unidades Escolares",
+      "telefone": "(19) 3816-1470",
+      "servicos": [],
+      "nomeNoMapa": "Unidades Escolares"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/wellington-lombardi-soares/",
+      "titulo": "Wellington Lombardi Soares",
+      "endereco": "Rua Tamoio, 716",
+      "horario": "De 2ª a 6ª das 07:00 às 12:00 - 13:00 às 18:00",
+      "telefone": "(19)3934-7214",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Wellington Lombardi Soares"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/wladimir-olivier/",
+      "titulo": "Wladimir Olivier",
+      "endereco": "Rua Yoriko Gonçalves, S/Nº",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00",
+      "telefone": "(19)3935-7214",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof. Wladimir Olivier"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/yolanda-steffen/",
+      "titulo": "Yolanda Steffen",
+      "endereco": "Rua Alzira Barnabé, 118 - Jardim Tropical",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 18:00",
+      "telefone": "(19) 3825-0293",
+      "servicos": [],
+      "nomeNoMapa": "EMEB Prof.ª Yolanda Steffen"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/academia-conceicao/",
+      "titulo": "Academia Conceição",
+      "endereco": "Av. Conceição, 1284 - Vila Maria Helena",
+      "telefone": "(19) 97134-6917",
+      "servicos": [],
+      "nomeNoMapa": "Academia Conceição"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/arena-aldrovandi/",
+      "titulo": "Arena Aldrovandi",
+      "endereco": "Av. Ângelo Bertelli Neto, 1000",
+      "telefone": "(19) 3834-4419",
+      "servicos": [],
+      "nomeNoMapa": "Arena Aldrovandi - Vera Lúcia de Barbieri Thomaselli"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/associacao-nipo-brasileira/",
+      "titulo": "Associação Nipo Brasileira",
+      "endereco": "Rua Chile, 389 - Jd. Moacyr Arruda",
+      "telefone": "(19) 3834-2584",
+      "servicos": [],
+      "nomeNoMapa": "Associação Cultural Esportiva Nipo Brasileira de Indaiatuba"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/campo-do-jardim-paulistano/",
+      "titulo": "Campo do Jardim Paulistano",
+      "endereco": "Rua Martinho Lutero, s/n",
+      "telefone": "(19) 3825-6287",
+      "servicos": [],
+      "nomeNoMapa": "Campo do Jardim Paulistano - Raul Monteiro Fernandes"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/campo-do-oliveira-camargo/",
+      "titulo": "Campo do Oliveira Camargo",
+      "endereco": "Rua Manoel Francisco Ribeiro Garcia, s/n",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Campo do Oliveira Camargo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/campo-do-sao-conrado/",
+      "titulo": "Campo do São Conrado",
+      "endereco": "Rua José de Campos, 1091",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Campo do São Conrado - Vicente Paula Barbosa"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-de-ginastica/",
+      "titulo": "Centro de Ginástica",
+      "endereco": "Rua Nicarágua, 240 - Pq. Boa Esperança",
+      "telefone": "(19) 3816-6892",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Ginástica"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-de-iniciacao-ao-esporte/",
+      "titulo": "Centro de Iniciação ao Esporte",
+      "endereco": "Rua Alagoas, 260 - Cidade Nova II",
+      "telefone": "(19) 3801-2531",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Iniciação ao Esporte"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-de-lutas-joao-pioli/",
+      "titulo": "Centro de Lutas João Pioli",
+      "endereco": "Rua Antônio Magnusson, 640 - Jd. Morada do Sol",
+      "telefone": "(19) 3834-7601",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Lutas João Pioli"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-de-treinamento-de-luta-de-braco/",
+      "titulo": "Centro de Treinamento de Luta de Braço",
+      "endereco": "Rua Nicarágua, 240 - Pq. Boa Esperança",
+      "telefone": "(19) 3816-6892",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Treinamento de Luta de Braço"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-esportivo-california/",
+      "titulo": "Centro Esportivo Califórnia",
+      "endereco": "Rua Ema Mantoanelli Tachinardi, 501 - Jd. Califórnia",
+      "telefone": "(19) 3835-3765",
+      "servicos": [],
+      "nomeNoMapa": "Centro Esportivo Califórnia"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-esportivo-do-trabalhador/",
+      "titulo": "Centro Esportivo do Trabalhador",
+      "endereco": "Av. Conceição, 1885 - Cidade Nova",
+      "telefone": "(19) 3934 0134",
+      "servicos": [],
+      "nomeNoMapa": "Centro Esportivo do Trabalhador - Dr. José Pedro Cardoso da Silva"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/centro-esportivo-rei-pele/",
+      "titulo": "Centro Esportivo Rei Pelé",
+      "endereco": "Estrada General Motors, 320",
+      "telefone": "(19) 99789-5622",
+      "servicos": [],
+      "nomeNoMapa": "Centro Esportivo Jardim Morada do Sol Rei Pelé"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/ceu-centro-de-artes-e-esportes-unificados/",
+      "titulo": "CEU - Centro de Artes e Esportes Unificados",
+      "endereco": "Rua Jordalino Pietrobom, 1300",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "CEU - Centro de Artes e Esportes Unificados - Claudinei Bitto"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/complexo-esportivo-cecap/",
+      "titulo": "Complexo Esportivo CECAP",
+      "endereco": "Rua Soldado João Carlos de Oliveira Júnior, 1587 - Cj. Habitacional Brigadeiro Faria Lima (CECAP)",
+      "telefone": "(19) 3875-8297",
+      "servicos": [],
+      "nomeNoMapa": "Complexo Esportivo CECAP - Cidemar Aparecido Gomes"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/complexo-esportivo-do-campo-bonito/",
+      "titulo": "Complexo Esportivo do Campo Bonito",
+      "endereco": "Av. Ottilia Ferraz de Camargo, 731 - Parque Campo Bonito",
+      "telefone": "(19) 3936-1466",
+      "servicos": [],
+      "nomeNoMapa": "Complexo Esportivo do Campo Bonito - Antônio Trinca"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/complexo-esportivo-jardim-aldrovandi/",
+      "titulo": "Complexo Esportivo Jardim Aldrovandi",
+      "endereco": "Av. Ângelo Bertelli Neto, 1150",
+      "telefone": "(19) 3834-4419",
+      "servicos": [],
+      "nomeNoMapa": "Complexo Esportivo Jardim Aldrovandi - Vereador Professor Luiz Carlos da Silva"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/complexo-esportivo-morada-do-sol/",
+      "titulo": "Complexo Esportivo Morada do Sol",
+      "endereco": "R. Ricardo Bergamini, 180 - Jardim Morada do Sol",
+      "telefone": "(19) 3835-4550",
+      "servicos": [],
+      "nomeNoMapa": "Complexo Esportivo Morada do Sol - Guarda Municipal Donizete Vieira Dantas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/cras-campo-jardim-brasil/",
+      "titulo": "CRAS - Campo Jardim Brasil",
+      "endereco": "R. Lourenço Martim do Amaral, 241 - Jd. Brasil",
+      "telefone": "(19) 3825-2065",
+      "servicos": [],
+      "nomeNoMapa": "CRAS - Campo Jardim Brasil"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/educando-para-vida/",
+      "titulo": "Educando para Vida",
+      "endereco": "Rua Compositor João Canova, 273",
+      "telefone": "(19) 3834-1697",
+      "servicos": [],
+      "nomeNoMapa": "Educando para Vida"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/espaco-bem-viver/",
+      "titulo": "Espaço Bem Viver",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, 585 - Vila Teller",
+      "telefone": "(19) 3801-1245",
+      "servicos": [],
+      "nomeNoMapa": "Espaço Bem Viver - Mário Jacintho da Silva"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/ginasio-do-primavera/",
+      "titulo": "Ginásio do Primavera",
+      "endereco": "Rua 24 de Maio, 2001 - Vila Vitória",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Ginásio do Primavera"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/parque-corolla/",
+      "titulo": "Parque Corolla",
+      "endereco": "Rua Serafim Gilberto Candello, s/n - Jd. Morada do Sol",
+      "telefone": "(19) 3936-3301",
+      "servicos": [],
+      "nomeNoMapa": "Parque Corolla"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/pista-de-bicicross/",
+      "titulo": "Pista de Bicicross",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, s/n - Jardim Esplanada",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Pista de Bicicross - Luís Cláudio Katayama"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/polo-esportivo/",
+      "titulo": "Polo Esportivo",
+      "endereco": "Rua Antônio Brunetti, 151 Praça Darcy Barnabé - Praça Darcy Barnabé, Jardim Morada do Sol",
+      "telefone": "(19) 3894-5763",
+      "servicos": [],
+      "nomeNoMapa": "Polo Esportivo - Cláudio Urbini Freitas (Quadra 23)"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/praca-de-esportes/",
+      "titulo": "Praça de Esportes",
+      "endereco": "Rua Helena Tomasi, 53",
+      "telefone": "(19) 3816-5921",
+      "servicos": [],
+      "nomeNoMapa": "Praça de Esportes Rodrigo Colli Badino - Rêmulo Zoppi"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/quadra-de-tenis-do-parque-tematico/",
+      "titulo": "Quadra de Tênis do Parque Temático",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, s/n",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Quadra de Tênis do Parque Temático"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/sesi/",
+      "titulo": "SESI",
+      "endereco": "Av. Francisco de Paula Leite, 2701 - Jd. California",
+      "telefone": "(19) 3825-4650",
+      "servicos": [],
+      "nomeNoMapa": "SESI"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/skate-parque-ecologico/",
+      "titulo": "Skate Parque Ecológico",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, s/n - Jd. Esplanada",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Skate Parque Ecológico"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/esportes/nucleos-esportivos/velodromo-municipal/",
+      "titulo": "Velódromo Municipal",
+      "endereco": "Rua Miguel Domingues, 790 - Jd. Regina",
+      "telefone": "(19) 3825 6287",
+      "servicos": [],
+      "nomeNoMapa": "Velódromo Municipal - Joaraci Mariano de Barros"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/",
+      "titulo": "Ponto Cidadão - Terminal Central Prefeito Alberto Brizzola",
+      "telefone": "(19) 3518-7808, 3518-7811 e 3518-7812. Whatsapp (19)97414-9323",
+      "servicos": [],
+      "nomeNoMapa": "Ponto Cidadão - Terminal Central Prefeito Alberto Brizzola"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/terminal-rodoviario/",
+      "titulo": "Terminal Rodoviário",
+      "endereco": "Rua dos Indaiás, 1791 - Jardim Belo Horizonte",
+      "horario": "Terminal Rodoviário: 4h30 às 0h / Lojas: 8h às 19h",
+      "telefone": "3816-4680",
+      "servicos": [],
+      "nomeNoMapa": "Terminal Rodoviário"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/transportes/transporte-coletivo/",
+      "titulo": "Transporte Coletivo",
+      "endereco": "Av. Francisco de Paula Leite, 2263 - Jardim Kioto II",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19) 3825-7938",
+      "servicos": [],
+      "nomeNoMapa": "Transporte Coletivo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/assistencia-farmaceutica/farmacia-alto-custo/",
+      "titulo": "Farmácia Alto Custo",
+      "endereco": "Rua Pedro Donda, 171 - Jd Esplanada II",
+      "horario": "segunda a sexta-feira das 07h às 17h, com entrega de senhas para atendimento das 7h às 16h30",
+      "telefone": "3825-5452",
+      "servicos": [],
+      "nomeNoMapa": "Farmácia Alto Custo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/assistencia-farmaceutica/farmacia-morada-do-sol/",
+      "titulo": "Farmácia Morada do Sol",
+      "endereco": "Rua : Zephiro Puccinelli, 1268 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "3935-2717",
+      "servicos": [],
+      "nomeNoMapa": "Farmácia Morada do Sol"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/assistencia-farmaceutica/farmacia-unificada/",
+      "titulo": "Farmácia Unificada",
+      "endereco": "Rua Pedro Donda, 171 - Jd Esplanada II",
+      "horario": "De 2ª a 6ª feira, das 7h às 17h, com entrega de senhas para atendimento das 7h às 16h30",
+      "telefone": "3825-5455",
+      "servicos": [],
+      "nomeNoMapa": "Farmácia Unificada"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/emulti/",
+      "titulo": "eMulti",
+      "endereco": "Rua Industria Rudolf Theodor Scheel, 72",
+      "horario": "7:00- 17:00 hs",
+      "telefone": "(19)998489639",
+      "servicos": [],
+      "nomeNoMapa": "eMulti"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/psicologia-na-atencao-basica/",
+      "titulo": "Psicologia na Atenção Básica",
+      "servicos": [],
+      "nomeNoMapa": "Psicologia na Atenção Básica"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-camargo-andrade/",
+      "titulo": "UBS Camargo Andrade",
+      "endereco": "Rua rudolf theodor schel, 72",
+      "horario": "das 7h às 17h - sala de vacina 07h30 às 16h30",
+      "telefone": "3825-2134",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde Camargo Andrade"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-i/",
+      "titulo": "UBS I",
+      "endereco": "Avenida Visconde de Indaiatuba, 199 - Parque Boa Esperança",
+      "horario": "7h às 17h - vacina das 07:30 às 16:30h",
+      "telefone": "3825-6430",
+      "servicos": [
+        "Acolhimento ao Usuário",
+        "Consulta de Enfermagem para recém-nascidos",
+        "Consulta de Pré Natal, coleta de Citologia Oncótica",
+        "Agendamentos de consultas na unidade com clínicos, ginecologistas e pediatras",
+        "Agendamentos para consulta nas especialidades",
+        "Agendamento de pedidos de exames médicos (RX, Ultrassonografia Obstétrica, Geral e outros)",
+        "Acompanhamento de usuários/pacientes com doenças crônico-degenerativas (diabetes, hipertensão entre outras)",
+        "Agendamento de transportes ao usuário",
+        "Medicações conforme receitas médicas (injetáveis), orientação e aplicação de Insulina",
+        "Eletrocardiograma",
+        "Sala de Vacina ( 07:30h – 16:30)",
+        "Grupo de Tabagismo, Diabetes / Hipertensos e Gestantes",
+        "Entrega de Insumos para os usuários diabéticos e curativos domiciliares",
+        "Visitas domiciliares",
+        "Realização de curativo conforme prescrição médica e avaliação do enfermeiro",
+        "Retirada de Pontos",
+        "Agendamento de transporte",
+        "Emissão do Cartão SUS",
+        "Cadastro para deficientes em transporte coletivo intermunicipal (EMTU)",
+        "Atendimento com Psicólogo",
+        "Acompanhamento de usuário com Tuberculose e tratamento supervisionado",
+        "Controle diário de P.A e Glicemia capilar conforme indicação médica",
+        "Encaminhamento para serviço de emergência quando necessário"
+      ],
+      "nomeNoMapa": "Unidade Básica de Saúde I - Hospital Dia"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-ii-cecap/",
+      "titulo": "UBS II Cecap",
+      "endereco": "Praça Vital Barnabé, s/nº",
+      "horario": "7:00h às 17:00h - segunda a sexta-feira",
+      "telefone": "3875-5766",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde II - Cecap"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-integrada/",
+      "titulo": "UBS Integrada",
+      "endereco": "Rua Eurico Primo Venturine, 610 - Jd Pedroso",
+      "horario": "De 2ª a 6ª feira, das 7h às 17h",
+      "servicos": [
+        "Acolhimento do Usuário",
+        "Consulta de Enfermagem do RN, Pré Natal, coleta de Citologia Oncotica",
+        "Eletrocardiograma",
+        "Entrega de Insumos para os usuários diabéticos e curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Aplicação de Bota de Una e conforme prescrição do ortopedista vascular",
+        "Agendamento de consultas",
+        "Agendamento de transporte",
+        "Entrega de Exames",
+        "Coleta de exames Laboratoriais",
+        "Cadastro EMTU",
+        "Encaminhamento para Psicologia , Caps, Grupo de Tabagismo",
+        "Acompanhamento de usuário com Tuberculose, hanseníase e tratamento supervisionado",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Visita domiciliar com apoio do Nasf para usuários com necessidades especiais e risco social, psicológico e de saúde",
+        "Consulta Médicas Pediátricas",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecologista",
+        "Consultas Médicas Obstétrica",
+        "Consultas Odontológicas",
+        "Vacinas",
+        "Inalação conforme receita Médica",
+        "Medicações conforme receitas médicas (injetáveis), aplicação de Insulina",
+        "Emissão de cartão Sus",
+        "Controle diário de PA e Glicemia capilar conforme indicação médica",
+        "Encaminhamento para serviço de emergência quando necessário",
+        "Viva Leite"
+      ],
+      "nomeNoMapa": "Unidade Básica Integrada"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-iv/",
+      "titulo": "UBS IV",
+      "endereco": "Coronel Julio Pereira de Blum, 193",
+      "horario": "das 8:00 às 17:00 h",
+      "telefone": "3935-2754",
+      "servicos": [
+        "Agendamento de consultas",
+        "Agendamento de transporte",
+        "Acolhimento do Usuário",
+        "Agendamento de RX, Mamografia, Ultrassonografia Obstétrica e Geral, ECG, e outros",
+        "Cadastro EMTU",
+        "Consulta Médicas Pediátricas",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecologistas",
+        "Consultas Médicas Obstétricas",
+        "Consultas Psicólogo",
+        "Consulta Nutricionista",
+        "Acupuntura",
+        "Consulta de Enfermagem do RN, Pré Natal, coleta de Citologia Oncotica",
+        "Eletrocardiograma",
+        "Vacinas",
+        "Grupo de Diabetes / Hipertenso (Consultas e Palestras )",
+        "Grupo de Caminhada",
+        "Grupo Gestante",
+        "Grupo Adolescente",
+        "Entrega de Insumos para os usuários diabéticos",
+        "Entrega de Insumos para os usuários curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Aplicação de Bota de Una e conforme prescrição do ortopedista vascular",
+        "Inalação conforme receita Médica",
+        "Medicações conforme receitas médicas (injetáveis), aplicação de Insulina",
+        "Controle diário de PA e Glicemia capilar conforme indicação médica",
+        "Cadastro para coleta de exames Laboratoriais",
+        "Entrega de Exames",
+        "Encaminhamento para Psicologia, CAPS, Grupo de Tabagismo",
+        "Acompanhamento de usuário com Tuberculose, hanseníase e tratamento supervisionado",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Emissão de cartão SUS",
+        "Encaminhamento para serviço de emergência quando necessário"
+      ],
+      "nomeNoMapa": "Unidade Básica de Saúde IV - Morada do Sol"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-ix-centro/",
+      "titulo": "UBS IX Centro",
+      "endereco": "Rua São Carlos, 585",
+      "horario": "das 7 às 17 h - vacina das 07:30 às 16:30 h",
+      "telefone": "3875-9368",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde IX - Centro"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jardim-das-maritacas/",
+      "titulo": "UBS Jardim das Maritacas",
+      "endereco": "Rua José Brossi, 50",
+      "horario": "7:00 às 17:00h - Sala de vacina 07:30 às 16:30 h",
+      "telefone": "19 99944-2693",
+      "servicos": [
+        "Acolhimento do Usuário",
+        "Consulta de Enfermagem do RN, Pré Natal",
+        "Eletrocardiograma",
+        "Entrega de Insumos para os usuários diabéticos e curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Agendamento de consultas",
+        "Agendamento de transporte",
+        "Entrega de Exames",
+        "Coleta de exames Laboratoriais",
+        "Cadastro EMTU",
+        "Encaminhamento para Psicologia , Caps, Grupo de Tabagismo",
+        "Acompanhamento de usuário com Tuberculose, hanseníase e tratamento supervisionado",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Consulta Médicas Pediátricas",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecologista",
+        "Consultas Médicas Obstétrica",
+        "Consultas Odontológicas",
+        "Vacinas",
+        "Inalação conforme receita Médica",
+        "Medicações conforme receitas médicas (injetáveis), aplicação de Insulina",
+        "Emissão de cartão Sus",
+        "Controle diário de PA e Glicemia capilar conforme indicação médica",
+        "Encaminhamento para serviço de emergência quando necessário"
+      ],
+      "nomeNoMapa": "Unidade Básica de Atendimento - Jardim das Maritacas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jd.-bela-vista/",
+      "titulo": "UBS Jd. Bela Vista",
+      "endereco": "Rua Jorge Alves Brawn, 178 - Jardim Bela Vista",
+      "horario": "de segunda a sexta feira das 07 às 17h",
+      "telefone": "3834-9590",
+      "servicos": [
+        "Acolhimento do Usuário",
+        "Consulta de Enfermagem do RN, Pré Natal, coleta de Citologia Oncotica",
+        "Eletrocardiograma",
+        "Entrega de Insumos para os usuários diabéticos e curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Aplicação de Bota de Una e conforme prescrição do ortopedista vascular",
+        "Agendamento de consultas",
+        "Agendamento de transporte",
+        "Entrega de Exames",
+        "Coleta de exames Laboratoriais",
+        "Cadastro EMTU",
+        "Encaminhamento para Psicologia , Caps, Grupo de Tabagismo",
+        "Acompanhamento de usuário com Tuberculose, hanseníase e tratamento supervisionado",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Visita domiciliar com apoio do Nasf para usuários com necessidades especiais e risco social, psicológico e de saúde",
+        "Consulta Médicas Pediátricas",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecologista",
+        "Consultas Médicas Obstétrica",
+        "Consultas Odontológicas",
+        "Vacinas",
+        "Inalação conforme receita Médica",
+        "Medicações conforme receitas médicas (injetáveis), aplicação de Insulina",
+        "Emissão de cartão Sus",
+        "Controle diário de PA e Glicemia capilar conforme indicação médica",
+        "Encaminhamento para serviço de emergência quando necessário"
+      ],
+      "nomeNoMapa": "UBS Jardim Bela Vista"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jd.-brasil/",
+      "titulo": "UBS Jd. Brasil",
+      "endereco": "Avenida Luiz Carlos Prestes, 305",
+      "horario": "das 7:00 às 17:00 - sala de vacina 07:30 às 16:30h",
+      "telefone": "3835-6969",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Jardim Brasil"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jd.-carlos-aldrovandi/",
+      "titulo": "UBS Jd. Carlos Aldrovandi",
+      "endereco": "Avenida Angelo Bertelli Neto, 1.000",
+      "horario": "De 2ª a 6ª feira 7h às 17h - vacina: 7h30 às 16h30",
+      "telefone": "(19)3835-5598",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Jd. Carlos Aldrovandi"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jd.-oliveira-camargo/",
+      "titulo": "UBS Jd. Oliveira Camargo",
+      "endereco": "Rua Yorico Gonçalves , s/n",
+      "horario": "das 7:00 às 17:00 h sala de vacina 07:30 às 16:30",
+      "telefone": "3835-4878",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Jardim Oliveira Camargo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-jd.-umuarama/",
+      "titulo": "UBS Jd. Umuarama",
+      "endereco": "Rua Guayi, 124",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00 hs",
+      "telefone": "3894-2097",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Jd. Umuarama"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-joao-pioli/",
+      "titulo": "UBS João Pioli",
+      "endereco": "Av. Manoel Ruz Perez, 3265",
+      "horario": "2ª a 6ª 7:00- 17:00 hs - vacina 07h30 as 16h30",
+      "telefone": "3835-4836/5522",
+      "servicos": [
+        "Acolhimentos aos usuários",
+        "Agendamentos de consultas e exames",
+        "Coletas de exames laboratoriais de 2ª à 6ª feira - 7h",
+        "Agendamentos de transportes",
+        "Emissão do Cartão SUS",
+        "Cadastro de transporte coletivo intermunicipal - EMTU",
+        "Exame de eletrocardiograma - ECG",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecológicas/Obstétricas",
+        "Consultas Médicas Pediátricas",
+        "Consultas com médico de família",
+        "Consultas Odontológicas",
+        "NASF - Núcleo de Apoio à Saúde da Família",
+        "Consultas Psicólogo - Atendimento psicológico individual e em grupo",
+        "Consulta de Enfermagem do Recém Nascido, Pré Natal e Exame Preventivo HPV ou Citopatológico",
+        "Grupo Diabéticos / Hipertensos - HIPERDIN",
+        "Grupo Gestante",
+        "Vacinas",
+        "Entrega de Insumos para os usuários diabéticos",
+        "Entrega de Insumos para os usuários para curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Aplicação de Bota de Una, conforme prescrição médica",
+        "Inalação conforme prescrição médica",
+        "Medicações injetáveis conforme prescrição médica",
+        "Controle diário de Pressão Arterial e Glicemia Capilar, conforme indicação médica",
+        "Entrega de Exames – Pezinho, ECG e Laboratoriais",
+        "Acompanhamento de usuário com Tuberculose, tratamento supervisionado e administração de medicamentos",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Encaminhamento para serviço de emergência quando necessário",
+        "Grupo de tabagismo",
+        "Distribuição de medicamentos conforme prescrição médica, através da farmácia na UBS"
+      ],
+      "nomeNoMapa": "Unidade Básica de Saúde João Pioli"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-pq.-corolla/",
+      "titulo": "UBS Pq. Corolla",
+      "endereco": "Rua Dr. Nelson Nazário, 80",
+      "horario": "7:00-17:00h",
+      "telefone": "3894-2713",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Parque Corolla"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-pq.-indaia/",
+      "titulo": "UBS Pq. Indaiá",
+      "endereco": "Rua Cristiano Selleguin, 139",
+      "horario": "7:00 às 17:00 h sala de vacina 07:30 às 16:30h",
+      "telefone": "3835-4818",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde - Parque Indaiá"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-v-itaici/",
+      "titulo": "UBS V Itaici",
+      "endereco": "Rua: Joaquim Pedroso de Alvarenga , s/nº",
+      "horario": "das 07:00 às 17:00 h - Vacina das 07:30 as16:30",
+      "telefone": "3894-7600",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde V - Itaici"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-vii/",
+      "titulo": "UBS VII",
+      "endereco": "Rua José de Campos, 709",
+      "horario": "7:00 às 17:00h - Sala de vacina 07:30 às 16:30 h",
+      "telefone": "3935-5012/3338",
+      "servicos": [
+        "Acolhimento do Usuário",
+        "Consulta de Enfermagem do RN, Pré Natal, coleta de Citologia Oncotica",
+        "Eletrocardiograma",
+        "Entrega de Insumos para os usuários diabéticos e curativo domiciliar",
+        "Realização de curativo conforme prescrição médica ou enfermeiro",
+        "Retirada de Pontos",
+        "Aplicação de Bota de Una e conforme prescrição do ortopedista vascular",
+        "Agendamento de consultas",
+        "Agendamento de transporte",
+        "Entrega de Exames",
+        "Coleta de exames Laboratoriais",
+        "Cadastro EMTU",
+        "Encaminhamento para Psicologia , Caps, Grupo de Tabagismo",
+        "Acompanhamento de usuário com Tuberculose, hanseníase e tratamento supervisionado",
+        "Acompanhamento de usuário com DST / AIDS",
+        "Visita domiciliar com apoio do Nasf para usuários com necessidades especiais e risco social, psicológico e de saúde",
+        "Consulta Médicas Pediátricas",
+        "Consultas Médicas Clinico Geral",
+        "Consultas Médicas Ginecologista",
+        "Consultas Médicas Obstétrica",
+        "Consultas Odontológicas",
+        "Vacinas",
+        "Inalação conforme receita Médica",
+        "Medicações conforme receitas médicas (injetáveis), aplicação de Insulina",
+        "Emissão de cartão Sus",
+        "Controle diário de PA e Glicemia capilar conforme indicação médica",
+        "Encaminhamento para serviço de emergência quando necessário",
+        "Viva Leite"
+      ],
+      "nomeNoMapa": "Unidade Básica de Saúde VII"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-x/",
+      "titulo": "UBS X",
+      "endereco": "Rua Basílio Martins, 830",
+      "horario": "das 7:00 às 17:00h sala de vacina 7:30 às 16:30h",
+      "telefone": "3894-5375/5345",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde X - Califórnia"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-xii/",
+      "titulo": "UBS XII",
+      "endereco": "Avenida Otília Ferraz de Camargo, 817 - Campo Bonito",
+      "horario": "Segunda a sexta-feira das 07:00 às 17:00 h",
+      "telefone": "3936-1787",
+      "servicos": [],
+      "nomeNoMapa": "Unidade Básica de Saúde XII - Campo Bonito"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/ambulatorio-de-especialidades-/",
+      "titulo": "Ambulatório de Especialidades",
+      "endereco": "Rua Regente Feijó, 187",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00 hs",
+      "telefone": "(19)38014406",
+      "servicos": [],
+      "nomeNoMapa": "Ambulatório de Especialidades da Mulher e da Criança"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/ambulatorio-dr-mario-paulo/",
+      "titulo": "Ambulatório Dr Mario Paulo",
+      "endereco": "Rua Hélio Pistoni, s/nº",
+      "horario": "De 2ª a 6ª feira, das 06:30 ás 17:00 hs",
+      "telefone": "(19) 3934-4680",
+      "servicos": [],
+      "nomeNoMapa": "Ambulatório de Especialidades Dr. Mario Paulo"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/caps-ad/",
+      "titulo": "CAPS AD",
+      "endereco": "Av. Presidente Vargas, 890",
+      "horario": "24h",
+      "telefone": "3816-7878/7842",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Atenção Psicossocial em Álcool e Drogas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/caps-ii/",
+      "titulo": "CAPS II",
+      "endereco": "Rua: Padre Bento Pacheco, 1806 - Vila Aurora",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00 hs",
+      "telefone": "(19)3816-7710",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Atenção Psicossocial"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/capsij/",
+      "titulo": "CAPSij",
+      "endereco": "Rua Padre Bento Pacheco, 1795",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "3835-5020",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Atenção Psicossocial Infanto Juvenil"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/ceem-unimax/",
+      "titulo": "CEEM - Unimax",
+      "endereco": "Rua Eurico Primo Venturini, 379 - Jd. Pedroso",
+      "horario": "De 2ª a 6ª feira, das 07:00as 17:00hs",
+      "telefone": "(19) 3885-9901",
+      "servicos": ["Exames de Ultrasson"],
+      "nomeNoMapa": "Centro Escola de Especialidades Médicas - Unimax"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/central-de-ambulancias/",
+      "titulo": "Central de Ambulâncias",
+      "endereco": "Rua: Carlos Alberto Garcia, 28",
+      "horario": "atendimento 24h ; administrativo das 7h às 18h.",
+      "telefone": "3835-6977",
+      "servicos": [],
+      "nomeNoMapa": "Central de Ambulâncias"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/centro-odontologico/",
+      "titulo": "Centro Odontológico",
+      "endereco": "Rua Zefhiro Puccinelli, s/nº - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00hs",
+      "telefone": "(19) 99841-6223",
+      "servicos": [],
+      "nomeNoMapa": "Centro Odontológico Dr. Guilherme Cibim - Mini Hospital"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/cerest/",
+      "titulo": "CEREST",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, 6271 - Jd Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 16:00 hs",
+      "telefone": "19 3894-4959",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Referência em Saúde do Trabalhador"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/derefim/",
+      "titulo": "DEREFIM",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, 6271",
+      "horario": "2ª a 6ª das 7:00 às 17:00 h",
+      "telefone": "3935-2791/2762",
+      "servicos": [],
+      "nomeNoMapa": "Departamento de Reabilitação Física e Mental"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/espaco-avancar/",
+      "titulo": "Espaço Avançar",
+      "endereco": "Rua Helena Tomasi, 107 - Jd. Rêmulo Zoppi",
+      "telefone": "(1) 3835-4888 / 3801-3727",
+      "servicos": [],
+      "nomeNoMapa": "Espaço Avançar"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/especialidades-odontologicas/",
+      "titulo": "Especialidades Odontológicas",
+      "endereco": "Av. Presidente Vargas, 457",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00hs",
+      "telefone": "(19)3894-2842",
+      "servicos": [],
+      "nomeNoMapa": "Centro de Especialidades Odontológicas CEO - Tipo II"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/hospital-dia/",
+      "titulo": "Hospital Dia",
+      "endereco": "Av. Visconde de Indaiatuba, 199",
+      "horario": "De 2ª a 6ª feira, das 7:00 às 17:00 hs",
+      "telefone": "3825-6430",
+      "servicos": [],
+      "nomeNoMapa": "Ambulatório de Especialidades e Hospital Dia Dr. Renato Riggio Jr."
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/laboratorio-de-analises-clinicas/",
+      "titulo": "Laboratório de Análises Clínicas",
+      "endereco": "Av. Visconde de Indaiatuba, 199",
+      "horario": "coleta das 7:00 às 8:00 h / func. 7:00 às 16:00 h",
+      "telefone": "3825-6432/6452",
+      "servicos": [],
+      "nomeNoMapa": "Laboratório Municipal de Análises Clínicas"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/laboratorio-de-proteses-dentaria/",
+      "titulo": "Laboratório de Próteses Dentária",
+      "endereco": "Avenida Presidente Vargas, 457",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19)3801-4244",
+      "servicos": [],
+      "nomeNoMapa": "Laboratório de Prótese Dentária"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/programa-nascer-bem/",
+      "titulo": "Programa Nascer Bem",
+      "endereco": "Rua Domingos Casagrande, 107 - Jardim do Sol",
+      "horario": "2ª a 6ª 7:00 - 17:00 hs",
+      "telefone": "(19)99940-0176",
+      "servicos": [],
+      "nomeNoMapa": "Programa Nascer Bem"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/sae/",
+      "titulo": "SAE",
+      "endereco": "Av: Visconde de Indaiatuba, 199 Anexo ao Hospital Dia - Vila Vitória",
+      "horario": "Segunda a sexta das 07:00 às 17:00hs",
+      "telefone": "3825-6440",
+      "servicos": [],
+      "nomeNoMapa": "Serviço de Atendimento Especializado"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/saude-mental/",
+      "titulo": "Saúde Mental",
+      "endereco": "Av. Presidente Vargas, 890 anexo lateral - Vila Vitoria II",
+      "horario": "Horário de Atendimento: 8:00 as 17:00",
+      "telefone": "3816-7878/7842",
+      "servicos": [],
+      "nomeNoMapa": "Saúde Mental"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/upa/",
+      "titulo": "UPA",
+      "endereco": "Av. Eng. Fábio Roberto Barnabé, 6020",
+      "horario": "24 horas",
+      "telefone": "3935-2770/2702",
+      "servicos": [],
+      "nomeNoMapa": "Unidade de Pronto Atendimento Dr. Paulo Kóide"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/verificacao-de-obitos/",
+      "titulo": "Verificação de Óbitos",
+      "endereco": "Alameda Dr. José Cardeal, 360",
+      "horario": "2ª a 6ª das 8:00 às 17: 00 h",
+      "telefone": "3894-3133",
+      "servicos": [],
+      "nomeNoMapa": "Serviço de Verificação de Óbitos"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/viva-leite/",
+      "titulo": "Viva Leite",
+      "endereco": "Rua Guayi, 124 UBS Umuarama - UBS Umuarama",
+      "telefone": "(19) 3894-2097",
+      "servicos": [],
+      "nomeNoMapa": "Viva Leite"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/seguranca/defesa-civil/",
+      "titulo": "Defesa Civil",
+      "endereco": "Av. Ário Barnabé, 924 - Jardim Morada do Sol",
+      "horario": "De 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19) 3825-3780",
+      "servicos": [],
+      "nomeNoMapa": "Defesa Civil"
+    },
+    {
+      "url": "https://www.indaiatuba.sp.gov.br/seguranca/guarda-civil/",
+      "titulo": "Guarda Civil",
+      "endereco": "Av. Ário Barnabé, 924",
+      "horario": "de 2ª a 6ª feira, das 8:00 às 17:00 hs",
+      "telefone": "(19) 3825-3797",
+      "servicos": [
+        "* SITUAÇÕES DE URGÊNCIA E EMERGÊNCIA, DEVEM SER COMUNICADAS ATRAVÉS DO TELEFONE 153 **"
+      ],
+      "nomeNoMapa": "Guarda Civil"
+    }
+  ]
+}

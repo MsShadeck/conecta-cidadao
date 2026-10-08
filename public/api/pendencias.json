@@ -1,0 +1,45 @@
+{
+ "atualizadoEm": "2026-10-08",
+ "pendencias": [
+  {
+   "categoria": "saude",
+   "id": "ubs-vila-todos-os-santos",
+   "nome": "UBS Vila Todos os Santos",
+   "imagem": "/img/saude/ubs-vila-todos-os-santos.jpg",
+   "motivo": "Não existe unidade com esse nome no CNES nem na lista oficial de UBS da Prefeitura (consulta de 08/10/2026). A foto pode ser de outra UBS: confirmar qual é antes de publicar."
+  },
+  {
+   "categoria": "seguranca",
+   "id": "1-distrito-policial",
+   "nome": "1º Distrito Policial",
+   "imagem": "/img/seguranca/1-dp.jpg",
+   "motivo": "Endereço não encontrado em fonte oficial (Prefeitura, OSM). Conferir no site da Polícia Civil de SP."
+  },
+  {
+   "categoria": "seguranca",
+   "id": "delegacia-da-mulher",
+   "nome": "Delegacia da Mulher",
+   "imagem": "/img/seguranca/dp-da-mulher.jpg",
+   "motivo": "Só o telefone (19) 3875-1304 está na lista oficial; o endereço não. Conferir no site da Polícia Civil de SP."
+  },
+  {
+   "categoria": "seguranca",
+   "id": "base-da-pm",
+   "nome": "Base da PM",
+   "imagem": "/img/seguranca/base-da-pm.jpg",
+   "motivo": "Endereço e unidade não encontrados em fonte oficial. Conferir com a Polícia Militar."
+  },
+  {
+   "categoria": "seguranca",
+   "id": "delegacia-de-policia",
+   "nome": "Delegacia de Polícia",
+   "imagem": "/img/seguranca/dp-do-municipio.jpg",
+   "motivo": "Só o telefone (19) 3875-8198 está na lista oficial; o endereço não. Conferir no site da Polícia Civil de SP."
+  },
+  {
+   "categoria": "lazer",
+   "nome": "Colônia Alemã - Igreja Luterana de Friburgo",
+   "motivo": "Fica fora do município de Indaiatuba."
+  }
+ ]
+}

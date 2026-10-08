@@ -1,0 +1,18 @@
+{
+  "_aviso": "Trecho do config.json do Indaiatuba Integra. As zonas industriais são aproximadas e só servem para o roteamento de bicicleta evitar ruas de caminhões.",
+  "velocidadesKmh": {
+    "caminhada": 5,
+    "bike": 15,
+    "patinete": 15,
+    "patineteAreaTerminal": 6,
+    "onibusMedia": 20
+  },
+  "zonasIndustriais": [
+    {
+      "nome": "Distritos Industriais Domingos Giomi / Nova Era (aprox.)",
+      "lat": -23.137,
+      "lon": -47.228,
+      "raioM": 900
+    }
+  ]
+}

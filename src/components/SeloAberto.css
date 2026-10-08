@@ -1,0 +1,38 @@
+/* ============================================================
+   SeloAberto.css — Selo "Aberto agora / Fechado" (SeloAberto.jsx)
+   A cor nunca é a única pista: o texto sempre diz o estado.
+============================================================ */
+
+.selo-aberto {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--raio-pilula);
+  background: var(--azul-nevoa);
+  color: var(--tinta-media);
+}
+
+.selo-aberto-ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.selo-aberto--aberto {
+  background: #d4edda;
+  color: #145a2e;
+}
+
+.selo-aberto--fechado {
+  background: #fde2df;
+  color: #9b2617;
+}
+
+.selo-aberto--feriado {
+  background: #fdefc8;
+  color: #6e4600;
+}

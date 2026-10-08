@@ -1,0 +1,23 @@
+/* ============================================================
+   MapaPreguicoso.css — Caixa do mapa. Fica fora do Mapa.css porque precisa
+   valer ANTES de o arquivo do Leaflet terminar de carregar (no fallback).
+============================================================ */
+
+.mapa {
+  width: 100%;
+  border-radius: var(--raio-card);
+  overflow: hidden;
+  background: var(--azul-nevoa);
+  box-shadow: var(--sombra-baixa);
+  position: relative;
+  /* isolation cria uma "camada" própria: as camadas internas do Leaflet
+     (z-index 400+) não passam por cima do cabeçalho fixo nem do overlay de busca. */
+  isolation: isolate;
+}
+
+.mapa--carregando {
+  display: grid;
+  place-items: center;
+  color: var(--tinta-media);
+  font-size: 14px;
+}

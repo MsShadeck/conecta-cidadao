@@ -1,0 +1,53 @@
+/* ============================================================
+   EmergenciaRapida.css — Faixa de números de emergência
+============================================================ */
+
+.emergencia {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  background: var(--branco);
+  border-left: 5px solid #b3261e;
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: var(--sombra-baixa);
+  margin-bottom: 18px;
+}
+
+.emergencia-titulo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #8c1d18;
+}
+
+.emergencia-lista {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.emergencia-numero {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cat-tinta, var(--azul-marca));
+  background: var(--cat-fundo, var(--azul-nevoa));
+  padding: 6px 12px;
+  border-radius: var(--raio-pilula);
+  min-height: 36px;
+}
+
+.emergencia-numero strong {
+  font-size: 15px;
+}
+
+.emergencia-mais {
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-left: auto;
+}

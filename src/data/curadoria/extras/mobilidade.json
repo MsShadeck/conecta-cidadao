@@ -1,0 +1,57 @@
+{
+  "_comentario": "Informações da página Mobilidade. Só entra o que está em fonte oficial ou na imprensa com data. Linhas, paradas e horários de ônibus NÃO são publicados aqui: não há dado aberto, e a fonte oficial é o sistema de previsão da operadora (link abaixo).",
+  "onibus": {
+    "operadora": "SOU Indaiatuba",
+    "resumo": "O transporte coletivo municipal é operado pela SOU Indaiatuba e gerido pela Secretaria Municipal de Mobilidade Urbana. Os horários de cada linha e a previsão de chegada nos pontos ficam no sistema oficial indicado pela Prefeitura.",
+    "links": [
+      {
+        "nome": "Horários de ônibus e previsão de chegada (página oficial)",
+        "descricao": "Entre em \"Abrir Previsão de Chegadas\" para ver as linhas municipais, os horários e a previsão em cada ponto.",
+        "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/horarios-de-onibus/"
+      },
+      {
+        "nome": "Linhas intermunicipais (Terminal Rodoviário)",
+        "descricao": "Destinos e horários das linhas que saem do Terminal Rodoviário.",
+        "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/consulta-horario-onibus/"
+      }
+    ],
+    "cartao": {
+      "titulo": "Cartão SOU",
+      "texto": "O cartão SOU é emitido no guichê da SOU Indaiatuba, no Ponto Cidadão (Rua Vinte e Quatro de Maio, 1.670), de segunda a sexta, das 9h às 17h. A primeira via é gratuita. Leve RG, CPF e comprovante de endereço.",
+      "telefones": ["(19) 3518-7808", "(19) 3518-7811", "(19) 3518-7812"],
+      "whatsapp": "(19) 97414-9323",
+      "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+    },
+    "noticias": [
+      {
+        "titulo": "Linhas 333, 334, 335 e 336",
+        "texto": "Segundo a imprensa, quatro linhas novas começaram a operar em 02/03/2026: 333 Sabiás × Centro, 334 Campo Bonito × Praça Dom Pedro, 335 Campo Bonito × Distrito Industrial e 336 EuroPark × Distrito Industrial (via Sabiás/Colibris). Confira os horários no sistema oficial.",
+        "fonte": "https://diariodotransporte.com.br/2026/02/27/indaiatuba-sp-vai-ter-domingao-tarifa-zero-e-mais-quatro-linhas-de-onibus/",
+        "data": "2026-02-27"
+      },
+      {
+        "titulo": "\"Domingão Tarifa Zero\" (anunciado)",
+        "texto": "A Prefeitura anunciou em fevereiro de 2026 a gratuidade dos ônibus municipais aos domingos, prevista para começar em abril. Não encontramos a confirmação oficial de que está em vigor nem as regras: confirme na Secretaria de Mobilidade, (19) 3825-7938, antes de contar com ela.",
+        "fonte": "https://diariodotransporte.com.br/2026/02/27/indaiatuba-sp-vai-ter-domingao-tarifa-zero-e-mais-quatro-linhas-de-onibus/",
+        "data": "2026-02-27"
+      }
+    ]
+  },
+  "ecobike": {
+    "titulo": "Ecobike — bicicletas grátis da Prefeitura",
+    "texto": "O Projeto Ecobike tem cinco estações com bicicletas gratuitas (inclusive com cadeirinha para criança e bicicletas duplas). O cadastro é presencial, nas estações, para maiores de 18 anos (ou menores com responsável): leve CPF, comprovante de endereço atualizado no seu nome e documento com foto. Cada uso pode durar até 4 horas seguidas, renováveis, e a bicicleta pode ser devolvida em qualquer estação.",
+    "horarios": "De segunda a sexta, as estações das praças do Cato e Dom Pedro II, da Guarda Civil e da Prefeitura funcionam das 8h às 12h e das 13h às 17h. Aos sábados, domingos e feriados (exceto feriado santo), só as estações da Prefeitura e da Guarda, no mesmo horário. Em feriado santo não funciona.",
+    "telefone": "(19) 3816-4680",
+    "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/ecobike/"
+  },
+  "bike": {
+    "titulo": "Ciclovias e passeios",
+    "texto": "O mapa mostra as ciclovias e ciclofaixas cadastradas no OpenStreetMap. O \"Indaiatuba by Bike\" é um passeio ciclístico gratuito aos domingos, promovido pelo Departamento de Turismo (idade recomendada: acima de 10 anos).",
+    "links": [
+      {
+        "nome": "Indaiatuba by Bike (inscrição e programação)",
+        "url": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/indaiatuba-a-capital-do-pedal/indaiatuba-by-bike/"
+      }
+    ]
+  }
+}

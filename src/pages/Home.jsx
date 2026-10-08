@@ -10,10 +10,16 @@ import { useBusca } from '../context/AppContext.jsx';
 import CardServico from '../components/CardServico.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
+import useDados from '../hooks/useDados.js';
 import './Home.css';
 
 export default function Home() {
   const { abrirBusca } = useBusca();
+  // Contagem real de locais por categoria, a partir de /api/locais.json.
+  const { dados } = useDados('/api/locais.json');
+  const totais = {};
+  for (const local of dados?.locais ?? [])
+    totais[local.categoria] = (totais[local.categoria] ?? 0) + 1;
   // Define o título da aba do navegador para esta página.
   useTituloPagina('Conecta Cidadão — Serviços públicos de Indaiatuba');
 
@@ -61,7 +67,11 @@ export default function Home() {
           {/* map() transforma cada categoria dos dados em um card na tela.
               Acrescentar uma categoria em servicos.js já faz surgir o card aqui. */}
           {categorias.map((categoria) => (
-            <CardServico key={categoria.slug} categoria={categoria} />
+            <CardServico
+              key={categoria.slug}
+              categoria={categoria}
+              total={dados ? (totais[categoria.slug] ?? 0) : undefined}
+            />
           ))}
         </div>
       </section>

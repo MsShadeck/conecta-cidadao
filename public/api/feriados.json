@@ -1,0 +1,186 @@
+{
+ "atualizadoEm": "2026-10-08",
+ "observacao": "Feriados de Indaiatuba segundo o edital do Conselho Superior da Magistratura (TJ-SP) com os feriados municipais de 2026: \"INDAIATUBA – 02/02, Sexta-Feira Santa e Corpus Christi\". Sexta-Feira Santa e Corpus Christi já vêm da BrasilAPI (datas móveis). Carnaval é ponto facultativo, não feriado.",
+ "feriados": [
+  {
+   "data": "2026-01-01",
+   "nome": "Confraternização mundial",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-02-02",
+   "nome": "Nossa Senhora da Candelária (padroeira de Indaiatuba)",
+   "tipo": "municipal",
+   "fonte": "https://cnbsp.org.br/2025/11/25/dje-csm-divulga-edital-sobre-aprovacao-de-feriados-municipais-para-2026/"
+  },
+  {
+   "data": "2026-02-16",
+   "nome": "Carnaval",
+   "tipo": "ponto facultativo",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-02-17",
+   "nome": "Carnaval",
+   "tipo": "ponto facultativo",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-04-03",
+   "nome": "Sexta-feira Santa",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-04-05",
+   "nome": "Páscoa",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-04-21",
+   "nome": "Tiradentes",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-05-01",
+   "nome": "Dia do trabalho",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-06-04",
+   "nome": "Corpus Christi",
+   "tipo": "municipal",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-09-07",
+   "nome": "Independência do Brasil",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-10-12",
+   "nome": "Nossa Senhora Aparecida",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-11-02",
+   "nome": "Finados",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-11-15",
+   "nome": "Proclamação da República",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-11-20",
+   "nome": "Dia da consciência negra",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2026-12-25",
+   "nome": "Natal",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2026"
+  },
+  {
+   "data": "2027-01-01",
+   "nome": "Confraternização mundial",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-02-02",
+   "nome": "Nossa Senhora da Candelária (padroeira de Indaiatuba)",
+   "tipo": "municipal",
+   "fonte": "https://cnbsp.org.br/2025/11/25/dje-csm-divulga-edital-sobre-aprovacao-de-feriados-municipais-para-2026/"
+  },
+  {
+   "data": "2027-02-08",
+   "nome": "Carnaval",
+   "tipo": "ponto facultativo",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-02-09",
+   "nome": "Carnaval",
+   "tipo": "ponto facultativo",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-03-26",
+   "nome": "Sexta-feira Santa",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-03-28",
+   "nome": "Páscoa",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-04-21",
+   "nome": "Tiradentes",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-05-01",
+   "nome": "Dia do trabalho",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-05-27",
+   "nome": "Corpus Christi",
+   "tipo": "municipal",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-09-07",
+   "nome": "Independência do Brasil",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-10-12",
+   "nome": "Nossa Senhora Aparecida",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-11-02",
+   "nome": "Finados",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-11-15",
+   "nome": "Proclamação da República",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-11-20",
+   "nome": "Dia da consciência negra",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  },
+  {
+   "data": "2027-12-25",
+   "nome": "Natal",
+   "tipo": "nacional",
+   "fonte": "https://brasilapi.com.br/api/feriados/v1/2027"
+  }
+ ]
+}

@@ -12,9 +12,14 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "imagens": "node scripts/otimizar-imagens.mjs"
+    "imagens": "node scripts/otimizar-imagens.mjs",
+    "dados": "node scripts/atualizar-dados.mjs",
+    "dados:prefeitura": "node scripts/dados/coletar-prefeitura.mjs",
+    "integra": "node scripts/sincronizar-integra.mjs"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
+    "leaflet.markercluster": "^1.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2"

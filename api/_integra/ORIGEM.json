@@ -1,0 +1,12 @@
+{
+  "projeto": "Indaiatuba Integra",
+  "commit": "5a1cd81",
+  "sincronizadoEm": "2026-10-08",
+  "viario": "© colaboradores do OpenStreetMap (ODbL) – extraído em 2026-10-08 via Overpass API",
+  "arquivos": [
+    "server/src/grafo.ts",
+    "server/src/geo.ts",
+    "server/data/viario.json",
+    "server/data/ciclovias.geojson"
+  ]
+}

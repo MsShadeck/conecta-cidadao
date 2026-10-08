@@ -1,12 +1,282 @@
-[
-  { "id": 1, "nome": "SAMU", "telefone": "192", "descricao": "Atendimento móvel de urgência para emergências médicas.", "categoria": "saude" },
-  { "id": 2, "nome": "Disque Saúde", "telefone": "136", "descricao": "Informações sobre o SUS, doenças, vacinação e campanhas.", "categoria": "saude" },
-  { "id": 3, "nome": "CVV — Centro de Valorização da Vida", "telefone": "188", "descricao": "Apoio emocional e prevenção do suicídio, 24 horas, ligação gratuita.", "categoria": "saude" },
-  { "id": 4, "nome": "Polícia Militar", "telefone": "190", "descricao": "Emergências policiais: crimes em andamento e situações de risco.", "categoria": "seguranca" },
-  { "id": 5, "nome": "Corpo de Bombeiros", "telefone": "193", "descricao": "Incêndios, resgates, salvamentos e acidentes.", "categoria": "seguranca" },
-  { "id": 6, "nome": "Polícia Civil", "telefone": "197", "descricao": "Informações e denúncias à polícia judiciária.", "categoria": "seguranca" },
-  { "id": 7, "nome": "Guarda Municipal", "telefone": "153", "descricao": "Proteção de bens, serviços e espaços públicos do município.", "categoria": "seguranca" },
-  { "id": 8, "nome": "Defesa Civil", "telefone": "199", "descricao": "Enchentes, deslizamentos, quedas de árvore e outros desastres.", "categoria": "seguranca" },
-  { "id": 9, "nome": "Central de Atendimento à Mulher", "telefone": "180", "descricao": "Denúncias e orientação sobre violência contra a mulher.", "categoria": "seguranca" },
-  { "id": 10, "nome": "Disque Direitos Humanos", "telefone": "100", "descricao": "Denúncias de violações de direitos humanos, inclusive contra crianças e idosos.", "categoria": "seguranca" }
-]
+{
+ "atualizadoEm": "2026-10-08",
+ "contatos": [
+  {
+   "id": "samu",
+   "nome": "SAMU",
+   "telefone": "192",
+   "descricao": "Atendimento móvel de urgência para emergências médicas.",
+   "categoria": "saude",
+   "emergencia": true,
+   "fonte": "https://www.gov.br/saude/pt-br/composicao/saes/samu-192"
+  },
+  {
+   "id": "pm",
+   "nome": "Polícia Militar",
+   "telefone": "190",
+   "descricao": "Emergências policiais: crimes em andamento e situações de risco.",
+   "categoria": "seguranca",
+   "emergencia": true,
+   "fonte": "https://www.ssp.sp.gov.br/"
+  },
+  {
+   "id": "bombeiros",
+   "nome": "Corpo de Bombeiros",
+   "telefone": "193",
+   "descricao": "Incêndios, resgates, salvamentos e acidentes.",
+   "categoria": "seguranca",
+   "emergencia": true,
+   "fonte": "https://www.corpodebombeiros.sp.gov.br/"
+  },
+  {
+   "id": "guarda-153",
+   "nome": "Guarda Civil de Indaiatuba",
+   "telefone": "153",
+   "descricao": "Urgências e emergências que envolvem a Guarda Civil Municipal.",
+   "categoria": "seguranca",
+   "emergencia": true,
+   "fonte": "https://www.indaiatuba.sp.gov.br/seguranca/guarda-civil/"
+  },
+  {
+   "id": "defesa-civil-199",
+   "nome": "Defesa Civil",
+   "telefone": "199",
+   "descricao": "Enchentes, deslizamentos, quedas de árvore e outros desastres.",
+   "categoria": "seguranca",
+   "emergencia": true,
+   "fonte": "https://www.defesacivil.sp.gov.br/"
+  },
+  {
+   "id": "policia-civil",
+   "nome": "Polícia Civil",
+   "telefone": "197",
+   "descricao": "Informações e denúncias à polícia judiciária. Boletim de ocorrência também pela Delegacia Eletrônica.",
+   "categoria": "seguranca",
+   "fonte": "https://www.policiacivil.sp.gov.br/"
+  },
+  {
+   "id": "cvv",
+   "nome": "CVV — Centro de Valorização da Vida",
+   "telefone": "188",
+   "descricao": "Apoio emocional e prevenção do suicídio, 24 horas, ligação gratuita.",
+   "categoria": "saude",
+   "fonte": "https://cvv.org.br/"
+  },
+  {
+   "id": "disque-saude",
+   "nome": "Disque Saúde",
+   "telefone": "136",
+   "descricao": "Informações sobre o SUS, doenças, vacinação e campanhas.",
+   "categoria": "saude",
+   "fonte": "https://www.gov.br/saude/pt-br/canais-de-atendimento"
+  },
+  {
+   "id": "ligue-180",
+   "nome": "Central de Atendimento à Mulher",
+   "telefone": "180",
+   "descricao": "Denúncias e orientação sobre violência contra a mulher.",
+   "categoria": "direitos",
+   "fonte": "https://www.gov.br/mulheres/pt-br/ligue180"
+  },
+  {
+   "id": "disque-100",
+   "nome": "Disque Direitos Humanos",
+   "telefone": "100",
+   "descricao": "Denúncias de violações de direitos humanos, inclusive contra crianças e idosos.",
+   "categoria": "direitos",
+   "fonte": "https://www.gov.br/mdh/pt-br/ondh"
+  },
+  {
+   "id": "disque-prefeitura",
+   "nome": "Disque Prefeitura",
+   "telefone": "(19) 3834-9000",
+   "descricao": "Central telefônica da Prefeitura de Indaiatuba.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "ouvidoria",
+   "nome": "Ouvidoria da Prefeitura",
+   "telefone": "0800 770 7702",
+   "descricao": "Reclamações, sugestões e elogios sobre os serviços municipais. Também pelo formulário Fale Conosco.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "whatsapp-prefeitura",
+   "nome": "WhatsApp da Prefeitura",
+   "telefone": "(19) 99821-3120",
+   "descricao": "Canal de WhatsApp divulgado no rodapé do portal oficial.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/fale-conosco/"
+  },
+  {
+   "id": "saae",
+   "nome": "SAAE — Água e esgoto",
+   "telefone": "0800 772 2195",
+   "descricao": "Serviço Autônomo de Água e Esgotos de Indaiatuba: ligação de água, vazamentos e conta.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.saae.sp.gov.br/"
+  },
+  {
+   "id": "guarda-adm",
+   "nome": "Guarda Civil — administração",
+   "telefone": "(19) 3825-3797",
+   "descricao": "Atendimento administrativo da Guarda Civil (para emergência, 153).",
+   "categoria": "seguranca",
+   "fonte": "https://www.indaiatuba.sp.gov.br/seguranca/guarda-civil/"
+  },
+  {
+   "id": "defesa-civil-adm",
+   "nome": "Defesa Civil de Indaiatuba",
+   "telefone": "(19) 3825-3780",
+   "descricao": "Atendimento da Defesa Civil municipal, de segunda a sexta, das 8h às 17h.",
+   "categoria": "seguranca",
+   "fonte": "https://www.indaiatuba.sp.gov.br/seguranca/defesa-civil/"
+  },
+  {
+   "id": "coi",
+   "nome": "COI — Centro de Operações e Inteligência",
+   "telefone": "(19) 3801-9710",
+   "descricao": "Central de monitoramento da Guarda Civil.",
+   "categoria": "seguranca",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "ddm",
+   "nome": "Delegacia da Mulher",
+   "telefone": "(19) 3875-1304",
+   "descricao": "Delegacia de Defesa da Mulher de Indaiatuba (número da lista oficial; confirme antes de ir).",
+   "categoria": "direitos",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "delegacia",
+   "nome": "Delegacia de Polícia",
+   "telefone": "(19) 3875-8198",
+   "descricao": "Delegacia de Polícia de Indaiatuba (número da lista oficial; confirme antes de ir).",
+   "categoria": "seguranca",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "bombeiros-adm",
+   "nome": "Corpo de Bombeiros — quartel",
+   "telefone": "(19) 3894-6054",
+   "descricao": "Número do quartel em Indaiatuba (para emergência, 193).",
+   "categoria": "seguranca",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "upa",
+   "nome": "UPA 24h Morada do Sol",
+   "telefone": "(19) 3935-2770",
+   "descricao": "Pronto atendimento municipal, 24 horas.",
+   "categoria": "saude",
+   "fonte": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/upa/"
+  },
+  {
+   "id": "central-ambulancias",
+   "nome": "Central de Ambulâncias",
+   "telefone": "(19) 3835-6977",
+   "descricao": "Transporte de pacientes (atendimento 24h). Em emergência, ligue 192.",
+   "categoria": "saude",
+   "fonte": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/central-de-ambulancias/"
+  },
+  {
+   "id": "secretaria-saude",
+   "nome": "Secretaria Municipal de Saúde",
+   "telefone": "(19) 3834-9289",
+   "descricao": "Informações gerais da saúde municipal.",
+   "categoria": "saude",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "secretaria-educacao",
+   "nome": "Secretaria Municipal de Educação",
+   "telefone": "(19) 3801-9191",
+   "descricao": "Matrículas, vagas em creche e escola municipal.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "assistencia-social",
+   "nome": "Secretaria Municipal de Assistência Social",
+   "telefone": "(19) 3834-9190",
+   "descricao": "Programas sociais e encaminhamento aos CRAS.",
+   "categoria": "direitos",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "conselho-tutelar-1",
+   "nome": "1º Conselho Tutelar",
+   "telefone": "(19) 3894-2542",
+   "descricao": "Proteção dos direitos de crianças e adolescentes.",
+   "categoria": "direitos",
+   "fonte": "https://www.indaiatuba.sp.gov.br/assistencia-social/conselhos/1-conselho-tutelar/"
+  },
+  {
+   "id": "conselho-tutelar-2",
+   "nome": "2º Conselho Tutelar",
+   "telefone": "(19) 3935-2735",
+   "descricao": "Proteção dos direitos de crianças e adolescentes (região do Jd. João Pioli).",
+   "categoria": "direitos",
+   "fonte": "https://www.indaiatuba.sp.gov.br/assistencia-social/conselhos/2-conselho-tutelar/"
+  },
+  {
+   "id": "procon",
+   "nome": "Procon Indaiatuba",
+   "telefone": "(19) 3816-9254",
+   "descricao": "Direitos do consumidor. Atende no Ponto Cidadão.",
+   "categoria": "direitos",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+  },
+  {
+   "id": "pat",
+   "nome": "PAT — Posto de Atendimento ao Trabalhador",
+   "telefone": "(19) 3816-9249",
+   "descricao": "Vagas de emprego, seguro-desemprego e carteira de trabalho. No Ponto Cidadão.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+  },
+  {
+   "id": "mobilidade",
+   "nome": "Secretaria de Mobilidade — Transporte coletivo",
+   "telefone": "(19) 3825-7938",
+   "descricao": "Gestão e fiscalização do transporte público municipal.",
+   "categoria": "mobilidade",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/transportes/transporte-coletivo/"
+  },
+  {
+   "id": "cartao-sou",
+   "nome": "Cartão SOU (guichê no Ponto Cidadão)",
+   "telefone": "(19) 3518-7808",
+   "descricao": "Emissão e recarga do cartão do ônibus, de segunda a sexta, das 9h às 17h. WhatsApp: (19) 97414-9323.",
+   "categoria": "mobilidade",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+  },
+  {
+   "id": "rodoviaria",
+   "nome": "Terminal Rodoviário",
+   "telefone": "(19) 3816-4680",
+   "descricao": "Informações sobre linhas intermunicipais.",
+   "categoria": "mobilidade",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/terminal-rodoviario/"
+  },
+  {
+   "id": "demutran",
+   "nome": "Departamento Municipal de Trânsito",
+   "telefone": "(19) 3934-4711",
+   "descricao": "Trânsito, sinalização e multas municipais.",
+   "categoria": "mobilidade",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  },
+  {
+   "id": "cartorio-eleitoral",
+   "nome": "Cartório Eleitoral",
+   "telefone": "(19) 3834-6378",
+   "descricao": "Título de eleitor e transferência de domicílio eleitoral.",
+   "categoria": "prefeitura",
+   "fonte": "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+  }
+ ]
+}

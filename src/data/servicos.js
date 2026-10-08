@@ -1,10 +1,13 @@
 /**
- * servicos.js — Fonte única de dados do Conecta Cidadão.
+ * servicos.js — Categorias do Conecta Cidadão e dados fixos do site.
  *
- * Todo o conteúdo do site (categorias, locais e equipe) mora neste arquivo.
- * Nenhum componente escreve informação "na mão": todos importam daqui. Assim,
- * para incluir um novo local basta adicionar um objeto em "locais" e colocar a
- * imagem em public/img/<categoria>/ — nada mais precisa ser alterado.
+ * Na v1, este arquivo guardava também os 24 locais (só nome e foto). Na v2 os
+ * locais vêm de fontes reais e ficam em public/api/locais.json, gerado por
+ * `npm run dados` (ver scripts/atualizar-dados.mjs). As páginas leem esse
+ * arquivo com fetch, pelo hook useDados.
+ *
+ * Aqui ficam só as informações que não mudam: o nome, a cor (via data-categoria
+ * no CSS), o ícone e o texto de cada categoria.
  *
  * Estrutura de uma categoria:
  *   slug   → identificador sem acento, usado na URL e no atributo data-categoria (cores do CSS)
@@ -12,7 +15,6 @@
  *   rota   → caminho registrado no App.jsx
  *   icone  → imagem da pasta public/ (caminho começa em "/" = raiz do site)
  *   resumo → frase curta mostrada no card da Home
- *   locais → lista de unidades daquela categoria
  */
 
 import { normalizar } from '../utils/texto.js';
@@ -23,80 +25,44 @@ export const categorias = [
     nome: 'Saúde',
     rota: '/saude',
     icone: '/img/interface/cuidados-de-saude.png',
-    resumo: 'Unidades básicas, hospital dia e pronto atendimento.',
-    locais: [
-      { nome: 'UBS Jd. Califórnia', imagem: '/img/saude/ubs-jd-california.jpg' },
-      { nome: 'UBS Jd. Morada do Sol', imagem: '/img/saude/ubs-jd-morada-do-sol.jpg' },
-      { nome: 'UBS Vila Todos os Santos', imagem: '/img/saude/ubs-vila-todos-os-santos.jpg' },
-      { nome: 'Hospital Dia', imagem: '/img/saude/hospital-dia.jpg' },
-      { nome: 'UBS Cecap', imagem: '/img/saude/ubs-cecap.jpg' },
-      { nome: 'HAOC', imagem: '/img/saude/haoc.jpg' },
-    ],
-  },
-  {
-    slug: 'seguranca',
-    nome: 'Segurança',
-    rota: '/seguranca',
-    icone: '/img/interface/social-security.png',
-    resumo: 'Delegacias, guarda municipal, polícia militar e bombeiros.',
-    locais: [
-      { nome: 'Guarda Municipal', imagem: '/img/seguranca/guarda-municipal.jpg' },
-      { nome: '1º Distrito Policial', imagem: '/img/seguranca/1-dp.jpg' },
-      { nome: 'Delegacia da Mulher', imagem: '/img/seguranca/dp-da-mulher.jpg' },
-      { nome: 'Base da PM', imagem: '/img/seguranca/base-da-pm.jpg' },
-      { nome: 'Delegacia de Polícia', imagem: '/img/seguranca/dp-do-municipio.jpg' },
-      { nome: 'Corpo de Bombeiros', imagem: '/img/seguranca/bombeiros.jpg' },
-    ],
+    resumo: 'UBS, UPA 24h, hospitais, CAPS e farmácias municipais.',
   },
   {
     slug: 'educacao',
     nome: 'Educação',
     rota: '/educacao',
     icone: '/img/interface/universidade.png',
-    resumo: 'Escolas municipais de educação básica (EMEBs).',
-    locais: [
-      { nome: 'EMEB Janette Vieira', imagem: '/img/educacao/janette-vieira.jpg' },
-      { nome: 'EMEB Maria Ignez', imagem: '/img/educacao/maria-ignez.jpg' },
-      { nome: 'EMEB Maria José Ambiel', imagem: '/img/educacao/maria-jose-ambiel.jpg' },
-      { nome: 'EMEB Maria José de Campos', imagem: '/img/educacao/maria-jose-de-campos.jpg' },
-      { nome: 'EMEB Osório Germano', imagem: '/img/educacao/osorio-germano.jpg' },
-      { nome: 'EMEB Yolanda Steffen', imagem: '/img/educacao/yolanda-steffen.jpg' },
-    ],
+    resumo: 'Escolas municipais (EMEBs) e creches, com endereço e telefone.',
+  },
+  {
+    slug: 'seguranca',
+    nome: 'Segurança',
+    rota: '/seguranca',
+    icone: '/img/interface/social-security.png',
+    resumo: 'Guarda Civil, Defesa Civil, Bombeiros e telefones de emergência.',
   },
   {
     slug: 'lazer',
-    nome: 'Lazer',
+    nome: 'Lazer e cultura',
     rota: '/lazer',
     icone: '/img/interface/bicicleta.png',
-    resumo: 'Parques, museus e espaços de convivência da cidade.',
-    locais: [
-      { nome: 'Parque Ecológico', imagem: '/img/lazer/parque-eco.jpg' },
-      { nome: 'Parque Mirim', imagem: '/img/lazer/parque-do-mirim.jpg' },
-      { nome: 'Parque da Criança', imagem: '/img/lazer/parque-da-crianca.jpg' },
-      { nome: 'Parque Pet', imagem: '/img/lazer/parque-pet.jpg' },
-      { nome: 'Museu da Água', imagem: '/img/lazer/museu-da-agua.jpg' },
-      { nome: 'Casarão Pau Preto', imagem: '/img/lazer/museu-casarao.jpg' },
-    ],
+    resumo: 'Parques, museus, centros culturais e espaços de esporte.',
+  },
+  {
+    slug: 'cidadania',
+    nome: 'Cidadania',
+    rota: '/cidadania',
+    icone: '/img/interface/cidadania.svg',
+    resumo: 'Prefeitura, Ponto Cidadão, Poupatempo, CRAS e Conselho Tutelar.',
+  },
+  {
+    slug: 'mobilidade',
+    nome: 'Ônibus e bike',
+    rota: '/mobilidade',
+    icone: '/img/interface/onibus.svg',
+    resumo: 'Terminais, cartão SOU, previsão oficial dos ônibus, Ecobike e ciclovias.',
   },
 ];
-
-/**
- * Lista única com todos os locais, já com a categoria embutida.
- *
- * flatMap = map + achatamento: percorre as 4 categorias, gera uma lista de locais
- * para cada uma e junta tudo em um array só (24 itens, sem listas aninhadas).
- * O operador spread (...local) copia nome e imagem do local original e as demais
- * linhas acrescentam de qual categoria ele veio — informação que a busca precisa
- * para exibir o rótulo e saber para onde navegar.
- */
-export const todosOsLocais = categorias.flatMap((categoria) =>
-  categoria.locais.map((local) => ({
-    ...local,
-    categoriaSlug: categoria.slug,
-    categoriaNome: categoria.nome,
-    rota: categoria.rota,
-  }))
-);
 
 /**
  * Procura uma categoria pelo slug.
@@ -112,22 +78,6 @@ export function buscarCategoria(slug) {
  * disponível no mesmo lugar de antes (import { normalizar } from './servicos.js').
  */
 export { normalizar };
-
-/**
- * Filtra os locais pelo termo digitado, comparando com o nome do local
- * e também com o nome da categoria (digitar "lazer" lista todos os parques).
- * @param {string} termo - texto digitado no campo de busca.
- * @returns {Array} locais encontrados; array vazio se o termo estiver em branco.
- */
-export function filtrarLocais(termo) {
-  const alvo = normalizar(termo);
-  // Busca vazia não deve devolver os 24 locais de uma vez.
-  if (!alvo) return [];
-  return todosOsLocais.filter(
-    (local) =>
-      normalizar(local.nome).includes(alvo) || normalizar(local.categoriaNome).includes(alvo)
-  );
-}
 
 /** Integrantes do grupo, exibidos na página Sobre (iniciais usadas no avatar). */
 export const equipe = [

@@ -1,10 +1,13 @@
 /**
  * AppContext.jsx — Estado global da aplicação (Context API do React).
  *
- * Guarda duas informações que precisam ser acessadas por componentes distantes
+ * Guarda informações que precisam ser acessadas por componentes distantes
  * uns dos outros na árvore:
  *   • buscaAberta → se o overlay de busca está visível;
- *   • aviso       → a mensagem temporária ("toast") exibida no rodapé da tela.
+ *   • aviso       → a mensagem temporária ("toast") exibida no rodapé da tela;
+ *   • origem      → onde a pessoa está (GPS ou CEP), usada em "Perto de mim",
+ *                   na ordenação por distância e no "Como chegar". Fica só na
+ *                   memória da aba: a localização não é salva nem enviada.
  *
  * Sem o Context seria necessário repassar essas informações de componente em
  * componente por props (o chamado "prop drilling").
@@ -36,6 +39,8 @@ export function AppProvider({ children }) {
   // useRef guarda o id do setTimeout entre renderizações SEM causar nova
   // renderização quando muda (diferente do useState).
   const tempoRef = useRef(null);
+  // Ponto de partida { lat, lng, rotulo, aproximada } ou null.
+  const [origem, setOrigem] = useState(null);
 
   // useCallback evita recriar a função a cada renderização, o que manteria
   // o objeto "valor" (mais abaixo) sempre diferente e re-renderizaria tudo.
@@ -77,8 +82,8 @@ export function AppProvider({ children }) {
 
   // useMemo monta o objeto do contexto só quando algum valor realmente muda.
   const valor = useMemo(
-    () => ({ buscaAberta, abrirBusca, fecharBusca, aviso, mostrarAviso }),
-    [buscaAberta, abrirBusca, fecharBusca, aviso, mostrarAviso]
+    () => ({ buscaAberta, abrirBusca, fecharBusca, aviso, mostrarAviso, origem, setOrigem }),
+    [buscaAberta, abrirBusca, fecharBusca, aviso, mostrarAviso, origem]
   );
 
   return <AppContext.Provider value={valor}>{children}</AppContext.Provider>;
@@ -108,4 +113,10 @@ export function useBusca() {
 export function useAviso() {
   const { aviso, mostrarAviso } = useContextoApp();
   return { aviso, mostrarAviso };
+}
+
+/** Hook público para o ponto de partida (Perto de mim, Como chegar, distâncias). */
+export function useOrigem() {
+  const { origem, setOrigem } = useContextoApp();
+  return { origem, setOrigem };
 }

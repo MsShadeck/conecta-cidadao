@@ -5,17 +5,34 @@
  *  1. Ligar o roteador (BrowserRouter), que troca a página sem recarregar o navegador;
  *  2. Disponibilizar o estado global (AppProvider) para todos os componentes;
  *  3. Declarar o mapa de rotas: qual URL desenha qual página.
+ *
+ * Code-splitting: as páginas são carregadas com React.lazy. Cada uma vira um
+ * arquivo JavaScript separado, baixado só quando a pessoa abre aquela rota.
+ * Assim a primeira visita (a Home) fica bem mais leve.
  */
 
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppProvider } from './context/AppContext.jsx';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
-import Categoria from './pages/Categoria.jsx';
-import Sobre from './pages/Sobre.jsx';
-import Contatos from './pages/Contatos.jsx';
-import Lembretes from './pages/Lembretes.jsx';
-import NaoEncontrada from './pages/NaoEncontrada.jsx';
+
+// lazy(() => import(...)): o import só acontece na primeira vez que a rota abre.
+const Categoria = lazy(() => import('./pages/Categoria.jsx'));
+const Local = lazy(() => import('./pages/Local.jsx'));
+const Sobre = lazy(() => import('./pages/Sobre.jsx'));
+const Contatos = lazy(() => import('./pages/Contatos.jsx'));
+const Lembretes = lazy(() => import('./pages/Lembretes.jsx'));
+const NaoEncontrada = lazy(() => import('./pages/NaoEncontrada.jsx'));
+
+/** Mensagem exibida enquanto o arquivo da página chega. */
+function CarregandoPagina() {
+  return (
+    <p className="container estado-dados" role="status">
+      Carregando...
+    </p>
+  );
+}
 
 export default function App() {
   return (
@@ -26,33 +43,40 @@ export default function App() {
       {/* AppProvider fica dentro do roteador porque o overlay de busca,
           que vive nesse contexto, precisa navegar entre as rotas. */}
       <AppProvider>
-        <Routes>
-          {/* Rota "pai" sem path: serve apenas para aplicar o Layout
-              (cabeçalho, rodapé, busca e aviso) em todas as páginas filhas.
-              Cada filha é desenhada no <Outlet /> que existe dentro do Layout. */}
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
+        <Suspense fallback={<CarregandoPagina />}>
+          <Routes>
+            {/* Rota "pai" sem path: serve apenas para aplicar o Layout
+                (cabeçalho, rodapé, busca e aviso) em todas as páginas filhas.
+                Cada filha é desenhada no <Outlet /> que existe dentro do Layout. */}
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
 
-            {/* As quatro categorias reaproveitam o MESMO componente Categoria.
-                O que muda é a prop "slug", usada para buscar os dados certos
-                no arquivo src/data/servicos.js. */}
-            <Route path="/saude" element={<Categoria slug="saude" />} />
-            <Route path="/seguranca" element={<Categoria slug="seguranca" />} />
-            <Route path="/educacao" element={<Categoria slug="educacao" />} />
-            <Route path="/lazer" element={<Categoria slug="lazer" />} />
+              {/* As categorias reaproveitam o MESMO componente Categoria.
+                  O que muda é a prop "slug", usada para filtrar os locais. */}
+              <Route path="/saude" element={<Categoria slug="saude" />} />
+              <Route path="/educacao" element={<Categoria slug="educacao" />} />
+              <Route path="/seguranca" element={<Categoria slug="seguranca" />} />
+              <Route path="/lazer" element={<Categoria slug="lazer" />} />
+              <Route path="/cidadania" element={<Categoria slug="cidadania" />} />
 
-            <Route path="/sobre" element={<Sobre />} />
+              <Route path="/sobre" element={<Sobre />} />
 
-            {/* Páginas da aula "useEffect + Consumo de API":
-                /contatos usa fetch (Exemplos 2 a 5) e /lembretes é o Exemplo 6. */}
-            <Route path="/contatos" element={<Contatos />} />
-            <Route path="/lembretes" element={<Lembretes />} />
+              {/* Páginas da aula "useEffect + Consumo de API":
+                  /contatos usa fetch (Exemplos 2 a 5) e /lembretes é o Exemplo 6. */}
+              <Route path="/contatos" element={<Contatos />} />
+              <Route path="/lembretes" element={<Lembretes />} />
 
-            {/* path="*" = curinga. Qualquer endereço não listado acima cai aqui
-                (página 404). Precisa ser sempre a última rota. */}
-            <Route path="*" element={<NaoEncontrada />} />
-          </Route>
-        </Routes>
+              {/* Detalhe de um local: /saude/ubs-jd-california.
+                  Os dois pedaços da URL chegam pelo useParams() na página.
+                  As rotas fixas acima têm prioridade sobre esta. */}
+              <Route path="/:categoria/:id" element={<Local />} />
+
+              {/* path="*" = curinga. Qualquer endereço não listado acima cai aqui
+                  (página 404). Precisa ser sempre a última rota. */}
+              <Route path="*" element={<NaoEncontrada />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </AppProvider>
     </BrowserRouter>
   );

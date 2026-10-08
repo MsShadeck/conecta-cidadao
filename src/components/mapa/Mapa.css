@@ -1,0 +1,65 @@
+/* ============================================================
+   Mapa.css — Mapa Leaflet (Mapa.jsx)
+============================================================ */
+
+/* Alfinete: gota colorida feita com border-radius e rotação de 45°.
+   A cor vem de --cat-tinta, definida pelo data-categoria (global.css). */
+.mapa-alfinete {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--cat-tinta, var(--azul-marca));
+  border: 3px solid var(--branco);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.mapa-alfinete--destaque {
+  width: 30px;
+  height: 30px;
+  outline: 3px solid var(--azul-acento);
+}
+
+/* Foco do teclado no alfinete (o Leaflet deixa os marcadores focáveis). */
+.leaflet-marker-icon:focus-visible {
+  outline: 3px solid var(--azul-acento);
+  outline-offset: 2px;
+}
+
+.mapa-balao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 13px;
+  min-width: 160px;
+}
+
+.mapa-balao span {
+  color: var(--tinta-media);
+}
+
+.mapa-balao a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Grupos de marcadores (leaflet.markercluster) nas cores da marca. */
+.marker-cluster {
+  background: rgba(26, 111, 175, 0.25);
+  border-radius: 50%;
+}
+
+.marker-cluster div {
+  width: 32px;
+  height: 32px;
+  margin: 4px;
+  border-radius: 50%;
+  background: var(--azul-marca);
+  color: var(--branco);
+  font-weight: 600;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+}

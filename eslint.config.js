@@ -13,7 +13,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   // Pastas geradas pela build ou por ferramentas: não precisam ser analisadas.
-  { ignores: ['dist', 'node_modules', 'dev-dist'] },
+  { ignores: ['dist', 'node_modules', 'dev-dist', 'api/_integra'] },
 
   // Código do site (roda no navegador).
   {

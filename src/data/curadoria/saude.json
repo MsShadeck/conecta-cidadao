@@ -1,0 +1,66 @@
+{
+  "_comentario": "Curadoria manual da categoria Saúde. Tem prioridade sobre as fontes automáticas. 'ajustes' altera um local vindo da ficha oficial (chave: 'origem' = URL da ficha). 'extras' acrescenta locais que não têm ficha na Prefeitura. 'pendentes' são locais do projeto original que NÃO foram encontrados em fonte verificável: não são publicados até alguém confirmar.",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-x/",
+      "id": "ubs-jd-california",
+      "nome": "UBS X – Jardim Califórnia",
+      "imagem": "/img/saude/ubs-jd-california.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-iv/",
+      "id": "ubs-jd-morada-do-sol",
+      "nome": "UBS IV – Morada do Sol",
+      "imagem": "/img/saude/ubs-jd-morada-do-sol.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-basica/ubs-ii-cecap/",
+      "id": "ubs-cecap",
+      "nome": "UBS II – Cecap",
+      "imagem": "/img/saude/ubs-cecap.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/hospital-dia/",
+      "id": "hospital-dia",
+      "nome": "Hospital Dia e Ambulatório de Especialidades Dr. Renato Riggio Jr.",
+      "imagem": "/img/saude/hospital-dia.jpg",
+      "observacao": "Não atende urgência e emergência. Para isso, procure a UPA ou o Pronto-Socorro do HAOC (informação da própria ficha da Prefeitura)."
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/upa/",
+      "nome": "UPA 24h Dr. Paulo Kóide – Morada do Sol"
+    }
+  ],
+  "extras": [
+    {
+      "id": "haoc",
+      "nome": "Hospital Augusto de Oliveira Camargo (HAOC)",
+      "tipo": "Hospital",
+      "cnes": "2784602",
+      "imagem": "/img/saude/haoc.jpg",
+      "observacao": "Hospital filantrópico que atende pelo SUS. É onde fica o Pronto-Socorro indicado pela Prefeitura para urgências, junto com a UPA.",
+      "horarioTexto": "Atendimento contínuo 24 horas (CNES)",
+      "vinteQuatroHoras": true,
+      "palavrasChave": [
+        "pronto socorro",
+        "hospital",
+        "internação",
+        "urgência",
+        "emergência",
+        "maternidade"
+      ],
+      "fonte": [
+        "https://apidadosabertos.saude.gov.br/cnes/estabelecimentos/2784602",
+        "https://www.indaiatuba.sp.gov.br/saude/atencao-especializada/hospital-dia/"
+      ]
+    }
+  ],
+  "pendentes": [
+    {
+      "id": "ubs-vila-todos-os-santos",
+      "nome": "UBS Vila Todos os Santos",
+      "imagem": "/img/saude/ubs-vila-todos-os-santos.jpg",
+      "motivo": "Não existe unidade com esse nome no CNES nem na lista oficial de UBS da Prefeitura (consulta de 08/10/2026). A foto pode ser de outra UBS: confirmar qual é antes de publicar."
+    }
+  ]
+}

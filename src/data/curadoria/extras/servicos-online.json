@@ -1,0 +1,159 @@
+{
+  "_comentario": "Serviços online oficiais. Todos os links foram abertos e conferidos em 08/10/2026 (o portal da Prefeitura responde 200 até para página inexistente, então a conferência foi pelo título da página).",
+  "servicos": [
+    {
+      "id": "minha-indaiatuba",
+      "nome": "Minha Indaiatuba",
+      "descricao": "Portal de serviços online da Prefeitura: certidões, solicitações e consultas.",
+      "categoria": "prefeitura",
+      "url": "https://minha.indaiatuba.sp.gov.br/",
+      "palavrasChave": ["certidão", "protocolo", "solicitação", "segunda via"]
+    },
+    {
+      "id": "carta-de-servicos",
+      "nome": "Carta de Serviços ao Usuário",
+      "descricao": "Lista oficial de todos os serviços da Prefeitura, com requisitos e prazos.",
+      "categoria": "prefeitura",
+      "url": "https://www.indaiatuba.sp.gov.br/servicos/",
+      "palavrasChave": ["serviços", "como fazer", "documentos"]
+    },
+    {
+      "id": "iptu",
+      "nome": "IPTU e tributos",
+      "descricao": "Lançamento do IPTU, segunda via e informações sobre tributos municipais.",
+      "categoria": "impostos",
+      "url": "https://www.indaiatuba.sp.gov.br/tributos/",
+      "palavrasChave": ["iptu", "imposto", "boleto", "segunda via", "carnê"]
+    },
+    {
+      "id": "minha-vacina",
+      "nome": "Minha Vacina",
+      "descricao": "Consulta e informações de vacinação da Secretaria de Saúde.",
+      "categoria": "saude",
+      "url": "https://www.indaiatuba.sp.gov.br/saude/minha-vacina/",
+      "palavrasChave": ["vacina", "carteira de vacinação", "campanha"]
+    },
+    {
+      "id": "cartao-sus",
+      "nome": "Cartão Nacional de Saúde (Cartão SUS)",
+      "descricao": "Como tirar o Cartão SUS em Indaiatuba. As UBS também emitem o cartão.",
+      "categoria": "saude",
+      "url": "https://www.indaiatuba.sp.gov.br/saude/cartao-nacional-de-saude/",
+      "palavrasChave": ["cartão sus", "cns", "cadastro"]
+    },
+    {
+      "id": "resultados-exames",
+      "nome": "Resultado de exames",
+      "descricao": "Consulta de resultados de exames da rede municipal.",
+      "categoria": "saude",
+      "url": "https://www.indaiatuba.sp.gov.br/saude/resultados-exames/",
+      "palavrasChave": ["exame", "resultado", "laboratório"]
+    },
+    {
+      "id": "ouvidoria",
+      "nome": "Ouvidoria / Fale conosco",
+      "descricao": "Reclamações, sugestões e elogios. Telefone 0800 770 7702.",
+      "categoria": "prefeitura",
+      "url": "https://www.indaiatuba.sp.gov.br/fale-conosco/",
+      "palavrasChave": ["reclamação", "denúncia", "sugestão", "ouvidoria"]
+    },
+    {
+      "id": "iluminacao",
+      "nome": "Iluminação pública",
+      "descricao": "Pedido de conserto de lâmpada apagada ou poste com defeito (Geolux).",
+      "categoria": "cidade",
+      "url": "http://atendimento.geolux.com.br/indaiatuba/",
+      "palavrasChave": ["lâmpada", "poste", "luz apagada", "iluminação"]
+    },
+    {
+      "id": "autuacoes",
+      "nome": "Pesquisa de autuação de trânsito",
+      "descricao": "Consulta de multas de trânsito aplicadas pelo município.",
+      "categoria": "transito",
+      "url": "https://indaiatuba.consultacidadao.com.br/",
+      "palavrasChave": ["multa", "autuação", "trânsito", "infração"]
+    },
+    {
+      "id": "horarios-onibus",
+      "nome": "Horários de ônibus e previsão de chegada",
+      "descricao": "Página oficial com o acesso à previsão de chegadas das linhas municipais e aos horários do Terminal Rodoviário.",
+      "categoria": "transito",
+      "url": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/horarios-de-onibus/",
+      "palavrasChave": ["ônibus", "horário", "linha", "previsão", "circular"]
+    },
+    {
+      "id": "imprensa-oficial",
+      "nome": "Imprensa Oficial",
+      "descricao": "Edições do diário oficial do município: leis, decretos e editais.",
+      "categoria": "transparencia",
+      "url": "https://www.indaiatuba.sp.gov.br/comunicacao/imprensa-oficial/edicoes/",
+      "palavrasChave": ["diário oficial", "decreto", "edital", "concurso"]
+    },
+    {
+      "id": "transparencia",
+      "nome": "Portal da Transparência",
+      "descricao": "Receitas, despesas, contratos e servidores da Prefeitura.",
+      "categoria": "transparencia",
+      "url": "https://www.indaiatuba.sp.gov.br/transparencia/",
+      "palavrasChave": ["transparência", "gastos", "salários", "contratos"]
+    },
+    {
+      "id": "adocao-animais",
+      "nome": "Adoção de animais",
+      "descricao": "Cães e gatos disponíveis para adoção no Departamento de Reabilitação Animal.",
+      "categoria": "cidade",
+      "url": "https://www.indaiatuba.sp.gov.br/urbanismo/reabilitacao-animal/adocao-de-animais/",
+      "palavrasChave": ["adotar", "cachorro", "gato", "pet"]
+    },
+    {
+      "id": "defesa-civil",
+      "nome": "Defesa Civil",
+      "descricao": "Orientações e alertas de chuva, enchente e outros riscos. Emergência: 199.",
+      "categoria": "cidade",
+      "url": "https://www.indaiatuba.sp.gov.br/seguranca/defesa-civil/",
+      "palavrasChave": ["chuva", "enchente", "alerta", "alagamento"]
+    },
+    {
+      "id": "agenda-cultural",
+      "nome": "Agenda cultural",
+      "descricao": "Programação de shows, teatro e eventos da Secretaria de Cultura.",
+      "categoria": "cidade",
+      "url": "https://cultura.indaiatuba.sp.gov.br/agenda",
+      "palavrasChave": ["eventos", "show", "teatro", "agenda"]
+    },
+    {
+      "id": "delegacia-eletronica",
+      "nome": "Delegacia Eletrônica (Polícia Civil SP)",
+      "descricao": "Registro de boletim de ocorrência pela internet para vários tipos de ocorrência.",
+      "categoria": "seguranca",
+      "url": "https://www.delegaciaeletronica.policiacivil.sp.gov.br/",
+      "palavrasChave": ["boletim de ocorrência", "bo", "furto", "perda de documento"]
+    },
+    {
+      "id": "poupatempo",
+      "nome": "Poupatempo (Governo de SP)",
+      "descricao": "Agendamento e serviços digitais: RG, CNH, carteira de trabalho e outros.",
+      "categoria": "documentos",
+      "url": "https://www.poupatempo.sp.gov.br/",
+      "palavrasChave": ["rg", "cnh", "agendamento", "documento"]
+    },
+    {
+      "id": "mapa-turistico",
+      "nome": "Mapa turístico (PDF)",
+      "descricao": "Mapa oficial com os pontos turísticos da cidade.",
+      "categoria": "cidade",
+      "url": "https://www.indaiatuba.sp.gov.br/download/64072/",
+      "palavrasChave": ["mapa", "turismo", "passeio"]
+    }
+  ],
+  "categorias": [
+    { "slug": "prefeitura", "nome": "Prefeitura" },
+    { "slug": "saude", "nome": "Saúde" },
+    { "slug": "impostos", "nome": "Impostos" },
+    { "slug": "documentos", "nome": "Documentos" },
+    { "slug": "transito", "nome": "Ônibus e trânsito" },
+    { "slug": "cidade", "nome": "Cidade" },
+    { "slug": "seguranca", "nome": "Segurança" },
+    { "slug": "transparencia", "nome": "Transparência" }
+  ]
+}

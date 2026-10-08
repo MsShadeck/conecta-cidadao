@@ -1,37 +1,53 @@
 /**
  * CardLocal.jsx — Card de uma unidade (UBS, escola, parque...).
  *
- * Usado na grade das páginas de categoria. Como o projeto ainda não tem página
- * de detalhe, o clique apenas dispara um aviso na tela.
+ * Na v1 o clique só mostrava um aviso ("Abrindo: X"). Agora o card inteiro é
+ * um link para a página de detalhe do local (/saude/ubs-jd-california).
  *
- * @param {{local: object, categoriaSlug: string}} props
- *   local         - { nome, imagem } vindo de src/data/servicos.js
- *   categoriaSlug - usado no data-categoria para colorir a borda do card
+ * @param {{local: object, distancia?: number}} props
+ *   local     - um item de /api/locais.json
+ *   distancia - em metros; aparece quando a pessoa informou de onde sai
  */
 
-import { useAviso } from '../context/AppContext.jsx';
+import { Link } from 'react-router-dom';
 import Foto from './Foto.jsx';
+import SeloAberto from './SeloAberto.jsx';
+import { buscarCategoria } from '../data/servicos.js';
+import { formatarDistancia } from '../utils/geo.js';
 import './CardLocal.css';
 
-export default function CardLocal({ local, categoriaSlug }) {
-  const { mostrarAviso } = useAviso();
-
+export default function CardLocal({ local, distancia }) {
+  const categoria = buscarCategoria(local.categoria);
   return (
-    // É <button> e não <div> porque o elemento é clicável: assim já vem com
-    // foco por teclado, ativação pelo Enter/Espaço e semântica correta.
-    <button
-      type="button"
+    // data-categoria: a borda e o selo do tipo herdam a cor do serviço.
+    <Link
+      to={`/${local.categoria}/${local.id}`}
       className="card-local"
-      data-categoria={categoriaSlug}
-      // Template string (crases) monta o texto com o nome do local dentro.
-      onClick={() => mostrarAviso(`Abrindo: ${local.nome}`)}
+      data-categoria={local.categoria}
     >
       <span className="card-local-moldura">
-        {/* Aqui o alt é preenchido: a foto identifica o local. O componente Foto
-            entrega WebP no tamanho certo e reserva o espaço (width/height). */}
-        <Foto className="card-local-imagem" src={local.imagem} alt={local.nome} />
+        {local.imagem ? (
+          // alt="" porque o nome do local já está escrito logo abaixo da foto.
+          <Foto className="card-local-imagem" src={local.imagem} alt="" />
+        ) : (
+          // Sem foto: o ícone da categoria num fundo colorido (decorativo).
+          <span className="card-local-imagem card-local-sem-foto" aria-hidden="true">
+            <img src={categoria?.icone} alt="" width="56" height="56" />
+          </span>
+        )}
       </span>
-      <span className="card-local-nome">{local.nome}</span>
-    </button>
+      <span className="card-local-corpo">
+        <span className="card-local-nome">{local.nome}</span>
+        <span className="card-local-detalhe">
+          {[local.tipo, local.endereco?.bairro].filter(Boolean).join(' · ')}
+        </span>
+        <span className="card-local-rodape">
+          <SeloAberto horarios={local.horarios} />
+          {distancia !== undefined && (
+            <span className="card-local-distancia">{formatarDistancia(distancia)}</span>
+          )}
+        </span>
+      </span>
+    </Link>
   );
 }

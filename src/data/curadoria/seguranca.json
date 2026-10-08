@@ -1,0 +1,70 @@
+{
+  "_comentario": "Curadoria manual da categoria Segurança. As delegacias da Polícia Civil e a base da PM são estaduais e não aparecem com endereço no portal da Prefeitura nem no OpenStreetMap; os TELEFONES delas estão na página Telefones úteis (contatos.json).",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/seguranca/guarda-civil/",
+      "id": "guarda-municipal",
+      "nome": "Guarda Civil de Indaiatuba (sede)",
+      "imagem": "/img/seguranca/guarda-municipal.jpg",
+      "observacao": "Urgências devem ser comunicadas pelo telefone 153 (informação da ficha oficial). O telefone abaixo é o da administração."
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/seguranca/defesa-civil/",
+      "nome": "Defesa Civil de Indaiatuba"
+    }
+  ],
+  "extras": [
+    {
+      "id": "corpo-de-bombeiros",
+      "nome": "Corpo de Bombeiros",
+      "tipo": "Bombeiros",
+      "osm": "Corpo de Bombeiros",
+      "imagem": "/img/seguranca/bombeiros.jpg",
+      "telefones": ["(19) 3894-6054"],
+      "observacao": "Em emergência, ligue 193. O número acima é o da lista de telefones úteis da Prefeitura.",
+      "palavrasChave": ["incêndio", "resgate", "193", "bombeiro"],
+      "fonte": [
+        "https://www.openstreetmap.org/",
+        "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+      ]
+    },
+    {
+      "id": "coi",
+      "nome": "COI – Centro de Operações e Inteligência",
+      "tipo": "Monitoramento",
+      "osm": "Centro de Operações e Inteligência",
+      "telefones": ["(19) 3801-9710"],
+      "palavrasChave": ["câmeras", "monitoramento", "guarda"],
+      "fonte": [
+        "https://www.openstreetmap.org/",
+        "https://www.indaiatuba.sp.gov.br/telefones-uteis/"
+      ]
+    }
+  ],
+  "pendentes": [
+    {
+      "id": "1-distrito-policial",
+      "nome": "1º Distrito Policial",
+      "imagem": "/img/seguranca/1-dp.jpg",
+      "motivo": "Endereço não encontrado em fonte oficial (Prefeitura, OSM). Conferir no site da Polícia Civil de SP."
+    },
+    {
+      "id": "delegacia-da-mulher",
+      "nome": "Delegacia da Mulher",
+      "imagem": "/img/seguranca/dp-da-mulher.jpg",
+      "motivo": "Só o telefone (19) 3875-1304 está na lista oficial; o endereço não. Conferir no site da Polícia Civil de SP."
+    },
+    {
+      "id": "base-da-pm",
+      "nome": "Base da PM",
+      "imagem": "/img/seguranca/base-da-pm.jpg",
+      "motivo": "Endereço e unidade não encontrados em fonte oficial. Conferir com a Polícia Militar."
+    },
+    {
+      "id": "delegacia-de-policia",
+      "nome": "Delegacia de Polícia",
+      "imagem": "/img/seguranca/dp-do-municipio.jpg",
+      "motivo": "Só o telefone (19) 3875-8198 está na lista oficial; o endereço não. Conferir no site da Polícia Civil de SP."
+    }
+  ]
+}

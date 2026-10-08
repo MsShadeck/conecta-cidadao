@@ -1,0 +1,38 @@
+{
+  "_comentario": "Curadoria manual da categoria Educação. As fichas de pré-escola e de ensino fundamental da mesma escola são unidas pelo script (mesmo endereço). Aqui só associamos as fotos e os identificadores antigos.",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/janette-vieira-vaqueiro/",
+      "id": "emeb-janette-vieira",
+      "imagem": "/img/educacao/janette-vieira.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-ignez-pinezzi/",
+      "id": "emeb-maria-ignez",
+      "imagem": "/img/educacao/maria-ignez.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/maria-jose-ambiel-marachini/",
+      "id": "emeb-maria-jose-ambiel",
+      "imagem": "/img/educacao/maria-jose-ambiel.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/maria-jose-de-campos/",
+      "id": "emeb-maria-jose-de-campos",
+      "imagem": "/img/educacao/maria-jose-de-campos.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/osorio-germando-e-silva-filho/",
+      "id": "emeb-osorio-germano",
+      "nome": "EMEB Prof. Osório Germano e Silva Filho",
+      "imagem": "/img/educacao/osorio-germano.jpg"
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/ensino-fundamental/ensino-regular/yolanda-steffen/",
+      "id": "emeb-yolanda-steffen",
+      "imagem": "/img/educacao/yolanda-steffen.jpg"
+    }
+  ],
+  "extras": [],
+  "pendentes": []
+}

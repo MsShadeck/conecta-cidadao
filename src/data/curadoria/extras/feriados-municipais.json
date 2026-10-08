@@ -1,0 +1,12 @@
+{
+  "_comentario": "Feriados de Indaiatuba segundo o edital do Conselho Superior da Magistratura (TJ-SP) com os feriados municipais de 2026: \"INDAIATUBA – 02/02, Sexta-Feira Santa e Corpus Christi\". Sexta-Feira Santa e Corpus Christi já vêm da BrasilAPI (datas móveis). Carnaval é ponto facultativo, não feriado.",
+  "feriados": [
+    {
+      "dataFixa": "02-02",
+      "nome": "Nossa Senhora da Candelária (padroeira de Indaiatuba)",
+      "fonte": "https://cnbsp.org.br/2025/11/25/dje-csm-divulga-edital-sobre-aprovacao-de-feriados-municipais-para-2026/"
+    }
+  ],
+  "municipaisMoveis": ["Corpus Christi"],
+  "pontosFacultativos": ["Carnaval"]
+}

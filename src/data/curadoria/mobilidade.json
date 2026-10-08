@@ -1,0 +1,47 @@
+{
+  "_comentario": "Curadoria manual da categoria Mobilidade. NÃO há dados abertos de linhas, paradas e horários de ônibus de Indaiatuba (sem GTFS público e sem itinerários no OpenStreetMap). A previsão de chegadas e os horários oficiais ficam no sistema da operadora, linkado pela Prefeitura; este site leva a pessoa até lá.",
+  "ajustes": [
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/terminal-rodoviario/",
+      "id": "terminal-rodoviario",
+      "nome": "Terminal Rodoviário Vereador Maurílio Gonçalves Pinto",
+      "observacao": "Linhas intermunicipais e rodoviárias. Destinos e horários na página oficial da Prefeitura."
+    },
+    {
+      "origem": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/transportes/transporte-coletivo/",
+      "id": "secretaria-de-mobilidade",
+      "nome": "Secretaria de Mobilidade Urbana – Transporte Coletivo",
+      "tipo": "Atendimento"
+    }
+  ],
+  "extras": [
+    {
+      "id": "terminal-central",
+      "nome": "Terminal Central Prefeito Alberto Brizzola",
+      "tipo": "Terminal de ônibus",
+      "endereco": "Rua Vinte e Quatro de Maio, 1670 - Centro",
+      "osm": "Terminal Central Prefeito Alberto Brizzola - Ponto Cidadão",
+      "telefones": ["(19) 3518-7808", "(19) 97414-9323"],
+      "horarioTexto": "Guichê do cartão SOU: de segunda a sexta-feira, das 9h às 17h",
+      "servicos": [
+        "Guichê da SOU Indaiatuba: emissão (1ª via gratuita) e recarga do cartão SOU",
+        "Para fazer o cartão: RG, CPF e comprovante de endereço"
+      ],
+      "observacao": "Terminal de ônibus municipal no mesmo prédio do Ponto Cidadão. Os telefones são do guichê da SOU Indaiatuba (o segundo é WhatsApp).",
+      "palavrasChave": ["ônibus", "terminal", "cartão sou", "passe", "recarga"],
+      "fonte": [
+        "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/",
+        "https://www.openstreetmap.org/"
+      ]
+    },
+    {
+      "id": "terminal-joao-pioli",
+      "nome": "Terminal Jardim João Pioli",
+      "tipo": "Terminal de ônibus",
+      "osm": "Terminal Jardim João Pioli",
+      "palavrasChave": ["ônibus", "terminal"],
+      "fonte": ["https://www.openstreetmap.org/"]
+    }
+  ],
+  "pendentes": []
+}

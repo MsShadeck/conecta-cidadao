@@ -5,7 +5,8 @@
 .card-local {
   display: flex;
   flex-direction: column;
-  text-align: left; /* <button> vem centralizado por padrão */
+  height: 100%;
+  color: inherit;
   background: var(--branco);
   border-radius: var(--raio-card);
   overflow: hidden; /* recorta a foto nos cantos arredondados */
@@ -33,7 +34,9 @@
 }
 
 .card-local-imagem {
+  display: block;
   width: 100%;
+  height: auto;
   /* aspect-ratio reserva o espaço antes do download, evitando que o layout
      "pule"; object-fit: cover preenche a moldura sem distorcer a foto. */
   aspect-ratio: 4 / 3;
@@ -47,12 +50,53 @@
   transform: scale(1.05);
 }
 
-.card-local-nome {
-  font-size: 13.5px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--tinta);
-  padding: 13px 15px 15px;
+/* Sem foto: o ícone da categoria centralizado no fundo da categoria. */
+.card-local-sem-foto {
+  display: grid;
+  place-items: center;
+  background: var(--cat-fundo, var(--azul-nevoa));
+}
+
+.card-local-sem-foto img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.card-local-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  padding: 12px 15px 14px;
   /* Filete superior na cor da categoria — o detalhe que liga o card ao serviço. */
   border-top: 3px solid var(--cat-fundo, var(--azul-nevoa));
+}
+
+.card-local-nome {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--tinta);
+}
+
+.card-local-detalhe {
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.card-local-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.card-local-distancia {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--azul-marca);
 }
