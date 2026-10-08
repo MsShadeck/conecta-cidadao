@@ -130,6 +130,11 @@ describe('interpretarHorarioOsm', () => {
       vinteQuatroHoras: false,
     });
   });
+  it('entende PH (feriados) junto com os dias', () => {
+    const r = interpretarHorarioOsm('Mo-Sa 10:00-22:00; Su,PH 14:00-20:00');
+    expect(r.feriados).toBe('aberto');
+    expect(r.faixas[1]).toEqual({ dias: ['dom'], abre: '14:00', fecha: '20:00' });
+  });
   it('desiste (null) de formatos que não entende', () => {
     expect(interpretarHorarioOsm('Mo-Fr 08:00-17:00 "com agendamento"')).toBeNull();
   });

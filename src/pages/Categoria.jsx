@@ -3,6 +3,7 @@
  *
  * Um único componente atende a todas as rotas: o App.jsx passa a prop "slug".
  * Os locais vêm de /api/locais.json (dados reais, com fonte), e a página oferece:
+ *  - busca por texto dentro da categoria (nome, tipo, bairro, serviços...);
  *  - filtros por tipo e por bairro;
  *  - ordem alfabética ou por distância (quando a pessoa informa de onde sai);
  *  - alternância entre lista e mapa;
@@ -21,7 +22,9 @@ import { useOrigem } from '../context/AppContext.jsx';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import { ordenarPorDistancia } from '../utils/geo.js';
-import { plural } from '../utils/texto.js';
+import { normalizar, plural } from '../utils/texto.js';
+import { pontuarLocal } from '../utils/busca.js';
+import IconeLupa from '../components/IconeLupa.jsx';
 import CardLocal from '../components/CardLocal.jsx';
 import ChipsCategorias from '../components/ChipsCategorias.jsx';
 import BotaoUtil from '../components/BotaoUtil.jsx';
@@ -49,6 +52,7 @@ export default function Categoria({ slug }) {
   const [parametros, setParametros] = useSearchParams();
   const navigate = useNavigate();
 
+  const busca = parametros.get('q') ?? '';
   const tipo = parametros.get('tipo') ?? '';
   const bairro = parametros.get('bairro') ?? '';
   const ordem = parametros.get('ordem') ?? 'nome';
@@ -78,8 +82,13 @@ export default function Categoria({ slug }) {
   );
 
   const visiveis = useMemo(() => {
+    const palavras = normalizar(busca).split(/\s+/).filter(Boolean);
     const filtrados = daCategoria.filter(
-      (l) => (!tipo || l.tipo === tipo) && (!bairro || l.endereco?.bairro === bairro)
+      (l) =>
+        (!tipo || l.tipo === tipo) &&
+        (!bairro || l.endereco?.bairro === bairro) &&
+        // Mesma pontuação da busca global: nome, tipo, bairro, serviços e palavras-chave.
+        (!palavras.length || pontuarLocal(l, palavras) > 0)
     );
     if (ordem === 'distancia' && origem) {
       // Locais sem coordenadas vão para o fim da lista.
@@ -87,7 +96,7 @@ export default function Categoria({ slug }) {
       return [...comDistancia, ...filtrados.filter((l) => !l.coordenadas)];
     }
     return [...filtrados].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
-  }, [daCategoria, tipo, bairro, ordem, origem]);
+  }, [daCategoria, busca, tipo, bairro, ordem, origem]);
 
   const marcadores = useMemo(
     () =>
@@ -137,6 +146,27 @@ export default function Categoria({ slug }) {
       <section className="container">
         <EstadoDados carregando={carregando} erro={erro} recarregar={recarregar}>
           <div className="painel categoria-filtros">
+            {/* Busca por texto dentro da categoria (fica na URL como ?q=). */}
+            <label className="campo campo-busca categoria-busca">
+              <IconeLupa />
+              <input
+                type="search"
+                placeholder={`Buscar em ${categoria.nome} (nome, bairro, tipo...)`}
+                aria-label={`Buscar em ${categoria.nome}`}
+                value={busca}
+                onChange={(e) => mudar('q', e.target.value)}
+              />
+              {busca && (
+                <button
+                  type="button"
+                  className="campo-busca-limpar"
+                  onClick={() => mudar('q', '')}
+                  aria-label="Limpar busca"
+                >
+                  ×
+                </button>
+              )}
+            </label>
             <div className="categoria-filtros-linha">
               <label className="filtro">
                 <span>Tipo</span>
@@ -208,7 +238,7 @@ export default function Categoria({ slug }) {
             {/* role="status": o leitor de tela anuncia a nova contagem ao filtrar. */}
             <p className="categoria-contagem" role="status">
               {plural(visiveis.length, 'local encontrado', 'locais encontrados')}
-              {(tipo || bairro) && (
+              {(busca || tipo || bairro) && (
                 <button
                   type="button"
                   className="categoria-limpar"

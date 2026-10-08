@@ -34,7 +34,57 @@
       "imagem": "/img/lazer/museu-casarao.jpg"
     }
   ],
-  "extras": [],
+  "extras": [
+    {
+      "id": "polo-shopping",
+      "nome": "Polo Shopping Indaiatuba",
+      "tipo": "Shopping",
+      "osm": "Polo Shopping Inadaiatuba",
+      "endereco": "Alameda Filtros Mann, 670 - Jardim Tropical",
+      "cep": "13344-580",
+      "usarHorarioOsm": true,
+      "site": "http://www.poloshoppingindaiatuba.com.br/",
+      "observacao": "O site oficial informa que o atendimento ao público é só por e-mail (sac@poloshoppingindaiatuba.com.br). Horário do OpenStreetMap: confirme no site.",
+      "palavrasChave": ["polo", "shopping", "compras", "lojas"],
+      "fonte": ["http://www.poloshoppingindaiatuba.com.br/", "https://www.openstreetmap.org/"],
+      "telefones": []
+    },
+    {
+      "id": "shopping-jaragua",
+      "nome": "Shopping Jaraguá Indaiatuba",
+      "tipo": "Shopping",
+      "osm": "Shopping Jaraguá",
+      "endereco": "Rua Quinze de Novembro, 1200 - Centro",
+      "cep": "13330-070",
+      "usarHorarioOsm": true,
+      "site": "https://shoppingjaragua.com.br/indaiatuba/",
+      "observacao": "Horário do OpenStreetMap: confirme no site oficial.",
+      "palavrasChave": ["jaraguá", "shopping", "compras", "lojas", "centro"],
+      "fonte": ["https://shoppingjaragua.com.br/indaiatuba/", "https://www.openstreetmap.org/"]
+    },
+    {
+      "id": "parque-mall",
+      "nome": "Parque Mall",
+      "tipo": "Shopping",
+      "osm": "Parque Mall",
+      "endereco": "Rua das Primaveras, 1050 - Jardim Pompéia",
+      "telefones": ["(19) 98112-8580"],
+      "site": "https://www.parquemall.com.br/",
+      "observacao": "No mesmo endereço funciona o Poupatempo Indaiatuba.",
+      "palavrasChave": ["parque mall", "shopping", "compras", "lojas", "poupatempo"],
+      "fonte": ["https://www.parquemall.com.br/", "https://www.openstreetmap.org/"]
+    },
+    {
+      "id": "mosteiro-mall",
+      "nome": "Mosteiro Mall",
+      "tipo": "Shopping",
+      "osm": "Mosteiro Mall",
+      "endereco": "Avenida Coronel Antônio Estanislau do Amaral - Itaici",
+      "observacao": "Centro comercial em Itaici. Informações só do OpenStreetMap (sem site oficial encontrado).",
+      "palavrasChave": ["mosteiro", "itaici", "shopping", "compras"],
+      "fonte": ["https://www.openstreetmap.org/"]
+    }
+  ],
   "pendentes": [],
   "ignorar": [
     "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/pontos-turisticos/prefeitura-municipal-de-indaiatuba/",

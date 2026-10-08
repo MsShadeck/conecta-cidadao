@@ -14,7 +14,7 @@ import EstadoDados from '../components/EstadoDados.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
 import '../components/ChipsCategorias.css';
-import './Contatos.css'; // campo de busca com lupa (.contatos-busca)
+import './Contatos.css'; // aviso de lista vazia (.contatos-aviso)
 import './ServicosOnline.css';
 
 export default function ServicosOnline() {
@@ -51,7 +51,7 @@ export default function ServicosOnline() {
         <EstadoDados carregando={carregando} erro={erro} recarregar={recarregar}>
           {dados && (
             <div className="painel servicos-online">
-              <label className="campo contatos-busca">
+              <label className="campo campo-busca">
                 <IconeLupa />
                 <input
                   type="search"

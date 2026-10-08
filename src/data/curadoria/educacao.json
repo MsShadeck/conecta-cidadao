@@ -1,5 +1,5 @@
 {
-  "_comentario": "Curadoria manual da categoria Educação. As fichas de pré-escola e de ensino fundamental da mesma escola são unidas pelo script (mesmo endereço). Aqui só associamos as fotos e os identificadores antigos.",
+  "_comentario": "Curadoria manual da categoria Educação. As fichas de pré-escola e de ensino fundamental da mesma escola são unidas pelo script (mesmo endereço). Aqui só associamos as fotos e os identificadores antigos. Faculdades e escolas técnicas (públicas e particulares) entram em \"extras\", com posição do OpenStreetMap e dados dos sites oficiais.",
   "ajustes": [
     {
       "origem": "https://www.indaiatuba.sp.gov.br/educacao/educacao-basica/educacao-infantil/pre-escola/janette-vieira-vaqueiro/",
@@ -33,6 +33,64 @@
       "imagem": "/img/educacao/yolanda-steffen.jpg"
     }
   ],
-  "extras": [],
+  "extras": [
+    {
+      "id": "fatec-indaiatuba",
+      "nome": "Fatec Indaiatuba – Dr. Archimedes Lammoglia",
+      "tipo": "Ensino superior",
+      "niveis": ["Ensino superior (tecnólogo) — pública e gratuita"],
+      "osm": "Faculdade de Tecnologia de Indaiatuba",
+      "telefones": ["(19) 3834-8975"],
+      "site": "https://fatecindaiatuba.edu.br/",
+      "observacao": "Faculdade de Tecnologia do Estado (Centro Paula Souza). O site oficial não informa o endereço; a posição no mapa vem do OpenStreetMap. Telefone da lista de telefones úteis da Prefeitura: confirme antes.",
+      "palavrasChave": ["fatec", "faculdade pública", "tecnólogo", "centro paula souza"],
+      "fonte": [
+        "https://fatecindaiatuba.edu.br/",
+        "https://www.indaiatuba.sp.gov.br/telefones-uteis/",
+        "https://www.openstreetmap.org/"
+      ]
+    },
+    {
+      "id": "unimax",
+      "nome": "UniMAX – Centro Universitário Max Planck",
+      "tipo": "Ensino superior",
+      "niveis": ["Ensino superior — particular"],
+      "osm": "Centro Universitário Max Planck",
+      "endereco": "Rua Nove de Dezembro, 460 - Jardim Pedroso",
+      "site": "https://unimax.edu.br/",
+      "palavrasChave": ["unimax", "max planck", "faculdade particular"],
+      "fonte": ["https://unimax.edu.br/", "https://www.openstreetmap.org/"]
+    },
+    {
+      "id": "fiec",
+      "nome": "FIEC – Fundação Indaiatubana de Educação e Cultura",
+      "tipo": "Ensino técnico",
+      "niveis": ["Cursos técnicos e profissionalizantes"],
+      "osm": "Fundação Indaiatubana de Educação e Cultura",
+      "endereco": "Avenida Engenheiro Fábio Roberto Barnabé, 3405 - Jardim Regina",
+      "telefones": ["(19) 3816-7534"],
+      "site": "https://www.fiec.com.br/",
+      "observacao": "Fundação ligada à Prefeitura. Telefone da lista de telefones úteis da Prefeitura: confirme antes.",
+      "palavrasChave": ["fiec", "curso técnico", "curso profissionalizante"],
+      "fonte": [
+        "https://www.fiec.com.br/",
+        "https://www.indaiatuba.sp.gov.br/telefones-uteis/",
+        "https://www.openstreetmap.org/"
+      ]
+    },
+    {
+      "id": "senai-indaiatuba",
+      "nome": "SENAI Indaiatuba – Comendador Santoro Mirone",
+      "tipo": "Ensino técnico",
+      "niveis": ["Cursos técnicos e de aprendizagem industrial"],
+      "osm": "Senai",
+      "endereco": "Rua Senai, 129 - Fazenda Pimenta",
+      "cep": "13347-680",
+      "telefones": ["(19) 3825-3450"],
+      "site": "https://indaiatuba.sp.senai.br/",
+      "palavrasChave": ["senai", "curso técnico", "aprendiz", "indústria"],
+      "fonte": ["https://indaiatuba.sp.senai.br/", "https://www.openstreetmap.org/"]
+    }
+  ],
   "pendentes": []
 }

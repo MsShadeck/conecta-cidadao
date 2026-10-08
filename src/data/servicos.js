@@ -32,7 +32,7 @@ export const categorias = [
     nome: 'Educação',
     rota: '/educacao',
     icone: '/img/interface/pequeno/universidade.png',
-    resumo: 'Escolas municipais (EMEBs) e creches, com endereço e telefone.',
+    resumo: 'Escolas municipais (EMEBs), creches, faculdades e escolas técnicas.',
   },
   {
     slug: 'seguranca',
@@ -46,7 +46,7 @@ export const categorias = [
     nome: 'Lazer e cultura',
     rota: '/lazer',
     icone: '/img/interface/pequeno/bicicleta.png',
-    resumo: 'Parques, museus, centros culturais e espaços de esporte.',
+    resumo: 'Parques, museus, cultura, esporte e shoppings.',
   },
   {
     slug: 'cidadania',

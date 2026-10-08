@@ -31,20 +31,20 @@ npm run dev     # abre em http://localhost:5173 (a rota /api/rota também funcio
 
 ## Rotas
 
-| Página                                     | Endereço                                                    |
-| ------------------------------------------ | ----------------------------------------------------------- |
-| Início (busca, atalhos, clima, categorias) | `/`                                                         |
-| Primeiros passos para quem chegou à cidade | `/primeiros-passos`                                         |
-| O que tem perto de mim (GPS ou CEP)        | `/perto-de-mim`                                             |
-| Mapa de todos os serviços                  | `/mapa` (aceita `?bairro=`)                                 |
-| Como chegar (a pé e de bicicleta)          | `/como-chegar` (aceita `?destino=id`)                       |
-| Categorias                                 | `/saude`, `/educacao`, `/seguranca`, `/lazer`, `/cidadania` |
-| Ônibus e bike                              | `/mobilidade`                                               |
-| Detalhe de um local                        | `/:categoria/:id` (ex.: `/saude/ubs-jd-california`)         |
-| Serviços online da Prefeitura              | `/servicos-online`                                          |
-| Telefones úteis                            | `/contatos`                                                 |
-| Lembretes (com data, local e `.ics`)       | `/lembretes` (aceita `?local=id`)                           |
-| Sobre, fontes e créditos                   | `/sobre`                                                    |
+| Página                                                | Endereço                                                                                          |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Início (busca, atalhos, clima, categorias)            | `/`                                                                                               |
+| Primeiros passos para quem chegou à cidade            | `/primeiros-passos`                                                                               |
+| O que tem perto de mim (GPS ou CEP)                   | `/perto-de-mim`                                                                                   |
+| Mapa de todos os serviços                             | `/mapa` (aceita `?bairro=`)                                                                       |
+| Como chegar (a pé e de bicicleta)                     | `/como-chegar` (aceita `?destino=id`)                                                             |
+| Categorias (com busca por texto, filtros, lista/mapa) | `/saude`, `/educacao`, `/seguranca`, `/lazer`, `/cidadania` (aceitam `?q=`, `?tipo=`, `?bairro=`) |
+| Ônibus e bike                                         | `/mobilidade`                                                                                     |
+| Detalhe de um local                                   | `/:categoria/:id` (ex.: `/saude/ubs-jd-california`)                                               |
+| Serviços online da Prefeitura                         | `/servicos-online`                                                                                |
+| Telefones úteis                                       | `/contatos`                                                                                       |
+| Lembretes (com data, local e `.ics`)                  | `/lembretes` (aceita `?local=id`)                                                                 |
+| Sobre, fontes e créditos                              | `/sobre`                                                                                          |
 
 Todas abrem por URL direta e com F5: o `vercel.json` manda tudo para o `index.html` (menos `/api/`).
 As páginas são carregadas sob demanda (`React.lazy`), e o mapa (Leaflet) só nas páginas que têm mapa.
@@ -77,15 +77,15 @@ src/
 O site não tem banco de dados. `npm run dados` gera arquivos JSON em `public/api/`, e as páginas leem
 com `fetch('/api/...')` (o mesmo padrão da aula de useEffect, agora no hook `useDados`).
 
-| Arquivo                                         | Conteúdo                                                                                      | Fontes                                               |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| `locais.json`                                   | 204 locais com endereço, telefones, horários, serviços, coordenadas, `fonte` e `atualizadoEm` | Fichas da Prefeitura, CNES, OpenStreetMap, Nominatim |
-| `contatos.json`                                 | Telefones úteis (cada um com a página onde foi conferido)                                     | Prefeitura, gov.br                                   |
-| `servicos-online.json`                          | Links oficiais (IPTU, Minha Vacina, multas, iluminação...)                                    | Prefeitura e órgãos responsáveis                     |
-| `mobilidade.json`                               | Ônibus (links oficiais, cartão SOU, novidades com data), Ecobike                              | Prefeitura, OSM, imprensa                            |
-| `feriados.json`                                 | Feriados nacionais e municipais (usados no "Aberto agora")                                    | BrasilAPI, edital CSM/TJ-SP                          |
-| `ciclovias.geojson`, `limite-municipio.geojson` | Ciclovias e contorno da cidade                                                                | OSM (via Integra), IBGE                              |
-| `pendencias.json`                               | Locais da v1 sem fonte oficial (não publicados)                                               | —                                                    |
+| Arquivo                                         | Conteúdo                                                                                                                      | Fontes                                               |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `locais.json`                                   | 212 locais (inclui faculdades e shoppings) com endereço, telefones, horários, serviços, coordenadas, `fonte` e `atualizadoEm` | Fichas da Prefeitura, CNES, OpenStreetMap, Nominatim |
+| `contatos.json`                                 | Telefones úteis (cada um com a página onde foi conferido)                                                                     | Prefeitura, gov.br                                   |
+| `servicos-online.json`                          | Links oficiais (IPTU, Minha Vacina, multas, iluminação...)                                                                    | Prefeitura e órgãos responsáveis                     |
+| `mobilidade.json`                               | Ônibus (links oficiais, cartão SOU, novidades com data), Ecobike                                                              | Prefeitura, OSM, imprensa                            |
+| `feriados.json`                                 | Feriados nacionais e municipais (usados no "Aberto agora")                                                                    | BrasilAPI, edital CSM/TJ-SP                          |
+| `ciclovias.geojson`, `limite-municipio.geojson` | Ciclovias e contorno da cidade                                                                                                | OSM (via Integra), IBGE                              |
+| `pendencias.json`                               | Locais da v1 sem fonte oficial (não publicados)                                                                               | —                                                    |
 
 Regras: **nada é inventado** (campo sem fonte = `null` = "Informação não disponível"), **nenhuma chave de
 API** (todas as fontes são abertas), Nominatim com no máximo 1 req/s e cache, e Overpass só no build.

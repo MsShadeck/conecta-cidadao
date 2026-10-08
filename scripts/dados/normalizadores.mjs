@@ -336,13 +336,18 @@ export function interpretarHorarioOsm(texto) {
   if (texto.trim() === '24/7') return interpretarHorario('24 horas');
   const faixas = [];
   let feriados = null;
-  for (const regra of texto
+  for (let regra of texto
     .split(';')
     .map((r) => r.trim())
     .filter(Boolean)) {
     if (/^PH\s+off$/i.test(regra)) {
       feriados = 'fechado';
       continue;
+    }
+    // "Su,PH 14:00-20:00": PH (feriados) junto com dias = abre nos feriados nesse horário.
+    if (/^[A-Za-z,-]*\bPH\b/.test(regra) && !/^PH\s+off$/i.test(regra)) {
+      feriados = 'aberto';
+      regra = regra.replace(/,PH\b|\bPH,/, '');
     }
     const m = regra.match(/^((?:Mo|Tu|We|Th|Fr|Sa|Su)(?:[-,](?:Mo|Tu|We|Th|Fr|Sa|Su))*)\s+(.+)$/);
     if (!m) return null;

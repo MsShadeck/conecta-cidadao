@@ -591,3 +591,48 @@ html[data-fonte='grande'] {
 html[data-fonte='maior'] {
   font-size: 125%;
 }
+
+/* ============================================================
+   8. CAMPO DE BUSCA COM LUPA (Serviços online, categorias, Como chegar)
+   O <label> faz o papel da caixa (classe .campo) e o <input> fica sem
+   borda, assim a lupa aparece "dentro" do campo. A altura é sempre a
+   de uma linha, em qualquer tipo de container (linha ou coluna).
+============================================================ */
+
+.campo-busca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  color: var(--tinta-fraca);
+}
+
+.campo-busca svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.campo-busca input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--tinta);
+}
+
+/* Botão "×" para limpar o texto digitado. */
+.campo-busca-limpar {
+  font-size: 1.125rem;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--tinta-media);
+  flex-shrink: 0;
+}
+
+.campo-busca-limpar:hover {
+  background: var(--azul-nevoa);
+}

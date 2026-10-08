@@ -115,3 +115,9 @@
 .grade-locais + .info-fonte {
   margin-top: 18px;
 }
+
+/* Campo de busca da categoria: largura toda, acima dos filtros. */
+.categoria-busca {
+  width: 100%;
+  background: var(--branco);
+}

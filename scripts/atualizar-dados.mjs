@@ -175,6 +175,9 @@ const PALAVRAS_POR_TIPO = {
     'carteira de trabalho',
   ],
   Parque: ['parque', 'passeio', 'caminhada', 'lazer', 'piquenique'],
+  'Ensino superior': ['faculdade', 'universidade', 'graduação', 'curso superior', 'vestibular'],
+  'Ensino técnico': ['curso técnico', 'curso profissionalizante', 'qualificação profissional'],
+  Shopping: ['shopping', 'compras', 'lojas'],
   Museu: ['museu', 'passeio', 'história'],
   Esporte: ['esporte', 'quadra', 'academia', 'futebol'],
   Biblioteca: ['livros', 'leitura', 'biblioteca'],
@@ -336,7 +339,8 @@ async function main() {
   const consulta = `[out:json][timeout:120];
 area["boundary"="administrative"]["admin_level"="8"]["name"="Indaiatuba"]->.a;
 (
-  nwr["amenity"~"^(school|kindergarten|police|fire_station|townhall|bus_station|bicycle_rental|library|community_centre|social_facility|clinic|hospital|doctors|theatre)$"](area.a);
+  nwr["amenity"~"^(school|kindergarten|police|fire_station|townhall|bus_station|bicycle_rental|library|community_centre|social_facility|clinic|hospital|doctors|theatre|university|college)$"](area.a);
+  nwr["shop"="mall"]["name"](area.a);
   nwr["leisure"~"^(park|sports_centre|stadium)$"]["name"](area.a);
   nwr["tourism"~"^(museum|attraction)$"](area.a);
   nwr["office"="government"](area.a);
@@ -345,7 +349,7 @@ out tags center;`;
   const overpass = await buscarOverpass(consulta);
   const osm = overpass.elements.map((el) => ({
     ...normalizarOsm(el),
-    classe: el.tags.amenity ?? el.tags.leisure ?? el.tags.tourism ?? el.tags.office,
+    classe: el.tags.amenity ?? el.tags.leisure ?? el.tags.tourism ?? el.tags.office ?? el.tags.shop,
   }));
   console.log(`  ${osm.length} elementos`);
 
@@ -449,9 +453,11 @@ out tags center;`;
       unidos.push({
         ...extra,
         categoria,
-        endereco: interpretarEndereco(extra.endereco),
+        endereco: extra.endereco ? { ...interpretarEndereco(extra.endereco), cep: extra.cep ?? null } : null,
         enderecoTexto: extra.endereco ?? null,
         telefones: extra.telefones ?? [],
+        // Lista de telefones escrita na curadoria (mesmo vazia) não é completada pelo OSM.
+        telefonesDaCuradoria: Array.isArray(extra.telefones),
         servicos: extra.servicos ?? [],
         site: extra.site ?? null,
         imagem: extra.imagem ?? null,
@@ -500,7 +506,7 @@ out tags center;`;
         local.endereco = candidato.endereco;
         local.enderecoTexto = `${candidato.endereco.logradouro}${candidato.endereco.numero ? `, ${candidato.endereco.numero}` : ''}`;
       }
-      if (local.telefones.length === 0) local.telefones = candidato.telefones;
+      if (local.telefones.length === 0 && !local.telefonesDaCuradoria) local.telefones = candidato.telefones;
       if (local.usarHorarioOsm && candidato.horarioOsm) {
         local.horarioTexto = candidato.horarioOsm;
         local.horarios = interpretarHorarioOsm(candidato.horarioOsm);
