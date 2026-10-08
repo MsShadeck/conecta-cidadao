@@ -675,6 +675,7 @@ out tags center;`;
   await gerarMobilidade(osm, limite);
   await gerarComercio(limite);
   await gerarBairros(limite);
+  await gerarCidade();
 
   // Resumo no terminal.
   const resumo = {};
@@ -692,6 +693,52 @@ out tags center;`;
   }
   console.table(resumo);
   console.log(`Pendências (não publicadas): ${pendentes.length} → public/api/pendencias.json`);
+}
+
+// Códigos IBGE dos municípios: Indaiatuba e São Paulo (para a comparação).
+const MUNICIPIOS_IBGE = { indaiatuba: '3520509', saoPaulo: '3550308' };
+
+/**
+ * Conheça Indaiatuba: números do IBGE (API de agregados do SIDRA) + fatos da
+ * curadoria (extras/cidade.json). Cada número leva o ano e a fonte.
+ *  - tabela 4714 (Censo 2022): população (93), área em km² (6318), densidade (614);
+ *  - tabela 6579: população estimada (9324), último ano publicado.
+ */
+async function gerarCidade() {
+  const ids = Object.values(MUNICIPIOS_IBGE).join(',');
+  const base = 'https://servicodados.ibge.gov.br/api/v3/agregados';
+  const censo = await buscar(`${base}/4714/periodos/2022/variaveis/93|6318|614?localidades=N6[${ids}]`);
+  const estimativa = await buscar(`${base}/6579/periodos/-1/variaveis/9324?localidades=N6[${ids}]`);
+
+  /** Valor de uma variável para um município: { valor, ano }. */
+  const valor = (respostas, variavel, codigo) => {
+    const v = respostas.find((r) => r.id === String(variavel));
+    const serie = v?.resultados[0].series.find((s) => s.localidade.id === codigo)?.serie ?? {};
+    const [ano, texto] = Object.entries(serie)[0] ?? [];
+    return ano ? { valor: Number(texto), ano: Number(ano) } : null;
+  };
+  const numeros = (codigo) => ({
+    populacaoEstimada: valor(estimativa, 9324, codigo),
+    populacaoCenso: valor(censo, 93, codigo),
+    areaKm2: valor(censo, 6318, codigo),
+    densidade: valor(censo, 614, codigo),
+  });
+
+  const curadoria = await lerJson(path.join(PASTA_CURADORIA, 'extras', 'cidade.json'));
+  delete curadoria._comentario;
+  await gravarJson('cidade.json', {
+    atualizadoEm: HOJE,
+    ibge: {
+      indaiatuba: numeros(MUNICIPIOS_IBGE.indaiatuba),
+      saoPaulo: numeros(MUNICIPIOS_IBGE.saoPaulo),
+      fontes: [
+        { nome: 'IBGE – Censo 2022 (tabela 4714)', url: 'https://sidra.ibge.gov.br/tabela/4714' },
+        { nome: 'IBGE – Estimativas de população (tabela 6579)', url: 'https://sidra.ibge.gov.br/tabela/6579' },
+      ],
+    },
+    ...curadoria,
+  });
+  console.log('cidade.json: números do IBGE e', curadoria.diferencas.length, 'diferenças');
 }
 
 /** Feriados nacionais (BrasilAPI) + municipais da curadoria (com fonte). */

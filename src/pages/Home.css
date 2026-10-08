@@ -292,3 +292,18 @@
   letter-spacing: 0.04em;
   color: var(--cat-tinta);
 }
+
+/* Diferenças para quem vem de São Paulo (reaproveita a grade do Seu bairro) */
+.home-diferencas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-diferencas .home-seu-bairro-lista li {
+  gap: 6px;
+}
+
+.home-diferencas a.info-fonte {
+  text-decoration: underline;
+}

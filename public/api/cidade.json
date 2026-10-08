@@ -1,0 +1,116 @@
+{
+ "atualizadoEm": "2026-10-08",
+ "ibge": {
+  "indaiatuba": {
+   "populacaoEstimada": {
+    "valor": 271322,
+    "ano": 2026
+   },
+   "populacaoCenso": {
+    "valor": 255748,
+    "ano": 2022
+   },
+   "areaKm2": {
+    "valor": 311.545,
+    "ano": 2022
+   },
+   "densidade": {
+    "valor": 820.9,
+    "ano": 2022
+   }
+  },
+  "saoPaulo": {
+   "populacaoEstimada": {
+    "valor": 11911337,
+    "ano": 2026
+   },
+   "populacaoCenso": {
+    "valor": 11451999,
+    "ano": 2022
+   },
+   "areaKm2": {
+    "valor": 1521.202,
+    "ano": 2022
+   },
+   "densidade": {
+    "valor": 7528.26,
+    "ano": 2022
+   }
+  },
+  "fontes": [
+   {
+    "nome": "IBGE – Censo 2022 (tabela 4714)",
+    "url": "https://sidra.ibge.gov.br/tabela/4714"
+   },
+   {
+    "nome": "IBGE – Estimativas de população (tabela 6579)",
+    "url": "https://sidra.ibge.gov.br/tabela/6579"
+   }
+  ]
+ },
+ "diferencas": [
+  {
+   "id": "regiao",
+   "titulo": "Outra região metropolitana",
+   "texto": "Indaiatuba faz parte da Região Metropolitana de Campinas, criada pela Lei Complementar estadual nº 870, de 2000 — não da Região Metropolitana de São Paulo.",
+   "fonte": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2000/lei.complementar-870-19.06.2000.html"
+  },
+  {
+   "id": "ddd",
+   "titulo": "DDD 19",
+   "texto": "Os telefones fixos de Indaiatuba usam o DDD 19, como mostram as páginas da Prefeitura.",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/"
+  },
+  {
+   "id": "agua",
+   "titulo": "Água e esgoto: SAAE",
+   "texto": "Quem cuida da água e do esgoto em Indaiatuba é o SAAE (Serviço Autônomo de Água e Esgotos). É lá que você passa a conta para o seu nome.",
+   "fonte": "https://www.saae.sp.gov.br/",
+   "rota": "/primeiros-passos"
+  },
+  {
+   "id": "energia",
+   "titulo": "Energia: CPFL",
+   "texto": "A energia elétrica em Indaiatuba é distribuída pela CPFL Piratininga, segundo a imprensa. A troca de titularidade é feita no site da CPFL.",
+   "fonte": "https://cenarioenergia.com.br/2025/09/03/cpfl-piratininga-ultrapassa-marca-de-2-milhoes-de-clientes-atendidos/",
+   "rota": "/primeiros-passos"
+  },
+  {
+   "id": "onibus",
+   "titulo": "Ônibus: SOU Indaiatuba e cartão SOU",
+   "texto": "O ônibus municipal é operado pela SOU Indaiatuba. O cartão de transporte é o cartão SOU, feito no Ponto Cidadão; a primeira via é gratuita.",
+   "fonte": "https://www.indaiatuba.sp.gov.br/mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/",
+   "rota": "/mobilidade"
+  },
+  {
+   "id": "feriado",
+   "titulo": "Feriado municipal: 2 de fevereiro",
+   "texto": "Além dos feriados nacionais, Indaiatuba tem feriado municipal em 2 de fevereiro, segundo a lista de feriados municipais de 2026 publicada pelo Tribunal de Justiça de SP. Nesse dia, serviços e comércio podem mudar de horário.",
+   "fonte": "https://cnbsp.org.br/2025/11/25/dje-csm-divulga-edital-sobre-aprovacao-de-feriados-municipais-para-2026/"
+  },
+  {
+   "id": "prefeitura",
+   "titulo": "Serviços online: Minha Indaiatuba",
+   "texto": "IPTU, certidões e pedidos à Prefeitura ficam no portal Minha Indaiatuba, com login pela conta gov.br.",
+   "fonte": "https://www.indaiatuba.sp.gov.br/fazenda/rendas-imobiliarias/cadastramento-email/",
+   "rota": "/servicos-online"
+  }
+ ],
+ "links": [
+  {
+   "nome": "História de Indaiatuba (Fundação Pró-Memória)",
+   "descricao": "Texto do Arquivo Público Municipal sobre a formação da cidade.",
+   "url": "https://www.indaiatuba.sp.gov.br/historia/"
+  },
+  {
+   "nome": "Agenda da Prefeitura",
+   "descricao": "Eventos, festas e programação da cidade.",
+   "url": "https://www.indaiatuba.sp.gov.br/agenda/"
+  },
+  {
+   "nome": "Cultura",
+   "descricao": "Secretaria de Cultura: equipamentos culturais, oficinas e eventos.",
+   "url": "https://www.indaiatuba.sp.gov.br/cultura/"
+  }
+ ]
+}

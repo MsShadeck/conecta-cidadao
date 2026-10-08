@@ -19,6 +19,7 @@ import Clima from '../components/Clima.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
 import IconeCategoria from '../components/IconeCategoria.jsx';
 import SeuBairro from '../components/SeuBairro.jsx';
+import DiferencasSP from '../components/DiferencasSP.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
 import { limparCep } from '../utils/cep.js';
@@ -170,6 +171,8 @@ export default function Home() {
       </div>
 
       {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
+      <DiferencasSP />
+
       <section className="container home-marca">
         <img
           src="/img/interface/pequeno/logo.png"

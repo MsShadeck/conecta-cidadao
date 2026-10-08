@@ -1,0 +1,96 @@
+/* ============================================================
+   Conheca.css — Conheça Indaiatuba (Conheca.jsx)
+============================================================ */
+
+.conheca-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.conheca-titulo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cat-tinta);
+}
+
+/* Tabela larga no celular: rola só dentro do painel, nunca a página. */
+.conheca-tabela-area {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.conheca-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.conheca-tabela th,
+.conheca-tabela td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--linha);
+}
+
+.conheca-tabela thead th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tinta-media);
+}
+
+.conheca-tabela tbody th {
+  font-weight: 500;
+}
+
+.conheca-tabela-area a,
+.conheca-bloco .info-fonte a {
+  text-decoration: underline;
+}
+
+.conheca-diferencas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: 12px;
+}
+
+.conheca-diferencas li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px;
+  border-top: 4px solid var(--cat-fundo);
+  font-size: 0.875rem;
+}
+
+.conheca-diferencas h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.conheca-links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 12px;
+}
+
+.conheca-links a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  height: 100%;
+  font-size: 0.875rem;
+  color: var(--tinta);
+}
+
+.conheca-links a strong {
+  color: var(--cat-tinta);
+  text-decoration: underline;
+}
