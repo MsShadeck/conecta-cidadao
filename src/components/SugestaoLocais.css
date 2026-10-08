@@ -11,7 +11,7 @@
 }
 
 .sugestao-titulo {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   color: var(--tinta);
 }
@@ -27,7 +27,7 @@
 }
 
 .sugestao-vazio {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--tinta-fraca);
 }
 
@@ -40,7 +40,7 @@
 }
 
 .sugestao-ajuda {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   color: var(--tinta-media);
 }
 
@@ -52,7 +52,7 @@
 }
 
 .sugestao-remover {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
   width: 24px;
   height: 24px;

@@ -21,10 +21,10 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0; /* mantém o tamanho e permite a rolagem lateral */
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   font-weight: 500;
   color: var(--tinta-media);
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--vidro-leve);
   padding: 8px 16px 8px 12px;
   border-radius: var(--raio-pilula);
   transition:

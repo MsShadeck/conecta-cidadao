@@ -100,6 +100,30 @@ async function gerarOpenGraph() {
   console.log('Imagem de prévia gerada: public/img/interface/og-imagem.png');
 }
 
+/**
+ * Ícones das categorias: os PNG originais têm 512px, mas aparecem com no
+ * máximo 56px na tela. A versão de 128px (2x, para telas de alta densidade)
+ * fica em img/interface/pequeno/ e é a que o site usa.
+ */
+async function reduzirIcones() {
+  const dir = path.join(PUBLICO, 'img/interface');
+  await mkdir(path.join(dir, 'pequeno'), { recursive: true });
+  for (const nome of [
+    'cuidados-de-saude',
+    'universidade',
+    'social-security',
+    'bicicleta',
+    'logo',
+  ]) {
+    await sharp(path.join(dir, `${nome}.png`))
+      .resize({ width: 128 })
+      .png({ compressionLevel: 9, palette: true })
+      .toFile(path.join(dir, 'pequeno', `${nome}.png`));
+  }
+  console.log('Ícones de categoria reduzidos: public/img/interface/pequeno/');
+}
+
 await otimizarFotos();
+await reduzirIcones();
 await gerarIcones();
 await gerarOpenGraph();

@@ -9,7 +9,7 @@
 }
 
 .origem-titulo {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .origem-ou {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--tinta-media);
 }
 
@@ -41,7 +41,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   font-weight: 500;
 }
 
@@ -52,17 +52,17 @@
 
 .origem-limpar {
   margin-left: 6px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--azul-marca);
   text-decoration: underline;
 }
 
 .origem-status {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   color: var(--tinta-media);
 }
 
 .origem-status--erro {
-  color: #a0460a;
+  color: var(--erro);
 }

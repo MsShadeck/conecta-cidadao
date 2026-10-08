@@ -10,14 +10,14 @@
 }
 
 .botao-util-pergunta {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   font-weight: 500;
   color: var(--tinta);
 }
 
 /* Pílula na cor da categoria (herda --cat-* do data-categoria da página). */
 .botao-util-botao {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   padding: 7px 16px;
   border-radius: var(--raio-pilula);
@@ -35,7 +35,7 @@
 /* Votado: inverte as cores (fundo forte, texto branco) para mostrar o estado. */
 .botao-util-botao[aria-pressed='true'] {
   background: var(--cat-tinta, var(--azul-marca));
-  color: var(--branco);
+  color: var(--texto-sobre-marca);
 }
 
 .botao-util-botao:active {
@@ -43,6 +43,6 @@
 }
 
 .botao-util-contagem {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   color: var(--tinta-fraca);
 }

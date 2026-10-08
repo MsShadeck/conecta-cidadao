@@ -45,7 +45,12 @@ export default function Local() {
   const { dados, carregando, erro, recarregar } = useDados('/api/locais.json');
   const local = dados?.locais.find((l) => l.id === id && l.categoria === slug);
 
-  useTituloPagina(local ? `${local.nome} — Conecta Cidadão` : 'Local — Conecta Cidadão');
+  useTituloPagina(
+    local ? `${local.nome} — Conecta Cidadão` : 'Local — Conecta Cidadão',
+    local
+      ? `${local.tipo} em Indaiatuba${local.enderecoTexto ? `: ${local.enderecoTexto}` : ''}. Telefone, horário e como chegar.`
+      : undefined
+  );
 
   // Categoria inexistente na URL: volta para o início.
   if (!categoria) return <Navigate to="/" replace />;

@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useBusca } from '../context/AppContext.jsx';
 import IconeLupa from './IconeLupa.jsx';
+import PreferenciasTela from './PreferenciasTela.jsx';
 import './Cabecalho.css';
 
 /** Destinos do menu. Ficam numa lista para o menu do celular e o da barra usarem os mesmos. */
@@ -47,7 +48,7 @@ export default function Cabecalho() {
   useEffect(() => {
     if (!menuAberto) return undefined;
     const painel = painelRef.current;
-    const focaveis = painel.querySelectorAll('a, button');
+    const focaveis = painel.querySelectorAll('a, button:not([disabled]), select');
     focaveis[0]?.focus();
 
     function aoTeclar(evento) {
@@ -77,19 +78,16 @@ export default function Cabecalho() {
       <div className="container">
         <header className="cabecalho">
           {/* <Link> troca a rota sem recarregar a página (diferente de <a href>). */}
-          <Link
-            to="/"
-            className="cabecalho-marca"
-            aria-label="Conecta Cidadão Indaiatuba, ir para o início"
-          >
+          {/* Sem aria-label: o nome acessível do link é o próprio texto visível
+              ("Conecta Cidadão Indaiatuba"), como recomenda a WCAG (2.5.3). */}
+          <Link to="/" className="cabecalho-marca">
             <span className="cabecalho-selo">
               {/* alt="" porque a imagem é decorativa: o nome já vem escrito ao lado.
                   width/height evitam o "pulo" do layout enquanto a imagem carrega. */}
-              <img src="/img/interface/logo.png" alt="" width="30" height="24" />
+              <img src="/img/interface/pequeno/logo.png" alt="" width="30" height="24" />
             </span>
             <span className="cabecalho-nome">
-              Conecta Cidadão
-              <span className="cabecalho-cidade">Indaiatuba</span>
+              Conecta Cidadão <span className="cabecalho-cidade">Indaiatuba</span>
             </span>
           </Link>
 
@@ -145,6 +143,11 @@ export default function Cabecalho() {
                 </li>
               ))}
             </ul>
+            {/* Acessibilidade: tamanho da letra, tema claro/escuro e Libras. */}
+            <div className="menu-celular-preferencias">
+              <h2 className="menu-celular-titulo">Acessibilidade</h2>
+              <PreferenciasTela />
+            </div>
           </nav>
         )}
       </div>

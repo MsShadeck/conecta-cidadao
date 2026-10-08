@@ -59,7 +59,7 @@
 }
 
 .card-servico-nome {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -67,7 +67,7 @@
 /* flex:1 faz o resumo ocupar a sobra vertical, de modo que a etiqueta fique
    alinhada na base mesmo quando os textos têm tamanhos diferentes. */
 .card-servico-resumo {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   line-height: 1.55;
   color: var(--tinta-media);
   flex: 1;

@@ -64,16 +64,16 @@ não foram apagadas: ficam comentadas com `/* */` ou `{/* */}` acima da versão 
 Quando um desses arquivos evoluiu depois das aulas (v2), a última versão feita em aula também
 ficou comentada, com o título **VERSÃO DA AULA**, e a versão nova é a ativa.
 
-| Exemplo do material                                                         | Onde está no projeto                                                                                                    |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Rotas (`BrowserRouter`, `Routes`, `Link`)                                   | `App.jsx`, `Cabecalho.jsx`, `Rodape.jsx`                                                                                |
-| LikeButton (useState)                                                       | `components/BotaoUtil.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa guarda um voto por página no `localStorage`)             |
-| ListaAlunos (3 etapas: lista fixa, lista vazia com `&&`, input + ternário)  | `components/SugestaoLocais.jsx`: Etapas 1 e 2 e bloco "ETAPA 3 — VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`) |
-| Exemplo 1: useEffect sem array, com `[]` e com dependência                  | `hooks/useTituloPagina.js` (título da aba)                                                                              |
-| Tecla: addEventListener + cleanup                                           | `context/AppContext.jsx` (atalho Ctrl + K)                                                                              |
-| Exemplos 2 a 5: fetch, loading e erro, filtro, SearchBar                    | `components/ListaContatos.jsx` e `components/BarraBusca.jsx`, página `/contatos`                                        |
-| Atividades propostas: exibir contato, recarregar, "nenhum encontrado", erro | Bloco "VERSÃO DA AULA" de `ListaContatos.jsx` (a v2 ativa acrescenta `AbortController`, busca sem acento e chips)       |
-| Exemplo 6: lista de tarefas                                                 | `pages/Lembretes.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`), página `/lembretes`               |
+| Exemplo do material                                                         | Onde está no projeto                                                                                                                  |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Rotas (`BrowserRouter`, `Routes`, `Link`)                                   | `App.jsx`, `Cabecalho.jsx`, `Rodape.jsx`                                                                                              |
+| LikeButton (useState)                                                       | `components/BotaoUtil.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa guarda um voto por página no `localStorage`)                           |
+| ListaAlunos (3 etapas: lista fixa, lista vazia com `&&`, input + ternário)  | `components/SugestaoLocais.jsx`: Etapas 1 e 2 e bloco "ETAPA 3 — VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`)               |
+| Exemplo 1: useEffect sem array, com `[]` e com dependência                  | `hooks/useTituloPagina.js`: variações A, B e C comentadas (a v2 ativa chama o `useMetadados`, que também cuida da descrição e do SEO) |
+| Tecla: addEventListener + cleanup                                           | `context/AppContext.jsx` (atalho Ctrl + K)                                                                                            |
+| Exemplos 2 a 5: fetch, loading e erro, filtro, SearchBar                    | `components/ListaContatos.jsx` e `components/BarraBusca.jsx`, página `/contatos`                                                      |
+| Atividades propostas: exibir contato, recarregar, "nenhum encontrado", erro | Bloco "VERSÃO DA AULA" de `ListaContatos.jsx` (a v2 ativa acrescenta `AbortController`, busca sem acento e chips)                     |
+| Exemplo 6: lista de tarefas                                                 | `pages/Lembretes.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`), página `/lembretes`                             |
 
 A página Telefones úteis busca os dados com `fetch('/api/contatos.json')`, arquivo que fica
 em `public/api/`. É o mesmo código usado com a API JSONPlaceholder no material, mas com os

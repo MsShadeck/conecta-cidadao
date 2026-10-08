@@ -18,7 +18,10 @@ import './Contatos.css'; // campo de busca com lupa (.contatos-busca)
 import './ServicosOnline.css';
 
 export default function ServicosOnline() {
-  useTituloPagina('Serviços online da Prefeitura — Conecta Cidadão');
+  useTituloPagina(
+    'Serviços online da Prefeitura — Conecta Cidadão',
+    'Links oficiais de Indaiatuba: IPTU, Minha Vacina, resultados de exames, multas, iluminação pública e mais.'
+  );
   const { dados, carregando, erro, recarregar } = useDados('/api/servicos-online.json');
   const [busca, setBusca] = useState('');
   const [categoria, setCategoria] = useState('todos');

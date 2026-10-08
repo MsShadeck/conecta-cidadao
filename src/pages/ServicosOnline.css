@@ -35,19 +35,19 @@
 }
 
 .servico-online strong {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--azul-marca);
 }
 
 .servico-online span {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   color: var(--tinta-media);
   line-height: 1.55;
 }
 
 .servico-online .servico-online-site {
   margin-top: auto;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--azul-marca);
 }

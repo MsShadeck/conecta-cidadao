@@ -53,6 +53,22 @@
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Aplica o tema e o tamanho de letra escolhidos ANTES de o React carregar,
+         para a página não aparecer clara e depois "piscar" para o escuro.
+         try/catch: o localStorage pode estar bloqueado (aba anônima etc.). -->
+    <script>
+      try {
+        var tema = JSON.parse(localStorage.getItem('cc:tema'));
+        var fonte = JSON.parse(localStorage.getItem('cc:fonte'));
+        if (tema === 'claro' || tema === 'escuro') document.documentElement.dataset.tema = tema;
+        if (fonte === 'grande' || fonte === 'maior') document.documentElement.dataset.fonte = fonte;
+      } catch (e) {}
+    </script>
+
+    <!-- Os dados dos locais são usados por quase todas as páginas (inclusive a
+         contagem da Home): o navegador já começa a baixar junto com o JavaScript. -->
+    <link rel="preload" href="/api/locais.json" as="fetch" crossorigin />
+
     <!-- preconnect: abre a conexão com o Google Fonts antes de a fonte ser
          pedida, reduzindo o tempo de carregamento. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

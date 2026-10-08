@@ -89,6 +89,9 @@ export default function Mapa({
       center: CENTRO_INDAIATUBA,
       zoom: 13,
       scrollWheelZoom: false, // a roda do mouse rola a página, não o mapa
+      // Desenha linhas (rotas, ciclovias) num <canvas> em vez de centenas de
+      // elementos SVG: bem mais leve no celular.
+      preferCanvas: true,
     });
     // Tiles do OpenStreetMap: uso permitido com crédito e sem abuso (não pede chave).
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

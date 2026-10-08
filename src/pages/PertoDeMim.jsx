@@ -37,7 +37,10 @@ const NECESSIDADES = [
 ];
 
 export default function PertoDeMim() {
-  useTituloPagina('O que tem perto de mim — Conecta Cidadão');
+  useTituloPagina(
+    'O que tem perto de mim — Conecta Cidadão',
+    'Descubra a UBS, a escola, a creche, o CRAS e o terminal de ônibus mais próximos do seu endereço em Indaiatuba.'
+  );
   const { dados, carregando, erro, recarregar } = useDados('/api/locais.json');
   const { origem } = useOrigem();
 

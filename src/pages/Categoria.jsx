@@ -38,7 +38,10 @@ export default function Categoria({ slug }) {
   // Título dinâmico: "Saúde — Conecta Cidadão". O hook é chamado antes do
   // possível "return" abaixo porque hooks não podem ficar depois de um desvio.
   useTituloPagina(
-    categoria ? `${categoria.nome} em Indaiatuba — Conecta Cidadão` : 'Conecta Cidadão'
+    categoria ? `${categoria.nome} em Indaiatuba — Conecta Cidadão` : 'Conecta Cidadão',
+    categoria
+      ? `${categoria.nome} em Indaiatuba: ${categoria.resumo} Endereços, telefones e horários.`
+      : undefined
   );
 
   const { dados, carregando, erro, recarregar } = useDados('/api/locais.json');

@@ -100,7 +100,7 @@ export default function Home() {
 
       <section className="container home-marca">
         <img
-          src="/img/interface/logo.png"
+          src="/img/interface/pequeno/logo.png"
           alt=""
           className="home-marca-logo"
           width="62"

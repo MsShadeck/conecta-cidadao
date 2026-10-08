@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   font-weight: 600;
   padding: 3px 10px;
   border-radius: var(--raio-pilula);

@@ -6,14 +6,16 @@
  * ajuda o usuário a se localizar no histórico e nas abas.
  *
  * Aula "useEffect + Consumo de API" — Exemplo 1: as três formas do array de
- * dependências. As duas primeiras ficaram comentadas; a terceira é a ativa.
+ * dependências. As três ficaram comentadas (a C era a ativa na aula); a versão
+ * ativa agora repassa o título e a descrição para o useMetadados, que também
+ * atualiza a descrição e a prévia de compartilhamento (SEO).
  *
- * Uso: useTituloPagina('Saúde — Conecta Cidadão');
+ * Uso: useTituloPagina('Saúde — Conecta Cidadão', 'Descrição opcional da página');
  */
 
-import { useEffect } from 'react';
+import useMetadados from './useMetadados.js';
 
-export default function useTituloPagina(titulo) {
+export default function useTituloPagina(titulo, descricao) {
   /* VARIAÇÃO A — SEM array de dependências
      Executa SEMPRE: na montagem e a cada renderização do componente que usa o hook.
 
@@ -31,11 +33,17 @@ export default function useTituloPagina(titulo) {
   }, []);
   */
 
-  // VARIAÇÃO C (ATIVA) — array com dependência [titulo]
-  // Executa na montagem E toda vez que o texto do título mudar.
+  /* VARIAÇÃO C — VERSÃO DA AULA (era a ativa): array com dependência [titulo]
+     Executa na montagem E toda vez que o texto do título mudar.
+
   useEffect(() => {
     // Efeito colateral no DOM: precisa ficar dentro do useEffect, não no corpo
     // do componente, para rodar depois que a tela é desenhada.
     document.title = `${titulo}`;
   }, [titulo]);
+  */
+
+  // VERSÃO ATIVA — a mesma ideia da variação C ([titulo] nas dependências),
+  // agora dentro do useMetadados, que cuida também da descrição da página.
+  useMetadados({ titulo, descricao });
 }

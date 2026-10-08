@@ -1,0 +1,49 @@
+/* ============================================================
+   PreferenciasTela.css — Letra, tema e Libras (PreferenciasTela.jsx)
+============================================================ */
+
+.preferencias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  font-size: 0.8125rem;
+}
+
+.preferencias-grupo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.preferencias-rotulo {
+  font-weight: 600;
+  color: var(--tinta-media);
+}
+
+/* Área de toque de pelo menos 40px (recomendação para celular). */
+.preferencias-botao,
+.preferencias-select {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 6px 12px;
+  border-radius: var(--raio-pilula);
+  border: 1.5px solid var(--linha);
+  background: var(--branco);
+  color: var(--tinta);
+  font-weight: 600;
+}
+
+.preferencias-botao[aria-pressed='true'] {
+  background: var(--azul-marca);
+  border-color: var(--azul-marca);
+  color: var(--texto-sobre-marca);
+}
+
+.preferencias-libras {
+  font-weight: 500;
+}
+
+.preferencias-libras:disabled {
+  cursor: default;
+}

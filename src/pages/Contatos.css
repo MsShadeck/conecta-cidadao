@@ -42,13 +42,13 @@
 }
 
 .contatos-aviso {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   color: var(--tinta-media);
   padding: 8px 2px;
 }
 
 .contatos-aviso--erro {
-  color: #a0460a;
+  color: var(--erro);
 }
 
 .contatos-lista {
@@ -72,7 +72,7 @@
   min-width: 64px;
   padding: 10px 0;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   border-radius: 14px;
   background: var(--cat-fundo, var(--azul-nevoa));
@@ -81,20 +81,20 @@
 }
 
 .contato-nome {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   font-weight: 600;
   color: var(--tinta);
 }
 
 .contato-descricao {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   line-height: 1.55;
   color: var(--tinta-media);
 }
 
 /* Números longos, como (19) 3834-9000, não cabem no tamanho 20px. */
 .contato-telefone--longo {
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 10px 10px;
   white-space: nowrap;
 }
@@ -105,12 +105,12 @@
 }
 
 .contato-fonte {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-decoration: underline;
 }
 
 .contato-copiar {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   font-weight: 500;
   color: var(--azul-marca);
   padding: 6px 10px;
@@ -120,12 +120,12 @@
 }
 
 .contato-copiar:hover {
-  background: #dcf0f8;
+  background: var(--azul-hover);
 }
 
 /* Bloco de emergência: números grandes, sempre no topo. */
 .contatos-subtitulo {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -150,12 +150,12 @@
 }
 
 .contatos-emergencia-numero strong {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 
 .contatos-emergencia-numero span {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   font-weight: 500;
 }
 

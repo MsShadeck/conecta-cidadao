@@ -15,9 +15,9 @@
 /* Botão de volta ao início, em destaque com o azul da marca. */
 .nao-encontrada-botao {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--branco);
+  color: var(--texto-sobre-marca);
   background: var(--azul-marca);
   padding: 12px 24px;
   border-radius: var(--raio-pilula);

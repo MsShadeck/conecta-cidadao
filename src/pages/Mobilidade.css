@@ -18,13 +18,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   line-height: 1.6;
 }
 
 .mobilidade-bloco h2,
 .mobilidade-subtitulo {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--cat-tinta, var(--tinta));
 }
@@ -64,12 +64,12 @@
 }
 
 .mobilidade-link span {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--tinta-media);
 }
 
 .mobilidade-aviso {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   background: var(--azul-nevoa);
   padding: 12px 14px;
   border-radius: 12px;
@@ -102,5 +102,5 @@
 /* Página Como chegar: o seletor de destino ocupa a largura toda. */
 .como-chegar-destino {
   width: 100%;
-  font-size: 14px;
+  font-size: 0.875rem;
 }

@@ -19,5 +19,5 @@
   display: grid;
   place-items: center;
   color: var(--tinta-media);
-  font-size: 14px;
+  font-size: 0.875rem;
 }

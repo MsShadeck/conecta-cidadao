@@ -28,7 +28,10 @@ import './Mobilidade.css';
 const COR_CICLOVIA = '#1a7f37';
 
 export default function Mobilidade() {
-  useTituloPagina('Ônibus e bike em Indaiatuba — Conecta Cidadão');
+  useTituloPagina(
+    'Ônibus e bike em Indaiatuba — Conecta Cidadão',
+    'Transporte coletivo de Indaiatuba: previsão oficial dos ônibus, cartão SOU, terminais, Ecobike e ciclovias.'
+  );
   const navigate = useNavigate();
   const abrir = useCallback((rota) => navigate(rota), [navigate]);
 

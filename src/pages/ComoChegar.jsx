@@ -20,7 +20,10 @@ import './Categoria.css'; // campo de seleção (.filtro)
 import './Mobilidade.css';
 
 export default function ComoChegar() {
-  useTituloPagina('Como chegar — Conecta Cidadão');
+  useTituloPagina(
+    'Como chegar — Conecta Cidadão',
+    'Trajeto a pé ou de bicicleta pelas ruas de Indaiatuba até postos de saúde, escolas, parques e serviços públicos.'
+  );
   const { dados, carregando, erro, recarregar } = useDados('/api/locais.json');
   const [parametros, setParametros] = useSearchParams();
   const idDestino = parametros.get('destino') ?? '';

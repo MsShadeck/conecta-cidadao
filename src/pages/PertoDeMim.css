@@ -23,7 +23,7 @@
 }
 
 .perto-cartao h2 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -44,19 +44,19 @@
 }
 
 .perto-nome {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   font-weight: 600;
   color: var(--tinta);
   text-decoration: underline;
 }
 
 .perto-detalhe {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   color: var(--tinta-media);
 }
 
 .perto-rota {
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   padding: 7px 14px;
 }

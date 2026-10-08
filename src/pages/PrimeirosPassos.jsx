@@ -114,7 +114,10 @@ const PASSOS = [
 ];
 
 export default function PrimeirosPassos() {
-  useTituloPagina('Primeiros passos em Indaiatuba — Conecta Cidadão');
+  useTituloPagina(
+    'Primeiros passos em Indaiatuba — Conecta Cidadão',
+    'Mudou para Indaiatuba? Cartão SUS, escola, cartão do ônibus, Ecobike, IPTU e documentos: o que resolver primeiro.'
+  );
   // A pessoa pode marcar o que já resolveu; fica salvo no navegador.
   const [feitos, setFeitos] = useLocalStorage('cc:primeiros-passos', {});
   const total = PASSOS.filter((p) => feitos[p.id]).length;

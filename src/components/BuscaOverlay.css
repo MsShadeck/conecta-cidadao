@@ -49,7 +49,7 @@
   border: none;
   outline: none;
   background: transparent;
-  font-size: 15.5px;
+  font-size: 0.9688rem;
   color: var(--tinta);
 }
 
@@ -59,7 +59,7 @@
 
 /* Botão "Esc": lembra o atalho e também funciona como botão de fechar. */
 .busca-fechar {
-  font-size: 11.5px;
+  font-size: 0.7188rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--tinta-fraca);
@@ -73,7 +73,7 @@
 
 .busca-fechar:hover {
   color: var(--azul-marca);
-  background: #dcf0f8;
+  background: var(--azul-hover);
 }
 
 /* Lista de resultados com altura limitada e rolagem própria. */
@@ -89,7 +89,7 @@
 
 /* Título de cada grupo: Categorias, Locais, Bairros, Telefones... */
 .busca-grupo-titulo {
-  font-size: 11.5px;
+  font-size: 0.7188rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -132,7 +132,7 @@
 }
 
 .busca-miniatura--icone {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .busca-miniatura--icone img {
@@ -152,7 +152,7 @@
 
 /* Nome em uma linha só: o que não couber vira "..." no final. */
 .busca-nome {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   font-weight: 500;
   color: var(--tinta);
   overflow: hidden;
@@ -162,7 +162,7 @@
 
 /* Detalhe na cor da categoria (data-categoria fica no botão do item). */
 .busca-detalhe {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   color: var(--cat-tinta, var(--tinta-media));
   /* Detalhe pode ser longo (descrição de um serviço): no máximo duas linhas. */
   display: -webkit-box;
@@ -174,7 +174,7 @@
 /* Mensagem de "nenhum resultado". */
 .busca-vazio {
   padding: 26px 24px 30px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--tinta-media);
   text-align: center;
 }

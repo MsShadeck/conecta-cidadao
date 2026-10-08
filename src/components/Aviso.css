@@ -20,8 +20,8 @@
 /* A pílula azul com o texto do aviso. */
 .aviso {
   background: var(--azul-marca);
-  color: var(--branco);
-  font-size: 13.5px;
+  color: var(--texto-sobre-marca);
+  font-size: 0.8438rem;
   font-weight: 500;
   padding: 11px 22px;
   border-radius: var(--raio-pilula);

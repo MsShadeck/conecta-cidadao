@@ -75,14 +75,14 @@
 }
 
 .card-local-nome {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.4;
   color: var(--tinta);
 }
 
 .card-local-detalhe {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   color: var(--tinta-media);
 }
 
@@ -96,7 +96,7 @@
 }
 
 .card-local-distancia {
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   font-weight: 600;
   color: var(--azul-marca);
 }

@@ -43,8 +43,9 @@ const URL_CNES = (codigo) => `https://apidadosabertos.saude.gov.br/cnes/estabele
 const URL_OSM = (osm) => `https://www.openstreetmap.org/${osm}`;
 
 const lerJson = async (arquivo) => JSON.parse(await readFile(arquivo, 'utf8'));
-const gravarJson = (nome, dados) =>
-  writeFile(path.join(PASTA_SAIDA, nome), `${JSON.stringify(dados, null, 1)}\n`);
+// compacto = sem espaços: o locais.json é o maior arquivo e quase toda página o baixa.
+const gravarJson = (nome, dados, { compacto = false } = {}) =>
+  writeFile(path.join(PASTA_SAIDA, nome), `${JSON.stringify(dados, null, compacto ? 0 : 1)}\n`);
 
 /* ------------------------------------------------------------------ */
 /* Classificação das fichas da Prefeitura                              */
@@ -650,7 +651,11 @@ out tags center;`;
       consultadoEm: HOJE,
     },
   ];
-  await gravarJson('locais.json', { atualizadoEm: HOJE, fontes, locais: finais });
+  await gravarJson(
+    'locais.json',
+    { atualizadoEm: HOJE, fontes, locais: finais },
+    { compacto: true }
+  );
   await gravarJson('pendencias.json', { atualizadoEm: HOJE, pendencias: pendentes });
 
   // 7. Ecobike: estações do OSM (posições) + regras da página oficial (curadoria).

@@ -14,7 +14,7 @@ export default function Rodape() {
     <footer className="rodape">
       <div className="container rodape-interno">
         <div className="rodape-marca">
-          <img src="/img/interface/logo.png" alt="" width="34" height="34" />
+          <img src="/img/interface/pequeno/logo.png" alt="" width="34" height="27" />
           <div>
             <p className="rodape-nome">Conecta Cidadão · Indaiatuba</p>
             <p className="rodape-frase">Projeto acadêmico não oficial — Fatec Indaiatuba</p>

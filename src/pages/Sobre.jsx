@@ -10,7 +10,10 @@ import useTituloPagina from '../hooks/useTituloPagina.js';
 import './Sobre.css';
 
 export default function Sobre() {
-  useTituloPagina('Sobre — Conecta Cidadão');
+  useTituloPagina(
+    'Sobre o projeto — Conecta Cidadão',
+    'Projeto acadêmico da Fatec Indaiatuba, sem vínculo com a Prefeitura. Fontes de dados, créditos e equipe.'
+  );
 
   return (
     <>

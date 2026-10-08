@@ -32,7 +32,7 @@
   flex-direction: column;
   gap: 4px;
   font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   min-width: 160px;
 }
 
@@ -57,9 +57,9 @@
   margin: 4px;
   border-radius: 50%;
   background: var(--azul-marca);
-  color: var(--branco);
+  color: var(--texto-sobre-marca);
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.8125rem;
   display: grid;
   place-items: center;
 }

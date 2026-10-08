@@ -55,7 +55,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 12.5px;
+  font-size: 0.7813rem;
   font-weight: 500;
   color: var(--tinta-media);
   flex: 1 1 170px;
@@ -78,7 +78,7 @@
 }
 
 .alternar button {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   padding: 8px 18px;
   color: var(--azul-marca);
@@ -86,7 +86,7 @@
 
 .alternar button[aria-pressed='true'] {
   background: var(--azul-marca);
-  color: var(--branco);
+  color: var(--texto-sobre-marca);
 }
 
 .categoria-contagem {
@@ -94,13 +94,13 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--tinta);
 }
 
 .categoria-limpar {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--azul-marca);
   text-decoration: underline;
 }

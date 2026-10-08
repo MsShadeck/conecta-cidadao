@@ -4,9 +4,9 @@
 
 .rodape {
   padding: 26px 0 34px;
-  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  border-top: 1px solid var(--linha-rodape);
   /* Branco semitransparente: deixa o degradê do body aparecer por baixo. */
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--vidro-rodape);
 }
 
 /* Marca à esquerda e links à direita; flex-wrap empilha os blocos no celular. */
@@ -25,21 +25,21 @@
 }
 
 .rodape-nome {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--azul-marca);
 }
 
 .rodape-frase {
-  font-size: 12.5px;
-  color: var(--azul-suave);
+  font-size: 0.7813rem;
+  color: var(--tinta-media); /* o azul-suave não tinha contraste suficiente */
 }
 
 .rodape-links {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 18px; /* 6px entre linhas, 18px entre colunas */
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   font-weight: 500;
 }
 

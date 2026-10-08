@@ -3,7 +3,7 @@
 ============================================================ */
 
 .passos-progresso {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--azul-marca);
 }
@@ -19,12 +19,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   line-height: 1.6;
   border: 2px solid transparent;
 }
 
-/* Passo concluído: borda verde e marca no título (além da caixa marcada). */
+/* Passo concluído: borda verde (além da caixa marcada, que é a pista principal). */
 .passo--feito {
   border-color: #b6dfc2;
 }
@@ -36,11 +36,11 @@
 }
 
 .passo-icone {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 .passo-topo h2 {
-  font-size: 16.5px;
+  font-size: 1.0313rem;
   font-weight: 600;
   line-height: 1.35;
 }
@@ -52,7 +52,7 @@
 }
 
 .passo-acoes .botao-secundario {
-  font-size: 13px;
+  font-size: 0.8125rem;
   padding: 8px 14px;
 }
 
@@ -60,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   min-height: 32px;
   cursor: pointer;

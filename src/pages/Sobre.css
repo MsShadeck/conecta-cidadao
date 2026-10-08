@@ -37,7 +37,7 @@
 }
 
 .sobre-subtitulo {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   color: var(--azul-marca);
   text-align: center;
@@ -52,7 +52,7 @@
 
 /* Entrelinha maior (1.75) para facilitar a leitura dos parágrafos longos. */
 .sobre-texto {
-  font-size: 14.5px;
+  font-size: 0.9063rem;
   line-height: 1.75;
   color: var(--tinta-media);
 }
@@ -97,7 +97,7 @@
   border-radius: 50%;
   background: #d8eafd;
   color: var(--azul-marca);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   display: grid;
   place-items: center;
@@ -105,7 +105,7 @@
 }
 
 .sobre-nome {
-  font-size: 13.5px;
+  font-size: 0.8438rem;
   font-weight: 500;
   line-height: 1.45;
   color: var(--tinta);

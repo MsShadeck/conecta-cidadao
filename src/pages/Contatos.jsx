@@ -10,7 +10,10 @@ import useTituloPagina from '../hooks/useTituloPagina.js';
 import './Contatos.css';
 
 export default function Contatos() {
-  useTituloPagina('Telefones úteis — Conecta Cidadão');
+  useTituloPagina(
+    'Telefones úteis de Indaiatuba — Conecta Cidadão',
+    'Telefones de emergência e da Prefeitura de Indaiatuba: SAMU, Guarda Civil, Defesa Civil, Ouvidoria, UPA, Conselho Tutelar e mais.'
+  );
 
   return (
     <>

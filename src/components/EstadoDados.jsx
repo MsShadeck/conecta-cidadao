@@ -7,7 +7,9 @@
 export default function EstadoDados({ carregando, erro, recarregar, children }) {
   if (carregando) {
     return (
-      <p className="estado-dados" role="status">
+      // estado-dados--reserva guarda o espaço da lista que vai chegar: assim o
+      // que vem embaixo não "pula" quando os dados aparecem (evita CLS).
+      <p className="estado-dados estado-dados--reserva" role="status">
         Carregando...
       </p>
     );

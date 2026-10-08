@@ -28,7 +28,10 @@ import './MapaGeral.css';
 const LIMITE_LISTA = 60;
 
 export default function MapaGeral() {
-  useTituloPagina('Mapa dos serviços de Indaiatuba — Conecta Cidadão');
+  useTituloPagina(
+    'Mapa dos serviços de Indaiatuba — Conecta Cidadão',
+    'Mapa com UBS, escolas, creches, CRAS, parques, terminais de ônibus e outros serviços públicos de Indaiatuba.'
+  );
   const navigate = useNavigate();
   const abrir = useCallback((rota) => navigate(rota), [navigate]);
   const { dados, carregando, erro, recarregar } = useDados('/api/locais.json');
@@ -142,8 +145,10 @@ export default function MapaGeral() {
                       type="button"
                       className={`mapa-geral-item${selecionado === l.id ? ' mapa-geral-item--ativo' : ''}`}
                       onClick={() => setSelecionado(l.id)}
-                      aria-label={`Mostrar ${l.nome} no mapa`}
                     >
+                      {/* Texto só para leitor de tela: o nome acessível continua
+                          contendo o texto visível (WCAG 2.5.3). */}
+                      <span className="somente-leitor">Mostrar no mapa: </span>
                       <span className="mapa-geral-cor" aria-hidden="true" />
                       <span>
                         <strong>{l.nome}</strong>
