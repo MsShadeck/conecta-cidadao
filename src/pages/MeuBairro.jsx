@@ -27,6 +27,7 @@ import EstadoDados from '../components/EstadoDados.jsx';
 import MapaWaze from '../components/MapaWaze.jsx';
 import ItemProximo from '../components/ItemProximo.jsx';
 import IconeCategoria from '../components/IconeCategoria.jsx';
+import ListaBairros from '../components/ListaBairros.jsx';
 import './MeuBairro.css';
 
 const BLOCOS = [
@@ -117,15 +118,23 @@ export default function MeuBairro() {
   }
 
   // Ponto inicial: /bairros/:slug → ?cep= / ?bairro= → bairro salvo.
+  // /meu-bairro e /bairros/:slug usam este mesmo componente: ao trocar de bairro
+  // pelo link, o React reaproveita o estado. Por isso o bairro da URL vale sempre
+  // que for diferente do ponto atual.
   useEffect(() => {
-    if (!listaBairros.length || ponto) return;
+    if (!listaBairros.length) return;
     if (bairroDaPagina) {
+      if (ponto?.slug === bairroDaPagina.slug) return;
+      setEntrada('');
       usarPonto({
         ...bairroDaPagina.coordenadas,
         rotulo: bairroDaPagina.nome,
         bairro: bairroDaPagina.nome,
+        slug: bairroDaPagina.slug,
         aproximada: true,
       });
+    } else if (ponto) {
+      return;
     } else if (parametros.get('cep') || parametros.get('bairro')) {
       pesquisar(parametros.get('cep') ?? parametros.get('bairro'));
     } else if (salvo) {
@@ -400,6 +409,7 @@ export default function MeuBairro() {
           </div>
         )}
 
+        {/* VERSÃO ANTERIOR — lista simples de links:
         {!ponto && !status && (
           <div className="container">
             <p className="info-fonte">Ou escolha um bairro:</p>
@@ -410,6 +420,23 @@ export default function MeuBairro() {
                 </li>
               ))}
             </ul>
+          </div>
+        )} */}
+
+        {/* Sem ponto: a lista aparece aberta. Com resultado: fica recolhida no fim. */}
+        {listaBairros.length > 0 && (
+          <div className="container">
+            {ponto ? (
+              <details className="painel bairro-outro">
+                <summary>Ver outro bairro</summary>
+                <ListaBairros
+                  bairros={listaBairros}
+                  atual={bairroDaPagina?.slug ?? bairro?.bairro.slug}
+                />
+              </details>
+            ) : (
+              !status && <ListaBairros bairros={listaBairros} />
+            )}
           </div>
         )}
       </EstadoDados>
