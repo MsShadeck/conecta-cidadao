@@ -8,7 +8,7 @@
 
 import { readFile, writeFile } from 'node:fs/promises';
 
-const SITE = 'https://conecta-cidadao.vercel.app';
+const SITE = 'https://conecta-cidadao-blue.vercel.app';
 const PAGINAS_FIXAS = [
   '/',
   '/primeiros-passos',

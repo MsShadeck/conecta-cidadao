@@ -14,7 +14,7 @@
 
 import { useEffect } from 'react';
 
-const SITE = 'https://conecta-cidadao.vercel.app';
+const SITE = 'https://conecta-cidadao-blue.vercel.app';
 const DESCRICAO_PADRAO =
   'Guia não oficial dos serviços públicos de Indaiatuba/SP: saúde, escolas, segurança, lazer, ônibus e serviços online.';
 

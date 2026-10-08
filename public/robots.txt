@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://conecta-cidadao.vercel.app/sitemap.xml
+Sitemap: https://conecta-cidadao-blue.vercel.app/sitemap.xml
