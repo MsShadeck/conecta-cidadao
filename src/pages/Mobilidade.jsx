@@ -30,8 +30,8 @@ const COR_CICLOVIA = '#1a7f37';
 
 export default function Mobilidade() {
   useTituloPagina(
-    'Ônibus e bike em Indaiatuba — Conecta Cidadão',
-    'Transporte coletivo de Indaiatuba: previsão oficial dos ônibus, cartão SOU, terminais, Ecobike e ciclovias.'
+    'Transporte em Indaiatuba — Conecta Cidadão',
+    'Como se locomover em Indaiatuba: ônibus (previsão oficial e cartão SOU), terminais, Ecobike, ciclovias e trânsito ao vivo.'
   );
   const navigate = useNavigate();
   const abrir = useCallback((rota) => navigate(rota), [navigate]);
@@ -83,13 +83,13 @@ export default function Mobilidade() {
     <div data-categoria="mobilidade">
       <section className="container categoria-topo">
         <ChipsCategorias />
-        <h1 className="titulo-pagina">Ônibus e bike</h1>
+        <h1 className="titulo-pagina">Transporte</h1>
         <p className="texto-apoio">
-          Como se locomover em Indaiatuba sem carro: transporte coletivo, terminais, cartão SOU,
-          bicicletas grátis do Ecobike e ciclovias.
+          Como se locomover em Indaiatuba: ônibus, terminais e cartão SOU, bicicletas grátis do
+          Ecobike, ciclovias e o trânsito ao vivo para quem vai de carro.
         </p>
         <Link to="/como-chegar" className="botao-primario mobilidade-cta">
-          Planejar um trajeto (a pé ou de bike)
+          Planejar um trajeto (Waze ou Google Maps)
         </Link>
       </section>
 

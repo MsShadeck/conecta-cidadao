@@ -7,7 +7,7 @@ responde: _"Acabei de chegar. O que eu preciso resolver, e onde fica o que eu pr
   com documentos e prazos só quando a fonte oficial informa;
 - **Meu bairro:** pelo CEP, endereço, localização ou bairro, a UBS, a escola, o mercado, a farmácia, o
   ônibus e o parque mais perto, e o dia da coleta de lixo quando a Prefeitura publica;
-- **Serviços públicos, Dia a dia, Ônibus e bike, Lazer e cultura e Conheça Indaiatuba**, com endereço,
+- **Serviços públicos, Dia a dia, Transporte, Lazer e cultura e Conheça Indaiatuba**, com endereço,
   telefone, horário ("Aberto agora") e os botões **Ir com Waze** e **Google Maps** em cada lugar.
 
 Projeto Integrador do curso de DSM da Fatec Indaiatuba, em React 18 + Vite 5 + React Router 6.
@@ -49,7 +49,7 @@ npm run dev     # abre em http://localhost:5173
 | Mapa de todos os serviços                                          | `/mapa` (aceita `?bairro=`)                                                                       |
 | Como chegar (botões Waze e Google Maps)                            | `/como-chegar` (aceita `?destino=id`)                                                             |
 | Categorias (com busca por texto, filtros, lista/mapa)              | `/saude`, `/educacao`, `/seguranca`, `/lazer`, `/cidadania` (aceitam `?q=`, `?tipo=`, `?bairro=`) |
-| Ônibus e bike                                                      | `/mobilidade`                                                                                     |
+| Transporte (ônibus, bike, trânsito)                                | `/mobilidade`                                                                                     |
 | Detalhe de um local                                                | `/:categoria/:id` (ex.: `/saude/ubs-jd-california`)                                               |
 | Serviços online da Prefeitura                                      | `/servicos-online`                                                                                |
 | Telefones úteis                                                    | `/contatos`                                                                                       |
@@ -127,7 +127,7 @@ Os mapas de **um ponto** (página de um local, Meu bairro, trânsito na página 
 **iFrame oficial do Waze** (`embed.waze.com`), com trânsito ao vivo.
 
 **Exceção — mapas com vários pontos:** o iFrame do Waze mostra um único ponto e não aceita vários
-marcadores. Por isso, o Mapa geral, as categorias em modo mapa, Ônibus e bike (Ecobike e ciclovias)
+marcadores. Por isso, o Mapa geral, as categorias em modo mapa, Transporte (Ecobike e ciclovias)
 e Conheça Indaiatuba (bairros e contorno do município) continuam com **Leaflet + OpenStreetMap**, sem
 nenhuma marca ou nome do Waze nesses mapas, como pedem as regras de marca do Waze.
 

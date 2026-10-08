@@ -42,8 +42,8 @@ const ATALHOS = [
   {
     rota: '/mobilidade',
     slug: 'mobilidade',
-    titulo: 'Ônibus e bike',
-    texto: 'Cartão SOU, terminais, Ecobike e ciclovias.',
+    titulo: 'Transporte',
+    texto: 'Ônibus, cartão SOU, Ecobike, ciclovias e trânsito.',
   },
   {
     rota: '/lazer',

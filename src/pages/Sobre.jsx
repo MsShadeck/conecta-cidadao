@@ -206,7 +206,7 @@ export default function Sobre() {
           </ul>
           <p className="sobre-texto">
             Linhas, paradas e horários de ônibus não aparecem porque não são publicados em formato
-            aberto: a página <Link to="/mobilidade">Ônibus e bike</Link> leva ao sistema oficial de
+            aberto: a página <Link to="/mobilidade">Transporte</Link> leva ao sistema oficial de
             previsão de chegadas. As fotos dos locais vêm do projeto original e a origem de cada uma
             está sendo conferida.
           </p>

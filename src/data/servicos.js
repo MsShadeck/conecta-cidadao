@@ -52,9 +52,9 @@ export const categorias = [
   },
   {
     slug: 'mobilidade',
-    nome: 'Ônibus e bike',
+    nome: 'Transporte',
     rota: '/mobilidade',
-    resumo: 'Terminais, cartão SOU, previsão oficial dos ônibus, Ecobike e ciclovias.',
+    resumo: 'Ônibus, cartão SOU, terminais, Ecobike, ciclovias e trânsito ao vivo.',
   },
 ];
 

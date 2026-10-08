@@ -21,7 +21,7 @@ import './Cabecalho.css';
 const LINKS_PRINCIPAIS = [
   { rota: '/primeiros-passos', nome: 'Primeiros passos' },
   { rota: '/meu-bairro', nome: 'Meu bairro' },
-  { rota: '/mobilidade', nome: 'Ônibus e bike' },
+  { rota: '/mobilidade', nome: 'Transporte' },
   { rota: '/mapa', nome: 'Mapa' },
 ];
 
@@ -32,7 +32,7 @@ const LINKS_MENU = [
   { rota: '/meu-bairro', nome: 'Meu bairro', icone: 'bairro' },
   { rota: '/servicos', nome: 'Serviços públicos', icone: 'servicos' },
   { rota: '/dia-a-dia', nome: 'Dia a dia (mercados, farmácias...)', icone: 'dia-a-dia' },
-  { rota: '/mobilidade', nome: 'Ônibus e bike', icone: 'mobilidade' },
+  { rota: '/mobilidade', nome: 'Transporte (ônibus, bike, trânsito)', icone: 'mobilidade' },
   { rota: '/lazer', nome: 'Lazer e cultura', icone: 'lazer' },
   { rota: '/conheca', nome: 'Conheça Indaiatuba', icone: 'conheca' },
   { rota: '/mapa', nome: 'Mapa' },

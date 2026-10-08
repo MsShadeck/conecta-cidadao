@@ -46,7 +46,7 @@ const DESENHOS = {
       <path d="m3 9 9-5 9 5H3ZM5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18" />
     </>
   ),
-  // Ônibus e bike: ônibus de frente
+  // Transporte: ônibus de frente
   mobilidade: (
     <>
       <rect x="5" y="3" width="14" height="15" rx="3" />

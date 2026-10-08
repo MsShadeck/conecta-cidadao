@@ -252,7 +252,7 @@ export default function PlanejadorRota({ destino }) {
       <BotoesNavegacao local={destino} origem={origem} />
       <p className="info-fonte">
         De ônibus: o Google Maps mostra as linhas de Indaiatuba, onde embarcar e o horário. Para a
-        previsão oficial de chegada nos pontos, veja a página Ônibus e bike.
+        previsão oficial de chegada nos pontos, veja a página Transporte.
       </p>
       <details className="planejador-origem">
         <summary>Sair de outro lugar (opcional)</summary>

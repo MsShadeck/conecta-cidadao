@@ -361,7 +361,7 @@
       "online": false,
       "documentos": ["RG", "CPF", "Comprovante de endereço"],
       "prazo": null,
-      "pagina": { "nome": "Ônibus e bike", "rota": "/mobilidade" },
+      "pagina": { "nome": "Transporte", "rota": "/mobilidade" },
       "links": [
         {
           "nome": "Ponto Cidadão (Prefeitura)",
