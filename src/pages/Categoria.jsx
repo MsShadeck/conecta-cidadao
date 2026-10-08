@@ -58,8 +58,12 @@ export default function Categoria({ slug }) {
           trocar de /saude para /lazer. Mudando a key, o estado recomeça do zero. */}
       <section className="container">
         <div className="painel categoria-extra">
-          <BotaoUtil key={`util-${categoria.slug}`} />
-          <SugestaoLocais key={`sugestao-${categoria.slug}`} categoriaNome={categoria.nome} />
+          <BotaoUtil key={`util-${categoria.slug}`} pagina={categoria.slug} />
+          <SugestaoLocais
+            key={`sugestao-${categoria.slug}`}
+            categoriaSlug={categoria.slug}
+            categoriaNome={categoria.nome}
+          />
         </div>
       </section>
     </div>

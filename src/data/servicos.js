@@ -15,6 +15,8 @@
  *   locais → lista de unidades daquela categoria
  */
 
+import { normalizar } from '../utils/texto.js';
+
 export const categorias = [
   {
     slug: 'saude',
@@ -106,19 +108,10 @@ export function buscarCategoria(slug) {
 }
 
 /**
- * Remove acentos e caixa para a busca não depender de digitação exata.
- * Assim "saude", "SAÚDE" e "Saúde" viram todos "saude".
- *
- * normalize('NFD') separa a letra do acento (ç → c + ̧ ) e o replace apaga
- * os sinais soltos usando o intervalo Unicode dos acentos combinantes.
+ * normalizar() mora em src/utils/texto.js; é reexportada aqui para continuar
+ * disponível no mesmo lugar de antes (import { normalizar } from './servicos.js').
  */
-export function normalizar(texto) {
-  return texto
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim(); // tira espaços sobrando nas pontas
-}
+export { normalizar };
 
 /**
  * Filtra os locais pelo termo digitado, comparando com o nome do local
@@ -132,8 +125,7 @@ export function filtrarLocais(termo) {
   if (!alvo) return [];
   return todosOsLocais.filter(
     (local) =>
-      normalizar(local.nome).includes(alvo) ||
-      normalizar(local.categoriaNome).includes(alvo)
+      normalizar(local.nome).includes(alvo) || normalizar(local.categoriaNome).includes(alvo)
   );
 }
 

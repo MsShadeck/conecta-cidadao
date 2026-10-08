@@ -92,6 +92,73 @@
   color: var(--tinta-media);
 }
 
+/* Números longos, como (19) 3834-9000, não cabem no tamanho 20px. */
+.contato-telefone--longo {
+  font-size: 14px;
+  padding: 10px 10px;
+  white-space: nowrap;
+}
+
+.contato-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.contato-fonte {
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.contato-copiar {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--azul-marca);
+  padding: 6px 10px;
+  border-radius: var(--raio-pilula);
+  background: var(--azul-nevoa);
+  flex-shrink: 0;
+}
+
+.contato-copiar:hover {
+  background: #dcf0f8;
+}
+
+/* Bloco de emergência: números grandes, sempre no topo. */
+.contatos-subtitulo {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contatos-emergencia-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.contatos-emergencia-numero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 8px;
+  border-radius: 16px;
+  text-align: center;
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
+}
+
+.contatos-emergencia-numero strong {
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.contatos-emergencia-numero span {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
 @media (max-width: 520px) {
   .contatos-lista {
     grid-template-columns: 1fr;

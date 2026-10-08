@@ -20,14 +20,17 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;   /* mantém o tamanho e permite a rolagem lateral */
+  flex-shrink: 0; /* mantém o tamanho e permite a rolagem lateral */
   font-size: 13.5px;
   font-weight: 500;
   color: var(--tinta-media);
   background: rgba(255, 255, 255, 0.72);
   padding: 8px 16px 8px 12px;
   border-radius: var(--raio-pilula);
-  transition: background var(--transicao), color var(--transicao), box-shadow var(--transicao);
+  transition:
+    background var(--transicao),
+    color var(--transicao),
+    box-shadow var(--transicao);
 }
 
 /* Ícone apagado nos chips inativos, para o chip ativo se destacar. */
@@ -47,11 +50,22 @@
 /* Modificador aplicado pelo NavLink na categoria aberta: assume as cores
    daquele serviço (variáveis vindas do data-categoria). */
 .chip--ativo {
-  background: var(--cat-fundo);
-  color: var(--cat-tinta);
+  /* Sem data-categoria (ex.: chip "Todos"), cai no azul da marca. */
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
   box-shadow: var(--sombra-baixa);
 }
 
 .chip--ativo img {
   opacity: 1;
+}
+
+/* Dentro de um painel branco, o chip inativo precisa de fundo próprio para aparecer. */
+.painel .chip {
+  background: var(--azul-nevoa);
+}
+
+.painel .chip--ativo {
+  background: var(--cat-fundo, var(--azul-marca));
+  color: var(--cat-tinta, var(--branco));
 }

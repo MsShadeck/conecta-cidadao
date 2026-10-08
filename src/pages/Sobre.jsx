@@ -16,38 +16,50 @@ export default function Sobre() {
     <>
       <section className="container sobre-topo">
         <h1 className="titulo-pagina">Sobre nós</h1>
-        <p className="texto-apoio">
-          Conheça o projeto e a equipe por trás do Conecta Cidadão.
-        </p>
+        <p className="texto-apoio">Conheça o projeto e a equipe por trás do Conecta Cidadão.</p>
       </section>
 
       <section className="container sobre-grade">
         {/* <article>: bloco de conteúdo com sentido próprio. */}
         <article className="sobre-card">
-          {/* Imagem informativa (traz o slogan), por isso o alt é preenchido. */}
+          {/* Logo sem texto: é decorativa, o nome do projeto vem logo abaixo. */}
           <img
-            src="/img/interface/logo-de-fundo.png"
-            alt="Serviços Sociais — cuidado que transforma vidas"
+            src="/img/interface/logo.png"
+            alt=""
             className="sobre-logo"
+            width="160"
+            height="128"
           />
           <h2 className="sobre-subtitulo">O projeto</h2>
           <p className="sobre-texto">
-            O <strong>Conecta Cidadão</strong> é uma plataforma criada para facilitar o acesso
-            da população aos serviços públicos de forma simples, rápida e prática.
+            O <strong>Conecta Cidadão</strong> é uma plataforma criada para facilitar o acesso da
+            população de <strong>Indaiatuba (SP)</strong> aos serviços públicos de forma simples,
+            rápida e prática, pensada também para quem acabou de se mudar para a cidade.
           </p>
           <p className="sobre-texto">
             {/* As etiquetas reaproveitam a classe global "etiqueta" com o
                 data-categoria de cada serviço, herdando a cor correspondente.
                 O {' '} força um espaço que o JSX apagaria na quebra de linha. */}
             Em uma única interface, o cidadão encontra informações sobre{' '}
-            <span className="etiqueta" data-categoria="saude">Saúde</span>,{' '}
-            <span className="etiqueta" data-categoria="seguranca">Segurança</span>,{' '}
-            <span className="etiqueta" data-categoria="educacao">Educação</span> e{' '}
-            <span className="etiqueta" data-categoria="lazer">Lazer</span> — sem burocracia e
-            sem complicação.
+            <span className="etiqueta" data-categoria="saude">
+              Saúde
+            </span>
+            ,{' '}
+            <span className="etiqueta" data-categoria="seguranca">
+              Segurança
+            </span>
+            ,{' '}
+            <span className="etiqueta" data-categoria="educacao">
+              Educação
+            </span>{' '}
+            e{' '}
+            <span className="etiqueta" data-categoria="lazer">
+              Lazer
+            </span>{' '}
+            — sem burocracia e sem complicação.
           </p>
           <p className="sobre-texto">
-            Nossa missão é aproximar as pessoas dos recursos públicos disponíveis na cidade,
+            Nossa missão é aproximar as pessoas dos recursos públicos disponíveis em Indaiatuba,
             promovendo mais qualidade de vida e cidadania ativa.
           </p>
         </article>

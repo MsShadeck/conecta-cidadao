@@ -8,7 +8,7 @@
   inset: 0; /* atalho para top/right/bottom/left: 0 */
   z-index: 200;
   display: flex;
-  align-items: flex-start;  /* painel próximo ao topo, não centralizado */
+  align-items: flex-start; /* painel próximo ao topo, não centralizado */
   justify-content: center;
   /* Distância do topo proporcional à altura da janela, com limites. */
   padding: clamp(48px, 12vh, 110px) 20px 20px;
@@ -66,7 +66,9 @@
   background: var(--azul-nevoa);
   padding: 5px 10px;
   border-radius: 8px;
-  transition: color var(--transicao), background var(--transicao);
+  transition:
+    color var(--transicao),
+    background var(--transicao);
 }
 
 .busca-fechar:hover {

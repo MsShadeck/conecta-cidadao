@@ -16,8 +16,8 @@ export default function NaoEncontrada() {
     <section className="container nao-encontrada">
       <h1 className="titulo-pagina">Esta página não existe</h1>
       <p className="texto-apoio">
-        O endereço digitado não corresponde a nenhum serviço. Volte ao início para escolher
-        entre saúde, segurança, educação e lazer.
+        O endereço digitado não corresponde a nenhum serviço. Volte ao início para escolher entre
+        saúde, segurança, educação e lazer.
       </p>
       {/* Saída clara para o usuário: um caminho de volta em vez de um beco sem saída. */}
       <Link to="/" className="nao-encontrada-botao">

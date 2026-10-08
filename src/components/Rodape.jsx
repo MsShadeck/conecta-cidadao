@@ -16,8 +16,8 @@ export default function Rodape() {
         <div className="rodape-marca">
           <img src="/img/interface/logo.png" alt="" width="34" height="34" />
           <div>
-            <p className="rodape-nome">Conecta Cidadão</p>
-            <p className="rodape-frase">Cuidado que transforma vidas</p>
+            <p className="rodape-nome">Conecta Cidadão · Indaiatuba</p>
+            <p className="rodape-frase">Projeto acadêmico não oficial — Fatec Indaiatuba</p>
           </div>
         </div>
 

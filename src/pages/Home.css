@@ -10,10 +10,10 @@
   gap: 14px;
 }
 
-/* Limita o título a ~17 caracteres por linha, forçando a quebra em duas
+/* Limita o título a ~22 caracteres por linha, forçando a quebra em duas
    linhas e deixando a chamada com aparência de manchete. */
 .home-topo .titulo-pagina {
-  max-width: 17ch;
+  max-width: 22ch;
 }
 
 /* Botão que imita um campo de busca (o input de verdade está no overlay). */
@@ -28,7 +28,9 @@
   padding: 15px 16px 15px 20px;
   box-shadow: var(--sombra-baixa);
   color: var(--azul-acento);
-  transition: box-shadow var(--transicao), transform var(--transicao);
+  transition:
+    box-shadow var(--transicao),
+    transform var(--transicao);
 }
 
 .home-busca:hover {
@@ -62,7 +64,7 @@
   border-radius: 8px;
 }
 
-/* Faixa branca com a logo e o slogan "Serviços Sociais". */
+/* Faixa branca com a logo, a cidade e o aviso de projeto não oficial. */
 .home-marca {
   display: flex;
   align-items: center;
@@ -88,9 +90,11 @@
 }
 
 .home-marca-frase {
-  font-size: 13px;
-  color: var(--azul-suave);
-  letter-spacing: 0.02em;
+  font-size: 13.5px;
+  line-height: 1.55;
+  /* --tinta-media em vez do azul-suave: o azul claro não tinha contraste suficiente. */
+  color: var(--tinta-media);
+  max-width: 62ch;
 }
 
 .home-servicos {

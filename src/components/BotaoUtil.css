@@ -23,11 +23,19 @@
   border-radius: var(--raio-pilula);
   background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--cat-tinta, var(--azul-marca));
-  transition: transform var(--transicao), filter var(--transicao);
+  transition:
+    transform var(--transicao),
+    filter var(--transicao);
 }
 
 .botao-util-botao:hover {
   filter: brightness(0.96);
+}
+
+/* Votado: inverte as cores (fundo forte, texto branco) para mostrar o estado. */
+.botao-util-botao[aria-pressed='true'] {
+  background: var(--cat-tinta, var(--azul-marca));
+  color: var(--branco);
 }
 
 .botao-util-botao:active {

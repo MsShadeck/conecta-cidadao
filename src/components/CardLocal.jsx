@@ -10,6 +10,7 @@
  */
 
 import { useAviso } from '../context/AppContext.jsx';
+import Foto from './Foto.jsx';
 import './CardLocal.css';
 
 export default function CardLocal({ local, categoriaSlug }) {
@@ -26,9 +27,9 @@ export default function CardLocal({ local, categoriaSlug }) {
       onClick={() => mostrarAviso(`Abrindo: ${local.nome}`)}
     >
       <span className="card-local-moldura">
-        {/* Aqui o alt é preenchido: a foto identifica o local.
-            loading="lazy" adia o download das imagens fora da tela. */}
-        <img className="card-local-imagem" src={local.imagem} alt={local.nome} loading="lazy" />
+        {/* Aqui o alt é preenchido: a foto identifica o local. O componente Foto
+            entrega WebP no tamanho certo e reserva o espaço (width/height). */}
+        <Foto className="card-local-imagem" src={local.imagem} alt={local.nome} />
       </span>
       <span className="card-local-nome">{local.nome}</span>
     </button>

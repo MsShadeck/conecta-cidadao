@@ -17,6 +17,7 @@ import { useNavigate } from 'react-router-dom';
 import { categorias, filtrarLocais } from '../data/servicos.js';
 import { useAviso, useBusca } from '../context/AppContext.jsx';
 import IconeLupa from './IconeLupa.jsx';
+import Foto from './Foto.jsx';
 import './BuscaOverlay.css';
 
 export default function BuscaOverlay() {
@@ -25,12 +26,12 @@ export default function BuscaOverlay() {
   // navigate() muda de rota por código (aqui, depois de escolher um resultado).
   const navigate = useNavigate();
 
-  const [termo, setTermo] = useState('');   // texto digitado no campo
-  const [ativo, setAtivo] = useState(0);    // índice do item destacado na lista
+  const [termo, setTermo] = useState(''); // texto digitado no campo
+  const [ativo, setAtivo] = useState(0); // índice do item destacado na lista
 
   // Referências para elementos reais do DOM:
-  const campoRef = useRef(null);  // o <input>, para dar foco nele
-  const listaRef = useRef(null);  // a <ul>, para rolar até o item destacado
+  const campoRef = useRef(null); // o <input>, para dar foco nele
+  const listaRef = useRef(null); // a <ul>, para rolar até o item destacado
 
   /**
    * Lista de resultados. O useMemo só recalcula quando o termo muda, evitando
@@ -172,7 +173,12 @@ export default function BuscaOverlay() {
             aria-label="Buscar por uma unidade, escola ou parque"
             onChange={(evento) => setTermo(evento.target.value)}
           />
-          <button type="button" className="busca-fechar" onClick={fecharBusca} aria-label="Fechar busca">
+          <button
+            type="button"
+            className="busca-fechar"
+            onClick={fecharBusca}
+            aria-label="Fechar busca"
+          >
             Esc
           </button>
         </div>
@@ -196,7 +202,14 @@ export default function BuscaOverlay() {
                 >
                   {/* Local mostra a foto; categoria mostra o ícone dentro de um selo colorido. */}
                   {item.tipo === 'local' ? (
-                    <img className="busca-miniatura" src={item.imagem} alt="" loading="lazy" />
+                    <Foto
+                      className="busca-miniatura"
+                      src={item.imagem}
+                      alt=""
+                      sizes="52px"
+                      largura={52}
+                      altura={40}
+                    />
                   ) : (
                     <span className="busca-miniatura busca-miniatura--icone">
                       <img src={item.icone} alt="" />
@@ -213,7 +226,8 @@ export default function BuscaOverlay() {
           </ul>
         ) : (
           <p className="busca-vazio">
-            Nada encontrado para “{termo}”. Tente o nome do bairro ou do serviço.
+            Nada encontrado para “{termo}”. Tente o nome do local ou da categoria (ex.: UBS, EMEB,
+            parque).
           </p>
         )}
       </div>

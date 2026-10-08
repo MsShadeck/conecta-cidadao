@@ -40,16 +40,16 @@ src/
 
 ## Rotas
 
-| Página    | Endereço      |
-| --------- | ------------- |
-| Início    | `/`           |
-| Saúde     | `/saude`      |
-| Segurança | `/seguranca`  |
-| Educação  | `/educacao`   |
-| Lazer     | `/lazer`      |
-| Sobre     | `/sobre`      |
-| Telefones úteis | `/contatos` |
-| Lembretes | `/lembretes`  |
+| Página          | Endereço     |
+| --------------- | ------------ |
+| Início          | `/`          |
+| Saúde           | `/saude`     |
+| Segurança       | `/seguranca` |
+| Educação        | `/educacao`  |
+| Lazer           | `/lazer`     |
+| Sobre           | `/sobre`     |
+| Telefones úteis | `/contatos`  |
+| Lembretes       | `/lembretes` |
 
 As quatro páginas de categoria usam o mesmo componente (`pages/Categoria.jsx`), que recebe
 o `slug` pela rota e monta a tela a partir do arquivo de dados.
@@ -61,17 +61,19 @@ O projeto usa `BrowserRouter`, então os endereços são limpos, sem `#`.
 O código praticado nas aulas **"Review + Rotas"** e **"useEffect + Consumo de API"** foi
 aplicado ao tema do Conecta Cidadão. Como a professora pediu, as versões intermediárias
 não foram apagadas: ficam comentadas com `/* */` ou `{/* */}` acima da versão ativa.
+Quando um desses arquivos evoluiu depois das aulas (v2), a última versão feita em aula também
+ficou comentada, com o título **VERSÃO DA AULA**, e a versão nova é a ativa.
 
-| Exemplo do material | Onde está no projeto |
-| ------------------- | -------------------- |
-| Rotas (`BrowserRouter`, `Routes`, `Link`) | `App.jsx`, `Cabecalho.jsx`, `Rodape.jsx` |
-| LikeButton (useState) | `components/BotaoUtil.jsx`: "Esta página foi útil?" nas páginas de categoria |
-| ListaAlunos (3 etapas: lista fixa, lista vazia com `&&`, input + ternário) | `components/SugestaoLocais.jsx`: "Sugira um local" nas páginas de categoria |
-| Exemplo 1: useEffect sem array, com `[]` e com dependência | `hooks/useTituloPagina.js` (título da aba) |
-| Tecla: addEventListener + cleanup | `context/AppContext.jsx` (atalho Ctrl + K) |
-| Exemplos 2 a 5: fetch, loading e erro, filtro, SearchBar | `components/ListaContatos.jsx` e `components/BarraBusca.jsx`, página `/contatos` |
-| Atividades propostas: exibir contato, recarregar, "nenhum encontrado", erro | Versão ativa de `ListaContatos.jsx` |
-| Exemplo 6: lista de tarefas | `pages/Lembretes.jsx`, página `/lembretes` |
+| Exemplo do material                                                         | Onde está no projeto                                                                                                    |
+| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Rotas (`BrowserRouter`, `Routes`, `Link`)                                   | `App.jsx`, `Cabecalho.jsx`, `Rodape.jsx`                                                                                |
+| LikeButton (useState)                                                       | `components/BotaoUtil.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa guarda um voto por página no `localStorage`)             |
+| ListaAlunos (3 etapas: lista fixa, lista vazia com `&&`, input + ternário)  | `components/SugestaoLocais.jsx`: Etapas 1 e 2 e bloco "ETAPA 3 — VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`) |
+| Exemplo 1: useEffect sem array, com `[]` e com dependência                  | `hooks/useTituloPagina.js` (título da aba)                                                                              |
+| Tecla: addEventListener + cleanup                                           | `context/AppContext.jsx` (atalho Ctrl + K)                                                                              |
+| Exemplos 2 a 5: fetch, loading e erro, filtro, SearchBar                    | `components/ListaContatos.jsx` e `components/BarraBusca.jsx`, página `/contatos`                                        |
+| Atividades propostas: exibir contato, recarregar, "nenhum encontrado", erro | Bloco "VERSÃO DA AULA" de `ListaContatos.jsx` (a v2 ativa acrescenta `AbortController`, busca sem acento e chips)       |
+| Exemplo 6: lista de tarefas                                                 | `pages/Lembretes.jsx`: bloco "VERSÃO DA AULA" (a v2 ativa usa `id` e `localStorage`), página `/lembretes`               |
 
 A página Telefones úteis busca os dados com `fetch('/api/contatos.json')`, arquivo que fica
 em `public/api/`. É o mesmo código usado com a API JSONPlaceholder no material, mas com os
@@ -114,17 +116,17 @@ A contagem de locais, a busca e a página da categoria se atualizam sozinhas.
 
 ## Paleta
 
-| Uso              | Cor                                         |
-| ---------------- | ------------------------------------------- |
-| Fundo            | `#c9e8f5`                                   |
-| Fundo claro      | `#eaf6fb`                                   |
-| Azul da marca    | `#1a6faf`                                   |
-| Azul de destaque | `#3a8fd4`                                   |
-| Texto            | `#1a1a2e` / `#3a3a5c`                       |
-| Saúde            | `#d4edda` / `#1a6f3a`                       |
-| Segurança        | `#fde8d8` / `#a0460a`                       |
-| Educação         | `#d8eafd` / `#1a4faf`                       |
-| Lazer            | `#e8d8fd` / `#6a1aaf`                       |
+| Uso              | Cor                   |
+| ---------------- | --------------------- |
+| Fundo            | `#c9e8f5`             |
+| Fundo claro      | `#eaf6fb`             |
+| Azul da marca    | `#1a6faf`             |
+| Azul de destaque | `#3a8fd4`             |
+| Texto            | `#1a1a2e` / `#3a3a5c` |
+| Saúde            | `#d4edda` / `#1a6f3a` |
+| Segurança        | `#fde8d8` / `#a0460a` |
+| Educação         | `#d8eafd` / `#1a4faf` |
+| Lazer            | `#e8d8fd` / `#6a1aaf` |
 
 Todas ficam em `src/styles/global.css`, no bloco `:root`. Trocar uma cor lá muda o site inteiro.
 

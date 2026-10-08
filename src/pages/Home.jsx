@@ -1,8 +1,8 @@
 /**
  * Home.jsx — Página inicial ("/").
  *
- * Três blocos: chamada com o botão de busca, faixa da marca e a grade com as
- * quatro categorias de serviço.
+ * Blocos: chamada com o botão de busca, faixa da marca (Conecta Cidadão —
+ * Indaiatuba) e a grade com as categorias de serviço.
  */
 
 import { categorias } from '../data/servicos.js';
@@ -15,18 +15,16 @@ import './Home.css';
 export default function Home() {
   const { abrirBusca } = useBusca();
   // Define o título da aba do navegador para esta página.
-  useTituloPagina('Conecta Cidadão');
+  useTituloPagina('Conecta Cidadão — Serviços públicos de Indaiatuba');
 
   return (
     <>
       <section className="container home-topo">
         {/* Só um <h1> por página: é o título principal do documento. */}
-        <h1 className="titulo-pagina">
-          Encontre os serviços públicos que você precisa
-        </h1>
+        <h1 className="titulo-pagina">Os serviços públicos de Indaiatuba em um só lugar</h1>
         <p className="texto-apoio">
-          Saúde, segurança, educação e lazer da cidade reunidos em um só lugar, de forma
-          fácil e prática.
+          Postos de saúde, escolas, segurança, lazer, ônibus e serviços online da Prefeitura, com
+          endereço, telefone e como chegar. Feito para quem mora ou acabou de chegar na cidade.
         </p>
 
         {/* Parece um campo de texto, mas é um botão: clicar abre o overlay de
@@ -39,11 +37,21 @@ export default function Home() {
         </button>
       </section>
 
+      {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
       <section className="container home-marca">
-        <img src="/img/interface/logo.png" alt="" className="home-marca-logo" />
+        <img
+          src="/img/interface/logo.png"
+          alt=""
+          className="home-marca-logo"
+          width="62"
+          height="50"
+        />
         <div>
-          <h2 className="home-marca-titulo">Serviços Sociais</h2>
-          <p className="home-marca-frase">Cuidado que transforma vidas</p>
+          <h2 className="home-marca-titulo">Conecta Cidadão · Indaiatuba/SP</h2>
+          <p className="home-marca-frase">
+            Projeto acadêmico da Fatec Indaiatuba, sem vínculo com a Prefeitura. Os dados vêm de
+            fontes públicas e cada página mostra de onde veio a informação.
+          </p>
         </div>
       </section>
 

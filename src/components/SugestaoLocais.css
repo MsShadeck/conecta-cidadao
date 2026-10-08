@@ -38,3 +38,29 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.sugestao-ajuda {
+  font-size: 13.5px;
+  color: var(--tinta-media);
+}
+
+/* Etiqueta com o botão × de remover encostado no texto. */
+.sugestao-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sugestao-remover {
+  font-size: 16px;
+  line-height: 1;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.sugestao-remover:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

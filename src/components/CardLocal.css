@@ -5,12 +5,14 @@
 .card-local {
   display: flex;
   flex-direction: column;
-  text-align: left;    /* <button> vem centralizado por padrão */
+  text-align: left; /* <button> vem centralizado por padrão */
   background: var(--branco);
   border-radius: var(--raio-card);
-  overflow: hidden;    /* recorta a foto nos cantos arredondados */
+  overflow: hidden; /* recorta a foto nos cantos arredondados */
   box-shadow: var(--sombra-baixa);
-  transition: transform var(--transicao), box-shadow var(--transicao);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
 }
 
 .card-local:hover {

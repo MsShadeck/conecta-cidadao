@@ -31,7 +31,7 @@
 
 /* Logo centralizada: margin auto nas laterais faz a centralização. */
 .sobre-logo {
-  width: min(280px, 80%);
+  width: min(160px, 50%);
   height: auto;
   margin: 0 auto 6px;
 }

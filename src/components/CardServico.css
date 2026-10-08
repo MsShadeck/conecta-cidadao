@@ -4,25 +4,27 @@
 
 .card-servico {
   display: flex;
-  flex-direction: column;   /* ícone, nome, resumo e etiqueta empilhados */
+  flex-direction: column; /* ícone, nome, resumo e etiqueta empilhados */
   align-items: flex-start;
   gap: 8px;
   background: var(--branco);
   border-radius: 22px;
   padding: 22px 22px 20px;
   box-shadow: var(--sombra-baixa);
-  color: var(--tinta);      /* anula o azul padrão de links */
-  position: relative;       /* referência para a faixa ::after abaixo */
-  overflow: hidden;         /* a faixa não escapa dos cantos arredondados */
-  transition: transform var(--transicao), box-shadow var(--transicao);
+  color: var(--tinta); /* anula o azul padrão de links */
+  position: relative; /* referência para a faixa ::after abaixo */
+  overflow: hidden; /* a faixa não escapa dos cantos arredondados */
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
 }
 
 /* Faixa colorida na base do card, criada só pelo CSS (sem elemento no JSX).
    Fica invisível em repouso e aparece no hover. */
 .card-servico::after {
-  content: '';                /* obrigatório para o pseudoelemento existir */
+  content: ''; /* obrigatório para o pseudoelemento existir */
   position: absolute;
-  inset: auto 0 0 0;          /* topo automático; grudado nas outras 3 bordas */
+  inset: auto 0 0 0; /* topo automático; grudado nas outras 3 bordas */
   height: 4px;
   background: var(--cat-tinta); /* cor da categoria, vinda do data-categoria */
   opacity: 0;

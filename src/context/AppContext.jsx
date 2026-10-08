@@ -10,10 +10,18 @@
  * componente por props (o chamado "prop drilling").
  */
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 // O contexto nasce com null. Se algum componente tentar usá-lo fora do
-// <AppProvider>, esse null é detectado em usarApp() e vira um erro claro.
+// <AppProvider>, esse null é detectado em useContextoApp() e vira um erro claro.
 const AppContext = createContext(null);
 
 /**
@@ -78,9 +86,11 @@ export function AppProvider({ children }) {
 
 /**
  * Hook interno (não exportado) que lê o contexto e garante que ele existe.
+ * O nome começa com "use" porque ele chama useContext: é a regra dos hooks
+ * (o ESLint só reconhece como hook as funções com esse prefixo).
  * Centralizar essa checagem aqui evita repeti-la nos hooks públicos abaixo.
  */
-function usarApp() {
+function useContextoApp() {
   const contexto = useContext(AppContext);
   if (!contexto) {
     throw new Error('Os hooks do app precisam estar dentro de <AppProvider>.');
@@ -90,12 +100,12 @@ function usarApp() {
 
 /** Hook público para quem só precisa controlar a busca (Cabeçalho, Home, Overlay). */
 export function useBusca() {
-  const { buscaAberta, abrirBusca, fecharBusca } = usarApp();
+  const { buscaAberta, abrirBusca, fecharBusca } = useContextoApp();
   return { buscaAberta, abrirBusca, fecharBusca };
 }
 
 /** Hook público para quem só precisa dos avisos (CardLocal, Aviso, Overlay). */
 export function useAviso() {
-  const { aviso, mostrarAviso } = usarApp();
+  const { aviso, mostrarAviso } = useContextoApp();
   return { aviso, mostrarAviso };
 }

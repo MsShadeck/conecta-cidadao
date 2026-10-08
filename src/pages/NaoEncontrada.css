@@ -22,7 +22,9 @@
   padding: 12px 24px;
   border-radius: var(--raio-pilula);
   box-shadow: var(--sombra-baixa);
-  transition: transform var(--transicao), box-shadow var(--transicao);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
 }
 
 .nao-encontrada-botao:hover {

@@ -18,17 +18,17 @@ Protótipo de hackathon (Desafio 1.3, "última milha") de jornada integrada esti
 
 ## Dados que ele tem
 
-| Dado | Arquivo | Formato | Origem | Real? |
-|---|---|---|---|---|
-| Linhas, paradas, viagens, horários e traçados | `server/data/gtfs/*.txt` | GTFS | gerado por `scripts/gerar-gtfs.ts` | **Não, é fictício.** São 4 linhas (101 a 104), agência "Operadora Simulada (dados fictícios)", `https://example.org` |
-| Posição dos ônibus e atrasos | `server/src/realtime.ts` | GTFS-RT em JSON | simulador em memória | **Não, é simulado** |
-| Estações Ecobike, bikes e vagas | `server/data/gbfs/station_information.json` + `gbfs.ts` | GBFS | simulador | **Não, é simulado** (as posições foram "reposicionadas com base no OSM") |
-| Patinetes e bateria | `gbfs.ts` | GBFS v2/v3 | simulador | **Não.** Indaiatuba não tem serviço real de patinete compartilhado conhecido |
-| Terminais Central e Rodoviário | `server/data/config.json` | JSON | OSM (`amenity=bus_station`) | Real, mas o próprio arquivo diz "coordenadas APROXIMADAS, CONFIRA" |
-| Viário (ruas, mão de direção) | `server/data/viario.json` (1,5 MB) | JSON próprio | Overpass/OSM (`scripts/baixar-viario.ts`) | **Real** (ODbL) |
-| Ciclovias e ciclofaixas | `server/data/ciclovias.geojson` | GeoJSON | Overpass/OSM | **Real** (ODbL) |
-| Lugares para busca offline | `server/data/lugares.json` | JSON | curadoria | coordenadas aproximadas |
-| Fatores de CO₂ | `server/data/emissoes.json` | JSON | valores de referência | aproximados, segundo o README |
+| Dado                                          | Arquivo                                                 | Formato         | Origem                                    | Real?                                                                                                                |
+| --------------------------------------------- | ------------------------------------------------------- | --------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Linhas, paradas, viagens, horários e traçados | `server/data/gtfs/*.txt`                                | GTFS            | gerado por `scripts/gerar-gtfs.ts`        | **Não, é fictício.** São 4 linhas (101 a 104), agência "Operadora Simulada (dados fictícios)", `https://example.org` |
+| Posição dos ônibus e atrasos                  | `server/src/realtime.ts`                                | GTFS-RT em JSON | simulador em memória                      | **Não, é simulado**                                                                                                  |
+| Estações Ecobike, bikes e vagas               | `server/data/gbfs/station_information.json` + `gbfs.ts` | GBFS            | simulador                                 | **Não, é simulado** (as posições foram "reposicionadas com base no OSM")                                             |
+| Patinetes e bateria                           | `gbfs.ts`                                               | GBFS v2/v3      | simulador                                 | **Não.** Indaiatuba não tem serviço real de patinete compartilhado conhecido                                         |
+| Terminais Central e Rodoviário                | `server/data/config.json`                               | JSON            | OSM (`amenity=bus_station`)               | Real, mas o próprio arquivo diz "coordenadas APROXIMADAS, CONFIRA"                                                   |
+| Viário (ruas, mão de direção)                 | `server/data/viario.json` (1,5 MB)                      | JSON próprio    | Overpass/OSM (`scripts/baixar-viario.ts`) | **Real** (ODbL)                                                                                                      |
+| Ciclovias e ciclofaixas                       | `server/data/ciclovias.geojson`                         | GeoJSON         | Overpass/OSM                              | **Real** (ODbL)                                                                                                      |
+| Lugares para busca offline                    | `server/data/lugares.json`                              | JSON            | curadoria                                 | coordenadas aproximadas                                                                                              |
+| Fatores de CO₂                                | `server/data/emissoes.json`                             | JSON            | valores de referência                     | aproximados, segundo o README                                                                                        |
 
 ## Lógica de rota
 
