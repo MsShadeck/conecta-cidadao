@@ -967,6 +967,9 @@ out tags center;`;
   for (const el of resposta.elements) {
     const base = normalizarOsm(el);
     if (!base.nome || !base.coordenadas || !dentroDoMunicipio(base.coordenadas, limite)) continue;
+    // Alguns nomes no OSM têm hífen opcional invisível (U+00AD, ex.: "Hel-vétia", com o hífen invisível),
+    // que atrapalha a busca e o slug. Sai antes de tudo.
+    base.nome = base.nome.replace(/\u00AD/g, '');
     const slug = criarSlug(base.nome);
     if (vistos.has(slug)) continue;
     vistos.add(slug);

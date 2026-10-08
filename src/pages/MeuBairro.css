@@ -154,31 +154,33 @@
 }
 
 /* ------------------------------------------------------------
-   Escolha do bairro (ListaBairros.jsx): agenda de A a Z
+   Escolha do bairro (ListaBairros.jsx): abas por tipo e cartões
 ------------------------------------------------------------ */
 .lista-bairros {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
+  margin-top: 8px;
 }
 
 .lista-bairros-topo {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 12px;
+  gap: 12px 20px;
 }
 
 .lista-bairros-titulo {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 600;
   color: var(--cat-tinta);
+  margin-bottom: 4px;
 }
 
 .lista-bairros-filtro {
-  flex: 1 1 260px;
-  max-width: 420px;
+  flex: 1 1 280px;
+  max-width: 440px;
   background: var(--branco);
 }
 
@@ -195,110 +197,191 @@
   outline: none; /* o campo inteiro já mostra o foco */
 }
 
-/* Atalhos A–Z: botões redondos que levam ao grupo da letra. */
-.lista-bairros-letras {
+/* Abas por tipo: pílulas com a contagem. No celular, rolam para o lado
+   dentro da faixa (a página não ganha rolagem horizontal). */
+.lista-bairros-abas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.lista-bairros-letras a {
-  display: grid;
-  place-items: center;
-  min-width: 40px;
-  height: 40px;
-  border-radius: var(--raio-pilula);
-  background: var(--branco);
-  box-shadow: var(--sombra-baixa);
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--cat-tinta);
-  transition: background var(--transicao);
-}
-
-.lista-bairros-letras a:hover {
-  background: var(--cat-fundo);
-}
-
-.lista-bairros-grupos {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Cada letra é um cartão: a letra grande à esquerda e os bairros em chips. */
-.lista-bairros-grupo {
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  align-items: start;
-  gap: 12px;
-  padding: 14px 16px;
-  border-radius: var(--raio-card);
-  background: var(--branco);
-  box-shadow: var(--sombra-baixa);
-  scroll-margin-top: 96px; /* o cabeçalho fixo não cobre o grupo ao pular pela letra */
-}
-
-.lista-bairros-letra {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: var(--cat-fundo);
-  color: var(--cat-tinta);
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.lista-bairros-chips {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 6px;
+  scrollbar-width: thin;
 }
 
-.lista-bairros-chip {
+.lista-bairros-abas button {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  min-height: 40px;
-  padding: 6px 14px;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 16px;
   border-radius: var(--raio-pilula);
   border: 1px solid var(--linha);
+  background: var(--branco);
+  font: inherit;
   font-size: 0.875rem;
+  font-weight: 500;
   color: var(--tinta);
+  cursor: pointer;
   transition:
     background var(--transicao),
     border-color var(--transicao);
 }
 
-.lista-bairros-chip:hover {
+.lista-bairros-abas button span {
+  min-width: 24px;
+  padding: 1px 7px;
+  border-radius: var(--raio-pilula);
   background: var(--cat-fundo);
-  border-color: var(--cat-tinta);
   color: var(--cat-tinta);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* Bairro aberto agora: cores invertidas (mesmo par de cores, contraste AA). */
-.lista-bairros-chip[aria-current='page'] {
+.lista-bairros-abas button:hover {
+  border-color: var(--cat-tinta);
+}
+
+.lista-bairros-abas button[aria-pressed='true'] {
   background: var(--cat-tinta);
   border-color: var(--cat-tinta);
   color: var(--cat-fundo);
+}
+
+.lista-bairros-abas button[aria-pressed='true'] span {
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+}
+
+.lista-bairros-secao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lista-bairros-secao-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--tinta);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--cat-fundo);
+}
+
+.lista-bairros-secao-titulo span {
+  font-size: 0.75rem;
+  color: var(--tinta-media);
+  font-weight: 500;
+}
+
+/* Grupo de uma letra: a letra num quadrado e os cartões ao lado. */
+.lista-bairros-letra-grupo {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.lista-bairros-letra {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+  font-size: 1.125rem;
+  font-weight: 700;
+  position: sticky;
+  top: 88px; /* acompanha a rolagem logo abaixo do cabeçalho fixo */
+}
+
+.lista-bairros-grade {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr));
+  gap: 10px;
+}
+
+/* Cartão de um bairro: tipo pequeno em cima, nome em destaque. */
+.lista-bairros-cartao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 100%;
+  min-height: 60px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta);
+  transition:
+    transform var(--transicao),
+    border-color var(--transicao),
+    background var(--transicao);
+}
+
+.lista-bairros-cartao:hover {
+  border-color: var(--cat-tinta);
+  background: var(--cat-fundo);
+  transform: translateY(-2px);
+}
+
+.lista-bairros-cartao-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.lista-bairros-tipo {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tinta-media);
+}
+
+.lista-bairros-nome {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.lista-bairros-cartao:hover .lista-bairros-tipo,
+.lista-bairros-cartao:hover .lista-bairros-nome {
+  color: var(--cat-tinta);
+}
+
+/* Bairro aberto agora: cores invertidas (o mesmo par de cores, contraste AA). */
+.lista-bairros-cartao[aria-current='page'],
+.lista-bairros-cartao[aria-current='page'] .lista-bairros-tipo {
+  background: var(--cat-tinta);
+  border-color: var(--cat-tinta);
+  color: var(--cat-fundo);
 }
 
 .lista-bairros-coleta {
+  flex-shrink: 0;
   font-size: 0.6875rem;
   font-weight: 600;
-  padding: 1px 7px;
+  padding: 2px 8px;
   border-radius: var(--raio-pilula);
   background: var(--cat-fundo);
   color: var(--cat-tinta);
 }
 
-.lista-bairros-chip[aria-current='page'] .lista-bairros-coleta {
-  background: var(--cat-fundo);
-  color: var(--cat-tinta);
+.lista-bairros-cartao:hover .lista-bairros-coleta {
+  background: var(--branco);
+}
+
+.lista-bairros-vazio {
+  font-size: 0.9375rem;
 }
 
 /* "Ver outro bairro" (depois do resultado). */
@@ -312,24 +395,33 @@
 }
 
 .bairro-outro[open] > summary {
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
-.bairro-outro .lista-bairros-grupo,
-.bairro-outro .lista-bairros-letras a {
+.bairro-outro .lista-bairros-cartao {
   box-shadow: none;
-  border: 1px solid var(--linha);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lista-bairros-cartao:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .lista-bairros-grupo {
+  .lista-bairros-letra-grupo {
     grid-template-columns: 1fr;
     gap: 8px;
   }
 
   .lista-bairros-letra {
-    width: 36px;
-    height: 36px;
+    position: static;
+    width: 32px;
+    height: 32px;
     font-size: 1rem;
+  }
+
+  .lista-bairros-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
