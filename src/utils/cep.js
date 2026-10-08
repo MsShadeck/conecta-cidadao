@@ -16,7 +16,7 @@ export function limparCep(texto) {
 }
 
 const ehIndaiatuba = (cidade) =>
-  (cidade ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase() === 'indaiatuba';
+  (cidade ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() === 'indaiatuba';
 
 // Ponto genérico que a BrasilAPI devolve para todos os CEPs da cidade (conferido em 10/2026).
 const CENTRO_GENERICO = { lat: -23.08842, lng: -47.2119 };
