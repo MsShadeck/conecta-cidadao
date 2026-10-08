@@ -1,0 +1,54 @@
+# Fontes de dados
+
+Verificação inicial em **08/10/2026**. Cada fonte foi consultada uma única vez, sem varredura.
+
+## APIs públicas
+
+| Fonte | Endpoint testado | Resultado | Uso previsto / limitações |
+|---|---|---|---|
+| CNES / Ministério da Saúde | `apidadosabertos.saude.gov.br/cnes/estabelecimentos?codigo_municipio=352050` | ✅ 200, JSON, 873 estabelecimentos (paginação de 20) | Unidades de saúde com endereço, CEP, bairro, lat/long e, às vezes, telefone. **Atenção:** `descricao_esfera_administrativa = MUNICIPAL` indica a gestão, não que a unidade seja pública; inclui centenas de clínicas privadas. Filtrar por tipo (2 = centro de saúde/UBS: 17 unidades; 70 = CAPS; 73 = pronto atendimento; 5/7 = hospital) **e** por natureza jurídica/atendimento SUS. Os nomes oficiais são numerados ("UBS X", "UBS IX CENTRAL"), então o cruzamento com os nomes do site se faz por bairro e, depois, por conferência humana. Uso só no build. |
+| Overpass / OSM | `overpass-api.de/api/interpreter` (área admin_level 8 "Indaiatuba") | ✅ 200 | Contagens: 68 escolas (39 com "EMEB/Municipal" no nome), 5 `police`, 1 `fire_station`, 1 `townhall`, 123 `leisure=park` (maioria praças), 3 museus, 4 `bus_station`, 48 `bus_stop` (nenhum com `route_ref`), 2 `bicycle_rental` (Ecobike), 139 vias `cycleway`. **0 relações `route=bus`**, ou seja, o OSM não tem itinerário de ônibus. ODbL: crédito "© OpenStreetMap contributors". Uso só no build. |
+| IBGE Localidades | `/api/v1/localidades/municipios/3520509` | ✅ | Nome e região do município |
+| IBGE Malhas | `/api/v3/malhas/municipios/3520509?formato=application/vnd.geo+json` | ✅ GeoJSON, 7,6 KB | Contorno da cidade no mapa e filtro de área |
+| BrasilAPI CEP v2 | `/api/cep/v2/13334100` | ✅ com coordenadas (via open-cep) | `/api/cep/v2/13330000` (CEP geral da cidade) deu 404. Em caso de falha, usar o ViaCEP, que não traz coordenadas. |
+| BrasilAPI Feriados | `/api/feriados/v1/2026` | ✅ | Só feriados nacionais. Os municipais entram pela curadoria, com fonte oficial. |
+| ViaCEP | `/ws/13334100/json/` | ✅ | Alternativa de CEP (sem lat/lng) |
+| Open-Meteo | `api.open-meteo.com/v1/forecast` e `air-quality-api.open-meteo.com` | ✅ com CORS | Clima e qualidade do ar em tempo real no front |
+| Nominatim | não testado (último recurso) | — | No máximo 1 req/s, `User-Agent` identificado, cache no build |
+| INEP / Censo Escolar | ainda não avaliado | — | Avaliar na Etapa 2. Se não for viável, usar o OSM. |
+
+## Prefeitura de Indaiatuba
+
+- **Não há `robots.txt`**: o endereço devolve a página inicial em HTML. Mesmo assim, a política
+  adotada é de **leitura manual e pontual**, sem scraping automatizado.
+- **O site responde 200 até para URL inexistente** (soft 404). Por isso, conferir um link exige ler o
+  conteúdo da página; o status HTTP não basta.
+- Links conferidos (a página tem o título esperado): Carta de Serviços, Horários de ônibus, Transporte
+  coletivo, Ponto Cidadão, Indaiatuba by Bike, Minha Vacina, Defesa Civil, Fale conosco, Tributos,
+  Imprensa Oficial, Transparência, Adoção de animais, Mapa turístico (PDF), Minha Indaiatuba, Geolux e
+  Consulta Cidadão (autuações).
+- A página "Terminais e pontos de embarque" existe, mas **está sem conteúdo**.
+
+### Fatos confirmados em páginas oficiais (08/10/2026)
+
+| Fato | Fonte |
+|---|---|
+| Disque Prefeitura (019) 3834-9000 e SAMU 192 (rodapé do portal) | todas as páginas do portal |
+| WhatsApp (19) 99821-3120 (`api.whatsapp.com/send?phone=5519998213120`) | rodapé do portal |
+| Secretaria de Mobilidade (transporte coletivo): Av. Francisco de Paula Leite, 2263, Jd. Kioto II; seg. a sex., 8h às 17h; (19) 3825-7938 | /mobilidade-urbana/transportes/transporte-coletivo/ |
+| Ponto Cidadão (Terminal Central Prefeito Alberto Brizzola): R. Vinte e Quatro de Maio, 1.670; atendimento seg. a sex., 8h às 17h; Procon (19) 3816-9254; PAT (19) 3816-9249; guichê do cartão SOU seg. a sex., 9h às 17h, (19) 3518-7808, WhatsApp (19) 97414-9323 | /mobilidade-urbana/terminais-de-transporte-publico/ponto-cidadao/ |
+| Previsão de chegadas das linhas municipais: sistema Cittati (operadora SOU Indaiatuba) | /mobilidade-urbana/horarios-de-onibus/ |
+| Endereço da Prefeitura: Av. Eng. Fábio Roberto Barnabé, 2800, CEP 13331-900 | rodapé do portal |
+
+**Não confirmado ainda:** Ouvidoria 0800 770 7702 (o número não aparece em /fale-conosco/, que é só um formulário).
+
+## Transporte coletivo: imprensa (fonte secundária, citar com data)
+
+- Linhas 333 a 336 em operação desde 02/03/2026, e "Domingão Tarifa Zero" anunciado para abril/2026:
+  [Diário do Transporte, 27/02/2026](https://diariodotransporte.com.br/2026/02/27/indaiatuba-sp-vai-ter-domingao-tarifa-zero-e-mais-quatro-linhas-de-onibus/),
+  [Correio da Manhã, 03/2026](https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/regiao-de-campinas/2026/03/263432-transporte-tera-tarifa-zero-aos-domingos-em-indaiatuba.html).
+- Renovação de frota (78 ônibus, 36 linhas):
+  [Diário do Transporte, 30/09/2026](https://diariodotransporte.com.br/2026/09/30/indaiatuba-sp-renova-46-da-frota-de-onibus-do-transporte-coletivo/).
+- **Não encontrei confirmação** de que a Tarifa Zero aos domingos está em vigor hoje, nem as regras dela.
+  Até haver fonte oficial, o site não deve afirmar que ela vale.
+- **Não existe GTFS público** nem itinerários abertos (OSM sem `route=bus`).
