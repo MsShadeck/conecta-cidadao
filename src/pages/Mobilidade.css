@@ -1,0 +1,106 @@
+/* ============================================================
+   Mobilidade.css — Página "Ônibus e bike" (Mobilidade.jsx)
+   Também usado pela página Como chegar (ComoChegar.jsx).
+============================================================ */
+
+.mobilidade {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mobilidade-cta {
+  align-self: flex-start;
+}
+
+.mobilidade-bloco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.mobilidade-bloco h2,
+.mobilidade-subtitulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cat-tinta, var(--tinta));
+}
+
+.mobilidade-subtitulo {
+  margin-bottom: 10px;
+}
+
+.mobilidade-bloco a {
+  text-decoration: underline;
+}
+
+.mobilidade-links {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+/* Link em forma de cartão: título em destaque e explicação embaixo. */
+.mobilidade-bloco a.mobilidade-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--cat-fundo);
+  color: var(--tinta);
+  text-decoration: none;
+}
+
+.mobilidade-link strong {
+  color: var(--cat-tinta);
+  text-decoration: underline;
+}
+
+.mobilidade-link span {
+  font-size: 13px;
+  color: var(--tinta-media);
+}
+
+.mobilidade-aviso {
+  font-size: 13.5px;
+  background: var(--azul-nevoa);
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+
+.mobilidade-telefones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-weight: 500;
+}
+
+.mobilidade-noticias {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mobilidade-noticias p {
+  margin: 2px 0;
+}
+
+.mobilidade-mapa {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Página Como chegar: o seletor de destino ocupa a largura toda. */
+.como-chegar-destino {
+  width: 100%;
+  font-size: 14px;
+}

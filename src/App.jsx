@@ -24,6 +24,8 @@ const Sobre = lazy(() => import('./pages/Sobre.jsx'));
 const Contatos = lazy(() => import('./pages/Contatos.jsx'));
 const Lembretes = lazy(() => import('./pages/Lembretes.jsx'));
 const NaoEncontrada = lazy(() => import('./pages/NaoEncontrada.jsx'));
+const Mobilidade = lazy(() => import('./pages/Mobilidade.jsx'));
+const ComoChegar = lazy(() => import('./pages/ComoChegar.jsx'));
 
 /** Mensagem exibida enquanto o arquivo da página chega. */
 function CarregandoPagina() {
@@ -58,6 +60,11 @@ export default function App() {
               <Route path="/seguranca" element={<Categoria slug="seguranca" />} />
               <Route path="/lazer" element={<Categoria slug="lazer" />} />
               <Route path="/cidadania" element={<Categoria slug="cidadania" />} />
+
+              {/* Mobilidade tem página própria: além dos terminais, mostra ônibus,
+                  cartão SOU, Ecobike e ciclovias. */}
+              <Route path="/mobilidade" element={<Mobilidade />} />
+              <Route path="/como-chegar" element={<ComoChegar />} />
 
               <Route path="/sobre" element={<Sobre />} />
 
