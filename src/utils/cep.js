@@ -14,7 +14,10 @@ export function limparCep(texto) {
 }
 
 const ehIndaiatuba = (cidade) =>
-  (cidade ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase() === 'indaiatuba';
+  (cidade ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase() === 'indaiatuba';
 
 async function json(url, signal) {
   const resposta = await fetch(url, { signal });

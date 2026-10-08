@@ -11,7 +11,11 @@
  * O "?? ''" protege contra campos vazios (null/undefined) vindos dos dados.
  */
 export function normalizar(texto) {
-  return (texto ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim(); // tira espaços sobrando nas pontas
+  return (texto ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim(); // tira espaços sobrando nas pontas
 }
 
 /**
