@@ -239,3 +239,26 @@ describe('textoHorario', () => {
     expect(textoHorario(null)).toBeNull();
   });
 });
+
+describe('buscarTudo (v3: checklist, bairros e comércio)', () => {
+  const checklist = [{ id: 'agua', titulo: 'Passe a conta de água para o seu nome', oQueE: 'SAAE', palavrasChave: ['saae'] }];
+  const bairros = [{ slug: 'cidade-nova', nome: 'Cidade Nova', coordenadas: { lat: 0, lng: 0 } }];
+  const comercio = [{ id: 'osm-node-1', nome: 'Padaria Exemplo', tipo: 'Padaria', enderecoTexto: 'Rua A, 1' }];
+
+  it('acha o item do checklist e leva para o passo', () => {
+    const grupo = buscarTudo('saae', { checklist }).find((g) => g.titulo === 'Primeiros passos');
+    expect(grupo.itens[0].rota).toBe('/primeiros-passos#passo-agua');
+  });
+  it('acha o bairro e leva para a página do bairro', () => {
+    const grupo = buscarTudo('cidade nova', { bairros }).find((g) => g.titulo === 'Bairros');
+    expect(grupo.itens[0].rota).toBe('/bairros/cidade-nova');
+  });
+  it('acha o comércio pelo tipo e leva ao Dia a dia filtrado', () => {
+    const grupo = buscarTudo('padaria', { comercio }).find((g) => g.titulo === 'Dia a dia');
+    expect(grupo.itens[0].rota).toBe('/dia-a-dia?q=Padaria%20Exemplo');
+  });
+  it('acha as páginas novas como categorias', () => {
+    const grupo = buscarTudo('primeiros passos').find((g) => g.titulo === 'Categorias');
+    expect(grupo.itens[0].rota).toBe('/primeiros-passos');
+  });
+});

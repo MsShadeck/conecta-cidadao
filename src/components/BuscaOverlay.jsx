@@ -36,6 +36,9 @@ export default function BuscaOverlay() {
   const { dados: locais } = useDados(buscaAberta ? '/api/locais.json' : null);
   const { dados: contatos } = useDados(buscaAberta ? '/api/contatos.json' : null);
   const { dados: servicos } = useDados(buscaAberta ? '/api/servicos-online.json' : null);
+  const { dados: checklist } = useDados(buscaAberta ? '/api/checklist.json' : null);
+  const { dados: bairros } = useDados(buscaAberta ? '/api/bairros.json' : null);
+  const { dados: comercio } = useDados(buscaAberta ? '/api/comercio.json' : null);
 
   // Referências para elementos reais do DOM:
   const campoRef = useRef(null); // o <input>, para dar foco nele
@@ -67,8 +70,11 @@ export default function BuscaOverlay() {
       locais: locais?.locais,
       contatos: contatos?.contatos,
       servicos: servicos?.servicos,
+      checklist: checklist?.itens,
+      bairros: bairros?.bairros,
+      comercio: comercio?.itens,
     });
-  }, [termo, locais, contatos, servicos]);
+  }, [termo, locais, contatos, servicos, checklist, bairros, comercio]);
 
   // Lista "achatada" para a navegação por setas atravessar os grupos.
   const itens = useMemo(() => grupos.flatMap((grupo) => grupo.itens), [grupos]);
@@ -236,8 +242,9 @@ export default function BuscaOverlay() {
                               className="busca-miniatura busca-miniatura--icone"
                               aria-hidden="true"
                             >
-                              {item.tipo === 'categoria' ? (
-                                <IconeCategoria slug={item.categoriaSlug} />
+                              {/* Ícone SVG para categorias e para os itens novos (iconeSlug). */}
+                              {item.tipo === 'categoria' || item.iconeSlug ? (
+                                <IconeCategoria slug={item.iconeSlug ?? item.categoriaSlug} />
                               ) : (
                                 SIMBOLOS[item.tipo]
                               )}

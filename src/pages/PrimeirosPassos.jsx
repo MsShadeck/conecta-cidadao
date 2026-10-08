@@ -12,7 +12,8 @@
  *  - "Imprimir / salvar PDF" usa a folha de impressão (@media print).
  */
 
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
@@ -38,6 +39,13 @@ export default function PrimeirosPassos() {
     'Checklist da mudança para Indaiatuba: Cartão SUS, creche e escola, água, luz, IPTU, coleta de lixo, título de eleitor, cartão do ônibus e pets.'
   );
   const { dados, carregando, erro, recarregar } = useDados('/api/checklist.json');
+  const { hash } = useLocation();
+
+  // Veio da busca (/primeiros-passos#passo-agua): rola até o item quando a lista chega.
+  useEffect(() => {
+    if (!dados || !hash) return;
+    document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' });
+  }, [dados, hash]);
   // Itens feitos: { 'agua': true, ... } — e o perfil da casa.
   const [feitos, setFeitos] = useLocalStorage('cc:checklist', {});
   const [perfil, setPerfil] = useLocalStorage('cc:perfil', {
@@ -143,7 +151,7 @@ export default function PrimeirosPassos() {
 /** Um item do checklist (cartão com o passo a passo). */
 function ItemChecklist({ item, feito, alternar }) {
   return (
-    <li className={`painel passo${feito ? ' passo--feito' : ''}`}>
+    <li id={`passo-${item.id}`} className={`painel passo${feito ? ' passo--feito' : ''}`}>
       <div className="passo-topo">
         <h3>{item.titulo}</h3>
         {item.online !== null && (

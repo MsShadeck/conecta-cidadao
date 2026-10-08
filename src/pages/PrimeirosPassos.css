@@ -195,3 +195,8 @@
     color: #000000;
   }
 }
+
+/* Ao rolar até um item (#passo-...), deixa espaço para o cabeçalho fixo. */
+.passo {
+  scroll-margin-top: 96px;
+}
