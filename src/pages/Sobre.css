@@ -117,3 +117,57 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Seções da v2: aviso, fontes e dados em conferência. */
+.sobre-secoes {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.sobre-aviso {
+  border-left: 5px solid var(--azul-marca);
+}
+
+.sobre-fontes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 14px 0;
+}
+
+.sobre-fontes li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--tinta-media);
+  padding: 12px 14px;
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+}
+
+.sobre-fontes a {
+  text-decoration: underline;
+}
+
+.sobre-fontes small {
+  font-size: 0.75rem;
+}
+
+.sobre-pendencias {
+  margin: 10px 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--tinta-media);
+}
+
+.sobre-aviso a,
+.sobre-secoes .sobre-texto a {
+  text-decoration: underline;
+}
