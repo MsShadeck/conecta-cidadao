@@ -1,0 +1,1475 @@
+{
+ "atualizadoEm": "2026-10-08",
+ "observacao": "Bairros do OpenStreetMap (um ponto por bairro, sem contorno). A coleta de lixo aparece só para os locais que a Prefeitura listou na nova programação de 2026.",
+ "coletaGeral": {
+  "horarios": "Diurno: de segunda a sábado, a partir das 6h. Noturno: de segunda a sexta a partir das 17h e aos sábados a partir das 16h.",
+  "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/",
+  "telefone": "(19) 3825-5410"
+ },
+ "bairros": [
+  {
+   "slug": "altos-da-bela-vista",
+   "nome": "Altos da Bela vista",
+   "coordenadas": {
+    "lat": -23.068605,
+    "lng": -47.2453568
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/13732628310"
+   ]
+  },
+  {
+   "slug": "american-park",
+   "nome": "American Park",
+   "coordenadas": {
+    "lat": -23.1399411,
+    "lng": -47.233822
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681740591"
+   ]
+  },
+  {
+   "slug": "aqui-se-vive",
+   "nome": "Aqui Se Vive",
+   "coordenadas": {
+    "lat": -23.0800588,
+    "lng": -47.1936809
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681957975"
+   ]
+  },
+  {
+   "slug": "barroca-funda",
+   "nome": "Barroca Funda",
+   "coordenadas": {
+    "lat": -23.0816291,
+    "lng": -47.1761409
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11301137905"
+   ]
+  },
+  {
+   "slug": "centro",
+   "nome": "Centro",
+   "coordenadas": {
+    "lat": -23.0841876,
+    "lng": -47.2195514
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7659926540"
+   ]
+  },
+  {
+   "slug": "chacara-alvorada",
+   "nome": "Chácara Alvorada",
+   "coordenadas": {
+    "lat": -23.0738335,
+    "lng": -47.1721805
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11294567379"
+   ]
+  },
+  {
+   "slug": "cidade-nova-i",
+   "nome": "Cidade Nova I",
+   "coordenadas": {
+    "lat": -23.0805579,
+    "lng": -47.2114663
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5319221996"
+   ]
+  },
+  {
+   "slug": "colinas-de-indaiatuba-i",
+   "nome": "Colinas de Indaiatuba I",
+   "coordenadas": {
+    "lat": -23.0610321,
+    "lng": -47.2339803
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190274"
+   ]
+  },
+  {
+   "slug": "colinas-de-indaiatuba-ii",
+   "nome": "Colinas de Indaiatuba II",
+   "coordenadas": {
+    "lat": -23.0590572,
+    "lng": -47.2222315
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190275"
+   ]
+  },
+  {
+   "slug": "conjunto-habitacional-joao-pioli",
+   "nome": "Conjunto Habitacional João Pioli",
+   "coordenadas": {
+    "lat": -23.1073947,
+    "lng": -47.2388501
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/1904984491"
+   ]
+  },
+  {
+   "slug": "conjunto-habitacional-veredas-da-conquista",
+   "nome": "Conjunto Habitacional Veredas da Conquista",
+   "coordenadas": {
+    "lat": -23.0516155,
+    "lng": -47.2395246
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12184020910"
+   ]
+  },
+  {
+   "slug": "distrito-industrial-bartolomai",
+   "nome": "Distrito Industrial Bartolomai",
+   "coordenadas": {
+    "lat": -23.1056552,
+    "lng": -47.2067352
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12156174757"
+   ]
+  },
+  {
+   "slug": "distrito-industrial-domingos-giomi",
+   "nome": "Distrito Industrial Domingos Giomi",
+   "coordenadas": {
+    "lat": -23.1315569,
+    "lng": -47.2320867
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681740589"
+   ]
+  },
+  {
+   "slug": "distrito-industrial-joao-narezzi",
+   "nome": "Distrito Industrial João Narezzi",
+   "coordenadas": {
+    "lat": -23.1337711,
+    "lng": -47.2229729
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8464264935"
+   ]
+  },
+  {
+   "slug": "distrito-industrial-nova-era",
+   "nome": "Distrito Industrial Nova Era",
+   "coordenadas": {
+    "lat": -23.1373267,
+    "lng": -47.2309252
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681740590"
+   ]
+  },
+  {
+   "slug": "distrito-industrial-vitoria-martini",
+   "nome": "Distrito Industrial Vitória Martini",
+   "coordenadas": {
+    "lat": -23.1408575,
+    "lng": -47.2377091
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681740588"
+   ]
+  },
+  {
+   "slug": "hel-vetia",
+   "nome": "Hel­vétia",
+   "coordenadas": {
+    "lat": -23.0800345,
+    "lng": -47.1760428
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11300899331"
+   ]
+  },
+  {
+   "slug": "jardim-america",
+   "nome": "Jardim América",
+   "coordenadas": {
+    "lat": -23.090335,
+    "lng": -47.2001782
+   },
+   "coleta": {
+    "localidade": "Jd. América (entre R. Itu e R. Venezuela)",
+    "programacao": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8480073700",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-amstalden-residence",
+   "nome": "Jardim Amstalden Residence",
+   "coordenadas": {
+    "lat": -23.0746379,
+    "lng": -47.2342406
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300151"
+   ]
+  },
+  {
+   "slug": "jardim-aquarius",
+   "nome": "Jardim Aquarius",
+   "coordenadas": {
+    "lat": -23.0752419,
+    "lng": -47.2006085
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738040"
+   ]
+  },
+  {
+   "slug": "jardim-barelona",
+   "nome": "Jardim Barelona",
+   "coordenadas": {
+    "lat": -23.1033867,
+    "lng": -47.2487005
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7474405831"
+   ]
+  },
+  {
+   "slug": "jardim-beija-flor",
+   "nome": "Jardim Beija-Flor",
+   "coordenadas": {
+    "lat": -23.1058764,
+    "lng": -47.2690145
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7483634988"
+   ]
+  },
+  {
+   "slug": "jardim-bela-vista",
+   "nome": "Jardim Bela Vista",
+   "coordenadas": {
+    "lat": -23.0665936,
+    "lng": -47.2346122
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190273"
+   ]
+  },
+  {
+   "slug": "jardim-bem-te-vi",
+   "nome": "Jardim Bem-Te-Vi",
+   "coordenadas": {
+    "lat": -23.1013904,
+    "lng": -47.2698576
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461417374"
+   ]
+  },
+  {
+   "slug": "jardim-bom-sucesso",
+   "nome": "Jardim Bom Sucesso",
+   "coordenadas": {
+    "lat": -23.1098231,
+    "lng": -47.2608757
+   },
+   "coleta": {
+    "localidade": "Jd. Bom Sucesso",
+    "programacao": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/12156127796",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-brasil",
+   "nome": "Jardim Brasil",
+   "coordenadas": {
+    "lat": -23.0633353,
+    "lng": -47.1381008
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8492083500"
+   ]
+  },
+  {
+   "slug": "jardim-brescia",
+   "nome": "Jardim Bréscia",
+   "coordenadas": {
+    "lat": -23.0587902,
+    "lng": -47.2174884
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190276"
+   ]
+  },
+  {
+   "slug": "jardim-casablanca",
+   "nome": "Jardim CasaBlanca",
+   "coordenadas": {
+    "lat": -23.0690099,
+    "lng": -47.1764428
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12988477949"
+   ]
+  },
+  {
+   "slug": "jardim-colonial",
+   "nome": "Jardim Colonial",
+   "coordenadas": {
+    "lat": -23.1060915,
+    "lng": -47.2320586
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/1904984515"
+   ]
+  },
+  {
+   "slug": "jardim-das-andorinhas",
+   "nome": "Jardim das Andorinhas",
+   "coordenadas": {
+    "lat": -23.1045689,
+    "lng": -47.2712354
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7483634989"
+   ]
+  },
+  {
+   "slug": "jardim-das-gaivotas",
+   "nome": "Jardim das Gaivotas",
+   "coordenadas": {
+    "lat": -23.0985119,
+    "lng": -47.2804042
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461299810"
+   ]
+  },
+  {
+   "slug": "jardim-das-maritacas",
+   "nome": "Jardim das Maritacas",
+   "coordenadas": {
+    "lat": -23.1228025,
+    "lng": -47.2535737
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7483929672"
+   ]
+  },
+  {
+   "slug": "jardim-do-sol",
+   "nome": "Jardim do Sol",
+   "coordenadas": {
+    "lat": -23.1007781,
+    "lng": -47.2053283
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7804914260"
+   ]
+  },
+  {
+   "slug": "jardim-dos-tucanos",
+   "nome": "Jardim dos Tucanos",
+   "coordenadas": {
+    "lat": -23.1051529,
+    "lng": -47.2679419
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461417379"
+   ]
+  },
+  {
+   "slug": "jardim-doutor-carlos-augusto-de-camargo-andrade-1",
+   "nome": "Jardim Doutor Carlos Augusto de Camargo Andrade 1",
+   "coordenadas": {
+    "lat": -23.0774119,
+    "lng": -47.1915854
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681957976"
+   ]
+  },
+  {
+   "slug": "jardim-doutor-carlos-augusto-de-camargo-andrade-2",
+   "nome": "Jardim Doutor Carlos Augusto de Camargo Andrade 2",
+   "coordenadas": {
+    "lat": -23.0763346,
+    "lng": -47.1903221
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681957977"
+   ]
+  },
+  {
+   "slug": "jardim-doutor-lauro-bueno-de-camargo",
+   "nome": "Jardim Doutor Lauro Bueno de Camargo",
+   "coordenadas": {
+    "lat": -23.1038524,
+    "lng": -47.2372694
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8484319425"
+   ]
+  },
+  {
+   "slug": "jardim-eldorado",
+   "nome": "Jardim Eldorado",
+   "coordenadas": {
+    "lat": -23.1056645,
+    "lng": -47.2090266
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7659931787"
+   ]
+  },
+  {
+   "slug": "jardim-esplanada",
+   "nome": "Jardim Esplanada",
+   "coordenadas": {
+    "lat": -23.0899271,
+    "lng": -47.2306114
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300149"
+   ]
+  },
+  {
+   "slug": "jardim-esplendor",
+   "nome": "Jardim Esplendor",
+   "coordenadas": {
+    "lat": -23.0857172,
+    "lng": -47.1943907
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11060879381"
+   ]
+  },
+  {
+   "slug": "jardim-europa",
+   "nome": "Jardim Europa",
+   "coordenadas": {
+    "lat": -23.0725502,
+    "lng": -47.2296004
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300152"
+   ]
+  },
+  {
+   "slug": "jardim-europa-ii",
+   "nome": "Jardim Europa II",
+   "coordenadas": {
+    "lat": -23.0704074,
+    "lng": -47.2329782
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300153"
+   ]
+  },
+  {
+   "slug": "jardim-guanabara",
+   "nome": "Jardim Guanabara",
+   "coordenadas": {
+    "lat": -23.0772555,
+    "lng": -47.1997287
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738038"
+   ]
+  },
+  {
+   "slug": "jardim-hubert",
+   "nome": "Jardim Hubert",
+   "coordenadas": {
+    "lat": -23.1088758,
+    "lng": -47.233358
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/1904984450"
+   ]
+  },
+  {
+   "slug": "jardim-itamaraca",
+   "nome": "Jardim Itamaracá",
+   "coordenadas": {
+    "lat": -23.0743103,
+    "lng": -47.1939673
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738045"
+   ]
+  },
+  {
+   "slug": "jardim-juliana",
+   "nome": "Jardim Juliana",
+   "coordenadas": {
+    "lat": -23.1032441,
+    "lng": -47.1839575
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11293422459"
+   ]
+  },
+  {
+   "slug": "jardim-kyoto",
+   "nome": "Jardim Kyoto",
+   "coordenadas": {
+    "lat": -23.111128,
+    "lng": -47.2194797
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681746522"
+   ]
+  },
+  {
+   "slug": "jardim-kyoto-2",
+   "nome": "Jardim Kyoto 2",
+   "coordenadas": {
+    "lat": -23.1116394,
+    "lng": -47.2185477
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681746523"
+   ]
+  },
+  {
+   "slug": "jardim-laguna",
+   "nome": "Jardim Laguna",
+   "coordenadas": {
+    "lat": -23.05847,
+    "lng": -47.2382351
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300174"
+   ]
+  },
+  {
+   "slug": "jardim-mantova",
+   "nome": "Jardim Mantova",
+   "coordenadas": {
+    "lat": -23.0563874,
+    "lng": -47.2142073
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190277"
+   ]
+  },
+  {
+   "slug": "jardim-marina",
+   "nome": "Jardim Marina",
+   "coordenadas": {
+    "lat": -23.0993659,
+    "lng": -47.2083511
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8480833568"
+   ]
+  },
+  {
+   "slug": "jardim-monte-carlo",
+   "nome": "Jardim Monte Carlo",
+   "coordenadas": {
+    "lat": -23.1031669,
+    "lng": -47.2443005
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7474405829"
+   ]
+  },
+  {
+   "slug": "jardim-monte-verde",
+   "nome": "Jardim Monte Verde",
+   "coordenadas": {
+    "lat": -23.1009437,
+    "lng": -47.2348301
+   },
+   "coleta": {
+    "localidade": "Jd. Monte Verde (entre a R. Carlos Alberto Bull e R. Albino Geraldi)",
+    "programacao": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8492102923",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-morada-do-sol",
+   "nome": "Jardim Morada do Sol",
+   "coordenadas": {
+    "lat": -23.1241515,
+    "lng": -47.2407565
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/1903385672"
+   ]
+  },
+  {
+   "slug": "jardim-moriyama",
+   "nome": "Jardim Moriyama",
+   "coordenadas": {
+    "lat": -23.1048049,
+    "lng": -47.2410606
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7474300590"
+   ]
+  },
+  {
+   "slug": "jardim-morumbi",
+   "nome": "Jardim Morumbi",
+   "coordenadas": {
+    "lat": -23.0542539,
+    "lng": -47.207035
+   },
+   "coleta": {
+    "localidade": "Jd. Morumbi",
+    "programacao": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8490498395",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-nely",
+   "nome": "Jardim Nely",
+   "coordenadas": {
+    "lat": -23.0981593,
+    "lng": -47.2166704
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/13512725203"
+   ]
+  },
+  {
+   "slug": "jardim-nova-indaia",
+   "nome": "Jardim Nova Indaiá",
+   "coordenadas": {
+    "lat": -23.1076037,
+    "lng": -47.2177377
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681704899"
+   ]
+  },
+  {
+   "slug": "jardim-olinda",
+   "nome": "Jardim Olinda",
+   "coordenadas": {
+    "lat": -23.0777492,
+    "lng": -47.1939008
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681957974"
+   ]
+  },
+  {
+   "slug": "jardim-oliveira-camargo",
+   "nome": "Jardim Oliveira Camargo",
+   "coordenadas": {
+    "lat": -23.1101249,
+    "lng": -47.2044296
+   },
+   "coleta": {
+    "localidade": "Jd. Oliveira Camargo",
+    "programacao": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8477508205",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-panorama",
+   "nome": "Jardim Panorama",
+   "coordenadas": {
+    "lat": -23.0912916,
+    "lng": -47.1734785
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11294522872"
+   ]
+  },
+  {
+   "slug": "jardim-park-real",
+   "nome": "Jardim Park Real",
+   "coordenadas": {
+    "lat": -23.0929353,
+    "lng": -47.243797
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461418919"
+   ]
+  },
+  {
+   "slug": "jardim-patricia",
+   "nome": "Jardim Patrícia",
+   "coordenadas": {
+    "lat": -23.102374,
+    "lng": -47.2091819
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11044096071"
+   ]
+  },
+  {
+   "slug": "jardim-pau-preto",
+   "nome": "Jardim Pau Preto",
+   "coordenadas": {
+    "lat": -23.0905399,
+    "lng": -47.2206325
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5312777521"
+   ]
+  },
+  {
+   "slug": "jardim-paulista",
+   "nome": "Jardim Paulista",
+   "coordenadas": {
+    "lat": -23.1221164,
+    "lng": -47.2494656
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7483929671"
+   ]
+  },
+  {
+   "slug": "jardim-paulista-i",
+   "nome": "Jardim Paulista I",
+   "coordenadas": {
+    "lat": -23.1238146,
+    "lng": -47.2489762
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8480201554"
+   ]
+  },
+  {
+   "slug": "jardim-paulista-ii",
+   "nome": "Jardim Paulista II",
+   "coordenadas": {
+    "lat": -23.1275204,
+    "lng": -47.2487285
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8484233254"
+   ]
+  },
+  {
+   "slug": "jardim-pedroso",
+   "nome": "Jardim Pedroso",
+   "coordenadas": {
+    "lat": -23.093116,
+    "lng": -47.210608
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8488930592"
+   ]
+  },
+  {
+   "slug": "jardim-pompeia",
+   "nome": "Jardim Pompéia",
+   "coordenadas": {
+    "lat": -23.0951587,
+    "lng": -47.2232744
+   },
+   "coleta": {
+    "localidade": "Jd. Pompéia (entre a Av. Eng. Fábio Roberto Barnabé, R. das Orquídeas, R. da Convenção, R. Augusto de Oliveira Camargo, R. Treze de Maio e R. das Primaveras)",
+    "programacao": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/5312810803",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-portal-do-sol",
+   "nome": "Jardim Portal do Sol",
+   "coordenadas": {
+    "lat": -23.0991351,
+    "lng": -47.2412589
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300147"
+   ]
+  },
+  {
+   "slug": "jardim-primavera",
+   "nome": "Jardim Primavera",
+   "coordenadas": {
+    "lat": -23.0959616,
+    "lng": -47.2026564
+   },
+   "coleta": {
+    "localidade": "Jd. Primavera",
+    "programacao": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8490593687",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "jardim-recanto-do-vale",
+   "nome": "Jardim Recanto do Vale",
+   "coordenadas": {
+    "lat": -23.1011107,
+    "lng": -47.2219213
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7659935885"
+   ]
+  },
+  {
+   "slug": "jardim-regente",
+   "nome": "Jardim Regente",
+   "coordenadas": {
+    "lat": -23.0690852,
+    "lng": -47.196133
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738044"
+   ]
+  },
+  {
+   "slug": "jardim-remulo-zoppi",
+   "nome": "Jardim Remulo Zoppi",
+   "coordenadas": {
+    "lat": -23.09801,
+    "lng": -47.2233999
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8487553134"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-dona-lucilla",
+   "nome": "Jardim Residencial Dona Lucilla",
+   "coordenadas": {
+    "lat": -23.0857592,
+    "lng": -47.2335682
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7468840298"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-dona-maria-jose",
+   "nome": "Jardim Residencial Dona Maria José",
+   "coordenadas": {
+    "lat": -23.086763,
+    "lng": -47.2341091
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300148"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-maria-candida",
+   "nome": "Jardim Residencial Maria Cândida",
+   "coordenadas": {
+    "lat": -23.0894207,
+    "lng": -47.2431468
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190271"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-maria-dulce",
+   "nome": "Jardim Residencial Maria Dulce",
+   "coordenadas": {
+    "lat": -23.0801625,
+    "lng": -47.2321609
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475300150"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-milano",
+   "nome": "Jardim Residencial Milano",
+   "coordenadas": {
+    "lat": -23.0602654,
+    "lng": -47.2363651
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7475319340"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-nova-veneza",
+   "nome": "Jardim Residencial Nova Veneza",
+   "coordenadas": {
+    "lat": -23.0935376,
+    "lng": -47.2483937
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461418903"
+   ]
+  },
+  {
+   "slug": "jardim-residencial-veneza",
+   "nome": "Jardim Residencial Veneza",
+   "coordenadas": {
+    "lat": -23.1001438,
+    "lng": -47.252225
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7474405832"
+   ]
+  },
+  {
+   "slug": "jardim-santa-rita",
+   "nome": "Jardim Santa Rita",
+   "coordenadas": {
+    "lat": -23.0736972,
+    "lng": -47.201735
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738041"
+   ]
+  },
+  {
+   "slug": "jardim-santiago",
+   "nome": "Jardim Santiago",
+   "coordenadas": {
+    "lat": -23.0983048,
+    "lng": -47.1970574
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11289907862"
+   ]
+  },
+  {
+   "slug": "jardim-sao-francisco",
+   "nome": "Jardim São Francisco",
+   "coordenadas": {
+    "lat": -23.1066295,
+    "lng": -47.2258223
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8490589037"
+   ]
+  },
+  {
+   "slug": "jardim-sevilha",
+   "nome": "Jardim Sevilha",
+   "coordenadas": {
+    "lat": -23.09444,
+    "lng": -47.1921901
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/4258999417"
+   ]
+  },
+  {
+   "slug": "jardim-tancredo-neves",
+   "nome": "Jardim Tancredo Neves",
+   "coordenadas": {
+    "lat": -23.1127265,
+    "lng": -47.2299283
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8484242925"
+   ]
+  },
+  {
+   "slug": "jardim-tropical",
+   "nome": "Jardim Tropical",
+   "coordenadas": {
+    "lat": -23.1104633,
+    "lng": -47.2162717
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5306665689"
+   ]
+  },
+  {
+   "slug": "jardim-umuarama",
+   "nome": "Jardim Umuarama",
+   "coordenadas": {
+    "lat": -23.1045544,
+    "lng": -47.2043652
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12156174758"
+   ]
+  },
+  {
+   "slug": "jardim-uniao",
+   "nome": "Jardim União",
+   "coordenadas": {
+    "lat": -23.1200569,
+    "lng": -47.249313
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7487870511"
+   ]
+  },
+  {
+   "slug": "jardim-valenca",
+   "nome": "Jardim Valença",
+   "coordenadas": {
+    "lat": -23.0715355,
+    "lng": -47.1979639
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738043"
+   ]
+  },
+  {
+   "slug": "jardim-vila-paradiso",
+   "nome": "Jardim Vila Paradiso",
+   "coordenadas": {
+    "lat": -23.0745231,
+    "lng": -47.2402566
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12685190272"
+   ]
+  },
+  {
+   "slug": "jardim-vista-verde",
+   "nome": "Jardim Vista Verde",
+   "coordenadas": {
+    "lat": -23.1036861,
+    "lng": -47.1781313
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11293452499"
+   ]
+  },
+  {
+   "slug": "jardins-do-imperio",
+   "nome": "Jardins do Império",
+   "coordenadas": {
+    "lat": -23.0941376,
+    "lng": -47.2531415
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7461418914"
+   ]
+  },
+  {
+   "slug": "loteamento-park-gran-reserve",
+   "nome": "Loteamento Park Gran Reserve",
+   "coordenadas": {
+    "lat": -23.0736891,
+    "lng": -47.1852627
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12988534216"
+   ]
+  },
+  {
+   "slug": "park-comercial",
+   "nome": "Park Comercial",
+   "coordenadas": {
+    "lat": -23.1341488,
+    "lng": -47.2255894
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8492321271"
+   ]
+  },
+  {
+   "slug": "parque-barnabe",
+   "nome": "Parque Barnabé",
+   "coordenadas": {
+    "lat": -23.0881626,
+    "lng": -47.2779139
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/11136624384"
+   ]
+  },
+  {
+   "slug": "parque-boa-esperanca",
+   "nome": "Parque Boa Esperança",
+   "coordenadas": {
+    "lat": -23.0892914,
+    "lng": -47.2016504
+   },
+   "coleta": {
+    "localidade": "Pq. Boa Esperança",
+    "programacao": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)",
+    "vigencia": "15 de julho de 2026",
+    "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   },
+   "fonte": [
+    "https://www.openstreetmap.org/node/8490643204",
+    "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/"
+   ]
+  },
+  {
+   "slug": "parque-campo-bonito",
+   "nome": "Parque Campo Bonito",
+   "coordenadas": {
+    "lat": -23.09681,
+    "lng": -47.2787554
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8487600717"
+   ]
+  },
+  {
+   "slug": "parque-das-nacoes",
+   "nome": "Parque das Nações",
+   "coordenadas": {
+    "lat": -23.1142452,
+    "lng": -47.2265451
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8484085268"
+   ]
+  },
+  {
+   "slug": "parque-residencial-indaia",
+   "nome": "Parque Residencial Indaiá",
+   "coordenadas": {
+    "lat": -23.0616099,
+    "lng": -47.2178662
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8490566831"
+   ]
+  },
+  {
+   "slug": "parque-residencial-sabias",
+   "nome": "Parque Residencial Sabiás",
+   "coordenadas": {
+    "lat": -23.1168284,
+    "lng": -47.2632906
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/7448671286"
+   ]
+  },
+  {
+   "slug": "recreio-campestre-joia",
+   "nome": "Recreio Campestre Jóia",
+   "coordenadas": {
+    "lat": -23.1199444,
+    "lng": -47.2236628
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5317360691"
+   ]
+  },
+  {
+   "slug": "residencial-ceu-azul",
+   "nome": "Residencial Céu Azul",
+   "coordenadas": {
+    "lat": -23.0538243,
+    "lng": -47.2379075
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12183995695"
+   ]
+  },
+  {
+   "slug": "residencial-evidencias",
+   "nome": "Residencial Evidências",
+   "coordenadas": {
+    "lat": -23.0852748,
+    "lng": -47.1614441
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/relation/18272384"
+   ]
+  },
+  {
+   "slug": "residencial-jardim-di-italia",
+   "nome": "Residencial Jardim Di Itália",
+   "coordenadas": {
+    "lat": -23.1013383,
+    "lng": -47.2608766
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/13988630555"
+   ]
+  },
+  {
+   "slug": "residencial-monte-carmelo",
+   "nome": "Residencial Monte Carmelo",
+   "coordenadas": {
+    "lat": -23.0941125,
+    "lng": -47.2842639
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/13929250895"
+   ]
+  },
+  {
+   "slug": "residencial-monte-verde",
+   "nome": "Residencial Monte Verde",
+   "coordenadas": {
+    "lat": -23.1041895,
+    "lng": -47.2313766
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5312138458"
+   ]
+  },
+  {
+   "slug": "santa-cruz",
+   "nome": "Santa Cruz",
+   "coordenadas": {
+    "lat": -23.0973009,
+    "lng": -47.2148706
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/13512702149"
+   ]
+  },
+  {
+   "slug": "tombadouro",
+   "nome": "Tombadouro",
+   "coordenadas": {
+    "lat": -23.0888097,
+    "lng": -47.1721749
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8492970629"
+   ]
+  },
+  {
+   "slug": "traviu",
+   "nome": "Traviú",
+   "coordenadas": {
+    "lat": -23.0474977,
+    "lng": -47.2336937
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12184020749"
+   ]
+  },
+  {
+   "slug": "videira",
+   "nome": "Videira",
+   "coordenadas": {
+    "lat": -23.1359628,
+    "lng": -47.1680852
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8484336680"
+   ]
+  },
+  {
+   "slug": "vila-brizzola",
+   "nome": "Vila Brizzola",
+   "coordenadas": {
+    "lat": -23.1037249,
+    "lng": -47.2128394
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8464918328"
+   ]
+  },
+  {
+   "slug": "vila-maria",
+   "nome": "Vila Maria",
+   "coordenadas": {
+    "lat": -23.0792331,
+    "lng": -47.1972105
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/9738732839"
+   ]
+  },
+  {
+   "slug": "vila-maria-elena",
+   "nome": "Vila Maria Elena",
+   "coordenadas": {
+    "lat": -23.0812254,
+    "lng": -47.1955944
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/8464911019"
+   ]
+  },
+  {
+   "slug": "vila-mariana",
+   "nome": "Vila Mariana",
+   "coordenadas": {
+    "lat": -23.1036652,
+    "lng": -47.2023431
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12156174759"
+   ]
+  },
+  {
+   "slug": "vila-rubens",
+   "nome": "Vila Rubens",
+   "coordenadas": {
+    "lat": -23.0727644,
+    "lng": -47.1975562
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738042"
+   ]
+  },
+  {
+   "slug": "vila-soriano",
+   "nome": "Vila Soriano",
+   "coordenadas": {
+    "lat": -23.0760957,
+    "lng": -47.1998199
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/12681738039"
+   ]
+  },
+  {
+   "slug": "vila-vitoria",
+   "nome": "Vila Vitória",
+   "coordenadas": {
+    "lat": -23.088755,
+    "lng": -47.2033447
+   },
+   "coleta": null,
+   "fonte": [
+    "https://www.openstreetmap.org/node/5319254365"
+   ]
+  }
+ ]
+}

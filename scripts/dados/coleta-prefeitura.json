@@ -1,0 +1,168 @@
+{
+  "coletadoEm": "2026-10-08",
+  "fonte": "https://www.indaiatuba.sp.gov.br/urbanismo/coleta-domiciliar-urbana/",
+  "vigencia": "15 de julho de 2026",
+  "horariosGerais": "Diurno: de segunda a sábado, a partir das 6h. Noturno: de segunda a sexta a partir das 17h e aos sábados a partir das 16h.",
+  "locais": [
+    {
+      "localidade": "Av. Domingos Ferrarezzi (entre a R. Carlos Alberto Bull e R. José Julio Finatti)",
+      "anterior": "SEG/QUA/SEX — Diurno",
+      "nova": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Cond. Jd. Park Real",
+      "anterior": "SEG/QUA/SEX — Diurno",
+      "nova": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Cond. Montreal Residence",
+      "anterior": "SEG/QUA/SEX — Diurno",
+      "nova": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Jd. Monte Verde (entre a R. Carlos Alberto Bull e R. Albino Geraldi)",
+      "anterior": "SEG/QUA/SEX — Diurno",
+      "nova": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Caldeira",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Condomínio Empresarial Caldeira",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Est. General Motors",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Est. José Rubim",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Europark Comercial",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Bom Sucesso",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Dos Sabiás",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Pq. Residencial dos Sabiás",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "R. Bonifácio Rosso Ros",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "SEG/QUA/SEX — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Pompéia (entre a Av. Eng. Fábio Roberto Barnabé, R. das Orquídeas, R. da Convenção, R. Augusto de Oliveira Camargo, R. Treze de Maio e R. das Primaveras)",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Cond. Reserva Vista Verde",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Jequitibá",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Paraíso",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Primavera",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Santorini",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "R. Pedro Virillo",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Vl. Verde",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "R. Sd. João Carlos de Oliveira Jr (entre Alameda Fundituba e R. Thomaz Barrio Gomes / R. Comendador Antônio Nagib Ibrahim)",
+      "anterior": "SEG/QUA/SEX — Noturno",
+      "nova": "DIÁRIO — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Jd. Oliveira Camargo",
+      "anterior": "TER/QUI/SAB — Diurno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Cond. Reserva Petrus",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Cond. Terra Magna",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. Morumbi",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "TER/QUI/SAB — Diurno (Seg. a Sáb. a partir das 06h)"
+    },
+    {
+      "localidade": "Jd. América (entre R. Itu e R. Venezuela)",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Jd. Cristina (entre R. Capivari e R. Rafard)",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Jd. Rossignatti",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Pq. Boa Esperança",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Vl. Furlan",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    },
+    {
+      "localidade": "Vl. Vitória II",
+      "anterior": "TER/QUI/SÁB — Noturno",
+      "nova": "SEG/QUA/SEX — Noturno (Seg. a Sex. a partir das 17h / Sáb. a partir das 16h)"
+    }
+  ]
+}

@@ -70,6 +70,8 @@ export default function SeletorOrigem({ titulo = 'De onde você sai?' }) {
     setStatus({ tipo: 'carregando', texto: 'Procurando o CEP...' });
     try {
       const ponto = await localizarCep(cep, controle.signal);
+      // Rua fora do mapa (só o bairro): aqui não há lista de bairros, então avisa.
+      if (ponto.lat === null) throw new Error('Não achamos a rua desse CEP no mapa. Use a sua localização.');
       setOrigem({ ...ponto, rotulo: `CEP ${cep} — ${ponto.rotulo}` });
       setStatus(null);
     } catch (erro) {

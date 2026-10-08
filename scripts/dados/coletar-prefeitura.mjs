@@ -184,7 +184,55 @@ async function main() {
   console.log(`\nFichas salvas: ${paginas.length} → scripts/dados/prefeitura-paginas.json`);
 }
 
+/**
+ * Lê as linhas de uma tabela HTML: [[célula, célula...], ...] (sem o cabeçalho <th>).
+ * Exportada para teste.
+ */
+export function linhasDaTabela(htmlTabela) {
+  return [...htmlTabela.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)]
+    .map(([, linha]) =>
+      [...linha.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map(([, celula]) =>
+        htmlParaLinhas(celula).join(' ').replace(/\s+/g, ' ').trim()
+      )
+    )
+    .filter((celulas) => celulas.length > 0);
+}
+
+/**
+ * Coleta domiciliar: a página oficial traz uma tabela com os locais que
+ * mudaram de dia ou turno em 2026 (localidade, programação anterior, nova).
+ * Grava scripts/dados/coleta-prefeitura.json (1 requisição).
+ */
+async function coletarColeta() {
+  const caminho = '/urbanismo/coleta-domiciliar-urbana/';
+  const html = await baixar(caminho);
+  const primeiraTabela = html.slice(html.search(/<table/i), html.search(/<\/table>/i) + 8);
+  const locais = linhasDaTabela(primeiraTabela)
+    .filter((c) => c.length >= 3 && c[0])
+    .map(([localidade, anterior, nova]) => ({ localidade, anterior, nova }));
+  const texto = htmlParaLinhas(html).join(' ');
+  const vigencia = texto.match(/a partir do dia (\d{1,2} de \w+ de \d{4})/i)?.[1] ?? null;
+  await writeFile(
+    'scripts/dados/coleta-prefeitura.json',
+    `${JSON.stringify(
+      {
+        coletadoEm: new Date().toISOString().slice(0, 10),
+        fonte: BASE + caminho,
+        vigencia,
+        horariosGerais:
+          'Diurno: de segunda a sábado, a partir das 6h. Noturno: de segunda a sexta a partir das 17h e aos sábados a partir das 16h.',
+        locais,
+      },
+      null,
+      2
+    )}\n`
+  );
+  console.log(`Coleta: ${locais.length} locais com programação nova → scripts/dados/coleta-prefeitura.json`);
+}
+
 // Só roda a coleta quando o arquivo é executado direto (não quando é importado nos testes).
+// --coleta: só a tabela da coleta de lixo (1 requisição).
 if (process.argv[1]?.endsWith('coletar-prefeitura.mjs')) {
-  await main();
+  if (process.argv.includes('--coleta')) await coletarColeta();
+  else await main();
 }

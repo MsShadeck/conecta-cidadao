@@ -1,0 +1,28 @@
+{
+  "_comentario": "Comércio com fonte oficial, que complementa os dados colaborativos do OpenStreetMap no Dia a dia. Conferido em 08/10/2026.",
+  "itens": [
+    {
+      "id": "ponto-verde",
+      "nome": "Ponto Verde — feira de produtores rurais",
+      "tipo": "Feira de produtores",
+      "grupo": "feiras",
+      "endereco": "Rua Francisco Araújo, 08 (ao lado da Estação)",
+      "telefones": ["(19) 3816-4680"],
+      "horarioTexto": "Sábado e domingo das 8h às 13h e quarta das 14h às 19h",
+      "horarios": {
+        "faixas": [
+          { "dias": ["sab", "dom"], "abre": "08:00", "fecha": "13:00" },
+          { "dias": ["qua"], "abre": "14:00", "fecha": "19:00" }
+        ],
+        "feriados": null,
+        "vinteQuatroHoras": false
+      },
+      "observacao": "Barracão com 20 expositores da agricultura familiar de Indaiatuba: frutas, verduras e legumes, mel, ovos, doces, massas, vinhos, sucos, licores e cachaças artesanais e mudas (Prefeitura).",
+      "fonte": ["https://www.indaiatuba.sp.gov.br/urbanismo/ponto-verde/"]
+    }
+  ],
+  "feirasLivres": {
+    "texto": "A Prefeitura informa que as feiras livres e a feira orgânica acontecem aos sábados, das 7h às 11h, mas a página oficial não lista os endereços. Confira os locais na Prefeitura: Disque Prefeitura (19) 3834-9000.",
+    "fonte": "https://www.indaiatuba.sp.gov.br/desenvolvimento-economico-industria-comercio-e-turismo/turismo/feiras-livres-e-feira-organica/"
+  }
+}

@@ -2,7 +2,8 @@
  * gerar-sitemap.mjs — Cria public/sitemap.xml antes de cada build.
  *
  * O sitemap lista todas as páginas do site para os buscadores (Google, Bing):
- * as páginas fixas e uma página para cada local de public/api/locais.json.
+ * as páginas fixas, uma página para cada local de public/api/locais.json e uma
+ * para cada bairro de public/api/bairros.json.
  * Roda sozinho no `npm run build` (ver package.json).
  */
 
@@ -12,7 +13,8 @@ const SITE = 'https://conecta-cidadao-blue.vercel.app';
 const PAGINAS_FIXAS = [
   '/',
   '/primeiros-passos',
-  '/perto-de-mim',
+  '/meu-bairro',
+  '/servicos',
   '/mapa',
   '/como-chegar',
   '/servicos-online',
@@ -28,7 +30,12 @@ const PAGINAS_FIXAS = [
 ];
 
 const { locais, atualizadoEm } = JSON.parse(await readFile('public/api/locais.json', 'utf8'));
-const urls = [...PAGINAS_FIXAS, ...locais.map((l) => `/${l.categoria}/${l.id}`)];
+const { bairros } = JSON.parse(await readFile('public/api/bairros.json', 'utf8'));
+const urls = [
+  ...PAGINAS_FIXAS,
+  ...locais.map((l) => `/${l.categoria}/${l.id}`),
+  ...bairros.map((b) => `/bairros/${b.slug}`),
+];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -97,10 +97,17 @@ export async function buscarCnes(codigoMunicipio) {
   return todos;
 }
 
-/** Consulta o Overpass (OpenStreetMap). Usar só no build, nunca a cada visita. */
-export function buscarOverpass(consulta) {
-  return buscar('https://overpass-api.de/api/interpreter', {
-    metodo: 'POST',
-    corpo: `data=${encodeURIComponent(consulta)}`,
-  });
+/**
+ * Consulta o Overpass (OpenStreetMap). Usar só no build, nunca a cada visita.
+ * O servidor principal às vezes responde 504 (sobrecarga); nesse caso tenta um
+ * espelho público da mesma API, com os mesmos dados.
+ */
+export async function buscarOverpass(consulta) {
+  const corpo = `data=${encodeURIComponent(consulta)}`;
+  try {
+    return await buscar('https://overpass-api.de/api/interpreter', { metodo: 'POST', corpo });
+  } catch (erro) {
+    console.warn(`  Overpass principal falhou (${erro.message}); tentando o espelho...`);
+    return buscar('https://overpass.kumi.systems/api/interpreter', { metodo: 'POST', corpo });
+  }
 }

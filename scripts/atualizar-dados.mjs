@@ -10,7 +10,8 @@
  *   5. o Nominatim, só para achar no mapa o que sobrou (1 req/s, com cache)
  * e grava em public/api/:
  *   locais.json, contatos.json, servicos-online.json, mobilidade.json,
- *   feriados.json, limite-municipio.geojson e pendencias.json.
+ *   feriados.json, limite-municipio.geojson, pendencias.json,
+ *   comercio.json (Dia a dia) e bairros.json (Meu bairro).
  *
  * O site continua lendo tudo com fetch('/api/...'), como na aula de useEffect.
  * Nada é inventado: o que nenhuma fonte informa fica null.
@@ -672,6 +673,8 @@ out tags center;`;
   await gerarFeriados();
   await gerarArquivosCurados();
   await gerarMobilidade(osm, limite);
+  await gerarComercio(limite);
+  await gerarBairros(limite);
 
   // Resumo no terminal.
   const resumo = {};
@@ -765,6 +768,184 @@ async function gerarMobilidade(osm, limite) {
     ...base,
     ecobike: { ...base.ecobike, estacoesNoMapa: unicas },
   });
+}
+
+
+/* ------------------------------------------------------------------ */
+/* Dia a dia: comércio do OpenStreetMap                                */
+/* ------------------------------------------------------------------ */
+
+/** Tipo de estabelecimento do OSM → nome exibido e grupo do filtro. */
+const TIPOS_COMERCIO = {
+  'shop=supermarket': ['Mercado', 'mercados'],
+  'shop=convenience': ['Mercearia / conveniência', 'mercados'],
+  'shop=butcher': ['Açougue', 'mercados'],
+  'shop=greengrocer': ['Hortifrúti', 'mercados'],
+  'shop=bakery': ['Padaria', 'padarias'],
+  'amenity=pharmacy': ['Farmácia', 'farmacias'],
+  'amenity=restaurant': ['Restaurante', 'restaurantes'],
+  'amenity=cafe': ['Café', 'restaurantes'],
+  'amenity=fast_food': ['Lanchonete', 'restaurantes'],
+  'amenity=bank': ['Banco', 'servicos'],
+  'shop=lottery': ['Lotérica', 'servicos'],
+  'amenity=post_office': ['Correios', 'servicos'],
+  'amenity=fuel': ['Posto de combustível', 'servicos'],
+};
+
+/**
+ * Comércio do dia a dia, só do OpenStreetMap (dados colaborativos, ODbL),
+ * consultado UMA vez no build (nunca a cada visita), mais a curadoria
+ * (feiras com fonte oficial). Sem nota, ranking nem destaque.
+ */
+async function gerarComercio(limite) {
+  const consulta = `[out:json][timeout:120];
+area["boundary"="administrative"]["admin_level"="8"]["name"="Indaiatuba"]->.a;
+(
+  nwr["shop"~"^(supermarket|convenience|bakery|butcher|greengrocer|lottery)$"]["name"](area.a);
+  nwr["amenity"~"^(restaurant|cafe|fast_food|pharmacy|fuel|bank|post_office)$"]["name"](area.a);
+);
+out tags center;`;
+  const resposta = await buscarOverpass(consulta);
+  const itens = [];
+  for (const el of resposta.elements) {
+    const t = el.tags;
+    const chave = t.shop ? `shop=${t.shop}` : `amenity=${t.amenity}`;
+    const [tipo, grupo] = TIPOS_COMERCIO[chave] ?? [];
+    const base = normalizarOsm(el);
+    if (!tipo || !base.nome || !base.coordenadas || !dentroDoMunicipio(base.coordenadas, limite)) continue;
+    const endereco = base.endereco
+      ? { ...base.endereco, bairro: base.endereco.bairro ?? null, cep: base.endereco.cep ?? null }
+      : null;
+    itens.push({
+      id: `osm-${el.type}-${el.id}`,
+      nome: base.nome,
+      tipo,
+      grupo,
+      endereco,
+      enderecoTexto: endereco
+        ? [endereco.logradouro, endereco.numero].filter(Boolean).join(', ') +
+          (endereco.bairro ? ` - ${endereco.bairro}` : '')
+        : null,
+      coordenadas: base.coordenadas,
+      telefones: base.telefones,
+      horarios: interpretarHorarioOsm(base.horarioOsm),
+      horarioTexto: base.horarioOsm,
+      site: base.site,
+      osm: base.osm,
+      fonte: [URL_OSM(base.osm)],
+      atualizadoEm: HOJE,
+    });
+  }
+
+  // Curadoria: feiras e mercados com fonte oficial (ex.: Ponto Verde).
+  const curados = await lerJson(path.join(PASTA_CURADORIA, 'extras', 'comercio.json'));
+  for (const extra of curados.itens) {
+    const endereco = { ...interpretarEndereco(extra.endereco), cep: extra.cep ?? null };
+    const ponto = extra.coordenadas ?? (await geocodificar(endereco, limite));
+    itens.push({
+      id: extra.id,
+      nome: extra.nome,
+      tipo: extra.tipo,
+      grupo: extra.grupo,
+      endereco,
+      enderecoTexto: extra.endereco,
+      coordenadas: ponto ? { lat: ponto.lat, lng: ponto.lng } : null,
+      telefones: extra.telefones ?? [],
+      horarios: extra.horarios ?? null,
+      horarioTexto: extra.horarioTexto ?? null,
+      site: extra.site ?? null,
+      osm: null,
+      observacao: extra.observacao ?? null,
+      fonte: extra.fonte,
+      atualizadoEm: HOJE,
+    });
+  }
+
+  itens.sort((a, b) => a.grupo.localeCompare(b.grupo) || a.nome.localeCompare(b.nome, 'pt-BR'));
+  await gravarJson(
+    'comercio.json',
+    {
+      atualizadoEm: HOJE,
+      aviso: 'Dados colaborativos. Horários de estabelecimentos podem mudar.',
+      credito: '© OpenStreetMap contributors (ODbL)',
+      grupos: [
+        { id: 'mercados', nome: 'Mercados' },
+        { id: 'padarias', nome: 'Padarias' },
+        { id: 'farmacias', nome: 'Farmácias' },
+        { id: 'restaurantes', nome: 'Restaurantes e lanches' },
+        { id: 'feiras', nome: 'Feiras' },
+        { id: 'servicos', nome: 'Bancos, lotéricas e postos' },
+      ],
+      feirasLivres: curados.feirasLivres,
+      itens,
+    },
+    { compacto: true }
+  );
+  console.log(`  Dia a dia: ${itens.length} estabelecimentos`);
+}
+
+/* ------------------------------------------------------------------ */
+/* Meu bairro: bairros do OpenStreetMap + coleta de lixo               */
+/* ------------------------------------------------------------------ */
+
+/** "Jd. Monte Verde" → "jardim monte verde" (para comparar com a tabela da coleta). */
+export function expandirAbreviacoes(nome) {
+  return normalizar(nome)
+    .replace(/\bjd\.?\s/g, 'jardim ')
+    .replace(/\bvl\.?\s/g, 'vila ')
+    .replace(/\bpq\.?\s/g, 'parque ')
+    .replace(/\bres\.?\s/g, 'residencial ')
+    .replace(/\bcond\.?\s/g, 'condominio ')
+    .replace(/\bnucl?\.?\s/g, 'nucleo ')
+    .replace(/\(.*?\)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+async function gerarBairros(limite) {
+  const consulta = `[out:json][timeout:120];
+area["boundary"="administrative"]["admin_level"="8"]["name"="Indaiatuba"]->.a;
+nwr["place"~"^(suburb|quarter|neighbourhood)$"]["name"](area.a);
+out tags center;`;
+  const resposta = await buscarOverpass(consulta);
+  let coleta = { locais: [], fonte: null, vigencia: null, horariosGerais: null };
+  try {
+    coleta = await lerJson('scripts/dados/coleta-prefeitura.json');
+  } catch {
+    console.warn('  Sem coleta-prefeitura.json (rode: npm run dados:prefeitura -- --coleta)');
+  }
+
+  const vistos = new Set();
+  const bairros = [];
+  for (const el of resposta.elements) {
+    const base = normalizarOsm(el);
+    if (!base.nome || !base.coordenadas || !dentroDoMunicipio(base.coordenadas, limite)) continue;
+    const slug = criarSlug(base.nome);
+    if (vistos.has(slug)) continue;
+    vistos.add(slug);
+    // Coleta: só quando o bairro aparece (pelo nome) na tabela oficial de 2026.
+    const alvo = expandirAbreviacoes(base.nome);
+    const linha = coleta.locais.find((c) => expandirAbreviacoes(c.localidade) === alvo);
+    bairros.push({
+      slug,
+      nome: base.nome,
+      coordenadas: base.coordenadas,
+      coleta: linha
+        ? // localidade exatamente como na tabela: pode ser só um trecho do bairro.
+          { localidade: linha.localidade, programacao: linha.nova, vigencia: coleta.vigencia, fonte: coleta.fonte }
+        : null,
+      fonte: [URL_OSM(base.osm), ...(linha ? [coleta.fonte] : [])],
+    });
+  }
+  bairros.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+  await gravarJson('bairros.json', {
+    atualizadoEm: HOJE,
+    observacao:
+      'Bairros do OpenStreetMap (um ponto por bairro, sem contorno). A coleta de lixo aparece só para os locais que a Prefeitura listou na nova programação de 2026.',
+    coletaGeral: { horarios: coleta.horariosGerais, fonte: coleta.fonte, telefone: '(19) 3825-5410' },
+    bairros,
+  });
+  console.log(`  Meu bairro: ${bairros.length} bairros, ${bairros.filter((b) => b.coleta).length} com coleta`);
 }
 
 // Executa só quando chamado direto (o Vitest importa classificar() sem rodar tudo).

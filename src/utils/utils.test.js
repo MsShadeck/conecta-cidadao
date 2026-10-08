@@ -177,3 +177,53 @@ describe('gerarIcs', () => {
     expect(ics.startsWith('BEGIN:VCALENDAR\r\n')).toBe(true);
   });
 });
+
+describe('proximidade', () => {
+  const ponto = { lat: -23.09, lng: -47.21 };
+  const locais = [
+    { id: 'ubs-longe', tipo: 'UBS', categoria: 'saude', coordenadas: { lat: -23.2, lng: -47.2 } },
+    { id: 'ubs-perto', tipo: 'UBS', categoria: 'saude', coordenadas: { lat: -23.091, lng: -47.211 } },
+    { id: 'parque', tipo: 'Parque', categoria: 'lazer', coordenadas: { lat: -23.1, lng: -47.22 } },
+  ];
+  const comercio = [{ id: 'm1', grupo: 'mercados', coordenadas: { lat: -23.095, lng: -47.21 } }];
+  const bairros = [
+    { nome: 'Cidade Nova', coordenadas: { lat: -23.085, lng: -47.2 } },
+    { nome: 'Jardim Pompéia', coordenadas: { lat: -23.096, lng: -47.22 } },
+  ];
+
+  it('maisProximos ordena por distância e ignora necessidades vazias', async () => {
+    const { maisProximos } = await import('./proximidade.js');
+    const r = maisProximos({ locais, comercio }, ponto);
+    const ubs = r.find((n) => n.id === 'ubs');
+    expect(ubs.itens.map((l) => l.id)).toEqual(['ubs-perto', 'ubs-longe']);
+    expect(r.find((n) => n.id === 'mercado').itens).toHaveLength(1);
+    expect(r.find((n) => n.id === 'escola')).toBeUndefined();
+  });
+
+  it('bairroDoPonto usa o nome do CEP e, sem ele, o ponto mais perto', async () => {
+    const { bairroDoPonto } = await import('./proximidade.js');
+    expect(bairroDoPonto(bairros, ponto, 'CIDADE NOVA')).toEqual({ bairro: bairros[0], porNome: true });
+    expect(bairroDoPonto(bairros, { lat: -23.097, lng: -47.221 }).bairro.nome).toBe('Jardim Pompéia');
+  });
+
+  it('procurarBairro aceita sem acento e só o começo', async () => {
+    const { procurarBairro } = await import('./proximidade.js');
+    expect(procurarBairro(bairros, 'pompeia').nome).toBe('Jardim Pompéia');
+    expect(procurarBairro(bairros, 'xyz')).toBeNull();
+  });
+});
+
+import { ehCoordenadaGenerica, limparCep } from './cep.js';
+
+describe('cep', () => {
+  it('limparCep aceita com e sem hífen e recusa o resto', () => {
+    expect(limparCep('13334-100')).toBe('13334100');
+    expect(limparCep('13334100')).toBe('13334100');
+    expect(limparCep('1333')).toBeNull();
+  });
+
+  it('reconhece o ponto genérico que a BrasilAPI devolve para a cidade toda', () => {
+    expect(ehCoordenadaGenerica(-23.08842, -47.2119)).toBe(true);
+    expect(ehCoordenadaGenerica(-23.1203, -47.2245)).toBe(false);
+  });
+});

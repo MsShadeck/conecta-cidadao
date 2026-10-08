@@ -18,6 +18,7 @@ import CardServico from '../components/CardServico.jsx';
 import Clima from '../components/Clima.jsx';
 import IconeLupa from '../components/IconeLupa.jsx';
 import IconeCategoria from '../components/IconeCategoria.jsx';
+import SeuBairro from '../components/SeuBairro.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
 import { limparCep } from '../utils/cep.js';
@@ -143,6 +144,9 @@ export default function Home() {
           <kbd className="home-busca-atalho">Ctrl K</kbd>
         </button>
       </section>
+
+      {/* Só aparece para quem salvou o bairro em "Meu bairro". */}
+      <SeuBairro />
 
       <section className="container home-atalhos" aria-labelledby="titulo-atalhos">
         <h2 id="titulo-atalhos" className="home-servicos-titulo">

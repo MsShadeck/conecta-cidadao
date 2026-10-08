@@ -1,0 +1,154 @@
+/* ============================================================
+   MeuBairro.css — Meu bairro (MeuBairro.jsx e ItemProximo.jsx)
+   Mobile first: tudo em uma coluna; a grade abre colunas em telas largas.
+============================================================ */
+
+.bairro-busca {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bairro-busca .campo {
+  flex: 1 1 260px;
+  min-width: 0;
+  background: var(--branco);
+}
+
+.bairro-status {
+  font-size: 0.875rem;
+  color: var(--tinta-media);
+}
+
+.bairro-status--erro {
+  color: var(--erro);
+}
+
+.bairro-resultado {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.bairro-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.bairro-ponto {
+  font-size: 0.9375rem;
+}
+
+.bairro-cabeca a,
+.bairro-onibus a.botao-secundario,
+.bairro-lista a {
+  text-decoration: underline;
+}
+
+.bairro-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bairro-bloco-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.bairro-bloco-titulo svg {
+  color: var(--cat-tinta);
+}
+
+.bairro-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 14px;
+}
+
+.bairro-necessidade {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  border-top: 4px solid var(--cat-fundo);
+}
+
+.bairro-necessidade h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cat-tinta);
+}
+
+.bairro-necessidade ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bairro-onibus {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9375rem;
+}
+
+.bairro-onibus-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bairro-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 6px 16px;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+/* Um lugar da lista (ItemProximo). */
+.item-proximo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.item-proximo:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-proximo-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  font-size: 0.875rem;
+}
+
+.item-proximo-topo a {
+  color: var(--tinta);
+  text-decoration: underline;
+}
+
+.item-proximo-detalhe {
+  font-size: 0.8125rem;
+  color: var(--tinta-media);
+}
+
+.item-proximo-osm {
+  font-size: 0.75rem;
+  color: var(--tinta-media);
+  text-decoration: underline;
+}

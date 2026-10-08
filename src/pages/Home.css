@@ -238,3 +238,57 @@
 .home-atalho svg {
   color: var(--cat-tinta, var(--azul-marca));
 }
+
+/* Seu bairro (só para quem salvou o bairro em "Meu bairro") */
+.home-seu-bairro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-seu-bairro-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.home-seu-bairro-topo h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-seu-bairro-topo svg {
+  color: var(--cat-tinta);
+}
+
+.home-seu-bairro-topo a {
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.home-seu-bairro-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+  gap: 12px;
+}
+
+.home-seu-bairro-lista li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-top: 4px solid var(--cat-fundo);
+  font-size: 0.875rem;
+}
+
+.home-seu-bairro-tipo {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cat-tinta);
+}

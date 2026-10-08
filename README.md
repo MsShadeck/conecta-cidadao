@@ -35,7 +35,7 @@ npm run dev     # abre em http://localhost:5173 (a rota /api/rota também funcio
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | Início (busca, atalhos, clima, categorias)            | `/`                                                                                               |
 | Primeiros passos para quem chegou à cidade            | `/primeiros-passos`                                                                               |
-| O que tem perto de mim (GPS ou CEP)                   | `/perto-de-mim`                                                                                   |
+| Meu bairro: o que tem perto (CEP, endereço, GPS ou bairro) | `/meu-bairro`, `/bairros/:slug` (`/perto-de-mim` redireciona)                                                                                  |
 | Mapa de todos os serviços                             | `/mapa` (aceita `?bairro=`)                                                                       |
 | Como chegar (a pé e de bicicleta)                     | `/como-chegar` (aceita `?destino=id`)                                                             |
 | Categorias (com busca por texto, filtros, lista/mapa) | `/saude`, `/educacao`, `/seguranca`, `/lazer`, `/cidadania` (aceitam `?q=`, `?tipo=`, `?bairro=`) |
