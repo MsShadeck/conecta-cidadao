@@ -7,6 +7,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import { Info } from 'lucide-react';
 import { categorias, equipe } from '../data/servicos.js';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
@@ -115,14 +116,16 @@ export default function Sobre() {
         {/* <article>: bloco de conteúdo com sentido próprio. */}
         <article className="sobre-card">
           {/* Logo sem texto: é decorativa, o nome do projeto vem logo abaixo. */}
-          <img
-            src="/img/interface/logo.png"
-            alt=""
-            className="sobre-logo"
-            width="160"
-            height="128"
-          />
-          <h2 className="sobre-subtitulo">O projeto</h2>
+          <div className="sobre-card-topo">
+            <img
+              src="/img/interface/logo.png"
+              alt=""
+              className="sobre-logo"
+              width="160"
+              height="128"
+            />
+            <h2 className="sobre-subtitulo">O projeto</h2>
+          </div>
           <p className="sobre-texto">
             O <strong>Conecta Cidadão</strong> é uma plataforma criada para facilitar o acesso da
             população de <strong>Indaiatuba (SP)</strong> aos serviços públicos de forma simples,
@@ -173,7 +176,10 @@ export default function Sobre() {
       <section className="container sobre-secoes">
         {/* Aviso importante: este site NÃO é da Prefeitura. */}
         <div className="painel sobre-aviso" role="note">
-          <h2 className="sobre-subtitulo sobre-subtitulo--esquerda">Site não oficial</h2>
+          <h2 className="sobre-subtitulo sobre-subtitulo--esquerda sobre-aviso-titulo">
+            <Info size={18} aria-hidden="true" />
+            Site não oficial
+          </h2>
           <p className="sobre-texto">
             O Conecta Cidadão é um <strong>projeto acadêmico</strong>, sem vínculo com a Prefeitura
             de Indaiatuba nem com outros órgãos públicos, e não usa o brasão nem a identidade visual

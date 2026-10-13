@@ -54,11 +54,16 @@
   transform: scale(1.04);
 }
 
-/* Sem foto: o ícone da categoria centralizado sobre um degradê da categoria. */
-.card-local-sem-foto {
+/* Sem foto (a maioria dos locais): cartão compacto, com o ícone da categoria
+   num quadrado colorido no lugar de um bloco vazio do tamanho da foto. */
+.card-local-icone {
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--cat-fundo, var(--azul-nevoa)), var(--branco) 140%);
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  border-radius: var(--raio-botao);
+  background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--cat-tinta, var(--azul-marca));
 }
 
@@ -68,6 +73,10 @@
   gap: 4px;
   flex: 1;
   padding: 14px 16px 16px;
+}
+
+.card-local--sem-foto .card-local-corpo {
+  padding-top: 16px;
 }
 
 .card-local-nome {

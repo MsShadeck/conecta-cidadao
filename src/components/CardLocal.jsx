@@ -22,21 +22,23 @@ export default function CardLocal({ local, distancia }) {
     // data-categoria: a borda e o selo do tipo herdam a cor do serviço.
     <Link
       to={`/${local.categoria}/${local.id}`}
-      className="card-local"
+      className={`card-local${local.imagem ? '' : ' card-local--sem-foto'}`}
       data-categoria={local.categoria}
     >
-      <span className="card-local-moldura">
-        {local.imagem ? (
-          // alt="" porque o nome do local já está escrito logo abaixo da foto.
+      {local.imagem && (
+        <span className="card-local-moldura">
+          {/* alt="" porque o nome do local já está escrito logo abaixo da foto. */}
           <Foto className="card-local-imagem" src={local.imagem} alt="" />
-        ) : (
-          // Sem foto: o ícone da categoria num fundo colorido (decorativo).
-          <span className="card-local-imagem card-local-sem-foto" aria-hidden="true">
-            <IconeCategoria slug={local.categoria} tamanho={40} />
+        </span>
+      )}
+      <span className="card-local-corpo">
+        {/* Sem foto: em vez de um bloco vazio do tamanho da foto, só o ícone
+            da categoria num quadrado colorido (decorativo). */}
+        {!local.imagem && (
+          <span className="card-local-icone" aria-hidden="true">
+            <IconeCategoria slug={local.categoria} tamanho={20} />
           </span>
         )}
-      </span>
-      <span className="card-local-corpo">
         <span className="card-local-nome">{local.nome}</span>
         <span className="card-local-detalhe">
           {[local.tipo, local.endereco?.bairro].filter(Boolean).join(' · ')}

@@ -155,3 +155,15 @@
 .categoria-busca {
   width: 100%;
 }
+
+/* Celular: filtros dois a dois, para os locais aparecerem já na primeira tela
+   (empilhados, os quatro filtros ocupavam a tela inteira). */
+@media (max-width: 520px) {
+  .categoria-filtros-linha .filtro {
+    flex-basis: 120px;
+  }
+
+  .filtro select {
+    padding-inline: 10px 6px;
+  }
+}

@@ -189,6 +189,68 @@
   text-decoration: underline;
 }
 
+/* Telas largas: cada item vira uma linha do checklist, em vez de cartões em
+   grade (os grupos têm de 1 a 5 itens e a grade deixava linhas meio vazias).
+   À esquerda: título, ações e "Marcar como feito"; à direita: os detalhes
+   numa ficha de duas colunas (rótulo | texto), com linhas de leitura curtas. */
+@media (min-width: 960px) {
+  .passos-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .passo {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'topo detalhes'
+      'rodape detalhes'
+      'fonte acoes';
+    column-gap: 40px;
+    row-gap: 16px;
+    align-items: start;
+  }
+
+  .passo-topo {
+    grid-area: topo;
+  }
+
+  .passo-rodape {
+    grid-area: rodape;
+  }
+
+  .passo > .info-fonte {
+    grid-area: fonte;
+  }
+
+  .passo-acoes {
+    grid-area: acoes;
+    padding-left: 160px; /* alinha os botões com o texto, depois da coluna de rótulos */
+  }
+
+  .passo-detalhes {
+    grid-area: detalhes;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px 20px;
+  }
+
+  .passo-detalhes dt {
+    margin-top: 0;
+    padding-top: 2px; /* alinha o rótulo pequeno com a primeira linha do texto */
+  }
+
+  .passo-topo {
+    flex-direction: column;
+  }
+
+  .passo-rodape {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
 /* ============================================================
    Folha de impressão ("Imprimir / salvar PDF")
    Só o checklist, em preto e branco, sem menus, botões nem mapas.

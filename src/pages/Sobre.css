@@ -30,11 +30,16 @@
   gap: 14px;
 }
 
-/* Logo centralizada: margin auto nas laterais faz a centralização. */
+/* Logo pequena ao lado do título, alinhada à esquerda como o texto. */
+.sobre-card-topo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .sobre-logo {
-  width: min(160px, 50%);
+  width: 64px;
   height: auto;
-  margin: 0 auto 6px;
 }
 
 .sobre-subtitulo {
@@ -42,7 +47,6 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--tinta);
-  text-align: center;
 }
 
 /* Modificador para o subtítulo da coluna da equipe, alinhado à esquerda. */
@@ -129,8 +133,24 @@
   margin-top: 22px;
 }
 
+/* Aviso: fundo de atenção em vez de uma borda colorida só de um lado. */
 .sobre-aviso {
-  border-left: 3px solid var(--azul-marca);
+  background: var(--atencao-fundo);
+  border-color: color-mix(in srgb, var(--atencao-tinta) 25%, transparent);
+}
+
+.sobre-aviso-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sobre-aviso-titulo svg {
+  color: var(--atencao-tinta);
+}
+
+.sobre-aviso .sobre-texto {
+  color: var(--tinta);
 }
 
 .sobre-fontes {

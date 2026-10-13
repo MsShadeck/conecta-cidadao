@@ -536,6 +536,13 @@ picture {
   display: contents;
 }
 
+/* Com o <picture> "transparente", o <source> (vazio, mas display: inline por
+   padrão) viraria um item solto de grade/flex e empurraria a foto para outra
+   célula. Escondê-lo não muda nada: o navegador continua lendo o srcset. */
+picture source {
+  display: none;
+}
+
 /* Local sem foto cadastrada: bloco neutro no lugar da imagem. */
 .foto-vazia {
   display: block;
