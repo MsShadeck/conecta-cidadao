@@ -128,7 +128,9 @@ Os mapas de **um ponto** (página de um local, Meu bairro, trânsito na página 
 
 **Exceção — mapas com vários pontos:** o iFrame do Waze mostra um único ponto e não aceita vários
 marcadores. Por isso, o Mapa geral, as categorias em modo mapa, Transporte (Ecobike e ciclovias)
-e Conheça Indaiatuba (bairros e contorno do município) continuam com **Leaflet + OpenStreetMap**, sem
+e Conheça Indaiatuba (bairros e contorno do município) continuam com **Leaflet**, com o mapa de fundo vetorial
+do **OpenFreeMap** (estilo Liberty no tema claro e Dark no escuro, desenhado pelo MapLibre, sem
+chave de API; ruas do OpenStreetMap), sem
 nenhuma marca ou nome do Waze nesses mapas, como pedem as regras de marca do Waze.
 
 A v2 calculava rotas a pé e de bicicleta no próprio site com o **Indaiatuba Integra**. Esse código
@@ -166,7 +168,7 @@ Locais sem fonte confirmada vão para `pendentes` e aparecem na página Sobre co
   - Home: 95 / 100 / 100 / 100
   - Saúde: 85 / 100 / 100 / 100
   - Página de uma UBS: 86 / 100 / 100 / 100
-  - Mapa geral: 75 / 100 / 96 / 100. O maior elemento da tela é um tile PNG do OpenStreetMap.
+  - Mapa geral: 75 / 100 / 96 / 100. O maior elemento da tela é um tile PNG do mapa de fundo.
 
 ## Atividades das aulas de React
 

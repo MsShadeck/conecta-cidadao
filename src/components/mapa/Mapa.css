@@ -41,6 +41,7 @@
 }
 
 .mapa-balao a {
+  color: var(--azul-marca);
   font-weight: 600;
   text-decoration: underline;
 }
@@ -62,4 +63,32 @@
   font-size: 0.8125rem;
   display: grid;
   place-items: center;
+}
+
+/* Controles do Leaflet (zoom, crédito e balão) com as cores do site:
+   como usam as variáveis do global.css, acompanham o tema claro e o escuro. */
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background: var(--branco);
+  color: var(--tinta);
+  border-bottom-color: var(--linha);
+}
+
+.leaflet-bar a:hover {
+  background: var(--azul-hover);
+}
+
+.leaflet-control-attribution.leaflet-control {
+  background: var(--vidro-leve);
+  color: var(--tinta-media);
+}
+
+.leaflet-control-attribution a {
+  color: var(--azul-marca);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--branco);
+  color: var(--tinta);
 }

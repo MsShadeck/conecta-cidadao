@@ -1,5 +1,5 @@
 /**
- * Mapa.jsx — Mapa interativo (Leaflet + OpenStreetMap), sem chave de API.
+ * Mapa.jsx — Mapa interativo (Leaflet + mapa de fundo do OpenFreeMap), sem chave de API.
  *
  * Este arquivo é carregado com React.lazy: o Leaflet (≈150 KB) só é baixado
  * nas páginas que mostram mapa. Use sempre pelo componente MapaPreguicoso.
@@ -22,11 +22,48 @@
 import { useEffect, useRef } from 'react';
 import L from './leafletGlobal.js';
 import 'leaflet.markercluster';
+// MapLibre desenha o mapa de fundo vetorial (OpenFreeMap); o plugin oficial
+// o coloca como uma camada do Leaflet, por baixo dos alfinetes e das rotas.
+import '@maplibre/maplibre-gl-leaflet';
+import { setWorkerUrl } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
+// O MapLibre desenha o mapa num Web Worker (outro arquivo). Ele calcula o endereço
+// desse arquivo sozinho, mas o Vite não percebe que precisa publicá-lo. O "?url"
+// faz o Vite copiar o worker para dist/ e devolver o endereço final dele.
+import urlDoWorker from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import './Mapa.css';
 
+setWorkerUrl(urlDoWorker);
+
 const CENTRO_INDAIATUBA = [-23.09, -47.218];
+
+/**
+ * Mapa de fundo: OpenFreeMap (estilo Liberty no tema claro, Dark no escuro).
+ * Gratuito, sem cadastro e sem chave de API, com uso liberado pelo projeto
+ * (https://openfreemap.org). É um mapa vetorial: as ruas são desenhadas no
+ * navegador, nítidas em qualquer zoom e em telas de alta densidade.
+ */
+const MAPA_DE_FUNDO = {
+  claro: 'https://tiles.openfreemap.org/styles/liberty',
+  escuro: 'https://tiles.openfreemap.org/styles/dark',
+};
+// Crédito pedido pelo OpenFreeMap (as ruas vêm do OpenStreetMap, via OpenMapTiles).
+const CREDITO_MAPA =
+  '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> ' +
+  '&copy; <a href="https://www.openmaptiles.org/" target="_blank" rel="noreferrer">OpenMapTiles</a> ' +
+  'Dados do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>';
+
+/**
+ * O site está no tema escuro? Mesma regra do global.css: a escolha feita no
+ * site (data-tema no <html>) vale mais que a do sistema.
+ */
+function temaEscuro() {
+  const escolhido = document.documentElement.dataset.tema;
+  if (escolhido) return escolhido === 'escuro';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
 
 /** Alfinete desenhado em HTML/CSS: herda a cor da categoria pelo data-categoria. */
 function iconeAlfinete(categoria, destaque) {
@@ -88,17 +125,27 @@ export default function Mapa({
     const mapa = L.map(divRef.current, {
       center: CENTRO_INDAIATUBA,
       zoom: 13,
+      maxZoom: 19, // o agrupamento de marcadores precisa saber o zoom máximo
       scrollWheelZoom: false, // a roda do mouse rola a página, não o mapa
       // Desenha linhas (rotas, ciclovias) num <canvas> em vez de centenas de
       // elementos SVG: bem mais leve no celular.
       preferCanvas: true,
     });
-    // Tiles do OpenStreetMap: uso permitido com crédito e sem abuso (não pede chave).
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    // Camada do MapLibre dentro do Leaflet: desenha o estilo vetorial do OpenFreeMap.
+    const fundo = L.maplibreGL({
+      style: MAPA_DE_FUNDO[temaEscuro() ? 'escuro' : 'claro'],
+      attributionControl: false, // o crédito aparece no controle do próprio Leaflet
     }).addTo(mapa);
+    mapa.attributionControl.addAttribution(CREDITO_MAPA);
+
+    // Troca o mapa de fundo quando o tema muda: pelo menu do site (atributo
+    // data-tema no <html>) ou pelo sistema (modo escuro do celular/computador).
+    const trocarFundo = () =>
+      fundo.getMaplibreMap()?.setStyle(MAPA_DE_FUNDO[temaEscuro() ? 'escuro' : 'claro']);
+    const observadorTema = new MutationObserver(trocarFundo);
+    observadorTema.observe(document.documentElement, { attributeFilter: ['data-tema'] });
+    const temaDoSistema = window.matchMedia('(prefers-color-scheme: dark)');
+    temaDoSistema.addEventListener('change', trocarFundo);
     grupoCamadasRef.current = L.layerGroup().addTo(mapa);
     grupoRotasRef.current = L.layerGroup().addTo(mapa);
     mapaRef.current = mapa;
@@ -109,6 +156,8 @@ export default function Mapa({
 
     return () => {
       observador.disconnect();
+      observadorTema.disconnect();
+      temaDoSistema.removeEventListener('change', trocarFundo);
       mapa.remove();
       mapaRef.current = null;
     };

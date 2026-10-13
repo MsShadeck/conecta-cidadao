@@ -33,8 +33,15 @@ const FONTES = [
   {
     nome: 'OpenStreetMap',
     url: 'https://www.openstreetmap.org/copyright',
-    uso: 'Mapa de fundo, posição de escolas, parques e terminais, ciclovias, os pontos de referência dos bairros e o comércio do Dia a dia (mercados, padarias, farmácias...). Dados colaborativos: qualquer pessoa pode corrigir.',
+    uso: 'Ruas do mapa de fundo (desenhado pelo OpenFreeMap), posição de escolas, parques e terminais, ciclovias, os pontos de referência dos bairros e o comércio do Dia a dia (mercados, padarias, farmácias...). Dados colaborativos: qualquer pessoa pode corrigir.',
     licenca: '© OpenStreetMap contributors, licença ODbL.',
+  },
+  {
+    nome: 'OpenFreeMap',
+    url: 'https://openfreemap.org/',
+    uso: 'Mapa de fundo dos mapas com vários pontos (Mapa geral, categorias, Transporte e Conheça), nas versões clara e escura.',
+    licenca:
+      'Mapa gratuito e aberto, sem cadastro nem chave de API; crédito ao OpenFreeMap, ao OpenMapTiles e ao OpenStreetMap.',
   },
   {
     nome: 'Nominatim (OpenStreetMap)',
