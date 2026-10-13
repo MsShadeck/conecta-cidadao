@@ -62,19 +62,26 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 14px;
+  padding: 16px;
+  background: var(--branco);
   border: 1px solid var(--linha);
+  transition: border-color var(--transicao);
   border-radius: var(--raio-card);
 }
 
 /* Número em destaque dentro de um selo com a cor da categoria. */
+.contato:hover {
+  border-color: var(--linha-forte);
+}
+
 .contato-telefone {
   min-width: 64px;
+  font-variant-numeric: tabular-nums;
   padding: 10px 0;
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
-  border-radius: 14px;
+  border-radius: var(--raio-botao);
   background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--cat-tinta, var(--azul-marca));
   flex-shrink: 0;
@@ -110,12 +117,13 @@
 }
 
 .contato-copiar {
-  font-size: 0.7813rem;
-  font-weight: 500;
-  color: var(--azul-marca);
-  padding: 6px 10px;
-  border-radius: var(--raio-pilula);
-  background: var(--azul-nevoa);
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  color: var(--tinta-media);
+  padding: 5px 10px;
+  border-radius: var(--raio-sm);
+  border: 1px solid var(--linha-forte);
+  background: var(--branco);
   flex-shrink: 0;
 }
 
@@ -125,8 +133,9 @@
 
 /* Bloco de emergência: números grandes, sempre no topo. */
 .contatos-subtitulo {
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: var(--texto-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 
@@ -138,18 +147,26 @@
 }
 
 .contatos-emergencia-numero {
+  border: 1px solid color-mix(in srgb, var(--cat-tinta, var(--azul-marca)) 18%, transparent);
+  transition: transform var(--transicao);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
   padding: 12px 8px;
-  border-radius: 16px;
+  border-radius: var(--raio-card);
   text-align: center;
   background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--cat-tinta, var(--azul-marca));
 }
 
+.contatos-emergencia-numero:hover {
+  transform: translateY(-2px);
+}
+
 .contatos-emergencia-numero strong {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
   font-size: 1.5rem;
   line-height: 1.1;
 }
@@ -163,4 +180,19 @@
   .contatos-lista {
     grid-template-columns: 1fr;
   }
+}
+
+/* Número longo, como (19) 3834-9000: o selo vai para cima do texto, em vez
+   de espremer o nome e a descrição numa coluna estreita. */
+.contato:has(.contato-telefone--longo) {
+  flex-wrap: wrap;
+}
+
+.contato:has(.contato-telefone--longo) .contato-texto {
+  flex-basis: 100%;
+  order: 3;
+}
+
+.contato:has(.contato-telefone--longo) .contato-copiar {
+  margin-left: auto;
 }

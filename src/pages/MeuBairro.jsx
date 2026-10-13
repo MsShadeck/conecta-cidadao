@@ -15,6 +15,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Bookmark, BookmarkCheck } from 'lucide-react';
 import { useOrigem } from '../context/AppContext.jsx';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
@@ -291,7 +292,8 @@ export default function MeuBairro() {
                   )
                 }
               >
-                {ehSalvo ? 'Salvo como meu bairro ✓' : 'Salvar como meu bairro'}
+                {ehSalvo ? <BookmarkCheck size={16} /> : <Bookmark size={16} />}
+                {ehSalvo ? 'Salvo como meu bairro' : 'Salvar como meu bairro'}
               </button>
             </div>
 

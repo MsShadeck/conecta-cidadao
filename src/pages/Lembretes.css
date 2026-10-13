@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 12px 4px;
+  padding: 14px 4px;
   font-size: 0.9063rem;
   color: var(--tinta);
   border-bottom: 1px solid var(--linha);
@@ -52,10 +52,10 @@
 
 .lembrete-remover {
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--erro);
   padding: 6px 12px;
-  border-radius: var(--raio-pilula);
+  border-radius: var(--raio-sm);
   flex-shrink: 0;
   transition: background var(--transicao);
 }
@@ -72,9 +72,9 @@
 .lembretes-campo {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 0.7813rem;
-  font-weight: 500;
+  gap: 6px;
+  font-size: var(--texto-xs);
+  font-weight: 600;
   color: var(--tinta-media);
   flex: 0 1 170px;
 }
@@ -85,7 +85,6 @@
 
 .lembretes-campo .campo {
   width: 100%;
-  border-radius: 14px;
 }
 
 .lembretes-dica {
@@ -108,7 +107,10 @@
 }
 
 .lembrete-texto small {
-  font-size: 0.7813rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--texto-xs);
   color: var(--tinta-media);
 }
 
@@ -124,10 +126,10 @@
 
 .lembrete-calendario {
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--azul-marca);
   padding: 6px 12px;
-  border-radius: var(--raio-pilula);
+  border-radius: var(--raio-sm);
 }
 
 .lembrete-calendario:hover {

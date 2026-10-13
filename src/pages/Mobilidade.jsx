@@ -12,6 +12,7 @@
 
 import { useCallback, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Bike, Bus, CreditCard, Newspaper, Route } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import ChipsCategorias from '../components/ChipsCategorias.jsx';
@@ -102,7 +103,9 @@ export default function Mobilidade() {
           <div className="container mobilidade">
             {/* ------------------------- Ônibus ------------------------- */}
             <section className="painel mobilidade-bloco" aria-labelledby="t-onibus">
-              <h2 id="t-onibus">🚌 Ônibus municipal</h2>
+              <h2 id="t-onibus">
+                <Bus size={20} /> Ônibus municipal
+              </h2>
               <p>{dados.onibus.resumo}</p>
               <ul className="mobilidade-links">
                 {dados.onibus.links.map((link) => (
@@ -123,7 +126,9 @@ export default function Mobilidade() {
             </section>
 
             <section className="painel mobilidade-bloco" aria-labelledby="t-cartao">
-              <h2 id="t-cartao">💳 {dados.onibus.cartao.titulo}</h2>
+              <h2 id="t-cartao">
+                <CreditCard size={20} /> {dados.onibus.cartao.titulo}
+              </h2>
               <p>{dados.onibus.cartao.texto}</p>
               <p className="mobilidade-telefones">
                 {dados.onibus.cartao.telefones.map((tel) => (
@@ -137,7 +142,9 @@ export default function Mobilidade() {
             </section>
 
             <section className="painel mobilidade-bloco" aria-labelledby="t-noticias">
-              <h2 id="t-noticias">📰 Novidades (confira antes de usar)</h2>
+              <h2 id="t-noticias">
+                <Newspaper size={20} /> Novidades (confira antes de usar)
+              </h2>
               <ul className="mobilidade-noticias">
                 {dados.onibus.noticias.map((n) => (
                   <li key={n.titulo}>
@@ -215,7 +222,9 @@ export default function Mobilidade() {
 
             {/* ------------------------- Bicicleta ------------------------- */}
             <section id="ecobike" className="painel mobilidade-bloco" aria-labelledby="t-ecobike">
-              <h2 id="t-ecobike">🚲 {dados.ecobike.titulo}</h2>
+              <h2 id="t-ecobike">
+                <Bike size={20} /> {dados.ecobike.titulo}
+              </h2>
               <p>{dados.ecobike.texto}</p>
               <p>
                 <strong>Horários: </strong>
@@ -231,7 +240,9 @@ export default function Mobilidade() {
             </section>
 
             <section className="painel mobilidade-bloco" aria-labelledby="t-bike">
-              <h2 id="t-bike">🛣️ {dados.bike.titulo}</h2>
+              <h2 id="t-bike">
+                <Route size={20} /> {dados.bike.titulo}
+              </h2>
               <p>{dados.bike.texto}</p>
               {dados.bike.links.map((link) => (
                 <a key={link.url} href={link.url} target="_blank" rel="noreferrer">

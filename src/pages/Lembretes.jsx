@@ -104,6 +104,7 @@ export default function Lembretes() {
 // A lista fica salva no navegador (useLocalStorage).
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
@@ -276,10 +277,12 @@ export default function Lembretes() {
                     {(item.data || local) && (
                       <small>
                         {item.data &&
-                          `📅 ${formatarData(item.data)}${item.hora ? ` às ${item.hora}` : ''}`}
+                          `${formatarData(item.data)}${item.hora ? ` às ${item.hora}` : ''}`}
                         {item.data && local && ' · '}
                         {local && (
-                          <Link to={`/${local.categoria}/${local.id}`}>📍 {local.nome}</Link>
+                          <Link to={`/${local.categoria}/${local.id}`}>
+                            <MapPin size={13} strokeWidth={2.25} /> {local.nome}
+                          </Link>
                         )}
                       </small>
                     )}

@@ -13,7 +13,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
   // Pastas geradas pela build ou por ferramentas: não precisam ser analisadas.
-  { ignores: ['dist', 'node_modules', 'dev-dist', 'api/_integra'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'dev-dist',
+      'api/_integra',
+      'playwright-report',
+      'test-results',
+    ],
+  },
 
   // Código do site (roda no navegador).
   {
@@ -40,7 +49,13 @@ export default [
 
   // Scripts de build, testes, funções serverless e arquivos de configuração (rodam no Node).
   {
-    files: ['scripts/**/*.{js,mjs}', 'api/**/*.js', '*.config.js', 'src/**/*.test.{js,jsx}'],
+    files: [
+      'scripts/**/*.{js,mjs}',
+      'api/**/*.js',
+      '*.config.js',
+      'src/**/*.test.{js,jsx}',
+      'tests/**/*.js',
+    ],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',

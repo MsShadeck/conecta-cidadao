@@ -20,23 +20,29 @@
   flex-direction: column;
   gap: 6px;
   height: 100%;
-  padding: 16px;
+  padding: 18px;
+  background: var(--branco);
   border: 1px solid var(--linha);
   border-radius: var(--raio-card);
+  box-shadow: var(--sombra-baixa);
   color: var(--tinta);
   transition:
     border-color var(--transicao),
-    box-shadow var(--transicao);
+    box-shadow var(--transicao),
+    transform var(--transicao);
 }
 
 .servico-online:hover {
-  border-color: var(--azul-acento);
-  box-shadow: var(--sombra-baixa);
+  border-color: var(--linha-forte);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-2px);
 }
 
 .servico-online strong {
-  font-size: 0.9375rem;
-  color: var(--azul-marca);
+  font-size: var(--texto-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
 }
 
 .servico-online span {
@@ -46,6 +52,10 @@
 }
 
 .servico-online .servico-online-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding-top: 8px;
   margin-top: auto;
   font-size: 0.75rem;
   font-weight: 500;

@@ -10,39 +10,48 @@
 }
 
 .botao-util-pergunta {
-  font-size: 0.9063rem;
-  font-weight: 500;
+  font-size: var(--texto-sm);
+  font-weight: 600;
   color: var(--tinta);
 }
 
-/* Pílula na cor da categoria (herda --cat-* do data-categoria da página). */
+/* Botão com contorno; ao votar, assume a cor da categoria
+   (herda --cat-* do data-categoria da página). */
 .botao-util-botao {
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 7px 16px;
-  border-radius: var(--raio-pilula);
-  background: var(--cat-fundo, var(--azul-nevoa));
-  color: var(--cat-tinta, var(--azul-marca));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--raio-botao);
+  border: 1px solid var(--linha-forte);
+  background: var(--branco);
+  color: var(--tinta);
+  box-shadow: var(--sombra-baixa);
   transition:
     transform var(--transicao),
-    filter var(--transicao);
+    background var(--transicao),
+    border-color var(--transicao);
 }
 
 .botao-util-botao:hover {
-  filter: brightness(0.96);
+  background: var(--azul-nevoa);
 }
 
-/* Votado: inverte as cores (fundo forte, texto branco) para mostrar o estado. */
+/* Votado: fundo e borda da categoria para mostrar o estado. */
 .botao-util-botao[aria-pressed='true'] {
-  background: var(--cat-tinta, var(--azul-marca));
-  color: var(--texto-sobre-marca);
+  background: var(--cat-fundo, var(--azul-nevoa));
+  border-color: var(--cat-tinta, var(--azul-marca));
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 .botao-util-botao:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .botao-util-contagem {
-  font-size: 0.8438rem;
+  font-size: 0.8125rem;
   color: var(--tinta-fraca);
 }

@@ -11,8 +11,9 @@
 }
 
 .sugestao-titulo {
-  font-size: 1.0625rem;
+  font-size: var(--texto-lg);
   font-weight: 600;
+  letter-spacing: -0.015em;
   color: var(--tinta);
 }
 
@@ -52,15 +53,14 @@
 }
 
 .sugestao-remover {
-  font-size: 1rem;
-  line-height: 1;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
+  color: inherit;
   display: grid;
   place-items: center;
 }
 
 .sugestao-remover:hover {
-  background: rgba(0, 0, 0, 0.08);
+  background: color-mix(in srgb, currentColor 14%, transparent);
 }

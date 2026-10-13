@@ -12,6 +12,7 @@
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, MapPin } from 'lucide-react';
 import { categorias } from '../data/servicos.js';
 import { useBusca } from '../context/AppContext.jsx';
 import CardServico from '../components/CardServico.jsx';
@@ -20,6 +21,7 @@ import IconeLupa from '../components/IconeLupa.jsx';
 import IconeCategoria from '../components/IconeCategoria.jsx';
 import SeuBairro from '../components/SeuBairro.jsx';
 import DiferencasSP from '../components/DiferencasSP.jsx';
+import Surgir from '../components/Surgir.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
 import { limparCep } from '../utils/cep.js';
@@ -92,76 +94,112 @@ export default function Home() {
   return (
     <>
       <section className="container home-topo">
-        {/* Só um <h1> por página: é o título principal do documento. */}
-        <h1 className="titulo-pagina">Chegou agora em Indaiatuba? Comece por aqui</h1>
-        <p className="texto-apoio">
-          O que resolver na mudança, o que tem perto da sua casa, como funciona o ônibus e onde
-          ficam os serviços públicos e o comércio do dia a dia. Tudo com a fonte de cada informação.
-        </p>
+        <div className="home-topo-texto">
+          <Surgir como="p" className="selo-topo" data-categoria="bairro">
+            <span className="selo-topo-ponto">
+              <MapPin size={12} strokeWidth={2.25} />
+            </span>
+            Guia não oficial · Indaiatuba/SP
+          </Surgir>
 
-        {/* Os dois caminhos principais, em botões grandes (fáceis de tocar no celular). */}
-        <div className="home-caminhos">
-          <Link to="/primeiros-passos" className="home-caminho" data-categoria="passos">
-            <IconeCategoria slug="passos" tamanho={30} />
-            <span>
-              <strong>Ver o que preciso resolver</strong>
-              Cartão SUS, escola, água, título de eleitor...
-            </span>
-          </Link>
-          <Link to="/meu-bairro" className="home-caminho" data-categoria="bairro">
-            <IconeCategoria slug="bairro" tamanho={30} />
-            <span>
-              <strong>Descobrir meu bairro</strong>
-              UBS, escola, mercado e ônibus perto de casa
-            </span>
-          </Link>
+          {/* Só um <h1> por página: é o título principal do documento. */}
+          <Surgir como="h1" atraso={0.04} className="titulo-pagina home-titulo">
+            Chegou agora em Indaiatuba? <span>Comece por aqui</span>
+          </Surgir>
+          <Surgir como="p" atraso={0.08} className="texto-apoio">
+            O que resolver na mudança, o que tem perto da sua casa, como funciona o ônibus e onde
+            ficam os serviços públicos e o comércio do dia a dia. Tudo com a fonte de cada
+            informação.
+          </Surgir>
+
+          <Surgir atraso={0.12} className="home-procura">
+            <form
+              className="home-cep"
+              onSubmit={irParaMeuBairro}
+              role="search"
+              aria-label="Meu bairro"
+            >
+              <label className="campo campo-busca">
+                <MapPin size={18} strokeWidth={2} />
+                <input
+                  type="text"
+                  inputMode="text"
+                  placeholder="Digite seu CEP ou bairro"
+                  aria-label="Digite seu CEP ou bairro"
+                  value={entrada}
+                  onChange={(e) => setEntrada(e.target.value)}
+                />
+              </label>
+              <button type="submit" className="botao-primario">
+                Ver meu bairro
+                <ArrowRight size={16} strokeWidth={2.25} />
+              </button>
+            </form>
+
+            {/* Parece um campo de texto, mas é um botão: clicar abre o overlay de
+                busca, que tem o input de verdade. Evita dois campos concorrentes. */}
+            <button type="button" className="home-busca" onClick={abrirBusca}>
+              <IconeLupa />
+              <span className="home-busca-texto">
+                Buscar no site: UBS, matrícula, título de eleitor...
+              </span>
+              {/* <kbd> é a tag semântica para teclas do teclado. */}
+              <kbd className="home-busca-atalho">Ctrl K</kbd>
+            </button>
+          </Surgir>
         </div>
 
-        <form className="home-cep" onSubmit={irParaMeuBairro} role="search" aria-label="Meu bairro">
-          <label className="campo campo-busca">
-            <IconeLupa />
-            <input
-              type="text"
-              inputMode="text"
-              placeholder="Digite seu CEP ou bairro"
-              aria-label="Digite seu CEP ou bairro"
-              value={entrada}
-              onChange={(e) => setEntrada(e.target.value)}
-            />
-          </label>
-          <button type="submit" className="botao-primario">
-            Ver meu bairro
-          </button>
-        </form>
-
-        {/* Parece um campo de texto, mas é um botão: clicar abre o overlay de
-            busca, que tem o input de verdade. Evita dois campos concorrentes. */}
-        <button type="button" className="home-busca" onClick={abrirBusca}>
-          <IconeLupa />
-          <span className="home-busca-texto">
-            Buscar no site: UBS, matrícula, título de eleitor...
-          </span>
-          {/* <kbd> é a tag semântica para teclas do teclado. */}
-          <kbd className="home-busca-atalho">Ctrl K</kbd>
-        </button>
+        {/* Os dois caminhos principais, em cartões grandes (fáceis de tocar no celular). */}
+        <div className="home-caminhos">
+          <Surgir atraso={0.14}>
+            <Link to="/primeiros-passos" className="home-caminho" data-categoria="passos">
+              <span className="home-caminho-icone">
+                <IconeCategoria slug="passos" tamanho={24} />
+              </span>
+              <span className="home-caminho-texto">
+                <strong>Ver o que preciso resolver</strong>
+                Cartão SUS, escola, água, título de eleitor...
+              </span>
+              <ArrowRight className="home-seta" size={18} />
+            </Link>
+          </Surgir>
+          <Surgir atraso={0.2}>
+            <Link to="/meu-bairro" className="home-caminho" data-categoria="bairro">
+              <span className="home-caminho-icone">
+                <IconeCategoria slug="bairro" tamanho={24} />
+              </span>
+              <span className="home-caminho-texto">
+                <strong>Descobrir meu bairro</strong>
+                UBS, escola, mercado e ônibus perto de casa
+              </span>
+              <ArrowRight className="home-seta" size={18} />
+            </Link>
+          </Surgir>
+        </div>
       </section>
 
       {/* Só aparece para quem salvou o bairro em "Meu bairro". */}
       <SeuBairro />
 
       <section className="container home-atalhos" aria-labelledby="titulo-atalhos">
-        <h2 id="titulo-atalhos" className="home-servicos-titulo">
-          Explore a cidade
-        </h2>
+        <div className="home-secao-cabeca">
+          <h2 id="titulo-atalhos" className="home-servicos-titulo">
+            Explore a cidade
+          </h2>
+          <p className="home-secao-texto">Atalhos para o que mais se procura no dia a dia.</p>
+        </div>
         <ul className="home-atalhos-lista">
-          {ATALHOS.map((atalho) => (
-            <li key={atalho.rota}>
+          {ATALHOS.map((atalho, i) => (
+            <Surgir como="li" key={atalho.rota} atraso={0.2 + i * 0.04}>
               <Link to={atalho.rota} className="home-atalho" data-categoria={atalho.slug}>
-                <IconeCategoria slug={atalho.slug} tamanho={26} />
+                <span className="home-atalho-icone">
+                  <IconeCategoria slug={atalho.slug} tamanho={20} />
+                </span>
                 <strong>{atalho.titulo}</strong>
-                <span>{atalho.texto}</span>
+                <span className="home-atalho-texto">{atalho.texto}</span>
+                <ArrowRight className="home-seta" size={16} />
               </Link>
-            </li>
+            </Surgir>
           ))}
         </ul>
       </section>
@@ -170,9 +208,30 @@ export default function Home() {
         <Clima />
       </div>
 
-      {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
+      {/* Diferenças para quem vem de São Paulo (só aparece se os dados carregarem). */}
       <DiferencasSP />
 
+      <section className="container home-servicos">
+        <div className="home-secao-cabeca">
+          <h2 className="home-servicos-titulo">Todas as categorias</h2>
+          <p className="home-secao-texto">
+            Os serviços públicos da cidade, com a contagem de locais de cada um.
+          </p>
+        </div>
+        <div className="grade-servicos">
+          {/* map() transforma cada categoria dos dados em um card na tela.
+              Acrescentar uma categoria em servicos.js já faz surgir o card aqui. */}
+          {categorias.map((categoria) => (
+            <CardServico
+              key={categoria.slug}
+              categoria={categoria}
+              total={dados ? (totais[categoria.slug] ?? 0) : undefined}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Faixa da marca: deixa claro de qual cidade o site trata e que ele não é oficial. */}
       <section className="container home-marca">
         <img
           src="/img/interface/pequeno/logo.png"
@@ -188,21 +247,9 @@ export default function Home() {
             fontes públicas e cada página mostra de onde veio a informação.
           </p>
         </div>
-      </section>
-
-      <section className="container home-servicos">
-        <h2 className="home-servicos-titulo">Todas as categorias</h2>
-        <div className="grade-servicos">
-          {/* map() transforma cada categoria dos dados em um card na tela.
-              Acrescentar uma categoria em servicos.js já faz surgir o card aqui. */}
-          {categorias.map((categoria) => (
-            <CardServico
-              key={categoria.slug}
-              categoria={categoria}
-              total={dados ? (totais[categoria.slug] ?? 0) : undefined}
-            />
-          ))}
-        </div>
+        <Link to="/sobre" className="botao-secundario home-marca-botao">
+          Sobre o projeto
+        </Link>
       </section>
     </>
   );

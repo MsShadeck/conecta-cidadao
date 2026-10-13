@@ -8,16 +8,19 @@
   height: 100%;
   color: inherit;
   background: var(--branco);
+  border: 1px solid var(--linha);
   border-radius: var(--raio-card);
   overflow: hidden; /* recorta a foto nos cantos arredondados */
   box-shadow: var(--sombra-baixa);
   transition:
     transform var(--transicao),
-    box-shadow var(--transicao);
+    box-shadow var(--transicao),
+    border-color var(--transicao);
 }
 
 .card-local:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  border-color: var(--linha-forte);
   box-shadow: var(--sombra-media);
 }
 
@@ -31,6 +34,7 @@
   display: block;
   overflow: hidden;
   background: var(--azul-nevoa); /* cor de espera enquanto a foto carrega */
+  border-bottom: 1px solid var(--linha);
 }
 
 .card-local-imagem {
@@ -41,23 +45,20 @@
      "pule"; object-fit: cover preenche a moldura sem distorcer a foto. */
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.3, 1);
+  transition: transform 0.5s var(--curva);
 }
 
 /* Zoom suave da foto quando o mouse está sobre o card (note o seletor:
    o hover é no card, mas quem se move é a imagem). */
 .card-local:hover .card-local-imagem {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* Sem foto: o ícone da categoria centralizado no fundo da categoria. */
+/* Sem foto: o ícone da categoria centralizado sobre um degradê da categoria. */
 .card-local-sem-foto {
   display: grid;
   place-items: center;
-  background: var(--cat-fundo, var(--azul-nevoa));
-}
-
-.card-local-sem-foto {
+  background: linear-gradient(135deg, var(--cat-fundo, var(--azul-nevoa)), var(--branco) 140%);
   color: var(--cat-tinta, var(--azul-marca));
 }
 
@@ -66,20 +67,19 @@
   flex-direction: column;
   gap: 4px;
   flex: 1;
-  padding: 12px 15px 14px;
-  /* Filete superior na cor da categoria — o detalhe que liga o card ao serviço. */
-  border-top: 3px solid var(--cat-fundo, var(--azul-nevoa));
+  padding: 14px 16px 16px;
 }
 
 .card-local-nome {
-  font-size: 0.875rem;
+  font-size: var(--texto-base);
   font-weight: 600;
-  line-height: 1.4;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
   color: var(--tinta);
 }
 
 .card-local-detalhe {
-  font-size: 0.7813rem;
+  font-size: 0.8125rem;
   color: var(--tinta-media);
 }
 
@@ -89,11 +89,24 @@
   align-items: center;
   gap: 8px;
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 10px;
 }
 
 .card-local-distancia {
-  font-size: 0.7813rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--texto-xs);
   font-weight: 600;
-  color: var(--azul-marca);
+  color: var(--tinta-media);
+}
+
+@media (max-width: 520px) {
+  .card-local-corpo {
+    padding: 12px;
+  }
+
+  .card-local-nome {
+    font-size: var(--texto-sm);
+  }
 }

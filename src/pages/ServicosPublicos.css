@@ -18,9 +18,20 @@
   padding: 14px 18px;
   border-radius: var(--raio-card);
   background: var(--branco);
+  border: 1px solid var(--linha);
   box-shadow: var(--sombra-baixa);
   color: var(--tinta-media);
-  font-size: 0.875rem;
+  font-size: var(--texto-sm);
+  transition:
+    border-color var(--transicao),
+    transform var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.servicos-publicos-atalho:hover {
+  border-color: var(--linha-forte);
+  box-shadow: var(--sombra-media);
+  transform: translateY(-2px);
 }
 
 .servicos-publicos-atalho svg {
@@ -30,6 +41,7 @@
 
 .servicos-publicos-atalho strong {
   display: block;
-  font-size: 0.9375rem;
-  color: var(--azul-marca);
+  font-size: var(--texto-base);
+  font-weight: 600;
+  color: var(--tinta);
 }

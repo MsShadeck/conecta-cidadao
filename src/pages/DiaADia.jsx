@@ -12,6 +12,7 @@
 
 import { useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { X } from 'lucide-react';
 import { useOrigem } from '../context/AppContext.jsx';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
@@ -110,7 +111,7 @@ export default function DiaADia() {
                   onClick={() => mudar('q', '')}
                   aria-label="Limpar busca"
                 >
-                  ×
+                  <X size={16} strokeWidth={2} />
                 </button>
               )}
             </label>

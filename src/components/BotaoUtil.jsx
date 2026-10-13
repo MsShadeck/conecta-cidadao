@@ -39,6 +39,7 @@ export default function BotaoUtil() {
 // VERSÃO ATIVA — um voto por página, guardado no navegador.
 // Como o site não tem servidor, o voto é só desta pessoa neste navegador:
 // por isso a mensagem fala em "você" em vez de mostrar um total de curtidas.
+import { ThumbsUp } from 'lucide-react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import './BotaoUtil.css';
 
@@ -67,7 +68,8 @@ export default function BotaoUtil({ pagina }) {
       <span className="botao-util-pergunta">Esta página foi útil?</span>
       {/* aria-pressed transforma o botão em "botão de alternância" para leitores de tela. */}
       <button type="button" className="botao-util-botao" aria-pressed={votou} onClick={alternar}>
-        {votou ? '👍 Marcada como útil' : '👍 Útil'}
+        <ThumbsUp size={16} strokeWidth={2} />
+        {votou ? 'Marcada como útil' : 'Útil'}
       </button>
       <span className="botao-util-contagem" role="status">
         {textoCurtidas(votou ? 1 : 0)}

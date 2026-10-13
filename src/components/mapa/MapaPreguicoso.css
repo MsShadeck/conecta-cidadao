@@ -5,7 +5,8 @@
 
 .mapa {
   width: 100%;
-  border-radius: var(--raio-card);
+  border-radius: var(--raio-lg);
+  border: 1px solid var(--linha);
   overflow: hidden;
   background: var(--azul-nevoa);
   box-shadow: var(--sombra-baixa);

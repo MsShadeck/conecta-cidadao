@@ -6,6 +6,7 @@
  * não aparece (os números continuam na página /contatos).
  */
 import { Link } from 'react-router-dom';
+import { ArrowRight, Phone, Siren } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import './EmergenciaRapida.css';
 
@@ -17,6 +18,7 @@ export default function EmergenciaRapida() {
   return (
     <aside className="emergencia" aria-labelledby="titulo-emergencia-rapida">
       <h2 id="titulo-emergencia-rapida" className="emergencia-titulo">
+        <Siren size={18} strokeWidth={2} />
         Emergência? Ligue grátis
       </h2>
       <ul className="emergencia-lista">
@@ -27,13 +29,14 @@ export default function EmergenciaRapida() {
               className="emergencia-numero"
               data-categoria={c.categoria}
             >
+              <Phone size={14} strokeWidth={2.25} />
               <strong>{c.telefone}</strong> {c.nome}
             </a>
           </li>
         ))}
       </ul>
       <Link to="/contatos" className="emergencia-mais">
-        Todos os telefones úteis
+        Todos os telefones úteis <ArrowRight size={14} />
       </Link>
     </aside>
   );

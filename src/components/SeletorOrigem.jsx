@@ -9,6 +9,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
+import { MapPin } from 'lucide-react';
 import { useOrigem } from '../context/AppContext.jsx';
 import { localizarCep } from '../utils/cep.js';
 import './SeletorOrigem.css';
@@ -71,7 +72,8 @@ export default function SeletorOrigem({ titulo = 'De onde você sai?' }) {
     try {
       const ponto = await localizarCep(cep, controle.signal);
       // Rua fora do mapa (só o bairro): aqui não há lista de bairros, então avisa.
-      if (ponto.lat === null) throw new Error('Não achamos a rua desse CEP no mapa. Use a sua localização.');
+      if (ponto.lat === null)
+        throw new Error('Não achamos a rua desse CEP no mapa. Use a sua localização.');
       setOrigem({ ...ponto, rotulo: `CEP ${cep} — ${ponto.rotulo}` });
       setStatus(null);
     } catch (erro) {
@@ -85,7 +87,7 @@ export default function SeletorOrigem({ titulo = 'De onde você sai?' }) {
 
       {origem && (
         <p className="origem-atual">
-          <span aria-hidden="true">📍</span> {origem.rotulo}
+          <MapPin size={16} strokeWidth={2.25} /> {origem.rotulo}
           {origem.aproximada && <span className="origem-aproximada"> (posição aproximada)</span>}
           <button type="button" className="origem-limpar" onClick={() => setOrigem(null)}>
             Trocar

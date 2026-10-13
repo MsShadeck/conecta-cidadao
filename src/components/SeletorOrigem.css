@@ -9,8 +9,9 @@
 }
 
 .origem-titulo {
-  font-size: 1rem;
+  font-size: var(--texto-base);
   font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .origem-opcoes {
@@ -38,6 +39,7 @@
 
 .origem-atual {
   display: flex;
+  color: var(--tinta);
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;

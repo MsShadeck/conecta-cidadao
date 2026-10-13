@@ -5,12 +5,22 @@
 /* Trilha "Início › Saúde › UBS X". */
 .trilha {
   font-size: 0.8125rem;
-  color: var(--tinta-media);
-  padding: 16px 0 12px;
+  color: var(--tinta-fraca);
+  padding: 24px 0 16px;
 }
 
 .trilha a {
+  color: var(--tinta-media);
+}
+
+.trilha a:hover {
+  color: var(--tinta);
   text-decoration: underline;
+}
+
+.trilha [aria-current] {
+  color: var(--tinta);
+  font-weight: 500;
 }
 
 .local {
@@ -38,16 +48,18 @@
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  border-radius: var(--raio-card);
-  box-shadow: var(--sombra-baixa);
+  border-radius: var(--raio-lg);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-media);
 }
 
 .local-observacao {
-  font-size: 0.875rem;
+  font-size: var(--texto-sm);
+  border: 1px solid color-mix(in srgb, var(--cat-tinta, var(--azul-marca)) 18%, transparent);
   background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--tinta);
   padding: 12px 16px;
-  border-radius: 14px;
+  border-radius: var(--raio-card);
 }
 
 .local-grade {
@@ -65,9 +77,11 @@
 }
 
 .local-bloco h2 {
-  font-size: 1rem;
+  font-size: var(--texto-xs);
   font-weight: 600;
-  color: var(--cat-tinta, var(--azul-marca));
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cat-tinta, var(--tinta-fraca));
 }
 
 .local-subtitulo {

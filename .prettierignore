@@ -6,3 +6,5 @@ public/api
 api/_integra/roteador.mjs
 api/_integra/data
 public/api/locais.json
+playwright-report
+test-results

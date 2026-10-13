@@ -7,6 +7,7 @@
  */
 
 import { useMemo, useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import { normalizar } from '../utils/texto.js';
@@ -90,7 +91,8 @@ export default function ServicosOnline() {
                         <strong>{s.nome}</strong>
                         <span>{s.descricao}</span>
                         <span className="servico-online-site">
-                          {new URL(s.url).hostname.replace(/^www\./, '')} ↗
+                          {new URL(s.url).hostname.replace(/^www\./, '')}
+                          <ArrowUpRight size={14} />
                           <span className="somente-leitor"> (abre em nova aba)</span>
                         </span>
                       </a>

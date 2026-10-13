@@ -2,46 +2,59 @@
    Categoria.css — Páginas de serviço (Categoria.jsx)
 ============================================================ */
 
-/* Cabeçalho da página: chips, título com etiqueta e resumo. */
+/* Cabeçalho da página: chips, ícone + título + etiqueta e resumo. */
 .categoria-topo {
-  padding: 18px 0 26px;
+  padding: 20px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-/* Título e etiqueta lado a lado; flex-wrap deixa a etiqueta cair para baixo
-   quando o nome do serviço não deixa espaço. */
+/* Ícone, título e etiqueta lado a lado; flex-wrap deixa a etiqueta cair para
+   baixo quando o nome do serviço não deixa espaço. */
 .categoria-titulo-area {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
-/* Aproxima o resumo do título, compensando o gap de 14px do container. */
-.categoria-topo .texto-apoio {
-  margin-top: -6px;
+/* Quadrado com o ícone na cor da categoria. */
+.categoria-icone {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
+  border: 1px solid color-mix(in srgb, var(--cat-tinta, var(--azul-marca)) 14%, transparent);
+  flex-shrink: 0;
 }
 
 /* A grade dos cards (.grade-locais) foi para o global.css: outras páginas usam. */
 
 /* Bloco "Esta página foi útil?" + sugestões, abaixo da grade de locais. */
 .categoria-extra {
-  margin-top: 28px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
 }
 
-/* Barra de filtros (tipo, bairro, ordem, lista/mapa). */
+.categoria-extra > .botao-util {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--linha);
+}
+
+/* Barra de filtros (busca, tipo, bairro, ordem, lista/mapa). */
 .categoria-filtros {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 18px;
-  padding: 18px 20px;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 18px;
 }
 
 .categoria-filtros-linha {
@@ -54,39 +67,58 @@
 .filtro {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 0.7813rem;
-  font-weight: 500;
+  gap: 6px;
+  font-size: var(--texto-xs);
+  font-weight: 600;
   color: var(--tinta-media);
   flex: 1 1 170px;
 }
 
 .filtro select {
   appearance: auto;
-  padding: 9px 14px;
-  border-radius: 14px;
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: var(--raio-botao);
   width: 100%;
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  color: var(--tinta);
 }
 
-/* Botões Lista | Mapa grudados, como um interruptor. */
+/* Botões Lista | Mapa num controle segmentado (fundo cinza, opção ativa branca). */
 .alternar {
   display: inline-flex;
-  border: 1.5px solid var(--azul-marca);
-  border-radius: var(--raio-pilula);
-  overflow: hidden;
+  gap: 2px;
+  padding: 3px;
+  background: var(--azul-nevoa);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-botao);
   align-self: flex-start;
 }
 
 .alternar button {
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 8px 18px;
-  color: var(--azul-marca);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--raio-sm);
+  color: var(--tinta-media);
+  transition:
+    background var(--transicao),
+    color var(--transicao);
+}
+
+.alternar button:hover {
+  color: var(--tinta);
 }
 
 .alternar button[aria-pressed='true'] {
-  background: var(--azul-marca);
-  color: var(--texto-sobre-marca);
+  background: var(--branco);
+  color: var(--tinta);
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.12);
 }
 
 .categoria-contagem {
@@ -94,13 +126,16 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  padding-top: 14px;
+  border-top: 1px solid var(--linha);
+  font-size: var(--texto-sm);
+  font-weight: 600;
   color: var(--tinta);
 }
 
 .categoria-limpar {
   font-size: 0.8125rem;
+  font-weight: 500;
   color: var(--azul-marca);
   text-decoration: underline;
 }
@@ -109,15 +144,14 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .grade-locais + .info-fonte {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 /* Campo de busca da categoria: largura toda, acima dos filtros. */
 .categoria-busca {
   width: 100%;
-  background: var(--branco);
 }

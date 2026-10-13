@@ -17,6 +17,7 @@
 
 import { useCallback, useMemo } from 'react';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
+import { List, Map as IconeMapa, X } from 'lucide-react';
 import { buscarCategoria } from '../data/servicos.js';
 import { useOrigem } from '../context/AppContext.jsx';
 import useDados from '../hooks/useDados.js';
@@ -26,6 +27,7 @@ import { normalizar, plural } from '../utils/texto.js';
 import { pontuarLocal } from '../utils/busca.js';
 import IconeLupa from '../components/IconeLupa.jsx';
 import CardLocal from '../components/CardLocal.jsx';
+import IconeCategoria from '../components/IconeCategoria.jsx';
 import ChipsCategorias from '../components/ChipsCategorias.jsx';
 import BotaoUtil from '../components/BotaoUtil.jsx';
 import SugestaoLocais from '../components/SugestaoLocais.jsx';
@@ -129,6 +131,9 @@ export default function Categoria({ slug }) {
       <section className="container categoria-topo">
         <ChipsCategorias />
         <div className="categoria-titulo-area">
+          <span className="categoria-icone">
+            <IconeCategoria slug={categoria.slug} tamanho={26} />
+          </span>
           <h1 className="titulo-pagina">{categoria.nome}</h1>
           {dados && (
             <span className="etiqueta">{plural(daCategoria.length, 'local', 'locais')}</span>
@@ -163,7 +168,7 @@ export default function Categoria({ slug }) {
                   onClick={() => mudar('q', '')}
                   aria-label="Limpar busca"
                 >
-                  ×
+                  <X size={16} strokeWidth={2} />
                 </button>
               )}
             </label>
@@ -218,6 +223,7 @@ export default function Categoria({ slug }) {
                     aria-pressed={ver === 'lista'}
                     onClick={() => mudar('ver', '')}
                   >
+                    <List size={16} />
                     Lista
                   </button>
                   <button
@@ -225,6 +231,7 @@ export default function Categoria({ slug }) {
                     aria-pressed={ver === 'mapa'}
                     onClick={() => mudar('ver', 'mapa')}
                   >
+                    <IconeMapa size={16} />
                     Mapa
                   </button>
                 </div>

@@ -6,17 +6,19 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 14px;
-  background: var(--branco);
-  border-left: 5px solid var(--alerta);
-  border-radius: 16px;
+  gap: 12px 16px;
+  background: var(--alerta-fundo);
+  border: 1px solid color-mix(in srgb, var(--alerta) 22%, transparent);
+  border-radius: var(--raio-card);
   padding: 14px 18px;
-  box-shadow: var(--sombra-baixa);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .emergencia-titulo {
-  font-size: 0.9375rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--texto-base);
   font-weight: 600;
   color: var(--alerta-tinta);
 }
@@ -34,20 +36,39 @@
   gap: 6px;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--cat-tinta, var(--azul-marca));
-  background: var(--cat-fundo, var(--azul-nevoa));
-  padding: 6px 12px;
+  color: var(--tinta);
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  padding: 6px 12px 6px 10px;
   border-radius: var(--raio-pilula);
   min-height: 36px;
+  box-shadow: var(--sombra-baixa);
+  transition: border-color var(--transicao);
+}
+
+.emergencia-numero:hover {
+  border-color: var(--alerta);
+}
+
+.emergencia-numero svg {
+  color: var(--cat-tinta, var(--alerta-tinta));
 }
 
 .emergencia-numero strong {
-  font-size: 0.9375rem;
+  font-size: var(--texto-base);
+  font-weight: 700;
+  color: var(--cat-tinta, var(--alerta-tinta));
 }
 
 .emergencia-mais {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   font-size: 0.8125rem;
-  font-weight: 500;
-  text-decoration: underline;
+  font-weight: 600;
   margin-left: auto;
+}
+
+.emergencia-mais:hover {
+  text-decoration: underline;
 }

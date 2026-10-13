@@ -8,3 +8,5 @@ dist
 .env*
 scripts/.cache
 dev-dist
+playwright-report
+test-results

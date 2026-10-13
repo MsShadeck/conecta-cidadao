@@ -34,7 +34,7 @@
   padding: 6px;
   background: var(--branco);
   border: 1px solid var(--linha);
-  border-radius: 16px;
+  border-radius: var(--raio-card);
   box-shadow: var(--sombra-alta);
 }
 
@@ -43,14 +43,14 @@
   align-items: flex-start;
   gap: 10px;
   padding: 10px 12px;
-  border-radius: 12px;
+  border-radius: var(--raio-sm);
   cursor: pointer;
   font-size: 0.875rem;
 }
 
 .campo-destino-opcao strong {
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--tinta);
 }
 

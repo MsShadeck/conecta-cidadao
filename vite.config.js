@@ -6,6 +6,7 @@
  */
 
 import { defineConfig } from 'vite';
+import { configDefaults } from 'vitest/config';
 // Plugin oficial do React: entende JSX e habilita a atualização instantânea
 // da tela ao salvar um arquivo (Hot Module Replacement).
 import react from '@vitejs/plugin-react';
@@ -86,5 +87,7 @@ export default defineConfig({
   test: {
     // Testes de funções puras: não precisam de navegador simulado.
     environment: 'node',
+    // tests/e2e são do Playwright (navegador de verdade): o Vitest não roda.
+    exclude: [...configDefaults.exclude, 'tests/e2e/**'],
   },
 });

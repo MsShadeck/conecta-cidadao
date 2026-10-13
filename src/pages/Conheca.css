@@ -10,9 +10,10 @@
 }
 
 .conheca-titulo {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--cat-tinta);
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--tinta);
 }
 
 /* Tabela larga no celular: rola só dentro do painel, nunca a página. */
@@ -31,16 +32,30 @@
 
 .conheca-tabela th,
 .conheca-tabela td {
-  padding: 10px 8px;
+  padding: 12px 14px;
   text-align: left;
   border-bottom: 1px solid var(--linha);
 }
 
 .conheca-tabela thead th {
-  font-size: 0.75rem;
+  font-size: var(--texto-xs);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--tinta-media);
+  letter-spacing: 0.06em;
+  color: var(--tinta-fraca);
+  background: var(--azul-nevoa);
+}
+
+.conheca-tabela tbody tr {
+  transition: background var(--transicao);
+}
+
+.conheca-tabela tbody tr:hover {
+  background: var(--azul-nevoa);
+}
+
+.conheca-tabela td {
+  font-variant-numeric: tabular-nums;
 }
 
 .conheca-tabela tbody th {
@@ -63,14 +78,18 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 18px;
-  border-top: 4px solid var(--cat-fundo);
-  font-size: 0.875rem;
+  padding: 20px;
+  box-shadow:
+    inset 0 3px 0 var(--cat-tinta),
+    var(--sombra-baixa);
+  font-size: var(--texto-sm);
+  color: var(--tinta-media);
 }
 
 .conheca-diferencas h3 {
-  font-size: 1rem;
+  font-size: var(--texto-base);
   font-weight: 600;
+  color: var(--tinta);
 }
 
 .conheca-links {
@@ -84,13 +103,20 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 16px;
+  padding: 18px;
   height: 100%;
-  font-size: 0.875rem;
-  color: var(--tinta);
+  font-size: var(--texto-sm);
+  color: var(--tinta-media);
+  transition:
+    border-color var(--transicao),
+    transform var(--transicao);
+}
+
+.conheca-links a:hover {
+  border-color: var(--cat-tinta);
+  transform: translateY(-2px);
 }
 
 .conheca-links a strong {
   color: var(--cat-tinta);
-  text-decoration: underline;
 }

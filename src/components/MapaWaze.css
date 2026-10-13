@@ -12,8 +12,8 @@
 .mapa-waze-quadro {
   width: 100%;
   max-height: 70vh; /* no celular deitado, não ocupa a tela toda */
-  border: 0;
-  border-radius: var(--raio-card);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
   background: var(--azul-nevoa);
   box-shadow: var(--sombra-baixa);
 }

@@ -10,6 +10,17 @@
  * Defesa Civil, que é quem emite alerta de verdade.
  */
 
+import {
+  Cloud,
+  CloudDrizzle,
+  CloudFog,
+  CloudLightning,
+  CloudRain,
+  CloudSun,
+  Snowflake,
+  Sun,
+  TriangleAlert,
+} from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import './Clima.css';
 
@@ -24,17 +35,17 @@ const URL_DEFESA_CIVIL = 'https://www.indaiatuba.sp.gov.br/seguranca/defesa-civi
 /** Limites usados pelos avisos (critério do site, não oficial). */
 const LIMITES = { chuvaForteMm: 30, chuvaProvavelPct: 80, chuvaModeradaMm: 10, calorC: 34 };
 
-/** Códigos de tempo da OMM (WMO) usados pelo Open-Meteo → texto e símbolo. */
+/** Códigos de tempo da OMM (WMO) usados pelo Open-Meteo → texto e ícone (Lucide). */
 function descreverTempo(codigo) {
-  if (codigo === 0) return ['Céu limpo', '☀️'];
-  if (codigo <= 2) return ['Poucas nuvens', '🌤️'];
-  if (codigo === 3) return ['Nublado', '☁️'];
-  if (codigo <= 48) return ['Neblina', '🌫️'];
-  if (codigo <= 57) return ['Garoa', '🌦️'];
-  if (codigo <= 67) return ['Chuva', '🌧️'];
-  if (codigo <= 77) return ['Neve', '❄️'];
-  if (codigo <= 82) return ['Pancadas de chuva', '🌧️'];
-  return ['Tempestade', '⛈️'];
+  if (codigo === 0) return ['Céu limpo', Sun];
+  if (codigo <= 2) return ['Poucas nuvens', CloudSun];
+  if (codigo === 3) return ['Nublado', Cloud];
+  if (codigo <= 48) return ['Neblina', CloudFog];
+  if (codigo <= 57) return ['Garoa', CloudDrizzle];
+  if (codigo <= 67) return ['Chuva', CloudRain];
+  if (codigo <= 77) return ['Neve', Snowflake];
+  if (codigo <= 82) return ['Pancadas de chuva', CloudRain];
+  return ['Tempestade', CloudLightning];
 }
 
 /** Monta a lista de avisos a partir da previsão do dia. Exportada para teste. */
@@ -63,14 +74,14 @@ export default function Clima() {
   // Sem dados ou com erro, o bloco simplesmente não aparece (não é essencial).
   if (erro || !dados?.current) return null;
 
-  const [texto, simbolo] = descreverTempo(dados.current.weather_code);
+  const [texto, IconeTempo] = descreverTempo(dados.current.weather_code);
   const avisos = avisosDoDia(dados.daily);
 
   return (
     <section className="clima" aria-labelledby="titulo-clima">
       <div className="clima-agora">
-        <span className="clima-simbolo" aria-hidden="true">
-          {simbolo}
+        <span className="clima-simbolo">
+          <IconeTempo size={30} strokeWidth={1.5} />
         </span>
         <div>
           <h2 id="titulo-clima" className="clima-titulo">
@@ -92,7 +103,10 @@ export default function Clima() {
         // role="alert" faz o leitor de tela anunciar o aviso assim que ele aparece.
         <div className="clima-aviso" role="alert">
           {avisos.map((a) => (
-            <p key={a}>⚠️ {a}</p>
+            <p key={a}>
+              <TriangleAlert size={16} strokeWidth={2} />
+              {a}
+            </p>
           ))}
           <a href={URL_DEFESA_CIVIL} target="_blank" rel="noreferrer">
             Orientações da Defesa Civil (emergência: 199)

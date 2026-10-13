@@ -3,75 +3,95 @@
 ============================================================ */
 
 .card-servico {
+  position: relative;
   display: flex;
-  flex-direction: column; /* ícone, nome, resumo e etiqueta empilhados */
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column; /* topo (ícone + contagem), nome e resumo empilhados */
+  gap: 6px;
   background: var(--branco);
-  border-radius: 22px;
-  padding: 22px 22px 20px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
+  padding: 22px;
   box-shadow: var(--sombra-baixa);
   color: var(--tinta); /* anula o azul padrão de links */
-  position: relative; /* referência para a faixa ::after abaixo */
-  overflow: hidden; /* a faixa não escapa dos cantos arredondados */
+  overflow: hidden; /* o brilho do ::before não escapa dos cantos arredondados */
   transition:
     transform var(--transicao),
-    box-shadow var(--transicao);
+    box-shadow var(--transicao),
+    border-color var(--transicao);
 }
 
-/* Faixa colorida na base do card, criada só pelo CSS (sem elemento no JSX).
+/* Brilho suave na cor da categoria, no canto de cima, criado só pelo CSS.
    Fica invisível em repouso e aparece no hover. */
-.card-servico::after {
+.card-servico::before {
   content: ''; /* obrigatório para o pseudoelemento existir */
   position: absolute;
-  inset: auto 0 0 0; /* topo automático; grudado nas outras 3 bordas */
-  height: 4px;
-  background: var(--cat-tinta); /* cor da categoria, vinda do data-categoria */
+  inset: 0;
+  background: radial-gradient(360px 160px at 0% 0%, var(--cat-fundo), transparent 70%);
   opacity: 0;
   transition: opacity var(--transicao);
+  pointer-events: none;
 }
 
-/* Hover: o card sobe e ganha sombra mais forte (sensação de elevação). */
+/* Hover: o card sobe um pouco e ganha sombra (sensação de elevação). */
 .card-servico:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
+  border-color: var(--linha-forte);
   box-shadow: var(--sombra-media);
 }
 
-.card-servico:hover::after {
+.card-servico:hover::before {
   opacity: 1;
 }
 
-/* Quadrado arredondado com o ícone, pintado com o tom claro da categoria. */
-.card-servico-icone {
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  background: var(--cat-fundo);
-  display: grid;
-  place-items: center;
-  margin-bottom: 4px;
+/* Os filhos ficam acima do brilho. */
+.card-servico > * {
+  position: relative;
 }
 
-/* O SVG herda a cor da categoria (stroke="currentColor"). */
+.card-servico-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Quadrado arredondado com o ícone, no tom claro da categoria. */
 .card-servico-icone {
-  color: var(--cat-tinta);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--cat-fundo);
+  color: var(--cat-tinta); /* o SVG herda a cor (stroke="currentColor") */
+  display: grid;
+  place-items: center;
 }
 
 .card-servico-nome {
-  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--texto-lg);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
-/* flex:1 faz o resumo ocupar a sobra vertical, de modo que a etiqueta fique
-   alinhada na base mesmo quando os textos têm tamanhos diferentes. */
+/* Seta "↗" que aparece deslizando no hover. */
+.card-servico-seta {
+  color: var(--cat-tinta);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition:
+    opacity var(--transicao),
+    transform var(--transicao);
+}
+
+.card-servico:hover .card-servico-seta {
+  opacity: 1;
+  transform: none;
+}
+
 .card-servico-resumo {
-  font-size: 0.8438rem;
-  line-height: 1.55;
+  font-size: var(--texto-sm);
+  line-height: 1.6;
   color: var(--tinta-media);
-  flex: 1;
-}
-
-.card-servico-contagem {
-  margin-top: 6px;
 }

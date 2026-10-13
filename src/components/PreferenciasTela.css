@@ -6,19 +6,42 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 18px;
+  gap: 12px 18px;
   font-size: 0.8125rem;
 }
 
 .preferencias-grupo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .preferencias-rotulo {
   font-weight: 600;
   color: var(--tinta-media);
+}
+
+/* Botões A / A+ / A++ lado a lado, como um controle segmentado. */
+.preferencias-grupo[role='group'] .preferencias-botao {
+  border-radius: 0;
+  margin-left: -1px; /* bordas vizinhas se sobrepõem em vez de dobrar */
+}
+
+.preferencias-grupo[role='group'] .preferencias-botao:nth-child(2) {
+  border-radius: var(--raio-sm) 0 0 var(--raio-sm);
+  margin-left: 0;
+}
+
+.preferencias-grupo[role='group'] .preferencias-botao:last-child {
+  border-radius: 0 var(--raio-sm) var(--raio-sm) 0;
+}
+
+.preferencias-grupo[role='group'] {
+  gap: 0;
+}
+
+.preferencias-grupo[role='group'] .preferencias-rotulo {
+  margin-right: 8px;
 }
 
 /* Área de toque de pelo menos 40px (recomendação para celular). */
@@ -27,21 +50,40 @@
   min-height: 40px;
   min-width: 40px;
   padding: 6px 12px;
-  border-radius: var(--raio-pilula);
-  border: 1.5px solid var(--linha);
+  border-radius: var(--raio-sm);
+  border: 1px solid var(--linha-forte);
   background: var(--branco);
   color: var(--tinta);
   font-weight: 600;
+  transition: background var(--transicao);
+}
+
+.preferencias-botao:hover {
+  background: var(--azul-nevoa);
 }
 
 .preferencias-botao[aria-pressed='true'] {
+  position: relative; /* fica por cima da borda dos vizinhos */
   background: var(--azul-marca);
   border-color: var(--azul-marca);
   color: var(--texto-sobre-marca);
 }
 
+/* Libras ocupa a linha toda dentro do menu. */
 .preferencias-libras {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 500;
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.preferencias-libras[aria-pressed='true'] {
+  background: var(--azul-nevoa);
+  border-color: var(--linha-forte);
+  color: var(--tinta);
 }
 
 .preferencias-libras:disabled {

@@ -18,6 +18,7 @@
  */
 
 import { useId, useMemo, useState } from 'react';
+import { X } from 'lucide-react';
 import { buscarCategoria } from '../data/servicos.js';
 import { normalizar } from '../utils/texto.js';
 import { pontuarLocal } from '../utils/busca.js';
@@ -114,7 +115,7 @@ export default function CampoDestino({ locais, valor, aoEscolher }) {
             onClick={limpar}
             aria-label="Limpar destino"
           >
-            ×
+            <X size={16} strokeWidth={2} />
           </button>
         )}
       </div>

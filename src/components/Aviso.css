@@ -1,11 +1,12 @@
 /* ============================================================
    Aviso.css — Mensagem temporária "toast" (componente Aviso.jsx)
+   A animação de entrada e saída é do Motion (no JSX).
 ============================================================ */
 
 /* Faixa fixa na parte de baixo da janela, sempre montada (mesmo vazia). */
 .aviso-area {
   position: fixed;
-  bottom: 28px;
+  bottom: 24px;
   left: 0;
   right: 0;
   display: flex;
@@ -17,23 +18,16 @@
   padding: 0 16px;
 }
 
-/* A pílula azul com o texto do aviso. */
+/* Cartão escuro com ícone e texto: contrasta com qualquer página. */
 .aviso {
-  background: var(--azul-marca);
-  color: var(--texto-sobre-marca);
-  font-size: 0.8438rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--tinta);
+  color: var(--azul-fundo);
+  font-size: var(--texto-sm);
   font-weight: 500;
-  padding: 11px 22px;
-  border-radius: var(--raio-pilula);
-  box-shadow: var(--sombra-media);
-  animation: aviso-entra 0.26s cubic-bezier(0.2, 0.7, 0.3, 1);
-}
-
-/* Entrada: surge subindo 14px. Só o "from" é declarado — o "to" é o
-   estado normal do elemento, que o navegador assume sozinho. */
-@keyframes aviso-entra {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
+  padding: 11px 18px 11px 14px;
+  border-radius: var(--raio-botao);
+  box-shadow: var(--sombra-alta);
 }

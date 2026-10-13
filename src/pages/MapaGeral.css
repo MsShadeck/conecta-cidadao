@@ -33,12 +33,13 @@
   gap: 8px;
   font-size: 0.8438rem;
   font-weight: 500;
-  padding: 8px 14px;
+  padding: 7px 14px;
   border-radius: var(--raio-pilula);
   background: var(--cat-fundo);
+  border: 1px solid color-mix(in srgb, var(--cat-tinta) 18%, transparent);
   color: var(--cat-tinta);
   cursor: pointer;
-  min-height: 40px;
+  min-height: 38px;
 }
 
 .mapa-geral-camada input {
@@ -72,7 +73,8 @@
 
 .mapa-geral-lista {
   background: var(--branco);
-  border-radius: var(--raio-card);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
   box-shadow: var(--sombra-baixa);
   padding: 14px;
   max-height: 560px;
@@ -102,8 +104,9 @@
   gap: 10px;
   text-align: left;
   padding: 8px 10px;
-  border-radius: 12px;
-  font-size: 0.8438rem;
+  border-radius: var(--raio-sm);
+  font-size: var(--texto-sm);
+  transition: background var(--transicao);
 }
 
 .mapa-geral-item .mapa-geral-cor {

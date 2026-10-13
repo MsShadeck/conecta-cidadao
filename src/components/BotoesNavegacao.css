@@ -28,14 +28,18 @@
   align-items: center;
   gap: 6px;
   min-height: 44px;
-  padding: 8px 16px;
-  border-radius: var(--raio-pilula);
-  border: 1.5px solid var(--azul-marca);
+  padding: 8px 14px;
+  border-radius: var(--raio-botao);
+  border: 1px solid var(--linha-forte);
   background: var(--branco);
-  color: var(--azul-marca);
-  font-size: 0.875rem;
+  color: var(--tinta);
+  font-size: var(--texto-sm);
   font-weight: 600;
   text-decoration: none;
+  box-shadow: var(--sombra-baixa);
+  transition:
+    background var(--transicao),
+    border-color var(--transicao);
 }
 
 .navegacao-botao:hover {
@@ -44,17 +48,19 @@
 
 .navegacao-botao small {
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: var(--texto-xs);
+  opacity: 0.85;
 }
 
 /* Waze: botão preenchido, para diferenciar do Google Maps. */
 .navegacao-botao--waze {
   background: var(--azul-marca);
+  border-color: transparent;
   color: var(--texto-sobre-marca);
 }
 
 .navegacao-botao--waze:hover {
-  background: var(--azul-acento);
+  background: var(--marca-forte);
 }
 
 /* Versão compacta (listas): botões menores. */
@@ -63,7 +69,8 @@
 }
 
 .navegacao--compacta .navegacao-botao {
-  min-height: 36px;
-  padding: 5px 12px;
+  min-height: 34px;
+  padding: 5px 11px;
   font-size: 0.8125rem;
+  border-radius: var(--raio-sm);
 }

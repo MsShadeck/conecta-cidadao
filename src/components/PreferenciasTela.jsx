@@ -12,6 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { Accessibility } from 'lucide-react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import './PreferenciasTela.css';
 
@@ -113,6 +114,7 @@ export default function PreferenciasTela() {
         onClick={() => setLibras(true)}
         disabled={libras}
       >
+        <Accessibility size={16} />
         {libras
           ? 'VLibras ativado (botão azul na lateral)'
           : 'Ativar tradução para Libras (VLibras)'}

@@ -7,6 +7,7 @@
 
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import { maisProximos } from '../utils/proximidade.js';
@@ -42,7 +43,9 @@ export default function SeuBairro() {
           <IconeCategoria slug="bairro" />
           Seu bairro: {salvo.bairro ?? salvo.rotulo}
         </h2>
-        <Link to="/meu-bairro">Ver tudo perto de casa</Link>
+        <Link to="/meu-bairro">
+          Ver tudo perto de casa <ArrowRight size={16} />
+        </Link>
       </div>
       <ul className="home-seu-bairro-lista">
         {perto.map((n) => {

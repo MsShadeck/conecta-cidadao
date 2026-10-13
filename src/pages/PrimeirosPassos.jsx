@@ -14,6 +14,7 @@
 
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
@@ -202,7 +203,7 @@ function ItemChecklist({ item, feito, alternar }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {link.nome} ↗
+            {link.nome} <ArrowUpRight size={14} />
           </a>
         ))}
       </div>

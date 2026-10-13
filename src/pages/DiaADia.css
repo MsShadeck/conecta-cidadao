@@ -4,9 +4,10 @@
 ============================================================ */
 
 .dia-aviso {
-  font-size: 0.875rem;
-  padding: 12px 14px;
-  border-radius: 14px;
+  font-size: var(--texto-sm);
+  padding: 12px 16px;
+  border-radius: var(--raio-botao);
+  border: 1px solid color-mix(in srgb, var(--cat-tinta) 18%, transparent);
   background: var(--cat-fundo);
   color: var(--cat-tinta);
 }
@@ -60,8 +61,11 @@
 /* .item-proximo tira a borda do último item; aqui cada um é um cartão. */
 .item-proximo.dia-item,
 .item-proximo.dia-item:last-child {
-  padding: 16px;
+  padding: 18px;
+  background: var(--branco);
   border: 1px solid var(--linha);
+  border-radius: var(--raio-card);
+  box-shadow: var(--sombra-baixa);
 }
 
 .dia-endereco {

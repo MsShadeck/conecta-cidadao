@@ -19,8 +19,8 @@
   font-weight: 500;
   color: var(--texto-sobre-marca);
   background: var(--azul-marca);
-  padding: 12px 24px;
-  border-radius: var(--raio-pilula);
+  padding: 12px 22px;
+  border-radius: var(--raio-botao);
   box-shadow: var(--sombra-baixa);
   transition:
     transform var(--transicao),

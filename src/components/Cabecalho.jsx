@@ -1,13 +1,32 @@
 /**
- * Cabecalho.jsx — Barra superior fixa (logo, navegação, busca e menu do celular).
+ * Cabecalho.jsx — Barra superior fixa (logo, navegação, busca e menu).
  *
- * No computador os links aparecem direto na barra. Em telas estreitas eles
- * não cabem, então somem e dão lugar ao botão "Menu", que abre um painel com
- * todos os destinos do site.
+ * No computador os links principais aparecem direto na barra. O botão "Menu"
+ * abre um painel lateral com todos os destinos do site e as opções de
+ * acessibilidade.
+ *
+ * O painel é um Dialog do Radix UI (@radix-ui/react-dialog). O Radix cuida do
+ * que antes era feito à mão: prender o Tab dentro do painel, fechar com Esc ou
+ * clique fora, travar a rolagem do fundo, avisar o leitor de tela (role
+ * "dialog" + aria-modal) e devolver o foco ao botão "Menu" ao fechar.
+ * A animação de entrada e saída é do Motion.
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import * as Dialog from '@radix-ui/react-dialog';
+import { AnimatePresence, motion } from 'motion/react';
+import {
+  Bookmark,
+  Globe,
+  House,
+  Info,
+  Map as IconeMapa,
+  Menu,
+  Navigation,
+  Phone,
+  X,
+} from 'lucide-react';
 import { useBusca } from '../context/AppContext.jsx';
 import IconeLupa from './IconeLupa.jsx';
 import PreferenciasTela from './PreferenciasTela.jsx';
@@ -16,7 +35,7 @@ import './Cabecalho.css';
 
 /**
  * Barra do topo: só o caminho de quem está chegando à cidade (poucas
- * entradas, para caber no celular). O resto do site fica no Menu.
+ * entradas, para caber na barra). O resto do site fica no Menu.
  */
 const LINKS_PRINCIPAIS = [
   { rota: '/primeiros-passos', nome: 'Primeiros passos' },
@@ -25,9 +44,13 @@ const LINKS_PRINCIPAIS = [
   { rota: '/mapa', nome: 'Mapa' },
 ];
 
-/** Menu completo, na ordem da jornada de quem acabou de se mudar. */
+/**
+ * Menu completo, na ordem da jornada de quem acabou de se mudar.
+ * "icone" é o slug de uma seção (IconeCategoria); "Icone" é um ícone Lucide
+ * para os destinos que não são seções.
+ */
 const LINKS_MENU = [
-  { rota: '/', nome: 'Início' },
+  { rota: '/', nome: 'Início', Icone: House },
   { rota: '/primeiros-passos', nome: 'Primeiros passos', icone: 'passos' },
   { rota: '/meu-bairro', nome: 'Meu bairro', icone: 'bairro' },
   { rota: '/servicos', nome: 'Serviços públicos', icone: 'servicos' },
@@ -35,140 +58,144 @@ const LINKS_MENU = [
   { rota: '/mobilidade', nome: 'Transporte (ônibus, bike, trânsito)', icone: 'mobilidade' },
   { rota: '/lazer', nome: 'Lazer e cultura', icone: 'lazer' },
   { rota: '/conheca', nome: 'Conheça Indaiatuba', icone: 'conheca' },
-  { rota: '/mapa', nome: 'Mapa' },
-  { rota: '/como-chegar', nome: 'Como chegar' },
-  { rota: '/servicos-online', nome: 'Serviços online' },
-  { rota: '/contatos', nome: 'Telefones úteis' },
-  { rota: '/lembretes', nome: 'Lembretes' },
-  { rota: '/sobre', nome: 'Sobre' },
+  { rota: '/mapa', nome: 'Mapa', Icone: IconeMapa },
+  { rota: '/como-chegar', nome: 'Como chegar', Icone: Navigation },
+  { rota: '/servicos-online', nome: 'Serviços online', Icone: Globe },
+  { rota: '/contatos', nome: 'Telefones úteis', Icone: Phone },
+  { rota: '/lembretes', nome: 'Lembretes', Icone: Bookmark },
+  { rota: '/sobre', nome: 'Sobre', Icone: Info },
 ];
 
 export default function Cabecalho() {
   const { abrirBusca } = useBusca();
   const { pathname } = useLocation();
   const [menuAberto, setMenuAberto] = useState(false);
-  const botaoMenuRef = useRef(null);
-  const painelRef = useRef(null);
 
   // Trocou de página: fecha o menu (o clique num link do menu também navega).
   useEffect(() => {
     setMenuAberto(false);
   }, [pathname]);
 
-  // Enquanto o menu está aberto: Esc fecha e o Tab fica "preso" dentro dele,
-  // para o foco do teclado não escapar para a página escondida atrás.
-  useEffect(() => {
-    if (!menuAberto) return undefined;
-    const painel = painelRef.current;
-    const focaveis = painel.querySelectorAll('a, button:not([disabled]), select');
-    focaveis[0]?.focus();
-
-    function aoTeclar(evento) {
-      if (evento.key === 'Escape') {
-        setMenuAberto(false);
-        botaoMenuRef.current?.focus(); // devolve o foco a quem abriu o menu
-        return;
-      }
-      if (evento.key !== 'Tab' || focaveis.length === 0) return;
-      const primeiro = focaveis[0];
-      const ultimo = focaveis[focaveis.length - 1];
-      // Shift+Tab no primeiro volta para o último; Tab no último volta ao primeiro.
-      if (evento.shiftKey && document.activeElement === primeiro) {
-        evento.preventDefault();
-        ultimo.focus();
-      } else if (!evento.shiftKey && document.activeElement === ultimo) {
-        evento.preventDefault();
-        primeiro.focus();
-      }
-    }
-    document.addEventListener('keydown', aoTeclar);
-    return () => document.removeEventListener('keydown', aoTeclar);
-  }, [menuAberto]);
-
   return (
     <div className="cabecalho-area">
-      <div className="container">
-        <header className="cabecalho">
-          {/* <Link> troca a rota sem recarregar a página (diferente de <a href>). */}
-          {/* Sem aria-label: o nome acessível do link é o próprio texto visível
-              ("Conecta Cidadão Indaiatuba"), como recomenda a WCAG (2.5.3). */}
-          <Link to="/" className="cabecalho-marca">
-            <span className="cabecalho-selo">
-              {/* alt="" porque a imagem é decorativa: o nome já vem escrito ao lado.
-                  width/height evitam o "pulo" do layout enquanto a imagem carrega. */}
-              <img src="/img/interface/pequeno/logo.png" alt="" width="30" height="24" />
-            </span>
-            <span className="cabecalho-nome">
-              Conecta Cidadão <span className="cabecalho-cidade">Indaiatuba</span>
-            </span>
-          </Link>
+      <header className="container cabecalho">
+        {/* <Link> troca a rota sem recarregar a página (diferente de <a href>). */}
+        {/* Sem aria-label: o nome acessível do link é o próprio texto visível
+            ("Conecta Cidadão Indaiatuba"), como recomenda a WCAG (2.5.3). */}
+        <Link to="/" className="cabecalho-marca">
+          <span className="cabecalho-selo">
+            {/* alt="" porque a imagem é decorativa: o nome já vem escrito ao lado.
+                width/height evitam o "pulo" do layout enquanto a imagem carrega. */}
+            <img src="/img/interface/pequeno/logo.png" alt="" width="26" height="21" />
+          </span>
+          <span className="cabecalho-nome">
+            Conecta Cidadão <span className="cabecalho-cidade">Indaiatuba</span>
+          </span>
+        </Link>
 
-          <nav className="cabecalho-nav" aria-label="Principal">
-            {/* Links da barra: aparecem só em telas largas (o CSS esconde no celular). */}
-            {LINKS_PRINCIPAIS.map((link) => (
-              <NavLink
-                key={link.rota}
-                to={link.rota}
-                className={({ isActive }) =>
-                  `cabecalho-link cabecalho-link--extra${isActive ? ' cabecalho-link--ativo' : ''}`
-                }
-              >
-                {link.nome}
-              </NavLink>
-            ))}
-
-            <button
-              type="button"
-              className="cabecalho-busca"
-              onClick={abrirBusca}
-              aria-label="Buscar um serviço"
+        <nav className="cabecalho-nav" aria-label="Principal">
+          {/* Links da barra: aparecem só em telas largas (o CSS esconde no celular). */}
+          {LINKS_PRINCIPAIS.map((link) => (
+            <NavLink
+              key={link.rota}
+              to={link.rota}
+              className={({ isActive }) =>
+                `cabecalho-link cabecalho-link--extra${isActive ? ' cabecalho-link--ativo' : ''}`
+              }
             >
-              <IconeLupa />
-              {/* Em telas pequenas o CSS esconde esta palavra e sobra só a lupa. */}
-              <span className="cabecalho-atalho">Buscar</span>
-            </button>
+              {link.nome}
+            </NavLink>
+          ))}
+        </nav>
 
-            {/* aria-expanded diz ao leitor de tela se o menu está aberto;
-                aria-controls aponta qual elemento o botão abre. */}
-            <button
-              ref={botaoMenuRef}
-              type="button"
-              className="cabecalho-menu-botao"
-              aria-expanded={menuAberto}
-              aria-controls="menu-celular"
-              onClick={() => setMenuAberto((aberto) => !aberto)}
-            >
-              <span className="cabecalho-menu-icone" aria-hidden="true" />
-              {menuAberto ? 'Fechar' : 'Menu'}
-            </button>
-          </nav>
-        </header>
+        <div className="cabecalho-acoes">
+          <button
+            type="button"
+            className="cabecalho-busca"
+            onClick={abrirBusca}
+            aria-label="Buscar um serviço"
+          >
+            <IconeLupa />
+            {/* Em telas pequenas o CSS esconde estes textos e sobra só a lupa. */}
+            <span className="cabecalho-atalho">Buscar</span>
+            <kbd className="cabecalho-tecla" aria-hidden="true">
+              Ctrl K
+            </kbd>
+          </button>
 
-        {menuAberto && (
-          <nav id="menu-celular" className="menu-celular" ref={painelRef} aria-label="Menu">
-            <ul>
-              {LINKS_MENU.map((link) => (
-                <li key={link.rota}>
-                  <NavLink
-                    to={link.rota}
-                    end
-                    className="menu-celular-link"
-                    data-categoria={link.icone}
-                  >
-                    {link.icone && <IconeCategoria slug={link.icone} tamanho={20} />}
-                    {link.nome}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-            {/* Acessibilidade: tamanho da letra, tema claro/escuro e Libras. */}
-            <div className="menu-celular-preferencias">
-              <h2 className="menu-celular-titulo">Acessibilidade</h2>
-              <PreferenciasTela />
-            </div>
-          </nav>
-        )}
-      </div>
+          {/* Dialog.Root controlado: o estado menuAberto decide se o painel aparece. */}
+          <Dialog.Root open={menuAberto} onOpenChange={setMenuAberto}>
+            {/* Trigger: o Radix coloca aria-expanded e aria-controls sozinho. */}
+            <Dialog.Trigger className="cabecalho-menu-botao">
+              <Menu size={18} strokeWidth={2} />
+              <span>Menu</span>
+            </Dialog.Trigger>
+
+            {/* AnimatePresence + forceMount: o Radix deixa o Motion decidir
+                quando o painel sai da tela, para a animação de saída tocar. */}
+            <AnimatePresence>
+              {menuAberto && (
+                <Dialog.Portal forceMount>
+                  <Dialog.Overlay asChild forceMount>
+                    <motion.div
+                      className="menu-fundo"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.18 }}
+                    />
+                  </Dialog.Overlay>
+                  <Dialog.Content asChild forceMount aria-describedby={undefined}>
+                    <motion.nav
+                      id="menu-celular"
+                      className="menu-celular"
+                      aria-label="Menu"
+                      initial={{ x: 32, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 32, opacity: 0 }}
+                      transition={{ duration: 0.24, ease: [0.2, 0.7, 0.3, 1] }}
+                    >
+                      <div className="menu-celular-topo">
+                        {/* Título exigido pelo Dialog: é o nome do painel para o leitor de tela. */}
+                        <Dialog.Title className="menu-celular-titulo">Navegar</Dialog.Title>
+                        <Dialog.Close className="menu-celular-fechar" aria-label="Fechar menu">
+                          <X size={18} strokeWidth={2} />
+                        </Dialog.Close>
+                      </div>
+                      <ul>
+                        {LINKS_MENU.map((link) => (
+                          <li key={link.rota}>
+                            <NavLink
+                              to={link.rota}
+                              end
+                              className="menu-celular-link"
+                              data-categoria={link.icone}
+                            >
+                              <span className="menu-celular-icone">
+                                {link.icone ? (
+                                  <IconeCategoria slug={link.icone} tamanho={18} />
+                                ) : (
+                                  <link.Icone size={18} strokeWidth={1.75} />
+                                )}
+                              </span>
+                              {link.nome}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                      {/* Acessibilidade: tamanho da letra, tema claro/escuro e Libras. */}
+                      <div className="menu-celular-preferencias">
+                        <h2 className="menu-celular-subtitulo">Acessibilidade</h2>
+                        <PreferenciasTela />
+                      </div>
+                    </motion.nav>
+                  </Dialog.Content>
+                </Dialog.Portal>
+              )}
+            </AnimatePresence>
+          </Dialog.Root>
+        </div>
+      </header>
     </div>
   );
 }

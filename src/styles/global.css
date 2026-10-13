@@ -1,19 +1,28 @@
 /* ============================================================
-   global.css — Estilos que valem para o site inteiro.
+   global.css — Design System do Conecta Cidadão.
    Importado uma única vez em src/main.jsx.
 
    Organização do arquivo:
-     1. TOKENS     — variáveis de cor, sombra, raio e transição
+     1. TOKENS     — cores, tipografia, espaçamento, raio, sombra e movimento
      2. RESET      — normaliza o comportamento padrão do navegador
      3. ESTRUTURA  — container, área de conteúdo e acessibilidade
      4. TIPOGRAFIA — classes de texto reutilizadas nas páginas
+     5. COMPONENTES BASE — painel, campo, botões, etiquetas, estados
+     6. TEMA ESCURO
+     7. TAMANHO DA LETRA
+     8. CAMPO DE BUSCA COM LUPA
+
+   Linguagem visual (v4): base neutra (cinzas frios), um único azul de marca,
+   superfícies brancas com borda fina + sombra discreta, raios médios (10–16px)
+   e movimento curto. As cores por categoria continuam como acento.
 ============================================================ */
 
 /* ============================================================
-   1. TOKENS — a mesma paleta do projeto original, agora centralizada
+   1. TOKENS
 
    Custom properties (--nome) declaradas no :root valem no documento todo.
-   Mudando o valor aqui, a alteração se propaga para todos os arquivos CSS.
+   Os nomes antigos (--azul-*, --tinta-*, --branco...) foram mantidos porque
+   todos os arquivos CSS do projeto já os usam; só os valores mudaram.
 ============================================================ */
 
 :root {
@@ -21,102 +30,135 @@
      calendários do sistema acompanham). O tema escuro troca para "dark". */
   color-scheme: light;
 
-  /* Azuis da marca */
-  --azul-fundo: #c9e8f5;
-  --azul-nevoa: #eaf6fb;
-  --azul-marca: #1a6faf;
-  --azul-acento: #3a8fd4;
+  /* ---- Cores: marca ---- */
+  --azul-marca: #1a6faf; /* links, botão principal (5,3:1 sobre branco) */
+  --marca-forte: #145a8f; /* hover do botão principal: escurece em vez de clarear */
+  --azul-acento: #3b82c4; /* anel de foco e bordas ativas */
   --azul-suave: #5a9ec9;
+  --marca-anel: rgba(26, 111, 175, 0.18); /* halo do foco em campos */
+  --marca-degrade-fim: #5b4bc9; /* fim do degradê do título da Home */
 
-  /* Texto — da cor mais forte (títulos) à mais fraca (legendas) */
-  --tinta: #1a1a2e;
-  --tinta-media: #3a3a5c;
-  /* #5b6585 em vez do antigo #7c86a3, que tinha contraste 3,6:1 (abaixo do
-     mínimo de 4,5:1 da WCAG AA). Confira com: node scripts/contraste.mjs */
-  --tinta-fraca: #5b6585;
+  /* ---- Cores: superfícies (do fundo da página aos cartões) ---- */
+  --azul-fundo: #f6f7f9; /* fundo da página: cinza frio, quase branco */
+  --branco: #ffffff; /* superfície dos cartões e painéis */
+  --azul-nevoa: #f0f3f7; /* preenchimento sutil (campos, hover, chips) */
+  --azul-hover: #e6ecf3;
+  --linha: #e4e7ec; /* borda padrão dos cartões */
+  --linha-forte: #d0d5dd; /* borda de campos e botões secundários */
+  --vidro: rgba(255, 255, 255, 0.78); /* cabeçalho translúcido */
+  --vidro-leve: rgba(255, 255, 255, 0.72);
+  --vidro-rodape: #ffffff;
+  --linha-rodape: var(--linha);
 
-  /* Superfícies */
-  --branco: #ffffff;
-  --linha: #e4eef5;
-  --vidro: rgba(255, 255, 255, 0.88); /* cabeçalho translúcido */
-  --vidro-leve: rgba(255, 255, 255, 0.72); /* chips */
-  --vidro-rodape: rgba(255, 255, 255, 0.35);
-  --linha-rodape: rgba(255, 255, 255, 0.7);
-  --azul-hover: #dcf0f8;
+  /* ---- Cores: texto (do mais forte ao mais fraco) ---- */
+  --tinta: #101828;
+  --tinta-media: #475467;
+  /* Confira os contrastes com: node scripts/contraste.mjs */
+  --tinta-fraca: #5d6b82;
 
   /* Texto sobre fundo azul (botões). No tema escuro o botão fica azul claro
      e o texto escuro, para manter o contraste. */
   --texto-sobre-marca: #ffffff;
 
-  /* Mensagens de erro e de alerta */
+  /* ---- Cores: feedback ---- */
   --erro: #a0460a;
-  --erro-fundo: #fde8d8;
-  --alerta: #b3261e;
+  --erro-fundo: #fdeee3;
+  --alerta: #c4321f;
   --alerta-tinta: #8c1d18;
+  --alerta-fundo: #fef3f2;
+  --atencao-fundo: #fef6e0;
+  --atencao-tinta: #6e4600;
 
-  /* Sombras — três níveis de elevação: repouso, hover e overlay */
-  --sombra-baixa: 0 1px 2px rgba(0, 60, 120, 0.06), 0 4px 14px rgba(0, 60, 120, 0.07);
-  --sombra-media: 0 10px 28px rgba(0, 90, 160, 0.16);
-  --sombra-alta: 0 18px 50px rgba(0, 60, 120, 0.22);
+  /* ---- Tipografia ---- */
+  --fonte: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --texto-xs: 0.75rem;
+  --texto-sm: 0.875rem;
+  --texto-base: 0.9375rem;
+  --texto-lg: 1.125rem;
+  --texto-xl: 1.375rem;
 
-  /* Raios de borda */
-  --raio-card: 18px;
+  /* ---- Espaçamento (múltiplos de 4px) ---- */
+  --esp-1: 4px;
+  --esp-2: 8px;
+  --esp-3: 12px;
+  --esp-4: 16px;
+  --esp-5: 20px;
+  --esp-6: 24px;
+  --esp-8: 32px;
+  --esp-10: 40px;
+  --esp-12: 48px;
+
+  /* ---- Raios de borda ---- */
+  --raio-sm: 8px;
+  --raio-botao: 10px;
+  --raio-card: 14px;
+  --raio-lg: 18px;
   --raio-pilula: 999px; /* valor alto = lados perfeitamente arredondados */
 
-  /* Ritmo — mesma duração e curva em todas as animações do site */
-  --transicao: 0.2s cubic-bezier(0.2, 0.7, 0.3, 1);
+  /* ---- Sombras: três níveis de elevação (repouso, hover e overlay) ----
+     Sombras curtas e de baixa opacidade; quem separa o cartão do fundo é a borda. */
+  --sombra-baixa: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --sombra-media: 0 12px 24px -8px rgba(16, 24, 40, 0.12), 0 2px 6px -2px rgba(16, 24, 40, 0.06);
+  --sombra-alta: 0 24px 56px -12px rgba(16, 24, 40, 0.24), 0 8px 16px -8px rgba(16, 24, 40, 0.1);
+
+  /* ---- Movimento: mesma duração e curva em todas as transições ---- */
+  --curva: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --transicao: 0.18s var(--curva);
+
+  /* Altura do cabeçalho fixo (usada em scroll-margin e elementos "sticky"). */
+  --altura-cabecalho: 64px;
 }
 
-/* Cores de cada serviço (já existiam nas tags da página Sobre).
+/* Cores de cada serviço.
 
    Truque central do projeto: o seletor de atributo [data-categoria='...']
    redefine --cat-fundo e --cat-tinta naquele elemento. Como variáveis CSS são
    herdadas, todo filho passa a usar a cor da categoria automaticamente —
    sem precisar de uma classe diferente para cada serviço. */
 [data-categoria='saude'] {
-  --cat-fundo: #d4edda;
+  --cat-fundo: #dcf2e3;
   --cat-tinta: #1a6f3a;
 }
 [data-categoria='seguranca'] {
-  --cat-fundo: #fde8d8;
+  --cat-fundo: #fdeadd;
   --cat-tinta: #a0460a;
 }
 [data-categoria='educacao'] {
-  --cat-fundo: #d8eafd;
+  --cat-fundo: #e0edfd;
   --cat-tinta: #1a4faf;
 }
 [data-categoria='lazer'] {
-  --cat-fundo: #e8d8fd;
+  --cat-fundo: #eee3fd;
   --cat-tinta: #6a1aaf;
 }
 /* Seções da jornada de quem está chegando (v3). */
 [data-categoria='passos'] {
-  --cat-fundo: #dceffa;
+  --cat-fundo: #e1f0fa;
   --cat-tinta: #0b5a8a;
 }
 [data-categoria='bairro'] {
-  --cat-fundo: #fbe0ea;
+  --cat-fundo: #fbe5ee;
   --cat-tinta: #9c1f55;
 }
 [data-categoria='dia-a-dia'] {
-  --cat-fundo: #e7f1d3;
+  --cat-fundo: #ebf3da;
   --cat-tinta: #49650f;
 }
 [data-categoria='conheca'] {
-  --cat-fundo: #e3e3fb;
+  --cat-fundo: #e8e8fc;
   --cat-tinta: #3b3bb0;
 }
 [data-categoria='servicos'] {
-  --cat-fundo: #e2ecf3;
+  --cat-fundo: #e5edf3;
   --cat-tinta: #2c5470;
 }
 /* Categorias novas da v2. */
 [data-categoria='cidadania'] {
-  --cat-fundo: #d3f0ec;
+  --cat-fundo: #d9f2ee;
   --cat-tinta: #0b6158;
 }
 [data-categoria='mobilidade'] {
-  --cat-fundo: #fdefc8;
+  --cat-fundo: #fdf0cf;
   --cat-tinta: #855400;
 }
 
@@ -138,24 +180,35 @@
 html {
   /* Impede o iOS de aumentar a fonte sozinho ao girar a tela. */
   -webkit-text-size-adjust: 100%;
+  /* Âncoras (#diferencas, #passo-x) param abaixo do cabeçalho fixo. */
+  scroll-padding-top: calc(var(--altura-cabecalho) + 16px);
 }
 
 body {
-  /* Poppins vem do Google Fonts (index.html); as demais são alternativas
+  /* Inter vem do Google Fonts (index.html); as demais são alternativas
      caso a fonte não carregue. */
-  font-family: 'Poppins', system-ui, sans-serif;
+  font-family: var(--fonte);
+  /* cv11 (a de um andar) e ss01 (números abertos) deixam a Inter mais limpa. */
+  font-feature-settings: 'cv11', 'ss01';
   font-weight: 400;
   color: var(--tinta);
   background-color: var(--azul-fundo);
-  /* Degradê do topo claro para o azul da marca nos primeiros 420px. */
-  background-image: linear-gradient(180deg, var(--azul-nevoa) 0%, var(--azul-fundo) 420px);
+  /* Brilho suave da marca no topo da página: dá profundidade sem pesar. */
+  background-image: radial-gradient(
+    1100px 420px at 50% -180px,
+    rgba(26, 111, 175, 0.09),
+    transparent 70%
+  );
   background-repeat: no-repeat;
   /* min-height + flex-column: com a área de conteúdo em flex:1, o rodapé fica
      sempre embaixo, mesmo em páginas curtas. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  line-height: 1.5;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* O <div id="root"> fica entre o body e o Layout; precisa repassar o flex. */
@@ -179,7 +232,9 @@ button {
   cursor: pointer;
 }
 
-input {
+input,
+select,
+textarea {
   font: inherit;
   color: inherit;
 }
@@ -187,25 +242,42 @@ input {
 a {
   color: var(--azul-marca);
   text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+/* Ícones Lucide: alinhados ao texto e sem encolher dentro de flex. */
+.lucide {
+  flex-shrink: 0;
+}
+
+/* Seleção de texto na cor da marca. */
+::selection {
+  background: var(--marca-anel);
 }
 
 /* Acessibilidade: contorno visível de foco apenas para quem navega por
    teclado. O :focus-visible evita que o contorno apareça em cliques de mouse. */
 :focus-visible {
-  outline: 3px solid var(--azul-acento);
-  outline-offset: 3px;
-  border-radius: 8px;
+  outline: 2px solid var(--azul-acento);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 /* ============================================================
    3. ESTRUTURA
 ============================================================ */
 
-/* Largura máxima de 1080px, com 20px de respiro de cada lado em telas
+/* Largura máxima de 1120px, com 20px de respiro de cada lado em telas
    estreitas. min() escolhe automaticamente o menor dos dois valores. */
 .container {
-  width: min(1080px, 100% - 40px);
+  width: min(1120px, 100% - 40px);
   margin-inline: auto; /* centraliza horizontalmente */
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 32px); /* 16px de cada lado no celular */
+  }
 }
 
 .conteudo {
@@ -213,7 +285,7 @@ a {
   /* Altura mínima de uma tela: enquanto os dados carregam, o rodapé já fica
      abaixo da dobra e não "pula" quando a lista aparece (evita CLS). */
   min-height: 100vh;
-  padding-bottom: 56px;
+  padding-bottom: 72px;
 }
 
 /* Link "Pular para o conteúdo": fica escondido acima da tela (top negativo)
@@ -225,16 +297,17 @@ a {
   z-index: 300; /* acima de tudo, inclusive do overlay de busca */
   background: var(--branco);
   color: var(--azul-marca);
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 10px 18px;
-  border-radius: var(--raio-pilula);
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-botao);
   box-shadow: var(--sombra-media);
   transition: top var(--transicao);
 }
 
 .pular-para-conteudo:focus {
-  top: 16px;
+  top: 12px;
 }
 
 /* ============================================================
@@ -244,36 +317,48 @@ a {
 .titulo-pagina {
   /* clamp(mínimo, ideal, máximo): a fonte acompanha a largura da tela sem
      ficar pequena demais no celular nem enorme no monitor. */
-  font-size: clamp(1.6875rem, 4.2vw, 2.5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em; /* títulos grandes pedem letras um pouco mais juntas */
-  line-height: 1.18;
+  font-size: clamp(1.75rem, 4.2vw, 2.625rem);
+  font-weight: 700;
+  letter-spacing: -0.032em; /* títulos grandes pedem letras mais juntas */
+  line-height: 1.12;
   color: var(--tinta);
+  text-wrap: balance; /* equilibra as linhas do título */
 }
 
 .texto-apoio {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   color: var(--tinta-media);
   line-height: 1.65;
-  /* 54ch ≈ 54 caracteres por linha: medida confortável de leitura. */
-  max-width: 54ch;
+  /* 62ch ≈ 62 caracteres por linha: medida confortável de leitura. */
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+h2,
+h3 {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 /* Etiqueta/pílula ("6 locais", "Saúde"). As variáveis --cat-* mudam conforme o
    data-categoria do elemento pai; o segundo valor do var() é o padrão azul,
    usado quando não há categoria definida. */
 .etiqueta {
-  display: inline-block;
-  font-size: 0.7813rem;
-  font-weight: 500;
-  padding: 3px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 2px 10px;
   border-radius: var(--raio-pilula);
   background: var(--cat-fundo, var(--azul-nevoa));
   color: var(--cat-tinta, var(--azul-marca));
 }
 
 /* Acessibilidade: respeita quem configurou o sistema para reduzir animações
-   (útil para pessoas com sensibilidade a movimento). */
+   (útil para pessoas com sensibilidade a movimento). As animações do Motion
+   seguem a mesma regra pelo <MotionConfig reducedMotion="user"> do Layout. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -286,66 +371,138 @@ a {
 }
 
 /* ============================================================
-   5. COMPONENTES DAS ATIVIDADES DA AULA — usados nas páginas
-      Telefones úteis, Lembretes e no bloco de sugestões das categorias
+   5. COMPONENTES BASE — usados em várias páginas
 ============================================================ */
 
-/* Topo das páginas novas (mesmo ritmo do topo da página Sobre). */
+/* Topo das páginas internas: título, texto de apoio e ações. */
 .pagina-topo {
-  padding: clamp(24px, 5vw, 44px) 0 26px;
+  padding: clamp(32px, 6vw, 56px) 0 clamp(24px, 4vw, 32px);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-/* Cartão branco que envolve o conteúdo (mesmo estilo do .sobre-card). */
+/* Cartão branco que envolve o conteúdo. */
 .painel {
   background: var(--branco);
-  border-radius: 24px;
-  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
+  padding: clamp(20px, 3.5vw, 28px);
   box-shadow: var(--sombra-baixa);
 }
 
-/* Campo de texto no formato pílula. */
+/* Campo de texto. */
 .campo {
-  font-size: 0.9063rem;
-  padding: 11px 18px;
-  border: 1px solid var(--linha);
-  border-radius: var(--raio-pilula);
-  background: var(--azul-nevoa);
+  font-size: var(--texto-base);
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--linha-forte);
+  border-radius: var(--raio-botao);
+  background: var(--branco);
+  box-shadow: var(--sombra-baixa);
   transition:
     border-color var(--transicao),
-    background var(--transicao);
+    box-shadow var(--transicao);
 }
 
-.campo:focus-within {
+.campo::placeholder,
+.campo input::placeholder {
+  color: var(--tinta-fraca);
+}
+
+.campo:hover {
+  border-color: #b8c0cc;
+}
+
+/* Foco: borda da marca + halo suave (padrão de formulários modernos). */
+.campo:focus-within,
+select.campo:focus {
   border-color: var(--azul-acento);
-  background: var(--branco);
+  box-shadow: 0 0 0 4px var(--marca-anel);
 }
 
-input.campo:focus-visible {
+input.campo:focus-visible,
+select.campo:focus-visible {
   outline: none; /* a borda azul do :focus-within já indica o foco */
 }
 
-/* Botão principal azul da marca. */
+select.campo {
+  appearance: auto;
+}
+
+/* Botão principal: azul da marca, sólido. */
 .botao-primario {
-  font-size: 0.9063rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: var(--texto-sm);
+  font-weight: 600;
   color: var(--texto-sobre-marca);
   background: var(--azul-marca);
-  padding: 11px 22px;
-  border-radius: var(--raio-pilula);
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--raio-botao);
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   transition:
     background var(--transicao),
-    transform var(--transicao);
+    transform var(--transicao),
+    box-shadow var(--transicao);
 }
 
 .botao-primario:hover {
-  background: var(--azul-acento);
+  background: var(--marca-forte);
 }
 
 .botao-primario:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
+}
+
+.botao-primario:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Botão secundário: superfície branca com borda, para ações ao lado do principal. */
+.botao-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  color: var(--tinta);
+  background: var(--branco);
+  border: 1px solid var(--linha-forte);
+  padding: 9px 16px;
+  border-radius: var(--raio-botao);
+  box-shadow: var(--sombra-baixa);
+  transition:
+    background var(--transicao),
+    border-color var(--transicao),
+    transform var(--transicao);
+}
+
+.botao-secundario:hover {
+  background: var(--azul-nevoa);
+}
+
+.botao-secundario:active {
+  transform: scale(0.98);
+}
+
+/* Links com cara de botão (ex.: "Abrir no mapa", "Ligar"). */
+a.botao-primario,
+a.botao-secundario {
+  text-decoration: none;
+}
+
+a.botao-primario {
+  color: var(--texto-sobre-marca);
 }
 
 /* O <main> recebe foco por código (tabIndex -1): não precisa do contorno azul. */
@@ -369,7 +526,7 @@ main:focus {
 
 /* "Atualizado em 08/10/2026" exibido no fim das listas que vêm de dados externos. */
 .atualizado-em {
-  font-size: 0.7813rem;
+  font-size: var(--texto-xs);
   color: var(--tinta-fraca);
 }
 
@@ -382,36 +539,7 @@ picture {
 /* Local sem foto cadastrada: bloco neutro no lugar da imagem. */
 .foto-vazia {
   display: block;
-  background: linear-gradient(135deg, var(--azul-nevoa), var(--azul-fundo));
-}
-
-/* Botão secundário: contorno azul, para ações ao lado do botão principal. */
-.botao-secundario {
-  font-size: 0.9063rem;
-  font-weight: 500;
-  color: var(--azul-marca);
-  background: var(--branco);
-  border: 1.5px solid var(--azul-marca);
-  padding: 10px 18px;
-  border-radius: var(--raio-pilula);
-  transition: background var(--transicao);
-}
-
-.botao-secundario:hover {
-  background: var(--azul-nevoa);
-}
-
-/* Links com cara de botão (ex.: "Abrir no mapa", "Ligar"). */
-a.botao-primario,
-a.botao-secundario {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-}
-
-a.botao-primario {
-  color: var(--texto-sobre-marca);
+  background: linear-gradient(135deg, var(--azul-nevoa), var(--azul-hover));
 }
 
 /* Bloco "Informação não disponível" usado nos campos sem fonte. */
@@ -426,8 +554,8 @@ a.botao-primario {
 .grade-locais {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
 }
 
 /* Celular: cards menores, mantendo dois por linha em vez de um só gigante. */
@@ -440,24 +568,47 @@ a.botao-primario {
 
 /* Linha "Fonte: ... · Atualizado em ..." (InfoFonte.jsx). */
 .info-fonte {
-  font-size: 0.7813rem;
+  font-size: var(--texto-xs);
   color: var(--tinta-media);
   line-height: 1.6;
 }
 
 .info-fonte a {
   text-decoration: underline;
+  text-decoration-color: var(--linha-forte);
+}
+
+.info-fonte a:hover {
+  text-decoration-color: currentColor;
 }
 
 /* Carregando / erro (EstadoDados.jsx). */
 .estado-dados {
   padding: 16px 2px;
-  font-size: 0.9063rem;
+  font-size: var(--texto-sm);
   color: var(--tinta-media);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+}
+
+/* Indicador giratório do "Carregando...". */
+.estado-dados-carregando {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.estado-dados-carregando .lucide {
+  animation: girar 0.9s linear infinite;
+  color: var(--azul-marca);
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .estado-dados--reserva {
@@ -466,6 +617,41 @@ a.botao-primario {
 
 .estado-dados--erro {
   color: var(--erro);
+}
+
+/* Título de seção pequeno, em caixa alta ("Explore a cidade", "Todas as categorias"). */
+.rotulo-secao {
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
+}
+
+/* Selo no topo das páginas ("Guia não oficial · Indaiatuba/SP"). */
+.selo-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  color: var(--tinta-media);
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-pilula);
+  padding: 4px 12px 4px 6px;
+  box-shadow: var(--sombra-baixa);
+}
+
+.selo-topo-ponto {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 /* ============================================================
@@ -479,72 +665,88 @@ a.botao-primario {
 @media (prefers-color-scheme: dark) {
   :root:not([data-tema='claro']) {
     color-scheme: dark;
-    --azul-fundo: #0e1621;
-    --azul-nevoa: #1d2a38;
-    --azul-marca: #8cc8f2;
-    --azul-acento: #5fb0ea;
+    --azul-fundo: #0b0e13;
+    --branco: #13171e;
+    --azul-nevoa: #1b212b;
+    --azul-hover: #232b37;
+    --linha: #242b36;
+    --linha-forte: #333c4a;
+    --vidro: rgba(11, 14, 19, 0.78);
+    --vidro-leve: rgba(19, 23, 30, 0.75);
+    --vidro-rodape: #0f1218;
+    --azul-marca: #7fbaf0;
+    --marca-forte: #a6cff6;
+    --azul-acento: #5fa8ea;
     --azul-suave: #6aa8d3;
-    --tinta: #e6edf3;
-    --tinta-media: #b6c3d1;
-    --tinta-fraca: #93a3b5;
-    --branco: #17212d;
-    --linha: #2a3a4b;
-    --vidro: rgba(23, 33, 45, 0.9);
-    --vidro-leve: rgba(23, 33, 45, 0.75);
-    --vidro-rodape: rgba(23, 33, 45, 0.6);
-    --linha-rodape: rgba(255, 255, 255, 0.08);
-    --azul-hover: #24364a;
-    --texto-sobre-marca: #0b1622;
+    --marca-anel: rgba(127, 186, 240, 0.22);
+    --marca-degrade-fim: #b9adff;
+    --tinta: #e8ecf1;
+    --tinta-media: #aeb8c6;
+    --tinta-fraca: #8f9aab;
+    --texto-sobre-marca: #08111c;
     --erro: #f6a07a;
     --erro-fundo: #3a2417;
     --alerta: #f28b82;
     --alerta-tinta: #f6aea8;
-    --sombra-baixa: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.3);
-    --sombra-media: 0 10px 28px rgba(0, 0, 0, 0.45);
-    --sombra-alta: 0 18px 50px rgba(0, 0, 0, 0.55);
+    --alerta-fundo: #2d1715;
+    --atencao-fundo: #33270f;
+    --atencao-tinta: #f2c96b;
+    --sombra-baixa: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --sombra-media: 0 12px 24px -8px rgba(0, 0, 0, 0.55), 0 2px 6px -2px rgba(0, 0, 0, 0.4);
+    --sombra-alta: 0 24px 56px -12px rgba(0, 0, 0, 0.7), 0 8px 16px -8px rgba(0, 0, 0, 0.5);
+  }
+  :root:not([data-tema='claro']) body {
+    background-image: radial-gradient(
+      1100px 420px at 50% -180px,
+      rgba(127, 186, 240, 0.08),
+      transparent 70%
+    );
+  }
+  :root:not([data-tema='claro']) .campo:hover {
+    border-color: #46505f;
   }
   :root:not([data-tema='claro']) [data-categoria='saude'] {
-    --cat-fundo: #173323;
+    --cat-fundo: #15301f;
     --cat-tinta: #8fdca8;
   }
   :root:not([data-tema='claro']) [data-categoria='seguranca'] {
-    --cat-fundo: #3a2417;
+    --cat-fundo: #362215;
     --cat-tinta: #f6b48a;
   }
   :root:not([data-tema='claro']) [data-categoria='educacao'] {
-    --cat-fundo: #172a45;
+    --cat-fundo: #16273f;
     --cat-tinta: #9cc2fb;
   }
   :root:not([data-tema='claro']) [data-categoria='lazer'] {
-    --cat-fundo: #2c1d45;
+    --cat-fundo: #291c40;
     --cat-tinta: #d1b3fb;
   }
   :root:not([data-tema='claro']) [data-categoria='cidadania'] {
-    --cat-fundo: #123430;
+    --cat-fundo: #11302c;
     --cat-tinta: #86ddd2;
   }
   :root:not([data-tema='claro']) [data-categoria='passos'] {
-    --cat-fundo: #13283a;
+    --cat-fundo: #122536;
     --cat-tinta: #8ccaf5;
   }
   :root:not([data-tema='claro']) [data-categoria='bairro'] {
-    --cat-fundo: #3a1626;
+    --cat-fundo: #361524;
     --cat-tinta: #f5a8c6;
   }
   :root:not([data-tema='claro']) [data-categoria='dia-a-dia'] {
-    --cat-fundo: #22301a;
+    --cat-fundo: #1f2c18;
     --cat-tinta: #bfe08a;
   }
   :root:not([data-tema='claro']) [data-categoria='conheca'] {
-    --cat-fundo: #1f1f45;
+    --cat-fundo: #1d1d40;
     --cat-tinta: #b9b9ff;
   }
   :root:not([data-tema='claro']) [data-categoria='servicos'] {
-    --cat-fundo: #1a2836;
+    --cat-fundo: #182532;
     --cat-tinta: #a9c8de;
   }
   :root:not([data-tema='claro']) [data-categoria='mobilidade'] {
-    --cat-fundo: #3a2c10;
+    --cat-fundo: #35290f;
     --cat-tinta: #f2c96b;
   }
 }
@@ -552,88 +754,106 @@ a.botao-primario {
 /* Mesmos valores quando a pessoa escolhe "escuro" no site. */
 :root[data-tema='escuro'] {
   color-scheme: dark;
-  --azul-fundo: #0e1621;
-  --azul-nevoa: #1d2a38;
-  --azul-marca: #8cc8f2;
-  --azul-acento: #5fb0ea;
+  --azul-fundo: #0b0e13;
+  --branco: #13171e;
+  --azul-nevoa: #1b212b;
+  --azul-hover: #232b37;
+  --linha: #242b36;
+  --linha-forte: #333c4a;
+  --vidro: rgba(11, 14, 19, 0.78);
+  --vidro-leve: rgba(19, 23, 30, 0.75);
+  --vidro-rodape: #0f1218;
+  --azul-marca: #7fbaf0;
+  --marca-forte: #a6cff6;
+  --azul-acento: #5fa8ea;
   --azul-suave: #6aa8d3;
-  --tinta: #e6edf3;
-  --tinta-media: #b6c3d1;
-  --tinta-fraca: #93a3b5;
-  --branco: #17212d;
-  --linha: #2a3a4b;
-  --vidro: rgba(23, 33, 45, 0.9);
-  --vidro-leve: rgba(23, 33, 45, 0.75);
-  --vidro-rodape: rgba(23, 33, 45, 0.6);
-  --linha-rodape: rgba(255, 255, 255, 0.08);
-  --azul-hover: #24364a;
-  --texto-sobre-marca: #0b1622;
+  --marca-anel: rgba(127, 186, 240, 0.22);
+  --marca-degrade-fim: #b9adff;
+  --tinta: #e8ecf1;
+  --tinta-media: #aeb8c6;
+  --tinta-fraca: #8f9aab;
+  --texto-sobre-marca: #08111c;
   --erro: #f6a07a;
   --erro-fundo: #3a2417;
   --alerta: #f28b82;
   --alerta-tinta: #f6aea8;
-  --sombra-baixa: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.3);
-  --sombra-media: 0 10px 28px rgba(0, 0, 0, 0.45);
-  --sombra-alta: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --alerta-fundo: #2d1715;
+  --atencao-fundo: #33270f;
+  --atencao-tinta: #f2c96b;
+  --sombra-baixa: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --sombra-media: 0 12px 24px -8px rgba(0, 0, 0, 0.55), 0 2px 6px -2px rgba(0, 0, 0, 0.4);
+  --sombra-alta: 0 24px 56px -12px rgba(0, 0, 0, 0.7), 0 8px 16px -8px rgba(0, 0, 0, 0.5);
+}
+:root[data-tema='escuro'] body {
+  background-image: radial-gradient(
+    1100px 420px at 50% -180px,
+    rgba(127, 186, 240, 0.08),
+    transparent 70%
+  );
+}
+:root[data-tema='escuro'] .campo:hover {
+  border-color: #46505f;
 }
 :root[data-tema='escuro'] [data-categoria='saude'] {
-  --cat-fundo: #173323;
+  --cat-fundo: #15301f;
   --cat-tinta: #8fdca8;
 }
 :root[data-tema='escuro'] [data-categoria='seguranca'] {
-  --cat-fundo: #3a2417;
+  --cat-fundo: #362215;
   --cat-tinta: #f6b48a;
 }
 :root[data-tema='escuro'] [data-categoria='educacao'] {
-  --cat-fundo: #172a45;
+  --cat-fundo: #16273f;
   --cat-tinta: #9cc2fb;
 }
 :root[data-tema='escuro'] [data-categoria='lazer'] {
-  --cat-fundo: #2c1d45;
+  --cat-fundo: #291c40;
   --cat-tinta: #d1b3fb;
 }
 :root[data-tema='escuro'] [data-categoria='cidadania'] {
-  --cat-fundo: #123430;
+  --cat-fundo: #11302c;
   --cat-tinta: #86ddd2;
 }
 :root[data-tema='escuro'] [data-categoria='passos'] {
-  --cat-fundo: #13283a;
+  --cat-fundo: #122536;
   --cat-tinta: #8ccaf5;
 }
 :root[data-tema='escuro'] [data-categoria='bairro'] {
-  --cat-fundo: #3a1626;
+  --cat-fundo: #361524;
   --cat-tinta: #f5a8c6;
 }
 :root[data-tema='escuro'] [data-categoria='dia-a-dia'] {
-  --cat-fundo: #22301a;
+  --cat-fundo: #1f2c18;
   --cat-tinta: #bfe08a;
 }
 :root[data-tema='escuro'] [data-categoria='conheca'] {
-  --cat-fundo: #1f1f45;
+  --cat-fundo: #1d1d40;
   --cat-tinta: #b9b9ff;
 }
 :root[data-tema='escuro'] [data-categoria='servicos'] {
-  --cat-fundo: #1a2836;
+  --cat-fundo: #182532;
   --cat-tinta: #a9c8de;
 }
 :root[data-tema='escuro'] [data-categoria='mobilidade'] {
-  --cat-fundo: #3a2c10;
+  --cat-fundo: #35290f;
   --cat-tinta: #f2c96b;
 }
 
 /* O logo (PNG azul) fica num selo claro no tema escuro para continuar visível.
-   Os ícones das categorias são SVG com currentColor e não precisam disso. */
+   Os ícones (Lucide) usam currentColor e não precisam disso. */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-tema='claro']) .cabecalho-selo {
+  :root:not([data-tema='claro']) .cabecalho-selo,
+  :root:not([data-tema='claro']) .rodape-selo {
     background: #dbeaf5;
   }
 }
-:root[data-tema='escuro'] .cabecalho-selo {
+:root[data-tema='escuro'] .cabecalho-selo,
+:root[data-tema='escuro'] .rodape-selo {
   background: #dbeaf5;
 }
 
 /* ============================================================
-   7. TAMANHO DA LETRA (botões A- / A / A+)
+   7. TAMANHO DA LETRA (botões A / A+ / A++)
    As fontes do site usam rem (relativo ao tamanho da letra do <html>).
    Mudar o font-size do <html> aumenta todo o texto de uma vez, e também
    respeita o tamanho de letra que a pessoa configurou no navegador.
@@ -664,6 +884,7 @@ html[data-fonte='maior'] {
   gap: 10px;
   min-height: 46px;
   color: var(--tinta-fraca);
+  cursor: text;
 }
 
 .campo-busca svg {
@@ -683,15 +904,17 @@ html[data-fonte='maior'] {
 
 /* Botão "×" para limpar o texto digitado. */
 .campo-busca-limpar {
-  font-size: 1.125rem;
-  line-height: 1;
+  display: grid;
+  place-items: center;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: var(--raio-sm);
   color: var(--tinta-media);
   flex-shrink: 0;
+  transition: background var(--transicao);
 }
 
 .campo-busca-limpar:hover {
   background: var(--azul-nevoa);
+  color: var(--tinta);
 }

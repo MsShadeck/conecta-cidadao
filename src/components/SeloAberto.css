@@ -7,32 +7,86 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.7813rem;
+  font-size: var(--texto-xs);
   font-weight: 600;
-  padding: 3px 10px;
+  line-height: 1.5;
+  padding: 1px 9px 1px 7px;
   border-radius: var(--raio-pilula);
   background: var(--azul-nevoa);
   color: var(--tinta-media);
+  border: 1px solid transparent;
 }
 
+/* Ponto colorido; no "aberto" ele pulsa devagar, como um indicador ao vivo. */
 .selo-aberto-ponto {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: currentColor;
 }
 
 .selo-aberto--aberto {
-  background: #d4edda;
+  background: #e3f6e9;
+  border-color: #c3e8cf;
   color: #145a2e;
 }
 
+.selo-aberto--aberto .selo-aberto-ponto {
+  box-shadow: 0 0 0 0 currentColor;
+  animation: selo-pulso 2s ease-out infinite;
+}
+
 .selo-aberto--fechado {
-  background: #fde2df;
+  background: #fdecea;
+  border-color: #f8d3ce;
   color: #9b2617;
 }
 
 .selo-aberto--feriado {
-  background: #fdefc8;
+  background: #fdf3d7;
+  border-color: #f4e1a8;
   color: #6e4600;
+}
+
+@keyframes selo-pulso {
+  70% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Tema escuro: os mesmos estados em tons escuros (contraste AA). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) .selo-aberto--aberto {
+    background: #15301f;
+    border-color: #1f4a30;
+    color: #8fdca8;
+  }
+  :root:not([data-tema='claro']) .selo-aberto--fechado {
+    background: #3a1a17;
+    border-color: #5a2722;
+    color: #f6aea8;
+  }
+  :root:not([data-tema='claro']) .selo-aberto--feriado {
+    background: #33270f;
+    border-color: #4d3a14;
+    color: #f2c96b;
+  }
+}
+:root[data-tema='escuro'] .selo-aberto--aberto {
+  background: #15301f;
+  border-color: #1f4a30;
+  color: #8fdca8;
+}
+:root[data-tema='escuro'] .selo-aberto--fechado {
+  background: #3a1a17;
+  border-color: #5a2722;
+  color: #f6aea8;
+}
+:root[data-tema='escuro'] .selo-aberto--feriado {
+  background: #33270f;
+  border-color: #4d3a14;
+  color: #f2c96b;
 }

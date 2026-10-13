@@ -24,8 +24,12 @@
 
 .mobilidade-bloco h2,
 .mobilidade-subtitulo {
-  font-size: 1.125rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  letter-spacing: -0.025em;
   color: var(--cat-tinta, var(--tinta));
 }
 
@@ -51,16 +55,25 @@
   flex-direction: column;
   gap: 4px;
   height: 100%;
-  padding: 14px 16px;
-  border-radius: 14px;
-  background: var(--cat-fundo);
+  padding: 16px;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-baixa);
   color: var(--tinta);
   text-decoration: none;
+  transition:
+    border-color var(--transicao),
+    transform var(--transicao);
+}
+
+.mobilidade-bloco a.mobilidade-link:hover {
+  border-color: var(--cat-tinta);
+  transform: translateY(-2px);
 }
 
 .mobilidade-link strong {
   color: var(--cat-tinta);
-  text-decoration: underline;
 }
 
 .mobilidade-link span {
@@ -69,10 +82,11 @@
 }
 
 .mobilidade-aviso {
-  font-size: 0.8438rem;
+  font-size: var(--texto-sm);
+  border: 1px solid var(--linha);
   background: var(--azul-nevoa);
   padding: 12px 14px;
-  border-radius: 12px;
+  border-radius: var(--raio-botao);
 }
 
 .mobilidade-telefones {
@@ -87,6 +101,11 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.mobilidade-noticias li {
+  padding-left: 14px;
+  border-left: 2px solid var(--cat-fundo, var(--linha));
 }
 
 .mobilidade-noticias p {

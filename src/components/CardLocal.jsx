@@ -10,6 +10,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
 import Foto from './Foto.jsx';
 import SeloAberto from './SeloAberto.jsx';
 import IconeCategoria from './IconeCategoria.jsx';
@@ -31,7 +32,7 @@ export default function CardLocal({ local, distancia }) {
         ) : (
           // Sem foto: o ícone da categoria num fundo colorido (decorativo).
           <span className="card-local-imagem card-local-sem-foto" aria-hidden="true">
-            <IconeCategoria slug={local.categoria} tamanho={48} />
+            <IconeCategoria slug={local.categoria} tamanho={40} />
           </span>
         )}
       </span>
@@ -43,7 +44,10 @@ export default function CardLocal({ local, distancia }) {
         <span className="card-local-rodape">
           <SeloAberto horarios={local.horarios} />
           {distancia !== undefined && (
-            <span className="card-local-distancia">{formatarDistancia(distancia)}</span>
+            <span className="card-local-distancia">
+              <MapPin size={12} strokeWidth={2.25} />
+              {formatarDistancia(distancia)}
+            </span>
           )}
         </span>
       </span>

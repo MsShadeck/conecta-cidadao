@@ -111,6 +111,7 @@ export default function SugestaoLocais({ categoriaNome }) {
 
 // VERSÃO ATIVA — Etapa 3 com id único, botão Remover e localStorage.
 import { useState } from 'react';
+import { X } from 'lucide-react';
 import useLocalStorage from '../hooks/useLocalStorage.js';
 import './SugestaoLocais.css';
 
@@ -175,7 +176,7 @@ export default function SugestaoLocais({ categoriaSlug, categoriaNome }) {
                 onClick={() => removerSugestao(item.id)}
                 aria-label={`Remover sugestão: ${item.nome}`}
               >
-                ×
+                <X size={14} strokeWidth={2.25} />
               </button>
             </li>
           ))}

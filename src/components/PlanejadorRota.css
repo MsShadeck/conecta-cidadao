@@ -20,45 +20,69 @@
   align-items: flex-start;
   gap: 4px;
   text-align: left;
-  padding: 14px 16px;
-  border-radius: 16px;
-  border: 2px solid var(--linha);
+  padding: 16px;
+  border-radius: var(--raio-card);
+  border: 1px solid var(--linha);
   background: var(--branco);
-  font-size: 0.875rem;
-  color: var(--tinta);
+  font-size: var(--texto-sm);
+  color: var(--tinta-media);
+  box-shadow: var(--sombra-baixa);
+  transition:
+    border-color var(--transicao),
+    background var(--transicao),
+    box-shadow var(--transicao);
+}
+
+button.planejador-opcao:hover {
+  border-color: var(--linha-forte);
 }
 
 .planejador-opcao strong {
-  font-size: 0.9375rem;
+  font-size: var(--texto-base);
+  font-weight: 600;
+  color: var(--tinta);
 }
 
-/* Opção escolhida: borda e fundo da marca (e aria-pressed para o leitor de tela). */
+/* Opção escolhida: borda e halo da marca (e aria-pressed para o leitor de tela). */
 .planejador-opcao[aria-pressed='true'] {
   border-color: var(--azul-marca);
   background: var(--azul-nevoa);
+  box-shadow: 0 0 0 3px var(--marca-anel);
 }
 
 .planejador-opcao--onibus a {
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: underline;
 }
 
+/* Ícone do modo (a pé, bicicleta, ônibus) num quadrado. */
 .planejador-icone {
-  font-size: 1.375rem;
-  line-height: 1;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--raio-botao);
+  background: var(--azul-nevoa);
+  color: var(--azul-marca);
+  margin-bottom: 6px;
+}
+
+.planejador-opcao[aria-pressed='true'] .planejador-icone {
+  background: var(--azul-marca);
+  color: var(--texto-sobre-marca);
 }
 
 .planejador-detalhe {
-  font-size: 0.7813rem;
+  font-size: var(--texto-xs);
   color: var(--tinta-media);
 }
 
 .planejador-aviso {
-  font-size: 0.8438rem;
-  background: #fdefc8;
-  color: #6e4600;
+  font-size: 0.8125rem;
+  background: var(--atencao-fundo);
+  color: var(--atencao-tinta);
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: var(--raio-botao);
 }
 
 .planejador-legenda {
@@ -66,7 +90,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
-  font-size: 0.7813rem;
+  font-size: var(--texto-xs);
   color: var(--tinta-media);
 }
 
@@ -86,7 +110,7 @@
 
 .planejador-origem summary {
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: var(--texto-sm);
   font-weight: 600;
   color: var(--azul-marca);
   min-height: 32px;

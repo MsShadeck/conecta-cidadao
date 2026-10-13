@@ -21,9 +21,12 @@
   gap: 8px;
   min-height: 40px;
   padding: 6px 14px;
-  border-radius: var(--raio-pilula);
+  border-radius: var(--raio-botao);
   background: var(--branco);
+  border: 1px solid var(--linha-forte);
+  box-shadow: var(--sombra-baixa);
   cursor: pointer;
+  transition: border-color var(--transicao);
 }
 
 .passos-perfil input,
@@ -40,10 +43,30 @@
   gap: 10px 16px;
 }
 
+/* Barra de progresso: trilho cinza e preenchimento na cor da seção. */
 .passos-barra {
-  width: min(320px, 100%);
-  height: 12px;
-  accent-color: var(--cat-tinta);
+  appearance: none;
+  width: min(360px, 100%);
+  height: 8px;
+  border: none;
+  border-radius: var(--raio-pilula);
+  overflow: hidden;
+  background: var(--azul-hover);
+}
+
+.passos-barra::-webkit-progress-bar {
+  background: var(--azul-hover);
+}
+
+.passos-barra::-webkit-progress-value {
+  background: var(--cat-tinta, var(--azul-marca));
+  border-radius: var(--raio-pilula);
+  transition: width 0.4s var(--curva);
+}
+
+.passos-barra::-moz-progress-bar {
+  background: var(--cat-tinta, var(--azul-marca));
+  border-radius: var(--raio-pilula);
 }
 
 .passos-progresso {
@@ -62,8 +85,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
   margin-bottom: 12px;
 }
 
@@ -84,12 +108,15 @@
   gap: 12px;
   font-size: 0.9063rem;
   line-height: 1.6;
-  border: 2px solid transparent;
+  transition:
+    border-color var(--transicao),
+    background var(--transicao);
 }
 
 /* Feito: borda na cor da seção e título riscado (além da caixa marcada). */
 .passo--feito {
-  border-color: var(--cat-fundo);
+  border-color: color-mix(in srgb, var(--cat-tinta, var(--azul-marca)) 40%, transparent);
+  background: color-mix(in srgb, var(--cat-fundo, var(--azul-nevoa)) 45%, var(--branco));
 }
 
 .passo--feito h3 {
@@ -106,8 +133,9 @@
 }
 
 .passo-topo h3 {
-  font-size: 1.0313rem;
+  font-size: var(--texto-lg);
   font-weight: 600;
+  letter-spacing: -0.015em;
   line-height: 1.35;
 }
 
@@ -198,5 +226,5 @@
 
 /* Ao rolar até um item (#passo-...), deixa espaço para o cabeçalho fixo. */
 .passo {
-  scroll-margin-top: 96px;
+  scroll-margin-top: calc(var(--altura-cabecalho) + 24px);
 }

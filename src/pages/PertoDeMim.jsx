@@ -10,6 +10,16 @@
 
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Ambulance,
+  Baby,
+  Bus,
+  HandHeart,
+  School,
+  ShieldCheck,
+  Stethoscope,
+  Trees,
+} from 'lucide-react';
 import { useOrigem } from '../context/AppContext.jsx';
 import useDados from '../hooks/useDados.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
@@ -23,18 +33,18 @@ import './PertoDeMim.css';
 
 /** O que a pessoa costuma procurar primeiro, e como reconhecer nos dados. */
 const NECESSIDADES = [
-  { titulo: 'Posto de saúde (UBS)', icone: '🩺', filtro: (l) => l.tipo === 'UBS' },
+  { titulo: 'Posto de saúde (UBS)', Icone: Stethoscope, filtro: (l) => l.tipo === 'UBS' },
   {
     titulo: 'Pronto atendimento / urgência',
-    icone: '🚑',
+    Icone: Ambulance,
     filtro: (l) => ['Pronto atendimento 24h', 'Hospital'].includes(l.tipo),
   },
-  { titulo: 'Escola municipal (EMEB)', icone: '🏫', filtro: (l) => l.tipo === 'EMEB' },
-  { titulo: 'Creche', icone: '🧸', filtro: (l) => l.tipo === 'Creche' },
-  { titulo: 'Assistência social (CRAS)', icone: '🤝', filtro: (l) => l.tipo === 'CRAS' },
-  { titulo: 'Segurança', icone: '🛡️', filtro: (l) => l.categoria === 'seguranca' },
-  { titulo: 'Terminal de ônibus', icone: '🚌', filtro: (l) => l.tipo === 'Terminal de ônibus' },
-  { titulo: 'Parque', icone: '🌳', filtro: (l) => l.tipo === 'Parque' },
+  { titulo: 'Escola municipal (EMEB)', Icone: School, filtro: (l) => l.tipo === 'EMEB' },
+  { titulo: 'Creche', Icone: Baby, filtro: (l) => l.tipo === 'Creche' },
+  { titulo: 'Assistência social (CRAS)', Icone: HandHeart, filtro: (l) => l.tipo === 'CRAS' },
+  { titulo: 'Segurança', Icone: ShieldCheck, filtro: (l) => l.categoria === 'seguranca' },
+  { titulo: 'Terminal de ônibus', Icone: Bus, filtro: (l) => l.tipo === 'Terminal de ônibus' },
+  { titulo: 'Parque', Icone: Trees, filtro: (l) => l.tipo === 'Parque' },
 ];
 
 export default function PertoDeMim() {
@@ -75,7 +85,7 @@ export default function PertoDeMim() {
               {resultados.map((r) => (
                 <li key={r.titulo} className="painel perto-cartao">
                   <h2>
-                    <span aria-hidden="true">{r.icone}</span> {r.titulo}
+                    <r.Icone size={18} strokeWidth={1.75} /> {r.titulo}
                   </h2>
                   {r.locais.length === 0 ? (
                     <p className="nao-disponivel">Nenhum local com posição no mapa.</p>

@@ -10,6 +10,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+// Motion (antigo Framer Motion): animações em React.
+// MotionConfig reducedMotion="user" desliga os deslocamentos para quem pediu
+// ao sistema para reduzir movimento (mesma regra do global.css).
+import { MotionConfig, animate, useReducedMotion } from 'motion/react';
 import Cabecalho from './Cabecalho.jsx';
 import Rodape from './Rodape.jsx';
 import BuscaOverlay from './BuscaOverlay.jsx';
@@ -24,12 +28,15 @@ export default function Layout() {
   const [anuncio, setAnuncio] = useState('');
   // Na primeira carga o leitor de tela já lê a página sozinho; só anunciamos as trocas.
   const primeiraCarga = useRef(true);
+  // true quando o sistema pede "reduzir movimento".
+  const reduzirMovimento = useReducedMotion();
 
   // Ao trocar de rota o React apenas substitui o conteúdo; o navegador mantém a
   // rolagem onde estava e o foco no link clicado. Este efeito:
   //  1. devolve a página ao topo;
   //  2. leva o foco para o <main>, para o Tab seguinte começar no conteúdo novo;
-  //  3. anuncia o título da página nova.
+  //  3. anuncia o título da página nova;
+  //  4. faz a página nova surgir com um fade curto (Motion).
   // O efeito do Layout roda DEPOIS dos efeitos das páginas filhas, então o
   // document.title já está atualizado pelo useTituloPagina quando chegamos aqui.
   useEffect(() => {
@@ -40,11 +47,19 @@ export default function Layout() {
     }
     mainRef.current?.focus({ preventScroll: true });
     setAnuncio(`Página carregada: ${document.title}`);
-  }, [pathname]);
+    // animate() anima o elemento direto, sem recriar a página (o estado dela,
+    // como filtros e campos digitados, continua o mesmo). Com movimento
+    // reduzido, sobra só o fade.
+    animate(
+      mainRef.current,
+      reduzirMovimento ? { opacity: [0, 1] } : { opacity: [0, 1], y: [8, 0] },
+      { duration: 0.28, ease: [0.2, 0.7, 0.3, 1] }
+    );
+  }, [pathname, reduzirMovimento]);
 
   return (
-    // <>...</> é um Fragment: agrupa elementos sem criar uma <div> extra no HTML.
-    <>
+    // MotionConfig no lugar do Fragment: vale para todas as animações do site.
+    <MotionConfig reducedMotion="user">
       {/* Acessibilidade: link invisível que só aparece ao receber foco pelo Tab.
           Permite a quem navega por teclado pular o cabeçalho e ir direto ao conteúdo. */}
       <a className="pular-para-conteudo" href="#conteudo">
@@ -72,6 +87,6 @@ export default function Layout() {
       <p className="somente-leitor" aria-live="polite" aria-atomic="true">
         {anuncio}
       </p>
-    </>
+    </MotionConfig>
   );
 }

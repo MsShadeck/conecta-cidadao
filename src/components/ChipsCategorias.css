@@ -5,9 +5,9 @@
 /* Fila horizontal que rola de lado quando não cabe na tela. */
 .chips {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
-  padding-bottom: 4px;
+  padding: 2px 2px 6px;
   scrollbar-width: none; /* esconde a barra de rolagem no Firefox */
 }
 
@@ -21,29 +21,30 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0; /* mantém o tamanho e permite a rolagem lateral */
-  font-size: 0.8438rem;
+  min-height: 36px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--tinta-media);
-  background: var(--vidro-leve);
-  padding: 8px 16px 8px 12px;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  padding: 6px 14px 6px 10px;
   border-radius: var(--raio-pilula);
   transition:
     background var(--transicao),
     color var(--transicao),
-    box-shadow var(--transicao);
+    border-color var(--transicao);
 }
 
-/* Ícone SVG na cor da categoria (--cat-tinta), com opacidade total: a cor da
-   categoria tem contraste AA sobre o fundo do chip nos dois temas. */
+/* Ícone SVG na cor da categoria (--cat-tinta). */
 .chip svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   color: var(--cat-tinta, var(--azul-marca));
 }
 
 .chip:hover {
-  background: var(--branco);
+  border-color: var(--linha-forte);
   color: var(--tinta);
 }
 
@@ -52,20 +53,35 @@
 .chip--ativo {
   /* Sem data-categoria (ex.: chip "Todos"), cai no azul da marca. */
   background: var(--cat-fundo, var(--azul-nevoa));
+  border-color: transparent;
   color: var(--cat-tinta, var(--azul-marca));
-  box-shadow: var(--sombra-baixa);
+  font-weight: 600;
+}
+
+.chip--ativo:hover {
+  border-color: var(--cat-tinta, var(--azul-marca));
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 .chip--ativo svg {
   color: currentColor;
 }
 
-/* Dentro de um painel branco, o chip inativo precisa de fundo próprio para aparecer. */
+/* Dentro de um painel branco, o chip inativo ganha fundo sutil para aparecer. */
 .painel .chip {
   background: var(--azul-nevoa);
+  border-color: transparent;
+}
+
+.painel .chip:hover {
+  border-color: var(--linha-forte);
 }
 
 .painel .chip--ativo {
-  background: var(--cat-fundo, var(--azul-marca));
-  color: var(--cat-tinta, var(--branco));
+  background: var(--cat-tinta, var(--azul-marca));
+  color: var(--branco);
+}
+
+.painel .chip--ativo svg {
+  color: currentColor;
 }

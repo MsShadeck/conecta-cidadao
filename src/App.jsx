@@ -13,6 +13,7 @@
 
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { LoaderCircle } from 'lucide-react';
 import { AppProvider } from './context/AppContext.jsx';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
@@ -38,7 +39,10 @@ const Conheca = lazy(() => import('./pages/Conheca.jsx'));
 function CarregandoPagina() {
   return (
     <p className="container estado-dados" role="status">
-      Carregando...
+      <span className="estado-dados-carregando">
+        <LoaderCircle size={18} />
+        Carregando...
+      </span>
     </p>
   );
 }

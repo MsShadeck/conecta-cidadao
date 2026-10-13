@@ -16,6 +16,7 @@
 
 import { useId, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { X } from 'lucide-react';
 import { normalizar } from '../utils/texto.js';
 import IconeLupa from './IconeLupa.jsx';
 
@@ -129,7 +130,7 @@ export default function ListaBairros({ bairros, atual = null }) {
               onClick={() => setFiltro('')}
               aria-label="Limpar filtro"
             >
-              ×
+              <X size={16} strokeWidth={2} />
             </button>
           )}
         </label>

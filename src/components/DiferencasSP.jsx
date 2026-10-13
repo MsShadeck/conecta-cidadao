@@ -6,6 +6,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import IconeCategoria from './IconeCategoria.jsx';
 
@@ -25,7 +26,9 @@ export default function DiferencasSP() {
           <IconeCategoria slug="conheca" />
           Diferenças para quem vem de São Paulo
         </h2>
-        <Link to="/conheca#diferencas">Ver todas, com as fontes</Link>
+        <Link to="/conheca#diferencas">
+          Ver todas, com as fontes <ArrowRight size={16} />
+        </Link>
       </div>
       <ul className="home-seu-bairro-lista">
         {dados.diferencas.slice(0, NA_HOME).map((d) => (

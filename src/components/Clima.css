@@ -5,10 +5,11 @@
 .clima {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   background: var(--branco);
-  border-radius: 22px;
-  padding: 18px 22px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
+  padding: 20px 24px;
   box-shadow: var(--sombra-baixa);
 }
 
@@ -18,50 +19,87 @@
   gap: 16px;
 }
 
+/* Ícone do tempo num quadrado com degradê de céu. */
 .clima-simbolo {
-  font-size: 2.5rem;
-  line-height: 1;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #e3f0fb, #fdf3d7);
+  color: #2b5f8f;
+  flex-shrink: 0;
 }
 
 .clima-titulo {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--tinta-media);
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-fraca);
 }
 
 .clima-temperatura {
-  font-size: 1.375rem;
-  font-weight: 600;
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--tinta);
+  font-variant-numeric: tabular-nums;
 }
 
 .clima-detalhe {
-  font-size: 0.8438rem;
+  font-size: var(--texto-sm);
   color: var(--tinta-media);
 }
 
 .clima-aviso {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 0.875rem;
-  background: #fdefc8;
-  color: #5c3b00;
-  border-radius: 14px;
+  gap: 6px;
+  font-size: var(--texto-sm);
+  background: var(--atencao-fundo);
+  color: var(--atencao-tinta);
+  border: 1px solid color-mix(in srgb, var(--atencao-tinta) 20%, transparent);
+  border-radius: var(--raio-botao);
   padding: 12px 14px;
+}
+
+.clima-aviso p {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.clima-aviso p svg {
+  margin-top: 2px;
 }
 
 .clima-aviso a {
   font-weight: 600;
-  color: #5c3b00;
+  color: inherit;
   text-decoration: underline;
 }
 
 .clima-fonte {
-  font-size: 0.75rem;
+  font-size: var(--texto-xs);
   color: var(--tinta-media);
+  padding-top: 12px;
+  border-top: 1px solid var(--linha);
 }
 
 .clima-fonte a {
   text-decoration: underline;
+  text-decoration-color: var(--linha-forte);
+}
+
+/* Tema escuro: céu noturno no quadrado do ícone. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) .clima-simbolo {
+    background: linear-gradient(160deg, #16273f, #2a2440);
+    color: #9cc2fb;
+  }
+}
+:root[data-tema='escuro'] .clima-simbolo {
+  background: linear-gradient(160deg, #16273f, #2a2440);
+  color: #9cc2fb;
 }

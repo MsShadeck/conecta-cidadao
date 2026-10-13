@@ -23,8 +23,15 @@
 }
 
 .perto-cartao h2 {
-  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--texto-base);
   font-weight: 600;
+}
+
+.perto-cartao h2 svg {
+  color: var(--cat-tinta, var(--azul-marca));
 }
 
 .perto-cartao ol {

@@ -1,46 +1,88 @@
 /* ============================================================
    Home.css — Estilos exclusivos da página inicial (Home.jsx)
+   Também estiliza SeuBairro.jsx e DiferencasSP.jsx (blocos da Home).
 ============================================================ */
 
+/* ---------- Topo: texto e busca à esquerda, dois caminhos à direita ---------- */
+
 .home-topo {
-  /* clamp: respiro proporcional à tela, entre 28px e 56px. */
-  padding: clamp(28px, 6vw, 56px) 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  /* clamp: respiro proporcional à tela. */
+  padding: clamp(40px, 8vw, 88px) 0 clamp(8px, 2vw, 16px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
 }
 
-/* Limita o título a ~22 caracteres por linha, forçando a quebra em duas
-   linhas e deixando a chamada com aparência de manchete. */
-.home-topo .titulo-pagina {
-  max-width: 22ch;
+.home-topo-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.home-titulo {
+  font-size: clamp(2.125rem, 5.4vw, 3.5rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+/* Segunda parte do título em degradê da marca. */
+.home-titulo span {
+  background: linear-gradient(90deg, var(--azul-marca), var(--marca-degrade-fim));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.home-procura {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Campo "CEP ou bairro" + botão, numa linha só (desce no celular). */
+.home-cep {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: min(560px, 100%);
+}
+
+.home-cep .campo-busca {
+  flex: 1 1 240px;
+  min-height: 48px;
+}
+
+.home-cep .botao-primario {
+  min-height: 48px;
+  padding-inline: 20px;
 }
 
 /* Botão que imita um campo de busca (o input de verdade está no overlay). */
 .home-busca {
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: min(520px, 100%);
-  margin-top: 10px;
-  background: var(--branco);
-  border-radius: var(--raio-pilula);
-  padding: 15px 16px 15px 20px;
-  box-shadow: var(--sombra-baixa);
-  color: var(--azul-acento);
+  gap: 10px;
+  width: min(560px, 100%);
+  padding: 8px 10px 8px 14px;
+  border-radius: var(--raio-botao);
+  color: var(--tinta-fraca);
+  border: 1px dashed var(--linha-forte);
   transition:
-    box-shadow var(--transicao),
-    transform var(--transicao);
+    border-color var(--transicao),
+    background var(--transicao);
 }
 
 .home-busca:hover {
-  box-shadow: var(--sombra-media);
-  transform: translateY(-2px);
+  border-color: var(--azul-acento);
+  background: var(--branco);
 }
 
 .home-busca svg {
-  width: 19px;
-  height: 19px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
@@ -48,84 +90,263 @@
 .home-busca-texto {
   flex: 1;
   text-align: left;
-  font-size: 0.9375rem;
-  color: var(--tinta-fraca);
+  font-size: var(--texto-sm);
 }
 
 /* Tecla "Ctrl K". font-family: inherit porque <kbd> vem com fonte
    monoespaçada por padrão no navegador. */
 .home-busca-atalho {
   font-family: inherit;
-  font-size: 0.7188rem;
-  font-weight: 500;
+  font-size: 0.6875rem;
+  font-weight: 600;
   color: var(--tinta-fraca);
   background: var(--azul-nevoa);
-  padding: 5px 10px;
-  border-radius: 8px;
+  border: 1px solid var(--linha);
+  padding: 2px 7px;
+  border-radius: 6px;
 }
 
-/* Faixa branca com a logo, a cidade e o aviso de projeto não oficial. */
+/* Dois caminhos principais: cartões grandes com o ícone na cor da seção. */
+.home-caminhos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-caminho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+  padding: 20px 20px 20px 18px;
+  border-radius: var(--raio-lg);
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta-media);
+  font-size: var(--texto-sm);
+  line-height: 1.5;
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao),
+    border-color var(--transicao);
+}
+
+.home-caminho:hover {
+  transform: translateY(-2px);
+  border-color: var(--cat-tinta);
+  box-shadow: var(--sombra-media);
+}
+
+.home-caminho-icone {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--cat-fundo);
+  color: var(--cat-tinta);
+  flex-shrink: 0;
+}
+
+.home-caminho-texto {
+  flex: 1;
+}
+
+.home-caminho strong {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
+  margin-bottom: 2px;
+}
+
+/* Seta "→" dos cartões: desliza um pouco no hover. */
+.home-seta {
+  color: var(--tinta-fraca);
+  transition:
+    transform var(--transicao),
+    color var(--transicao);
+}
+
+.home-caminho:hover .home-seta,
+.home-atalho:hover .home-seta {
+  transform: translateX(3px);
+  color: var(--cat-tinta, var(--azul-marca));
+}
+
+@media (max-width: 880px) {
+  .home-topo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cabeçalho das seções ---------- */
+
+.home-secao-cabeca {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+/* Título das seções da Home (também usado em SeuBairro e DiferencasSP). */
+.home-servicos-titulo {
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  color: var(--tinta);
+}
+
+.home-secao-texto {
+  font-size: var(--texto-base);
+  color: var(--tinta-media);
+}
+
+/* ---------- Explore a cidade ---------- */
+
+.home-atalhos {
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+.home-atalhos-lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 14px;
+}
+
+.home-atalho {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  padding: 20px;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-baixa);
+  color: var(--tinta);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao),
+    border-color var(--transicao);
+}
+
+.home-atalho:hover {
+  transform: translateY(-2px);
+  border-color: var(--linha-forte);
+  box-shadow: var(--sombra-media);
+}
+
+.home-atalho-icone {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--cat-fundo, var(--azul-nevoa));
+  color: var(--cat-tinta, var(--azul-marca));
+  margin-bottom: 10px;
+}
+
+.home-atalho strong {
+  font-size: var(--texto-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.home-atalho-texto {
+  font-size: 0.8125rem;
+  color: var(--tinta-media);
+  padding-right: 18px; /* espaço da seta */
+}
+
+.home-atalho .home-seta {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+}
+
+.home-clima {
+  margin-top: 20px;
+}
+
+/* ---------- Todas as categorias ---------- */
+
+.home-servicos {
+  margin-top: clamp(48px, 7vw, 80px);
+}
+
+/* Grade dos cards de serviço.
+   auto-fill + minmax: o navegador calcula sozinho quantas colunas cabem
+   (3, 2 ou 1) sem precisar de media query. */
+.grade-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+  gap: 16px;
+}
+
+/* ---------- Faixa da marca ---------- */
+
 .home-marca {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-top: clamp(34px, 6vw, 54px);
+  gap: 20px;
+  margin-top: clamp(48px, 7vw, 72px);
   background: var(--branco);
-  border-radius: 22px;
-  padding: 18px 26px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
+  padding: 24px 28px;
   box-shadow: var(--sombra-baixa);
 }
 
 .home-marca-logo {
-  width: 62px;
+  width: 56px;
   height: auto;
   flex-shrink: 0;
 }
 
 .home-marca-titulo {
-  font-size: 1.3125rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--azul-marca);
+  font-size: var(--texto-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
 }
 
 .home-marca-frase {
-  font-size: 0.8438rem;
-  line-height: 1.55;
-  /* --tinta-media em vez do azul-suave: o azul claro não tinha contraste suficiente. */
+  font-size: var(--texto-sm);
+  line-height: 1.6;
   color: var(--tinta-media);
   max-width: 62ch;
 }
 
-.home-servicos {
-  margin-top: clamp(26px, 5vw, 40px);
-}
-
-.home-servicos-titulo {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--tinta-media);
-  margin-bottom: 16px;
-}
-
-/* Grade dos cards de serviço.
-   auto-fit + minmax(228px, 1fr): o navegador calcula sozinho quantas colunas
-   cabem (4, 2 ou 1) sem precisar de media query. */
-.grade-servicos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(228px, 1fr));
-  gap: 16px;
+.home-marca-botao {
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 /* Ajustes para telas pequenas. */
-@media (max-width: 560px) {
+@media (max-width: 620px) {
   .home-marca {
-    padding: 16px 20px;
+    flex-wrap: wrap;
+    padding: 20px;
     gap: 14px;
   }
 
   .home-marca-logo {
-    width: 50px;
+    width: 44px;
+  }
+
+  .home-marca-botao {
+    margin-left: 0;
+  }
+
+  .home-cep .botao-primario {
+    flex: 1 1 100%;
   }
 
   /* Some com a tecla de atalho: no celular não há Ctrl K. */
@@ -134,116 +355,14 @@
   }
 }
 
-/* Atalhos "Novo em Indaiatuba?". */
-.home-atalhos {
-  margin-top: clamp(30px, 5vw, 44px);
-}
+/* ---------- Seu bairro (SeuBairro.jsx) e Diferenças (DiferencasSP.jsx) ---------- */
 
-.home-atalhos-lista {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
-
-.home-atalho {
+.home-seu-bairro,
+.home-diferencas {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  height: 100%;
-  padding: 16px 18px;
-  border-radius: var(--raio-card);
-  background: var(--branco);
-  box-shadow: var(--sombra-baixa);
-  color: var(--tinta);
-  transition:
-    transform var(--transicao),
-    box-shadow var(--transicao);
-}
-
-.home-atalho:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sombra-media);
-}
-
-.home-atalho strong {
-  font-size: 0.9375rem;
-  color: var(--azul-marca);
-}
-
-.home-atalho span:last-child {
-  font-size: 0.8125rem;
-  color: var(--tinta-media);
-}
-
-.home-clima {
-  margin-top: 18px;
-}
-
-/* Dois caminhos principais: botões grandes na cor de cada seção. */
-.home-caminhos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px;
-  margin-top: 6px;
-}
-
-.home-caminho {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 84px;
-  padding: 16px 20px;
-  border-radius: 20px;
-  background: var(--cat-fundo);
-  color: var(--tinta);
-  font-size: 0.875rem;
-  line-height: 1.45;
-  box-shadow: var(--sombra-baixa);
-  transition:
-    transform var(--transicao),
-    box-shadow var(--transicao);
-}
-
-.home-caminho:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--sombra-media);
-}
-
-.home-caminho svg {
-  color: var(--cat-tinta);
-  flex-shrink: 0;
-}
-
-.home-caminho strong {
-  display: block;
-  font-size: 1.0625rem;
-  color: var(--cat-tinta);
-}
-
-/* Campo "CEP ou bairro" + botão. */
-.home-cep {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  width: min(620px, 100%);
-}
-
-.home-cep .campo-busca {
-  flex: 1 1 240px;
-  background: var(--branco);
-}
-
-/* Ícone dos atalhos na cor da seção. */
-.home-atalho svg {
-  color: var(--cat-tinta, var(--azul-marca));
-}
-
-/* Seu bairro (só para quem salvou o bairro em "Meu bairro") */
-.home-seu-bairro {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  margin-top: clamp(40px, 6vw, 64px);
 }
 
 .home-seu-bairro-topo {
@@ -251,59 +370,69 @@
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 8px;
+  gap: 8px 16px;
 }
 
 .home-seu-bairro-topo h2 {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.home-seu-bairro-topo svg {
+.home-seu-bairro-topo h2 svg {
   color: var(--cat-tinta);
 }
 
+/* Link "Ver tudo": texto da marca com seta (a seta vem do JSX). */
 .home-seu-bairro-topo a {
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--texto-sm);
+  font-weight: 600;
+}
+
+.home-seu-bairro-topo a:hover {
   text-decoration: underline;
 }
 
 .home-seu-bairro-lista {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 14px;
 }
 
 .home-seu-bairro-lista li {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 16px;
-  border-top: 4px solid var(--cat-fundo);
-  font-size: 0.875rem;
+  gap: 6px;
+  padding: 20px;
+  font-size: var(--texto-sm);
+  color: var(--tinta-media);
+}
+
+.home-seu-bairro-lista li strong {
+  font-size: var(--texto-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--tinta);
 }
 
 .home-seu-bairro-tipo {
-  font-size: 0.75rem;
+  font-size: var(--texto-xs);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: var(--cat-tinta);
 }
 
-/* Diferenças para quem vem de São Paulo (reaproveita a grade do Seu bairro) */
-.home-diferencas {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .home-diferencas .home-seu-bairro-lista li {
-  gap: 6px;
+  gap: 8px;
 }
 
 .home-diferencas a.info-fonte {
+  margin-top: auto;
   text-decoration: underline;
+  text-decoration-color: var(--linha-forte);
 }

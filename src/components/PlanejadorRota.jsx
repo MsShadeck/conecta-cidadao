@@ -20,6 +20,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Bike, Bus, Footprints } from 'lucide-react';
 import { useOrigem } from '../context/AppContext.jsx';
 import SeletorOrigem from './SeletorOrigem.jsx';
 import MapaPreguicoso from './mapa/MapaPreguicoso.jsx';
@@ -140,7 +141,7 @@ export default function PlanejadorRota({ destino }) {
               onClick={() => setModo('pe')}
             >
               <span className="planejador-icone" aria-hidden="true">
-                🚶
+                <Footprints size={22} strokeWidth={1.75} />
               </span>
               <strong>A pé</strong>
               <span>
@@ -154,7 +155,7 @@ export default function PlanejadorRota({ destino }) {
               onClick={() => setModo('bike')}
             >
               <span className="planejador-icone" aria-hidden="true">
-                🚲
+                <Bike size={22} strokeWidth={1.75} />
               </span>
               <strong>De bicicleta</strong>
               <span>
@@ -166,7 +167,7 @@ export default function PlanejadorRota({ destino }) {
             </button>
             <div className="planejador-opcao planejador-opcao--onibus">
               <span className="planejador-icone" aria-hidden="true">
-                🚌
+                <Bus size={22} strokeWidth={1.75} />
               </span>
               <strong>De ônibus</strong>
               <span className="planejador-detalhe">

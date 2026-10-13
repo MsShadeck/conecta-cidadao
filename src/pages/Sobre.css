@@ -21,7 +21,8 @@
 
 .sobre-card {
   background: var(--branco);
-  border-radius: 24px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
   padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--sombra-baixa);
   display: flex;
@@ -37,9 +38,10 @@
 }
 
 .sobre-subtitulo {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--azul-marca);
+  font-size: var(--texto-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--tinta);
   text-align: center;
 }
 
@@ -52,7 +54,7 @@
 
 /* Entrelinha maior (1.75) para facilitar a leitura dos parágrafos longos. */
 .sobre-texto {
-  font-size: 0.9063rem;
+  font-size: var(--texto-base);
   line-height: 1.75;
   color: var(--tinta-media);
 }
@@ -65,7 +67,8 @@
 
 .sobre-equipe {
   background: var(--branco);
-  border-radius: 24px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio-lg);
   padding: clamp(22px, 3.5vw, 30px);
   box-shadow: var(--sombra-baixa);
 }
@@ -95,8 +98,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #d8eafd;
-  color: var(--azul-marca);
+  background: linear-gradient(135deg, var(--azul-marca), var(--marca-degrade-fim));
+  color: var(--texto-sobre-marca);
   font-size: 0.875rem;
   font-weight: 600;
   display: grid;
@@ -127,7 +130,7 @@
 }
 
 .sobre-aviso {
-  border-left: 5px solid var(--azul-marca);
+  border-left: 3px solid var(--azul-marca);
 }
 
 .sobre-fontes {
@@ -145,9 +148,10 @@
   font-size: 0.875rem;
   line-height: 1.55;
   color: var(--tinta-media);
-  padding: 12px 14px;
+  padding: 14px 16px;
   border: 1px solid var(--linha);
-  border-radius: 14px;
+  border-radius: var(--raio-card);
+  background: var(--azul-nevoa);
 }
 
 .sobre-fontes a {
