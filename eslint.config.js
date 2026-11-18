@@ -21,6 +21,7 @@ export default [
       'api/_integra',
       'playwright-report',
       'test-results',
+      'backend',
     ],
   },
 

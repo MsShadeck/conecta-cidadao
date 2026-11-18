@@ -1,0 +1,51 @@
+sequenceDiagram
+  autonumber
+  actor A as Administrador
+  participant P as Admin.jsx (FormularioLocal)
+  participant S as Spring Security (JWT + perfil)
+  participant C as LocalController
+  participant SV as LocalService
+  participant R as TipoLocal / Bairro / Local Repository
+  participant DB as MySQL
+
+  Note over A,DB: UC14 – Manter locais (fluxo principal: incluir, alterar é igual com PUT)
+  A->>P: Preenche nome, tipo, endereço, telefones, horários e fontes e clica em "Incluir local"
+  P->>S: POST /api/locais + Bearer token
+  alt Token sem perfil ADMIN
+    S-->>P: 403 Forbidden
+    P-->>A: "Você não tem permissão para fazer isso."
+  else Perfil ADMIN
+    S->>C: incluir(@Valid LocalForm)
+    alt Validação falhou (sem fonte, CEP fora de 00000-000, latitude inválida)
+      C-->>P: 400 {"campos": {"fontes": "informe ao menos uma fonte oficial"}}
+      P-->>A: Mensagem embaixo de cada campo
+    else Formulário válido
+      C->>SV: incluir(form)  [@Transactional]
+      SV->>SV: id = slug(nome) → "ubs-jardim-exemplo"
+      SV->>R: localRepository.existsById(id)
+      alt Já existe
+        SV-->>C: RegraNegocioException (409)
+        C-->>P: 409 Conflict
+      else Novo
+        SV->>R: tipoLocalRepository.findById(tipoLocalId)
+        SV->>R: bairroRepository.findFirstByNomeIgnoreCase(bairro)
+        SV->>SV: confere faixas (fecha depois de abre, sem repetir)
+        SV->>R: localRepository.save(local)
+        R->>DB: INSERT INTO local + telefone_local + horario_funcionamento + fonte_local + palavra_chave_local
+        DB-->>R: COMMIT
+        C-->>P: 201 Created + LocalDTO
+        P-->>A: "“UBS Jardim Exemplo” foi incluído." e a lista é recarregada
+      end
+    end
+  end
+
+  Note over A,DB: Excluir (D do CRUD), com confirmação em dois passos na tela
+  A->>P: "Excluir" → "Confirmar exclusão"
+  P->>C: DELETE /api/locais/{id}
+  C->>SV: excluir(id)  [@Transactional]
+  SV->>R: lembreteRepository.desvincularLocal(id)
+  R->>DB: UPDATE lembrete SET local_id = NULL WHERE local_id = ?
+  SV->>R: localRepository.deleteById(id)
+  R->>DB: DELETE FROM local (telefones, horários e fontes saem em cascata)
+  C-->>P: 204 No Content
+  P-->>A: "Local excluído."

@@ -1,0 +1,65 @@
+erDiagram
+  USUARIO {
+    bigint id PK
+    varchar nome
+    varchar email UK
+    char senha_hash
+    enum perfil
+    int bairro_id FK
+    enum tema
+    enum tamanho_fonte
+    boolean libras
+    boolean ativo
+    datetime criado_em
+  }
+  LEMBRETE {
+    bigint id PK
+    bigint usuario_id FK
+    varchar texto
+    date data
+    time hora
+    varchar local_id FK
+    datetime criado_em
+  }
+  SUGESTAO_LOCAL {
+    bigint id PK
+    bigint usuario_id FK
+    varchar categoria_slug FK
+    varchar nome
+    enum status
+    datetime criado_em
+  }
+  PROGRESSO_CHECKLIST {
+    bigint usuario_id PK,FK
+    varchar item_id PK,FK
+    datetime feito_em
+  }
+  AVALIACAO_PAGINA {
+    bigint usuario_id PK,FK
+    varchar pagina PK
+    datetime criado_em
+  }
+  BAIRRO {
+    int id PK
+    varchar nome
+  }
+  LOCAL {
+    varchar id PK
+    varchar nome
+  }
+  CATEGORIA {
+    varchar slug PK
+    varchar nome
+  }
+  CHECKLIST_ITEM {
+    varchar id PK
+    varchar titulo
+  }
+  BAIRRO |o--o{ USUARIO : "0..1:N"
+  USUARIO ||--o{ LEMBRETE : "1:N"
+  LOCAL |o--o{ LEMBRETE : "0..1:N"
+  USUARIO ||--o{ SUGESTAO_LOCAL : "1:N"
+  CATEGORIA ||--o{ SUGESTAO_LOCAL : "1:N"
+  USUARIO ||--o{ PROGRESSO_CHECKLIST : "1:N"
+  CHECKLIST_ITEM ||--o{ PROGRESSO_CHECKLIST : "1:N"
+  USUARIO ||--o{ AVALIACAO_PAGINA : "1:N"

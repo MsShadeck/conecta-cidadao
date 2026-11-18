@@ -1,0 +1,54 @@
+sequenceDiagram
+  autonumber
+  actor U as Usuário cadastrado
+  participant P as Lembretes.jsx
+  participant H as useColecao / SessaoContext
+  participant S as Spring Security (JWT)
+  participant C as LembreteController
+  participant SV as LembreteService
+  participant R as LembreteRepository / LocalRepository
+  participant DB as MySQL
+
+  Note over U,DB: UC08 – Gerenciar lembretes (fluxo principal: criar e listar)
+  U->>P: Preenche texto, data, hora e local e clica em "Adicionar"
+  P->>H: adicionar({texto, data, hora, localId})
+  H->>S: POST /api/lembretes + Authorization: Bearer token
+  S->>S: Valida assinatura e validade do token
+  alt Token ausente ou vencido
+    S-->>H: 401 Unauthorized
+    H-->>P: encerra a sessão
+    P-->>U: "Sua sessão expirou. Entre de novo."
+  else Token válido
+    S->>C: criar(jwt, @Valid LembreteForm)
+    C->>SV: criar(usuarioId do token, form)
+    alt Hora informada sem data (fluxo alternativo 3b)
+      SV-->>C: RegraNegocioException
+      C-->>P: 400 {"mensagem": "Para informar a hora, informe também a data."}
+      P-->>U: Mensagem de erro no formulário
+    else Dados válidos
+      SV->>R: localRepository.findById(localId)
+      R->>DB: SELECT ... FROM local WHERE id = ?
+      DB-->>R: local
+      SV->>R: lembreteRepository.save(lembrete)
+      R->>DB: INSERT INTO lembrete (usuario_id, texto, data, hora, local_id)
+      DB-->>R: id gerado
+      C-->>H: 201 Created + LembreteDTO
+      H-->>P: acrescenta à lista
+      P-->>U: Lembrete na lista, com botão "Calendário" (.ics)
+    end
+  end
+
+  Note over U,DB: Excluir (D do CRUD)
+  U->>P: Clica em "Remover"
+  P->>H: remover(id)
+  H->>C: DELETE /api/lembretes/{id}
+  C->>SV: excluir(usuarioId, id)
+  SV->>R: findByIdAndUsuarioId(id, usuarioId)
+  alt Lembrete de outra pessoa
+    SV-->>C: NaoEncontradoException
+    C-->>P: 404 (não revela que o lembrete existe)
+  else Lembrete do próprio usuário
+    R->>DB: DELETE FROM lembrete WHERE id = ?
+    C-->>H: 204 No Content
+    H-->>P: retira da lista
+  end

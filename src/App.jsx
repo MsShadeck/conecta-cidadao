@@ -15,6 +15,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { LoaderCircle } from 'lucide-react';
 import { AppProvider } from './context/AppContext.jsx';
+import { SessaoProvider } from './context/SessaoContext.jsx';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
 
@@ -34,6 +35,9 @@ const ServicosPublicos = lazy(() => import('./pages/ServicosPublicos.jsx'));
 const MeuBairro = lazy(() => import('./pages/MeuBairro.jsx'));
 const DiaADia = lazy(() => import('./pages/DiaADia.jsx'));
 const Conheca = lazy(() => import('./pages/Conheca.jsx'));
+// PI 2: conta do usuário e painel do administrador (dados no MySQL, pela API Spring Boot).
+const Entrar = lazy(() => import('./pages/Entrar.jsx'));
+const Admin = lazy(() => import('./pages/Admin.jsx'));
 
 /** Mensagem exibida enquanto o arquivo da página chega. */
 function CarregandoPagina() {
@@ -55,64 +59,72 @@ export default function App() {
     <BrowserRouter>
       {/* AppProvider fica dentro do roteador porque o overlay de busca,
           que vive nesse contexto, precisa navegar entre as rotas. */}
-      <AppProvider>
-        <Suspense fallback={<CarregandoPagina />}>
-          <Routes>
-            {/* Rota "pai" sem path: serve apenas para aplicar o Layout
+      {/* SessaoProvider: quem está logado (token da API). Fica por fora para que
+          qualquer componente possa gravar no banco em nome do usuário. */}
+      <SessaoProvider>
+        <AppProvider>
+          <Suspense fallback={<CarregandoPagina />}>
+            <Routes>
+              {/* Rota "pai" sem path: serve apenas para aplicar o Layout
                 (cabeçalho, rodapé, busca e aviso) em todas as páginas filhas.
                 Cada filha é desenhada no <Outlet /> que existe dentro do Layout. */}
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
+              <Route element={<Layout />}>
+                <Route path="/" element={<Home />} />
 
-              {/* Serviços públicos: agrupa as categorias abaixo (que continuam
+                {/* Serviços públicos: agrupa as categorias abaixo (que continuam
                   com os mesmos endereços, para não quebrar links antigos). */}
-              <Route path="/servicos" element={<ServicosPublicos />} />
+                <Route path="/servicos" element={<ServicosPublicos />} />
 
-              {/* As categorias reaproveitam o MESMO componente Categoria.
+                {/* As categorias reaproveitam o MESMO componente Categoria.
                   O que muda é a prop "slug", usada para filtrar os locais. */}
-              <Route path="/saude" element={<Categoria slug="saude" />} />
-              <Route path="/educacao" element={<Categoria slug="educacao" />} />
-              <Route path="/seguranca" element={<Categoria slug="seguranca" />} />
-              <Route path="/lazer" element={<Categoria slug="lazer" />} />
-              <Route path="/cidadania" element={<Categoria slug="cidadania" />} />
+                <Route path="/saude" element={<Categoria slug="saude" />} />
+                <Route path="/educacao" element={<Categoria slug="educacao" />} />
+                <Route path="/seguranca" element={<Categoria slug="seguranca" />} />
+                <Route path="/lazer" element={<Categoria slug="lazer" />} />
+                <Route path="/cidadania" element={<Categoria slug="cidadania" />} />
 
-              {/* Mobilidade tem página própria: além dos terminais, mostra ônibus,
+                {/* Mobilidade tem página própria: além dos terminais, mostra ônibus,
                   cartão SOU, Ecobike e ciclovias. */}
-              <Route path="/mobilidade" element={<Mobilidade />} />
-              <Route path="/como-chegar" element={<ComoChegar />} />
+                <Route path="/mobilidade" element={<Mobilidade />} />
+                <Route path="/como-chegar" element={<ComoChegar />} />
 
-              {/* Recursos para quem mora ou acabou de chegar na cidade. */}
-              <Route path="/mapa" element={<MapaGeral />} />
-              {/* Meu bairro: por CEP, endereço, localização ou bairro.
+                {/* Recursos para quem mora ou acabou de chegar na cidade. */}
+                <Route path="/mapa" element={<MapaGeral />} />
+                {/* Meu bairro: por CEP, endereço, localização ou bairro.
                   /perto-de-mim (v2) continua funcionando e leva para lá; a página antiga
                   (pages/PertoDeMim.jsx) fica no projeto como referência das aulas. */}
-              <Route path="/meu-bairro" element={<MeuBairro />} />
-              <Route path="/dia-a-dia" element={<DiaADia />} />
-              <Route path="/conheca" element={<Conheca />} />
-              <Route path="/bairros/:slug" element={<MeuBairro />} />
-              <Route path="/perto-de-mim" element={<Navigate to="/meu-bairro" replace />} />
-              <Route path="/servicos-online" element={<ServicosOnline />} />
-              <Route path="/primeiros-passos" element={<PrimeirosPassos />} />
+                <Route path="/meu-bairro" element={<MeuBairro />} />
+                <Route path="/dia-a-dia" element={<DiaADia />} />
+                <Route path="/conheca" element={<Conheca />} />
+                <Route path="/bairros/:slug" element={<MeuBairro />} />
+                <Route path="/perto-de-mim" element={<Navigate to="/meu-bairro" replace />} />
+                <Route path="/servicos-online" element={<ServicosOnline />} />
+                <Route path="/primeiros-passos" element={<PrimeirosPassos />} />
 
-              <Route path="/sobre" element={<Sobre />} />
+                <Route path="/sobre" element={<Sobre />} />
 
-              {/* Páginas da aula "useEffect + Consumo de API":
+                {/* Páginas da aula "useEffect + Consumo de API":
                   /contatos usa fetch (Exemplos 2 a 5) e /lembretes é o Exemplo 6. */}
-              <Route path="/contatos" element={<Contatos />} />
-              <Route path="/lembretes" element={<Lembretes />} />
+                <Route path="/contatos" element={<Contatos />} />
+                <Route path="/lembretes" element={<Lembretes />} />
 
-              {/* Detalhe de um local: /saude/ubs-jd-california.
+                {/* PI 2: cadastro/login (UC13) e painel do administrador (UC14 e UC15). */}
+                <Route path="/entrar" element={<Entrar />} />
+                <Route path="/admin" element={<Admin />} />
+
+                {/* Detalhe de um local: /saude/ubs-jd-california.
                   Os dois pedaços da URL chegam pelo useParams() na página.
                   As rotas fixas acima têm prioridade sobre esta. */}
-              <Route path="/:categoria/:id" element={<Local />} />
+                <Route path="/:categoria/:id" element={<Local />} />
 
-              {/* path="*" = curinga. Qualquer endereço não listado acima cai aqui
+                {/* path="*" = curinga. Qualquer endereço não listado acima cai aqui
                   (página 404). Precisa ser sempre a última rota. */}
-              <Route path="*" element={<NaoEncontrada />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </AppProvider>
+                <Route path="*" element={<NaoEncontrada />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </AppProvider>
+      </SessaoProvider>
     </BrowserRouter>
   );
 }

@@ -26,6 +26,8 @@ const PAGINAS = [
   ['/sobre', /Sobre o projeto/],
   ['/contatos', /Telefones úteis/],
   ['/lembretes', /Meus lembretes/],
+  ['/entrar', /Entrar/],
+  ['/admin', /Administração/],
   ['/saude/haoc', /Hospital Augusto de Oliveira Camargo/],
   ['/endereco-que-nao-existe', /Esta página não existe/],
 ];

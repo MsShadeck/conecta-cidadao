@@ -17,11 +17,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import useDados from '../hooks/useDados.js';
 import useLocalStorage from '../hooks/useLocalStorage.js';
+import { useMarcacoes } from '../hooks/useDadosDoUsuario.js';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import EstadoDados from '../components/EstadoDados.jsx';
 import InfoFonte from '../components/InfoFonte.jsx';
 import IconeCategoria from '../components/IconeCategoria.jsx';
 import './PrimeirosPassos.css';
+
+// PI 2 (v3): logado, o progresso vai para a tabela progresso_checklist (API).
+const caminhoItemChecklist = (id) => `/checklist/progresso/${encodeURIComponent(id)}`;
 
 const PERFIS = [
   { id: 'criancas', rotulo: 'Moro com crianças' },
@@ -48,7 +52,11 @@ export default function PrimeirosPassos() {
     document.getElementById(hash.slice(1))?.scrollIntoView({ block: 'start' });
   }, [dados, hash]);
   // Itens feitos: { 'agua': true, ... } — e o perfil da casa.
-  const [feitos, setFeitos] = useLocalStorage('cc:checklist', {});
+  const { marcados: feitos, alternar: alternarFeito } = useMarcacoes({
+    chaveLocal: 'cc:checklist',
+    caminhoLista: '/checklist/progresso',
+    caminhoItem: caminhoItemChecklist,
+  });
   const [perfil, setPerfil] = useLocalStorage('cc:perfil', {
     criancas: true,
     carro: true,
@@ -128,9 +136,7 @@ export default function PrimeirosPassos() {
                         key={item.id}
                         item={item}
                         feito={Boolean(feitos[item.id])}
-                        alternar={() =>
-                          setFeitos((anterior) => ({ ...anterior, [item.id]: !anterior[item.id] }))
-                        }
+                        alternar={() => alternarFeito(item.id)}
                       />
                     ))}
                   </ol>

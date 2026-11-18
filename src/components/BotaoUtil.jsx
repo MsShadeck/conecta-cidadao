@@ -40,8 +40,12 @@ export default function BotaoUtil() {
 // Como o site não tem servidor, o voto é só desta pessoa neste navegador:
 // por isso a mensagem fala em "você" em vez de mostrar um total de curtidas.
 import { ThumbsUp } from 'lucide-react';
-import useLocalStorage from '../hooks/useLocalStorage.js';
+import { useMarcacoes } from '../hooks/useDadosDoUsuario.js';
 import './BotaoUtil.css';
+
+// PI 2 (v3): logado, o voto vai para a tabela avaliacao_pagina (API /api/avaliacoes);
+// o administrador vê o total por página no painel. Visitante: continua no navegador.
+const caminhoVoto = (pagina) => `/avaliacoes?pagina=${encodeURIComponent(pagina)}`;
 
 /**
  * Monta o texto da contagem com o plural certo: "1 curtida", "2 curtidas", "0 curtidas".
@@ -54,13 +58,20 @@ export function textoCurtidas(quantidade) {
 /** @param {{pagina: string}} props - identificador da página, ex.: 'saude' ou 'saude/ubs-x'. */
 export default function BotaoUtil({ pagina }) {
   // Um objeto { 'saude': true, 'lazer': true } com as páginas já votadas.
-  const [votos, setVotos] = useLocalStorage('cc:paginas-uteis', {});
+  const {
+    marcados: votos,
+    alternar: alternarVoto,
+    online,
+  } = useMarcacoes({
+    chaveLocal: 'cc:paginas-uteis',
+    caminhoLista: '/avaliacoes',
+    caminhoItem: caminhoVoto,
+  });
   const votou = Boolean(votos[pagina]);
 
   // O mesmo botão marca e desmarca: clicar de novo desfaz o voto.
   function alternar() {
-    // Copia o objeto antigo (...prev) e troca só a chave desta página.
-    setVotos((prev) => ({ ...prev, [pagina]: !prev[pagina] }));
+    alternarVoto(pagina);
   }
 
   return (
@@ -73,7 +84,10 @@ export default function BotaoUtil({ pagina }) {
       </button>
       <span className="botao-util-contagem" role="status">
         {textoCurtidas(votou ? 1 : 0)}
-        {votou && ' · obrigado! Seu voto fica salvo neste navegador.'}
+        {votou &&
+          (online
+            ? ' · obrigado! Seu voto foi registrado.'
+            : ' · obrigado! Seu voto fica salvo neste navegador.')}
       </span>
     </div>
   );

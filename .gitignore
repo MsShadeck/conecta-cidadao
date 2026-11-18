@@ -6,6 +6,10 @@ dist
 
 .vercel
 .env*
+!.env.example
+
+# Back-end (Maven)
+backend/target
 scripts/.cache
 dev-dist
 playwright-report
