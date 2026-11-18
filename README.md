@@ -9,14 +9,15 @@ eu preciso perto de casa?"_
 
 ## 1. Identificação do projeto
 
-| Campo                 | Informação                                                           |
-| --------------------- | -------------------------------------------------------------------- |
-| Curso                 | Desenvolvimento de Software Multiplataforma (DSM) — Fatec Indaiatuba |
-| Semestre / PI         | 2º semestre — Projeto Integrador 2 (PI 2), 2026-2                    |
-| Tema                  | Desenvolvimento de Sistemas Web com Persistência de Dados            |
-| Disciplina norteadora | Engenharia de Software II                                            |
-| Disciplinas satélite  | Desenvolvimento Web II; Banco de Dados Relacional                    |
-| Integrantes           | Homer Betinatti Gomes; Moisés Globekener de Almeida Shadeck          |
+| Campo                    | Informação                                                           |
+| ------------------------ | -------------------------------------------------------------------- |
+| Curso                    | Desenvolvimento de Software Multiplataforma (DSM) — Fatec Indaiatuba |
+| Semestre / PI            | 2º semestre — Projeto Integrador 2 (PI 2), 2026-2                    |
+| Tema                     | Desenvolvimento de Sistemas Web com Persistência de Dados            |
+| Disciplina norteadora    | Engenharia de Software II                                            |
+| Disciplinas satélite     | Desenvolvimento Web II; Banco de Dados Relacional                    |
+| Integrantes              | Homer Betinatti Gomes; Moisés Globekener de Almeida Shadeck          |
+| Professores responsáveis | Sergio Clauss; Simone Silva; Giovana Fadini                          |
 
 ## 2. Tema, contexto e desafio
 
