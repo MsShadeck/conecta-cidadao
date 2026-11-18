@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph Fontes["Fontes públicas (só no build)"]
+    PF[Portal da Prefeitura]
+    CN[CNES / DataSUS]
+    OSM[OpenStreetMap]
+    IB[IBGE e BrasilAPI]
+  end
+  subgraph Build["Scripts Node.js"]
+    AD[npm run dados]
+    GS[npm run sql]
+  end
+  CU[(Curadoria JSON)]
+  JS[(public/api/*.json)]
+  DB[(MySQL / MariaDB<br/>conecta_cidadao)]
+  subgraph Vercel["Vercel"]
+    SPA[SPA React + Vite<br/>PWA]
+  end
+  subgraph Backend["Back-end Java 21 + Spring Boot 4.1"]
+    API[API REST + JWT<br/>Controller, Service,<br/>Repository JPA]
+  end
+  N[Navegador do cidadão<br/>localStorage]
+  PF & CN & OSM & IB --> AD
+  CU --> AD
+  AD --> JS
+  JS --> GS --> DB
+  JS --> SPA
+  SPA <--> N
+  SPA -- "fetch /api (VITE_API_URL)" --> API
+  API <--> DB

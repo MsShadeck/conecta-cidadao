@@ -1,0 +1,204 @@
+classDiagram
+  direction TB
+
+  class Categoria {
+    -String slug
+    -String nome
+    -String rota
+    -String resumo
+  }
+  class TipoLocal {
+    -Integer id
+    -String nome
+  }
+  class Local {
+    -String id
+    -String nome
+    -String logradouro
+    -String numero
+    -String bairroNome
+    -String cep
+    -String enderecoCompleto
+    -Double latitude
+    -Double longitude
+    -boolean coordenadaAproximada
+    -String coordenadaFonte
+    -String horarioTexto
+    -boolean vinteQuatroHoras
+    -String abreFeriados
+    -String site
+    -String entrada
+    -String imagem
+    -String observacao
+    -String cnes
+    -Boolean temRampa
+    -Boolean temBanheiroAdaptado
+    -LocalDate atualizadoEm
+    -List~String~ telefones
+    -List~String~ servicos
+    -List~String~ fontes
+    -Set~String~ palavrasChave
+    -Set~String~ niveis
+    +estaAberto(agora, hojeEFeriado) boolean
+  }
+  class FaixaHorario {
+    <<embeddable>>
+    -String diaSemana
+    -String abre
+    -String fecha
+    +contem(hora) boolean
+  }
+  class Bairro {
+    -Integer id
+    -String slug
+    -String nome
+    -Double latitude
+    -Double longitude
+  }
+  class ColetaLixo {
+    -Integer id
+    -String localidade
+    -String programacao
+    -String vigencia
+    -String fonteUrl
+  }
+  class Usuario {
+    -Long id
+    -String nome
+    -String email
+    -String senhaHash
+    -Perfil perfil
+    -String tema
+    -String tamanhoFonte
+    -boolean libras
+    -boolean ativo
+    -LocalDateTime criadoEm
+    +isAdmin() boolean
+  }
+  class Perfil {
+    <<enumeration>>
+    CIDADAO
+    ADMIN
+  }
+  class Lembrete {
+    -Long id
+    -String texto
+    -LocalDate data
+    -LocalTime hora
+    -LocalDateTime criadoEm
+    +exportarIcs() String
+  }
+  class SugestaoLocal {
+    -Long id
+    -String nome
+    -StatusSugestao status
+    -LocalDateTime criadoEm
+    +aprovar()
+    +recusar()
+  }
+  class StatusSugestao {
+    <<enumeration>>
+    PENDENTE
+    APROVADA
+    RECUSADA
+  }
+  class ProgressoChecklist {
+    -Long usuarioId
+    -String itemId
+    -LocalDateTime feitoEm
+  }
+  class AvaliacaoPagina {
+    -Long usuarioId
+    -String pagina
+    -LocalDateTime criadoEm
+  }
+  class ChecklistGrupo {
+    -String id
+    -String nome
+    -int ordem
+  }
+  class ChecklistItem {
+    -String id
+    -String titulo
+    -String oQueE
+    -String porQue
+    -String comoFazer
+    -boolean online
+    -String documentos
+    -String prazo
+    -String perfil
+    -String paginaRota
+    -int ordem
+  }
+  class ChecklistLink {
+    -Integer id
+    -String nome
+    -String url
+  }
+  class Feriado {
+    -LocalDate data
+    -String nome
+    -String tipo
+    -String fonteUrl
+    +fechaServicos() boolean
+  }
+  class Contato {
+    -String id
+    -String nome
+    -String telefone
+    -String descricao
+    -String grupo
+    -boolean emergencia
+    -String fonteUrl
+  }
+  class CategoriaServicoOnline {
+    -String slug
+    -String nome
+  }
+  class ServicoOnline {
+    -String id
+    -String nome
+    -String descricao
+    -String url
+  }
+  class GrupoComercio {
+    -String id
+    -String nome
+  }
+  class Estabelecimento {
+    -String id
+    -String nome
+    -String tipo
+    -String logradouro
+    -String numero
+    -String bairroNome
+    -Double latitude
+    -Double longitude
+    -String telefone
+    -String horarioTexto
+    -String site
+    -String observacao
+    -String osmRef
+    -LocalDate atualizadoEm
+  }
+
+  Categoria "1" --> "1..*" TipoLocal : classifica
+  TipoLocal "1" --> "*" Local : tipifica
+  Bairro "0..1" <-- "*" Local : localizado em
+  Bairro "1" *-- "*" ColetaLixo : tem
+  Local "1" *-- "*" FaixaHorario : horários
+  Usuario "*" --> "0..1" Bairro : meu bairro
+  Usuario --> Perfil
+  Usuario "1" *-- "*" Lembrete : cria
+  Lembrete "*" --> "0..1" Local : cita
+  Usuario "1" *-- "*" SugestaoLocal : envia
+  SugestaoLocal "*" --> "1" Categoria : em
+  SugestaoLocal --> StatusSugestao
+  Usuario "1" *-- "*" ProgressoChecklist : marca
+  ProgressoChecklist "*" --> "1" ChecklistItem : item
+  Usuario "1" *-- "*" AvaliacaoPagina : vota
+  ChecklistGrupo "1" *-- "1..*" ChecklistItem : agrupa
+  ChecklistItem "1" *-- "1..*" ChecklistLink : links
+  CategoriaServicoOnline "1" --> "*" ServicoOnline : agrupa
+  GrupoComercio "1" --> "*" Estabelecimento : agrupa
+  Local ..> Feriado : estaAberto() consulta

@@ -1,0 +1,77 @@
+erDiagram
+  CONTATO {
+    varchar id PK
+    varchar nome
+    varchar telefone
+    varchar descricao
+    varchar grupo
+    boolean emergencia
+    varchar fonte_url
+  }
+  FERIADO {
+    date data PK
+    varchar nome
+    enum tipo
+    varchar fonte_url
+  }
+  CATEGORIA_SERVICO_ONLINE {
+    varchar slug PK
+    varchar nome
+  }
+  SERVICO_ONLINE {
+    varchar id PK
+    varchar nome
+    varchar descricao
+    varchar categoria_slug FK
+    varchar url
+  }
+  CHECKLIST_GRUPO {
+    varchar id PK
+    varchar nome
+    tinyint ordem
+  }
+  CHECKLIST_ITEM {
+    varchar id PK
+    varchar grupo_id FK
+    varchar titulo
+    text o_que_e
+    text por_que
+    text como_fazer
+    boolean online
+    text documentos
+    varchar prazo
+    varchar perfil
+    varchar pagina_rota
+    tinyint ordem
+  }
+  CHECKLIST_LINK {
+    int id PK
+    varchar item_id FK
+    varchar nome
+    varchar url
+  }
+  GRUPO_COMERCIO {
+    varchar id PK
+    varchar nome
+  }
+  ESTABELECIMENTO {
+    varchar id PK
+    varchar nome
+    varchar tipo
+    varchar grupo_id FK
+    varchar logradouro
+    varchar numero
+    varchar bairro_nome
+    decimal latitude
+    decimal longitude
+    varchar telefone
+    varchar horario_texto
+    varchar site
+    varchar observacao
+    varchar osm_ref
+    date atualizado_em
+  }
+  CATEGORIA_SERVICO_ONLINE ||--o{ SERVICO_ONLINE : "1:N"
+  CHECKLIST_GRUPO ||--|{ CHECKLIST_ITEM : "1:N"
+  CHECKLIST_ITEM ||--|{ CHECKLIST_LINK : "1:N"
+  GRUPO_COMERCIO ||--o{ ESTABELECIMENTO : "1:N"

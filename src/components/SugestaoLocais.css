@@ -64,3 +64,17 @@
 .sugestao-remover:hover {
   background: color-mix(in srgb, currentColor 14%, transparent);
 }
+
+/* PI 2: situação da moderação e erro da API */
+.sugestao-status {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.sugestao-erro {
+  font-size: var(--texto-sm);
+  color: var(--alerta-tinta);
+  background: var(--alerta-fundo);
+  border-radius: var(--raio-sm);
+  padding: 8px 12px;
+}

@@ -135,3 +135,28 @@
 .lembrete-calendario:hover {
   background: var(--azul-nevoa);
 }
+
+/* PI 2: onde os lembretes ficam salvos, erro da API e importação do navegador */
+.lembretes-onde {
+  font-size: var(--texto-sm);
+}
+
+.lembretes-erro {
+  font-size: var(--texto-sm);
+  color: var(--alerta-tinta);
+  background: var(--alerta-fundo);
+  border-radius: var(--raio-sm);
+  padding: 8px 12px;
+}
+
+.lembretes-importar {
+  font: inherit;
+  font-weight: 600;
+  color: var(--azul-marca);
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}

@@ -102,10 +102,13 @@ export default function Lembretes() {
 // VERSÃO ATIVA — cada lembrete tem id único, data opcional, pode ser ligado a
 // um local do site e pode ir para o calendário do celular (.ics).
 // A lista fica salva no navegador (useLocalStorage).
+// PI 2 (v3): quem entra na conta grava os lembretes no banco MySQL, pela API
+// (hook useColecao); o visitante continua usando o navegador.
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
-import useLocalStorage from '../hooks/useLocalStorage.js';
+import { useColecao } from '../hooks/useDadosDoUsuario.js';
+import { useSessao } from '../context/SessaoContext.jsx';
 import useTituloPagina from '../hooks/useTituloPagina.js';
 import useDados from '../hooks/useDados.js';
 import { formatarData } from '../utils/datas.js';
@@ -124,10 +127,21 @@ export default function Lembretes() {
   // ?local=ubs-cecap (vindo do botão "Criar lembrete" da página do local) já
   // chega selecionado.
   const [localId, setLocalId] = useState(() => parametros.get('local') ?? '');
-  // useLocalStorage no lugar do useState: a lista sobrevive ao F5.
-  // Cada item é { id, texto, data?, hora?, localId? }. Os lembretes salvos pela
-  // versão anterior ({ id, texto }) continuam funcionando.
-  const [lista, setLista] = useLocalStorage('cc:lembretes', []);
+  // Cada item é { id, texto, data?, hora?, localId? }. Visitante: localStorage
+  // (sobrevive ao F5). Logado: tabela lembrete do banco, pela API /api/lembretes.
+  const {
+    lista,
+    adicionar: salvar,
+    remover: excluir,
+    online,
+    carregando,
+    erro: erroLista,
+    noNavegador,
+    importarDoNavegador,
+  } = useColecao({ chaveLocal: 'cc:lembretes', caminho: '/lembretes' });
+  const { apiAtiva } = useSessao();
+  const [erro, setErro] = useState(null);
+  const [salvando, setSalvando] = useState(false);
 
   const locaisPorId = useMemo(() => new Map((dados?.locais ?? []).map((l) => [l.id, l])), [dados]);
   const localEscolhido = locaisPorId.get(localId);
@@ -145,23 +159,36 @@ export default function Lembretes() {
     [lista]
   );
 
-  function adicionar() {
+  async function adicionar() {
     const texto = tarefa.trim();
     if (texto === '') return;
-    // crypto.randomUUID() cria um id único, usado como key e para remover.
-    const novo = { id: crypto.randomUUID(), texto };
+    // O id é criado pelo hook (navegador) ou pelo banco (API).
+    const novo = { texto };
     if (data) novo.data = data;
     if (data && hora) novo.hora = hora;
     if (localId) novo.localId = localId;
-    setLista((prev) => [...prev, novo]);
-    setTarefa('');
-    setData('');
-    setHora('');
+    setErro(null);
+    setSalvando(true);
+    try {
+      await salvar(novo);
+      setTarefa('');
+      setData('');
+      setHora('');
+    } catch (e) {
+      setErro(e.message);
+    } finally {
+      setSalvando(false);
+    }
   }
 
-  function remover(id) {
+  async function remover(id) {
     // Remove pelo id: apagar um item do meio não afeta os outros.
-    setLista((prev) => prev.filter((item) => item.id !== id));
+    setErro(null);
+    try {
+      await excluir(id);
+    } catch (e) {
+      setErro(e.message);
+    }
   }
 
   /** Junta o local completo (nome e endereço) para o arquivo de calendário. */
@@ -182,8 +209,22 @@ export default function Lembretes() {
         <h1 className="titulo-pagina">Meus lembretes</h1>
         <p className="texto-apoio">
           Anote o que você precisa resolver nos serviços de Indaiatuba, como agendar uma consulta ou
-          fazer a matrícula na escola. Os lembretes ficam salvos só neste navegador; os que têm data
-          podem ir para a agenda do celular.
+          fazer a matrícula na escola. Os que têm data podem ir para a agenda do celular.
+        </p>
+        <p className="texto-apoio lembretes-onde">
+          {online ? (
+            'Seus lembretes ficam salvos na sua conta e aparecem em qualquer aparelho em que você entrar.'
+          ) : (
+            <>
+              Os lembretes ficam salvos só neste navegador.
+              {apiAtiva && (
+                <>
+                  {' '}
+                  <Link to="/entrar">Entre na sua conta</Link> para guardá-los em qualquer aparelho.
+                </>
+              )}
+            </>
+          )}
         </p>
       </section>
 
@@ -241,10 +282,28 @@ export default function Lembretes() {
                 ))}
               </select>
             </label>
-            <button type="submit" className="botao-primario">
-              Adicionar
+            <button type="submit" className="botao-primario" disabled={salvando}>
+              {salvando ? 'Salvando...' : 'Adicionar'}
             </button>
           </form>
+          {(erro || erroLista) && (
+            <p className="lembretes-erro" role="alert">
+              {erro || erroLista}
+            </p>
+          )}
+          {noNavegador > 0 && (
+            <p className="lembretes-dica">
+              Há {noNavegador} {noNavegador === 1 ? 'lembrete salvo' : 'lembretes salvos'} só neste
+              navegador.{' '}
+              <button
+                type="button"
+                className="lembretes-importar"
+                onClick={() => importarDoNavegador().catch((e) => setErro(e.message))}
+              >
+                Levar para a minha conta
+              </button>
+            </p>
+          )}
           {localEscolhido && (
             <p className="lembretes-dica">
               Ligado a: <strong>{localEscolhido.nome}</strong>
@@ -265,7 +324,12 @@ export default function Lembretes() {
             )}
           </div>
 
-          {lista.length === 0 && <p className="lembretes-vazio">Nenhum lembrete</p>}
+          {carregando && (
+            <p className="lembretes-vazio" role="status">
+              Carregando seus lembretes...
+            </p>
+          )}
+          {!carregando && lista.length === 0 && <p className="lembretes-vazio">Nenhum lembrete</p>}
 
           <ul className="lembretes-lista">
             {ordenada.map((item) => {

@@ -8,3 +8,5 @@ api/_integra/data
 public/api/locais.json
 playwright-report
 test-results
+backend/target
+database

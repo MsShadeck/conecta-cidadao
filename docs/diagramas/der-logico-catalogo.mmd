@@ -1,0 +1,96 @@
+erDiagram
+  CATEGORIA {
+    varchar slug PK
+    varchar nome UK
+    varchar rota UK
+    varchar resumo
+  }
+  TIPO_LOCAL {
+    int id PK
+    varchar nome
+    varchar categoria_slug FK
+  }
+  BAIRRO {
+    int id PK
+    varchar slug UK
+    varchar nome
+    decimal latitude
+    decimal longitude
+  }
+  COLETA_LIXO {
+    int id PK
+    int bairro_id FK
+    varchar localidade
+    varchar programacao
+    varchar vigencia
+    varchar fonte_url
+  }
+  LOCAL {
+    varchar id PK
+    varchar nome
+    int tipo_local_id FK
+    varchar logradouro
+    varchar numero
+    varchar bairro_nome
+    int bairro_id FK
+    char cep
+    varchar endereco_completo
+    decimal latitude
+    decimal longitude
+    boolean coordenada_aproximada
+    enum coordenada_fonte
+    varchar horario_texto
+    boolean vinte_quatro_horas
+    enum abre_feriados
+    varchar site
+    varchar entrada
+    varchar imagem
+    text observacao
+    varchar cnes
+    boolean tem_rampa
+    boolean tem_banheiro_adaptado
+    date atualizado_em
+  }
+  TELEFONE_LOCAL {
+    int id PK
+    varchar local_id FK
+    varchar numero
+    tinyint ordem
+  }
+  HORARIO_FUNCIONAMENTO {
+    int id PK
+    varchar local_id FK
+    enum dia_semana
+    time abre
+    time fecha
+  }
+  SERVICO_LOCAL {
+    int id PK
+    varchar local_id FK
+    varchar descricao
+    tinyint ordem
+  }
+  NIVEL_ENSINO_LOCAL {
+    varchar local_id PK,FK
+    varchar nivel PK
+  }
+  PALAVRA_CHAVE_LOCAL {
+    varchar local_id PK,FK
+    varchar palavra PK
+  }
+  FONTE_LOCAL {
+    int id PK
+    varchar local_id FK
+    varchar url
+    tinyint ordem
+  }
+  CATEGORIA ||--|{ TIPO_LOCAL : "1:N"
+  TIPO_LOCAL ||--o{ LOCAL : "1:N"
+  BAIRRO |o--o{ LOCAL : "0..1:N"
+  BAIRRO ||--o{ COLETA_LIXO : "1:N"
+  LOCAL ||--o{ TELEFONE_LOCAL : "1:N"
+  LOCAL ||--o{ HORARIO_FUNCIONAMENTO : "1:N"
+  LOCAL ||--o{ SERVICO_LOCAL : "1:N"
+  LOCAL ||--o{ NIVEL_ENSINO_LOCAL : "1:N"
+  LOCAL ||--o{ PALAVRA_CHAVE_LOCAL : "1:N"
+  LOCAL ||--|{ FONTE_LOCAL : "1:N"

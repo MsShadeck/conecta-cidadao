@@ -1,17 +1,133 @@
 # Conecta Cidadão — Indaiatuba
 
-Guia **não oficial** para quem acabou de se mudar para **Indaiatuba (SP)**. A pergunta que o site
-responde: _"Acabei de chegar. O que eu preciso resolver, e onde fica o que eu preciso perto de casa?"_
+Guia **não oficial** de serviços públicos para quem acabou de se mudar para **Indaiatuba (SP)**.
+A pergunta que o sistema responde: _"Acabei de chegar. O que eu preciso resolver, e onde fica o que
+eu preciso perto de casa?"_
 
-- **Primeiros passos:** checklist da mudança (cartão SUS, escola, água, luz, IPTU, título de eleitor...),
-  com documentos e prazos só quando a fonte oficial informa;
-- **Meu bairro:** pelo CEP, endereço, localização ou bairro, a UBS, a escola, o mercado, a farmácia, o
-  ônibus e o parque mais perto, e o dia da coleta de lixo quando a Prefeitura publica;
-- **Serviços públicos, Dia a dia, Transporte, Lazer e cultura e Conheça Indaiatuba**, com endereço,
-  telefone, horário ("Aberto agora") e os botões **Ir com Waze** e **Google Maps** em cada lugar.
+**Site:** https://conecta-cidadao-blue.vercel.app · **Documentação completa (PDF):**
+[`documentacao/`](documentacao/)
 
-Projeto Integrador do curso de DSM da Fatec Indaiatuba, em React 18 + Vite 5 + React Router 6.
-Sem vínculo com a Prefeitura: todos os dados vêm de fontes públicas, citadas em cada página.
+## 1. Identificação do projeto
+
+| Campo                 | Informação                                                           |
+| --------------------- | -------------------------------------------------------------------- |
+| Curso                 | Desenvolvimento de Software Multiplataforma (DSM) — Fatec Indaiatuba |
+| Semestre / PI         | 2º semestre — Projeto Integrador 2 (PI 2), 2026-2                    |
+| Tema                  | Desenvolvimento de Sistemas Web com Persistência de Dados            |
+| Disciplina norteadora | Engenharia de Software II                                            |
+| Disciplinas satélite  | Desenvolvimento Web II; Banco de Dados Relacional                    |
+| Integrantes           | Homer Betinatti Gomes; Moisés Globekener de Almeida Shadeck          |
+
+## 2. Tema, contexto e desafio
+
+A informação sobre UBS, escolas, CRAS e outros serviços de Indaiatuba está espalhada em várias páginas
+oficiais. Quem acabou de chegar à cidade precisa descobrir tudo ao mesmo tempo. O desafio do PI 2 foi
+transformar o guia do PI 1 em um **sistema web com persistência de dados**: dados reais com fonte
+oficial, banco relacional MySQL, API em Java com Spring Boot, contas de usuário e painel do administrador.
+
+## 3. Objetivos
+
+**Geral:** desenvolver um sistema web com persistência de dados que reúna os serviços públicos e o
+comércio essencial de Indaiatuba, aplicando engenharia de software, desenvolvimento web e banco de dados.
+
+**Específicos:** evoluir os requisitos do PI 1; modelar o banco (conceitual, lógico, dicionário, SQL);
+implementar o CRUD; integrar front-end e back-end; garantir qualidade com testes e acessibilidade;
+documentar o projeto no GitHub.
+
+## 4. Metodologias
+
+Aprendizagem Baseada em Projetos, estudo de caso real (dados da Prefeitura, CNES, IBGE e OpenStreetMap),
+sala de aula invertida (as atividades de React viraram partes do projeto) e práticas estruturadas:
+Git/GitHub, publicação contínua na Vercel, ESLint/Prettier e testes automatizados.
+
+## 5. Fases do projeto
+
+| Fase | Entrega                                      | Onde está                                                      |
+| ---- | -------------------------------------------- | -------------------------------------------------------------- |
+| 1    | Revisão da ideia e do escopo                 | Documentação, seção 5.1                                        |
+| 2    | Requisitos, casos de uso, classes, sequência | Documentação, seção 5.2 · [`docs/diagramas/`](docs/diagramas/) |
+| 3    | DER, modelo lógico, dicionário, scripts SQL  | [`database/`](database/README.md) · documentação, seção 5.3    |
+| 4    | Sistema web integrado ao banco (CRUD)        | `src/` (React) · [`backend/`](backend/README.md) (Spring Boot) |
+| 5    | Testes e validação dos requisitos            | `npm test`, `npm run test:e2e`, `backend: mvnw test` · seção 8 |
+| 6    | Produto final, documentação e pitch          | Site publicado · [`documentacao/`](documentacao/)              |
+
+## 6. Entregáveis por disciplina
+
+- **Engenharia de Software II:** requisitos (16 RF, 10 RNF), casos de uso, diagrama de classes completo,
+  diagramas de sequência dos casos de uso UC08 e UC14, organização das fases, documentação técnica.
+- **Desenvolvimento Web II:** front-end React com rotas e hooks; API REST em Spring Boot; CRUD de locais
+  (painel `/admin`), lembretes, sugestões, checklist e votos; login com JWT.
+- **Banco de Dados Relacional:** DER, modelo lógico, dicionário de dados, scripts de criação, carga,
+  CRUD e testes de integridade em [`database/`](database/README.md).
+
+## 7. Tecnologias
+
+| Camada         | Tecnologias                                                                  |
+| -------------- | ---------------------------------------------------------------------------- |
+| Front-end      | **JavaScript** (React 18, Vite 5, React Router 6), CSS próprio, PWA          |
+| Back-end       | **Java 21**, Spring Boot 4.1, Spring Data JPA, Spring Security (JWT, BCrypt) |
+| Banco de dados | **SQL** — MySQL 8 / MariaDB (XAMPP), phpMyAdmin                              |
+| Mapas          | Leaflet + OpenFreeMap, iFrame e links do Waze, links do Google Maps          |
+| Testes         | Vitest, Playwright, JUnit 5 + MockMvc                                        |
+| Ferramentas    | Git, GitHub, Vercel, VS Code, Figma, Mermaid (diagramas)                     |
+
+## 8. Testes e qualidade
+
+- **Front-end:** 92 testes unitários (Vitest) e 62 de ponta a ponta (Playwright, computador e celular).
+- **API:** 10 testes de integração (HTTP → JPA → banco) com JUnit 5 e MockMvc.
+- **Banco:** 10 comandos inválidos recusados (PK, FK, UNIQUE, CHECK, ENUM, NOT NULL, RESTRICT) e a
+  conferência da carga sem problemas. A API lendo o MySQL devolve os 212 locais idênticos ao JSON.
+- **Acessibilidade:** WCAG 2.1 AA, Lighthouse 100 em acessibilidade, tema escuro, VLibras.
+
+## 9. Curricularização da extensão
+
+Guia gratuito, aberto e sem anúncios para novos moradores e para a população de Indaiatuba, com dados
+oficiais e acessível (Libras, tamanho de letra, alto contraste, funciona sem internet).
+
+## 10. Resultados
+
+212 serviços públicos, 118 bairros, 135 comércios, 34 telefones úteis, 18 serviços online e
+16 tarefas no checklist da mudança, todos com fonte oficial. O sistema tem banco MySQL com 25 tabelas,
+API REST, contas de usuário e painel do administrador. A versão publicada na Vercel funciona no modo
+"só navegador"; o sistema completo (API + MySQL) roda localmente com o XAMPP.
+
+## 11. Portfólio (este repositório)
+
+`src/` front-end · `backend/` API Java · `database/` scripts SQL · `docs/` fontes de dados e diagramas ·
+`documentacao/` PDFs · `tests/` testes de ponta a ponta.
+
+## 12. Cronograma
+
+Fases 1 a 5 concluídas; entrega final pronta; apresentação (pitch) na semana 15.
+
+## 13. Apresentação (pitch)
+
+Roteiro e slides em [`documentacao/`](documentacao/).
+
+## 14. Considerações finais
+
+As três disciplinas se completaram. A principal lição foi validar o modelo com os dados de verdade:
+quatro decisões do banco só se mostraram erradas quando a API leu os 212 locais reais.
+
+## 15. Referências
+
+Lista completa na documentação (seção 15).
+
+### Rodar o sistema completo (site + API + banco)
+
+1. XAMPP: ligue o MySQL e importe `database/01-criacao.sql` e `database/02-carga-dados.sql`.
+2. API: siga [`backend/README.md`](backend/README.md) (`.\mvnw.cmd spring-boot:run`, porta 8080).
+3. Site: crie `.env.local` com `VITE_API_URL=http://localhost:8080` e rode `npm run dev`.
+
+Sem a API, o site funciona como a versão publicada: lê `public/api/*.json` e guarda os dados de cada
+pessoa só no navegador.
+
+---
+
+# Guia técnico
+
+Front-end em React 18 + Vite 5 + React Router 6. Sem vínculo com a Prefeitura: todos os dados vêm de
+fontes públicas, citadas em cada página.
 
 ## Como rodar
 
@@ -32,6 +148,7 @@ npm run dev     # abre em http://localhost:5173
 | `npm run dados`                        | Atualiza `public/api/*.json` a partir das fontes (ver abaixo)                                |
 | `npm run dados:prefeitura`             | Relê as fichas oficiais no portal da Prefeitura (lento de propósito: 1 página a cada 1,2 s)  |
 | `npm run dados:prefeitura -- --coleta` | Relê só a tabela oficial de coleta de lixo por bairro                                        |
+| `npm run sql`                          | Gera `database/02-carga-dados.sql` a partir de `public/api/*.json` (banco MySQL do PI 2)     |
 | `npm run integra`                      | Traz o roteamento e o viário do Indaiatuba Integra (usado pela `api/rota.js`, da v2)         |
 | `npm run imagens`                      | Gera as versões WebP das fotos, os ícones e a imagem de prévia                               |
 | `npm run contraste`                    | Confere o contraste das cores (WCAG AA)                                                      |
@@ -54,6 +171,8 @@ npm run dev     # abre em http://localhost:5173
 | Serviços online da Prefeitura                                      | `/servicos-online`                                                                                |
 | Telefones úteis                                                    | `/contatos`                                                                                       |
 | Lembretes (com data, local e `.ics`)                               | `/lembretes` (aceita `?local=id` e `?texto=`)                                                     |
+| Entrar, criar conta e Minha conta (com a API)                      | `/entrar`                                                                                         |
+| Painel do administrador: CRUD de locais, sugestões e votos         | `/admin`                                                                                          |
 | Sobre, fontes e créditos                                           | `/sobre`                                                                                          |
 
 Todas abrem por URL direta e com F5: o `vercel.json` manda tudo para o `index.html` (menos `/api/`).
@@ -64,7 +183,10 @@ As páginas são carregadas sob demanda (`React.lazy`), e o mapa (Leaflet) só n
 ```
 api/rota.js                função serverless da v2: rota a pé e de bike (Integra); a v3 não a usa mais
 api/_integra/              gerado por npm run integra (não editar)
-docs/                      fontes de dados e integração com o Indaiatuba Integra
+backend/                   API REST do PI 2 (Java 21 + Spring Boot 4.1 + JPA + JWT) — ver backend/README.md
+database/                  banco MySQL do PI 2: criação, carga, CRUD e testes de integridade (.sql)
+documentacao/              documentação do PI 2, manual do professor e versão do PI 1 (PDF)
+docs/                      fontes de dados, integração com o Indaiatuba Integra e diagramas/ (DER, UML)
 public/api/                dados que o site lê com fetch (gerados por npm run dados)
 public/img/                fotos (JPG + WebP), ícones e CREDITOS.md
 scripts/
@@ -75,7 +197,9 @@ src/
   data/servicos.js         categorias (nome, cor, ícone, texto) e equipe
   data/curadoria/          correções e acréscimos feitos à mão (prioridade sobre as fontes)
   context/AppContext.jsx   estado global: busca, avisos e ponto de partida (origem)
-  hooks/                   useDados, useLocalStorage, useMetadados, useTituloPagina
+  context/SessaoContext.jsx  conta do usuário: entrar, cadastrar, sair e token da API
+  services/api.js          cliente da API (VITE_API_URL); sem ela, o site usa só o navegador
+  hooks/                   useDados, useLocalStorage, useDadosDoUsuario (navegador ou API), useMetadados...
   utils/                   texto, horário (aberto agora), geo, busca, CEP, .ics, navegação (Waze/Google),
                            proximidade (o que fica mais perto de um ponto)
   components/              Cabecalho, BuscaOverlay, CardLocal, BotoesNavegacao, MapaWaze, mapa/…
@@ -85,8 +209,12 @@ src/
 
 ## De onde vêm os dados
 
-O site não tem banco de dados. `npm run dados` gera arquivos JSON em `public/api/`, e as páginas leem
+O site publicado lê arquivos JSON: `npm run dados` gera os arquivos em `public/api/`, e as páginas leem
 com `fetch('/api/...')` (o mesmo padrão da aula de useEffect, agora no hook `useDados`).
+
+Para o PI 2, os mesmos dados também foram modelados em um **banco relacional MySQL** (25 tabelas), em
+[`database/`](database/README.md): script de criação, carga gerada por `npm run sql`, CRUD e testes de
+integridade. Os diagramas (DER, classes, sequência e casos de uso) ficam em `docs/diagramas/`.
 
 | Arquivo                                         | Conteúdo                                                                                                                      | Fontes                                                |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |

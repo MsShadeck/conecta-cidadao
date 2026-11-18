@@ -25,8 +25,11 @@ import {
   Menu,
   Navigation,
   Phone,
+  ShieldCheck,
+  UserRound,
   X,
 } from 'lucide-react';
+import { useSessao } from '../context/SessaoContext.jsx';
 import { useBusca } from '../context/AppContext.jsx';
 import IconeLupa from './IconeLupa.jsx';
 import PreferenciasTela from './PreferenciasTela.jsx';
@@ -68,6 +71,21 @@ const LINKS_MENU = [
 
 export default function Cabecalho() {
   const { abrirBusca } = useBusca();
+  // PI 2: "Entrar / Minha conta" e "Administração" só aparecem quando a API existe.
+  const { apiAtiva, usuario, ehAdmin } = useSessao();
+  const linksMenu = [
+    ...LINKS_MENU,
+    ...(apiAtiva
+      ? [
+          {
+            rota: '/entrar',
+            nome: usuario ? `Minha conta (${usuario.nome.split(' ')[0]})` : 'Entrar',
+            Icone: UserRound,
+          },
+        ]
+      : []),
+    ...(ehAdmin ? [{ rota: '/admin', nome: 'Administração', Icone: ShieldCheck }] : []),
+  ];
   const { pathname } = useLocation();
   const [menuAberto, setMenuAberto] = useState(false);
 
@@ -163,7 +181,7 @@ export default function Cabecalho() {
                         </Dialog.Close>
                       </div>
                       <ul>
-                        {LINKS_MENU.map((link) => (
+                        {linksMenu.map((link) => (
                           <li key={link.rota}>
                             <NavLink
                               to={link.rota}

@@ -14,10 +14,33 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { apiAtiva, urlDaApi } from '../services/api.js';
 
 // Fica FORA do hook: é compartilhado por todos os componentes enquanto a aba
 // estiver aberta. Guarda só respostas que deram certo.
 const cache = new Map();
+
+/**
+ * PI 2: com a API ligada (VITE_API_URL), os locais vêm do banco MySQL, no mesmo
+ * formato do arquivo. Se a API não responder, o site cai para o arquivo estático,
+ * então continua funcionando (e offline, pelo PWA).
+ */
+const NA_API = { '/api/locais.json': '/locais' };
+
+async function buscarJson(url, signal) {
+  const enderecos = apiAtiva && NA_API[url] ? [urlDaApi(NA_API[url]), url] : [url];
+  for (const [i, endereco] of enderecos.entries()) {
+    try {
+      const resposta = await fetch(endereco, { signal });
+      if (!resposta.ok) throw new Error(`Não foi possível carregar os dados (${resposta.status}).`);
+      return await resposta.json();
+    } catch (erro) {
+      // AbortError ou última opção: repassa o erro. Senão, tenta o próximo endereço.
+      if (erro.name === 'AbortError' || i === enderecos.length - 1) throw erro;
+    }
+  }
+  return null;
+}
 
 export default function useDados(url) {
   const [estado, setEstado] = useState(() => ({
@@ -38,12 +61,7 @@ export default function useDados(url) {
     const controle = new AbortController();
     setEstado({ dados: null, carregando: true, erro: null });
 
-    fetch(url, { signal: controle.signal })
-      .then((resposta) => {
-        if (!resposta.ok)
-          throw new Error(`Não foi possível carregar os dados (${resposta.status}).`);
-        return resposta.json();
-      })
+    buscarJson(url, controle.signal)
       .then((dados) => {
         cache.set(url, dados);
         setEstado({ dados, carregando: false, erro: null });

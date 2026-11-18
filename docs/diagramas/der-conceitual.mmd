@@ -1,0 +1,76 @@
+flowchart LR
+  classDef ent fill:#eef4fa,stroke:#1a4f7a,stroke-width:1.5px,color:#111
+  classDef rel fill:#fff6e0,stroke:#8a6500,color:#111
+
+  CAT[CATEGORIA]:::ent
+  TIP[TIPO_LOCAL]:::ent
+  LOC[LOCAL]:::ent
+  BAI[BAIRRO]:::ent
+  COL[COLETA_LIXO]:::ent
+  TEL[TELEFONE_LOCAL]:::ent
+  HOR[HORARIO_FUNCIONAMENTO]:::ent
+  SER[SERVICO_LOCAL]:::ent
+  NIV[NIVEL_ENSINO_LOCAL]:::ent
+  PAL[PALAVRA_CHAVE_LOCAL]:::ent
+  FON[FONTE_LOCAL]:::ent
+  USU[USUARIO]:::ent
+  LEM[LEMBRETE]:::ent
+  SUG[SUGESTAO_LOCAL]:::ent
+  PRO[PROGRESSO_CHECKLIST]:::ent
+  AVA[AVALIACAO_PAGINA]:::ent
+  CKG[CHECKLIST_GRUPO]:::ent
+  CKI[CHECKLIST_ITEM]:::ent
+  CKL[CHECKLIST_LINK]:::ent
+  CSO[CATEGORIA_SERVICO_ONLINE]:::ent
+  SON[SERVICO_ONLINE]:::ent
+  GCO[GRUPO_COMERCIO]:::ent
+  EST[ESTABELECIMENTO]:::ent
+  CON[CONTATO]:::ent
+  FER[FERIADO]:::ent
+
+  r1{classifica}:::rel
+  r2{tipifica}:::rel
+  r3{localiza}:::rel
+  r4{tem}:::rel
+  r5{possui}:::rel
+  r6{funciona}:::rel
+  r7{oferece}:::rel
+  r8{atende}:::rel
+  r9{indexa}:::rel
+  r10{comprova}:::rel
+  r11{mora}:::rel
+  r12{cria}:::rel
+  r13{cita}:::rel
+  r14{envia}:::rel
+  r15{recebe}:::rel
+  r16{marca}:::rel
+  r17{marcado}:::rel
+  r18{vota}:::rel
+  r19{agrupa}:::rel
+  r20{referencia}:::rel
+  r21{agrupa}:::rel
+  r22{agrupa}:::rel
+
+  CAT ---|1| r1 ---|N| TIP
+  TIP ---|1| r2 ---|N| LOC
+  BAI ---|0..1| r3 ---|N| LOC
+  BAI ---|1| r4 ---|N| COL
+  LOC ---|1| r5 ---|N| TEL
+  LOC ---|1| r6 ---|N| HOR
+  LOC ---|1| r7 ---|N| SER
+  LOC ---|1| r8 ---|N| NIV
+  LOC ---|1| r9 ---|N| PAL
+  LOC ---|1| r10 ---|1..N| FON
+  BAI ---|0..1| r11 ---|N| USU
+  USU ---|1| r12 ---|N| LEM
+  LOC ---|0..1| r13 ---|N| LEM
+  USU ---|1| r14 ---|N| SUG
+  CAT ---|1| r15 ---|N| SUG
+  USU ---|1| r16 ---|N| PRO
+  CKI ---|1| r17 ---|N| PRO
+  USU ---|1| r18 ---|N| AVA
+  CKG ---|1| r19 ---|1..N| CKI
+  CKI ---|1| r20 ---|1..N| CKL
+  CSO ---|1| r21 ---|N| SON
+  GCO ---|1| r22 ---|N| EST
+  CON ~~~ FER

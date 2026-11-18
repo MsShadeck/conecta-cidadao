@@ -110,37 +110,61 @@ export default function SugestaoLocais({ categoriaNome }) {
 */
 
 // VERSÃO ATIVA — Etapa 3 com id único, botão Remover e localStorage.
+// PI 2 (v3): quem entra na conta envia a sugestão para o banco (API /api/sugestoes),
+// e o administrador aprova ou recusa no painel /admin.
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import useLocalStorage from '../hooks/useLocalStorage.js';
+import { useColecao } from '../hooks/useDadosDoUsuario.js';
 import './SugestaoLocais.css';
+
+const ROTULO_STATUS = { PENDENTE: 'em análise', APROVADA: 'aprovada', RECUSADA: 'recusada' };
 
 /** @param {{categoriaSlug: string, categoriaNome: string}} props */
 export default function SugestaoLocais({ categoriaSlug, categoriaNome }) {
   const [sugestao, setSugestao] = useState('');
   // Cada categoria tem a sua lista salva: cc:sugestoes:saude, cc:sugestoes:lazer...
   // Cada item agora é um objeto { id, nome } em vez de só o texto.
-  const [listaSugestoes, setListaSugestoes] = useLocalStorage(`cc:sugestoes:${categoriaSlug}`, []);
+  // O id único (crypto.randomUUID no navegador ou o id do banco) vira a key.
+  const {
+    lista: listaSugestoes,
+    adicionar,
+    remover,
+    online,
+    erro: erroLista,
+  } = useColecao({
+    chaveLocal: `cc:sugestoes:${categoriaSlug}`,
+    caminho: `/sugestoes?categoria=${categoriaSlug}`,
+  });
+  const [erro, setErro] = useState(null);
 
-  function adicionarSugestao() {
+  async function adicionarSugestao() {
     const nome = sugestao.trim();
     if (nome === '') return;
-    // crypto.randomUUID() gera um identificador único (ex.: "3b2f…"), que vira a key.
-    // Diferente do índice, o id não muda quando outro item é removido.
-    setListaSugestoes((prev) => [...prev, { id: crypto.randomUUID(), nome }]);
-    setSugestao('');
+    setErro(null);
+    try {
+      await adicionar(online ? { categoria: categoriaSlug, nome } : { nome });
+      setSugestao('');
+    } catch (e) {
+      setErro(e.message);
+    }
   }
 
-  function removerSugestao(id) {
-    setListaSugestoes((prev) => prev.filter((item) => item.id !== id));
+  async function removerSugestao(id) {
+    setErro(null);
+    try {
+      await remover(id);
+    } catch (e) {
+      setErro(e.message);
+    }
   }
 
   return (
     <div className="sugestao">
       <h2 className="sugestao-titulo">Sentiu falta de algum local de {categoriaNome}?</h2>
       <p className="sugestao-ajuda">
-        Anote aqui para não esquecer. A lista fica só neste navegador; para pedir a inclusão de um
-        local, use o botão “Informar erro” na página de qualquer local.
+        {online
+          ? 'Sua sugestão vai para a equipe do Conecta Cidadão, que confere a fonte oficial antes de incluir o local.'
+          : 'Anote aqui para não esquecer. A lista fica só neste navegador; para pedir a inclusão de um local, entre na sua conta ou use o botão “Informar erro” na página de qualquer local.'}
       </p>
 
       <form
@@ -163,6 +187,12 @@ export default function SugestaoLocais({ categoriaSlug, categoriaNome }) {
         </button>
       </form>
 
+      {(erro || erroLista) && (
+        <p className="sugestao-erro" role="alert">
+          {erro || erroLista}
+        </p>
+      )}
+
       {listaSugestoes.length === 0 ? (
         <p className="sugestao-vazio">Nenhuma sugestão cadastrada</p>
       ) : (
@@ -170,6 +200,11 @@ export default function SugestaoLocais({ categoriaSlug, categoriaNome }) {
           {listaSugestoes.map((item) => (
             <li key={item.id} className="etiqueta sugestao-item">
               {item.nome}
+              {item.status && (
+                <span className="sugestao-status" data-status={item.status}>
+                  ({ROTULO_STATUS[item.status]})
+                </span>
+              )}
               <button
                 type="button"
                 className="sugestao-remover"

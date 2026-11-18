@@ -1,0 +1,27 @@
+flowchart LR
+  P(("Público geral"))
+  C(("Usuário cadastrado"))
+  A(("Administrador"))
+  subgraph S["Sistema Conecta Cidadão"]
+    direction TB
+    UC01([UC01 Buscar serviços])
+    UC02([UC02 Ver detalhes do local])
+    UC03([UC03 Filtrar e ver Aberto agora])
+    UC04([UC04 Ver no mapa])
+    UC05([UC05 Ir com Waze ou Google Maps])
+    UC06([UC06 Meu bairro: CEP, GPS ou bairro])
+    UC07([UC07 Seguir os Primeiros passos])
+    UC08([UC08 Gerenciar lembretes])
+    UC09([UC09 Consultar telefones úteis])
+    UC10([UC10 Acessar serviços online])
+    UC11([UC11 Sugerir local])
+    UC12([UC12 Avaliar página])
+    UC13([UC13 Cadastrar-se e entrar])
+    UC14([UC14 Manter locais: CRUD])
+    UC15([UC15 Moderar sugestões])
+  end
+  P --- UC01 & UC02 & UC03 & UC04 & UC05 & UC06 & UC07
+  P --- UC08 & UC09 & UC10 & UC11 & UC12 & UC13
+  C -. herda de .-> P
+  A --- UC14 & UC15
+  A -. herda de .-> C
