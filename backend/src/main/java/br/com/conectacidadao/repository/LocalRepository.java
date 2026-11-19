@@ -16,6 +16,8 @@ public interface LocalRepository extends JpaRepository<Local, String> {
 	 * e bairro na mesma consulta; as listas (telefones, horários...) vêm em lote
 	 * (hibernate.default_batch_fetch_size), sem uma consulta por local.
 	 * No MySQL, a collation utf8mb4_unicode_ci já ignora acentos no LIKE.
+	 * Bairro e texto usam "" (e não null) para "sem filtro": o PostgreSQL não consegue
+	 * descobrir o tipo de um parâmetro nulo dentro de lower() e recusa a consulta.
 	 */
 	@Query("""
 			select l from Local l
@@ -24,8 +26,8 @@ public interface LocalRepository extends JpaRepository<Local, String> {
 			  left join fetch l.bairro b
 			 where (:categoria is null or c.slug = :categoria)
 			   and (:tipo is null or t.nome = :tipo)
-			   and (:bairro is null or lower(coalesce(b.nome, l.bairroNome)) = lower(:bairro))
-			   and (:texto is null
+			   and (:bairro = '' or lower(coalesce(b.nome, l.bairroNome)) = lower(:bairro))
+			   and (:texto = ''
 			        or lower(l.nome) like lower(concat('%', :texto, '%'))
 			        or lower(t.nome) like lower(concat('%', :texto, '%'))
 			        or exists (select 1 from Local l2 join l2.palavrasChave p

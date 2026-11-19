@@ -52,7 +52,7 @@ public class LocalService {
 	@Transactional(readOnly = true)
 	public LocaisResposta listar(Filtro f) {
 		var encontrados = locais.buscar(vazioParaNulo(f.categoria()), vazioParaNulo(f.tipo()),
-				vazioParaNulo(f.bairro()), vazioParaNulo(f.texto()));
+				semFiltro(f.bairro()), semFiltro(f.texto()));
 		if (f.abertoAgora()) {
 			var agora = ZonedDateTime.now(FUSO);
 			boolean feriado = feriados.findById(agora.toLocalDate()).map(x -> x.fechaServicos()).orElse(false);
@@ -153,6 +153,11 @@ public class LocalService {
 	private static List<String> semRepetir(List<String> lista) {
 		if (lista == null) return List.of();
 		return lista.stream().filter(Objects::nonNull).map(String::trim).filter(s -> !s.isEmpty()).distinct().toList();
+	}
+
+	/** "" significa "sem filtro" nas buscas por texto (veja LocalRepository.buscar). */
+	private static String semFiltro(String s) {
+		return s == null ? "" : s.trim();
 	}
 
 	static String vazioParaNulo(String s) {

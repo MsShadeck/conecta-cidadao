@@ -3,6 +3,8 @@ package br.com.conectacidadao.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+import org.hibernate.annotations.ColumnTransformer;
+
 /**
  * Uma linha da tabela horario_funcionamento: um dia da semana com o horário de abrir e fechar.
  * "seg a sex, 8h às 17h" vira cinco faixas, o que permite calcular o "Aberto agora".
@@ -10,6 +12,7 @@ import jakarta.persistence.Embeddable;
  * Os horários ficam como texto "HH:mm" no Java porque a fonte usa "24:00" para "até a
  * meia-noite", e o java.time.LocalTime não aceita 24:00 (o TIME do MySQL aceita).
  * Como o formato tem dois dígitos, comparar o texto é o mesmo que comparar o horário.
+ * O CAST na gravação converte o texto para TIME (o PostgreSQL não faz isso sozinho).
  */
 @Embeddable
 public class FaixaHorario {
@@ -19,9 +22,11 @@ public class FaixaHorario {
 	private String diaSemana;
 
 	@Column(nullable = false, length = 8)
+	@ColumnTransformer(write = "cast(? as time)")
 	private String abre;
 
 	@Column(nullable = false, length = 8)
+	@ColumnTransformer(write = "cast(? as time)")
 	private String fecha;
 
 	protected FaixaHorario() {
