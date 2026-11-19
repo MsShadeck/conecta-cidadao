@@ -11,11 +11,12 @@ flowchart LR
   end
   CU[(Curadoria JSON)]
   JS[(public/api/*.json)]
-  DB[(MySQL / MariaDB<br/>conecta_cidadao)]
+  DB[(MySQL / MariaDB<br/>XAMPP, desenvolvimento)]
+  PG[(PostgreSQL 17 no Neon<br/>versão publicada)]
   subgraph Vercel["Vercel"]
     SPA[SPA React + Vite<br/>PWA]
   end
-  subgraph Backend["Back-end Java 21 + Spring Boot 4.1"]
+  subgraph Backend["Render (Docker): Java 21 + Spring Boot 4.1"]
     API[API REST + JWT<br/>Controller, Service,<br/>Repository JPA]
   end
   N[Navegador do cidadão<br/>localStorage]
@@ -23,7 +24,9 @@ flowchart LR
   CU --> AD
   AD --> JS
   JS --> GS --> DB
+  GS -- "npm run sql:postgres" --> PG
   JS --> SPA
   SPA <--> N
   SPA -- "fetch /api (VITE_API_URL)" --> API
   API <--> DB
+  API <--> PG

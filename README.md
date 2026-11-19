@@ -4,7 +4,8 @@ Guia **não oficial** de serviços públicos para quem acabou de se mudar para *
 A pergunta que o sistema responde: _"Acabei de chegar. O que eu preciso resolver, e onde fica o que
 eu preciso perto de casa?"_
 
-**Site:** https://conecta-cidadao-blue.vercel.app · **Documentação completa (PDF):**
+**Site:** https://conecta-cidadao-blue.vercel.app · **API:** https://conecta-cidadao-api-kksw.onrender.com/api/categorias ·
+**Documentação completa (PDF):**
 [`documentacao/`](documentacao/)
 
 ## 1. Identificação do projeto
@@ -63,14 +64,15 @@ Git/GitHub, publicação contínua na Vercel, ESLint/Prettier e testes automatiz
 
 ## 7. Tecnologias
 
-| Camada         | Tecnologias                                                                  |
-| -------------- | ---------------------------------------------------------------------------- |
-| Front-end      | **JavaScript** (React 18, Vite 5, React Router 6), CSS próprio, PWA          |
-| Back-end       | **Java 21**, Spring Boot 4.1, Spring Data JPA, Spring Security (JWT, BCrypt) |
-| Banco de dados | **SQL** — MySQL 8 / MariaDB (XAMPP), phpMyAdmin                              |
-| Mapas          | Leaflet + OpenFreeMap, iFrame e links do Waze, links do Google Maps          |
-| Testes         | Vitest, Playwright, JUnit 5 + MockMvc                                        |
-| Ferramentas    | Git, GitHub, Vercel, VS Code, Figma, Mermaid (diagramas)                     |
+| Camada         | Tecnologias                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------- |
+| Front-end      | **JavaScript** (React 18, Vite 5, React Router 6), CSS próprio, PWA                             |
+| Back-end       | **Java 21**, Spring Boot 4.1, Spring Data JPA, Spring Security (JWT, BCrypt)                    |
+| Banco de dados | **SQL**: MySQL 8 / MariaDB (XAMPP) no desenvolvimento; PostgreSQL 17 (Neon) na versão publicada |
+| Mapas          | Leaflet + OpenFreeMap, iFrame e links do Waze, links do Google Maps                             |
+| Testes         | Vitest, Playwright, JUnit 5 + MockMvc                                                           |
+| Hospedagem     | Vercel (site), Render (API em Docker), Neon (banco)                                             |
+| Ferramentas    | Git, GitHub, VS Code, Figma, Mermaid (diagramas)                                                |
 
 ## 8. Testes e qualidade
 
@@ -89,8 +91,9 @@ oficiais e acessível (Libras, tamanho de letra, alto contraste, funciona sem in
 
 212 serviços públicos, 118 bairros, 135 comércios, 34 telefones úteis, 18 serviços online e
 16 tarefas no checklist da mudança, todos com fonte oficial. O sistema tem banco MySQL com 25 tabelas,
-API REST, contas de usuário e painel do administrador. A versão publicada na Vercel funciona no modo
-"só navegador"; o sistema completo (API + MySQL) roda localmente com o XAMPP.
+API REST, contas de usuário e painel do administrador, tudo publicado: site na Vercel, API no Render e
+banco PostgreSQL no Neon. A API usa o plano gratuito do Render: depois de 15 minutos sem uso, o primeiro
+acesso leva cerca de 1 minuto (nesse tempo, os locais vêm do arquivo estático do site).
 
 ## 11. Portfólio (este repositório)
 
@@ -120,8 +123,15 @@ Lista completa na documentação (seção 15).
 2. API: siga [`backend/README.md`](backend/README.md) (`.\mvnw.cmd spring-boot:run`, porta 8080).
 3. Site: crie `.env.local` com `VITE_API_URL=http://localhost:8080` e rode `npm run dev`.
 
-Sem a API, o site funciona como a versão publicada: lê `public/api/*.json` e guarda os dados de cada
-pessoa só no navegador.
+Sem a API, o site lê `public/api/*.json` e guarda os dados de cada pessoa só no navegador.
+
+### Versão publicada (Vercel + Render + Neon)
+
+- **Banco:** PostgreSQL 17 no Neon, criado com `database/postgres/01-criacao.sql` e `02-carga-dados.sql`
+  (gerados a partir dos scripts MySQL por `npm run sql:postgres`).
+- **API:** Render, serviço Docker com `backend/Dockerfile`; variáveis `DB_URL`, `DB_USUARIO`, `DB_SENHA`,
+  `JWT_SEGREDO`, `ADMIN_EMAIL`, `ADMIN_SENHA` e `CORS_ORIGENS` configuradas no painel do Render.
+- **Site:** Vercel, com `VITE_API_URL` apontando para a API.
 
 ---
 

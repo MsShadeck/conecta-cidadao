@@ -41,6 +41,22 @@ atividades do semestre: `controller → service → repository → model`.
 | `CORS_ORIGENS` | `http://localhost:5173,http://localhost:4173`  | Endereços do site que podem chamar a API            |
 | `PORT`         | `8080`                                         | Porta da API                                        |
 
+## Versão publicada (Render + Neon)
+
+A API publicada roda no **Render** (plano gratuito, serviço Docker com o `Dockerfile` desta pasta) e usa um
+banco **PostgreSQL 17 no Neon**. O código é o mesmo: o driver é escolhido pelo `DB_URL`.
+
+1. No Neon, rode `database/postgres/01-criacao.sql` e `02-carga-dados.sql` (gerados por `npm run sql:postgres`).
+2. No Render, crie um Web Service do tipo Docker com **Docker Context** `backend` e **Dockerfile**
+   `backend/Dockerfile`, e defina as variáveis da tabela acima, com
+   `DB_URL=jdbc:postgresql://<host-do-neon>/conecta_cidadao?sslmode=require` e
+   `CORS_ORIGENS=https://conecta-cidadao-blue.vercel.app`.
+3. Na Vercel, defina `VITE_API_URL` com o endereço do Render e publique o site de novo.
+
+Diferenças entre os bancos que exigiram ajuste no código: os horários são gravados com `CAST(? AS TIME)`
+(o PostgreSQL não converte texto em TIME sozinho) e a busca usa `""` para "sem filtro" (o PostgreSQL não
+deduz o tipo de um parâmetro nulo dentro de `lower()`).
+
 ## Endpoints
 
 | Método e rota                                                                                        | Acesso  | O que faz                                             |
