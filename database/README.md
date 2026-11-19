@@ -4,7 +4,8 @@ Banco relacional do PI 2 (disciplina Banco de Dados Relacional). Guarda os mesmo
 lê em `public/api/*.json` e os dados de cada usuário (conta, lembretes, sugestões, checklist e
 votos). Quem lê e grava é a API em [`../backend`](../backend/README.md) (Spring Boot + JPA).
 
-- **SGBD:** MySQL 8 ou MariaDB 10.4+ (o do XAMPP, administrado pelo phpMyAdmin)
+- **SGBD:** MySQL 8 ou MariaDB 10.4+ (o do XAMPP, administrado pelo phpMyAdmin). A versão publicada
+  usa PostgreSQL 17 no Neon, com o mesmo modelo (arquivos em `postgres/`)
 - **Banco:** `conecta_cidadao` · 25 tabelas + 1 visão · InnoDB · utf8mb4
 - **Diagramas:** `docs/diagramas/der-conceitual.png` e `der-logico-*.png` (código Mermaid nos `.mmd`)
 
@@ -14,6 +15,7 @@ votos). Quem lê e grava é a API em [`../backend`](../backend/README.md) (Sprin
 | `02-carga-dados.sql`        | Dados reais do site. **Gerado** por `npm run sql`; não edite à mão                          |
 | `03-crud-e-consultas.sql`   | INSERT, SELECT, UPDATE e DELETE de cada requisito (busca, "Aberto agora", mais perto, CRUD) |
 | `04-testes-integridade.sql` | 10 comandos que o banco deve recusar e conferências da carga                                |
+| `postgres/`                 | Versão PostgreSQL de 01 e 02 para o banco publicado (Neon). **Gerada** por `npm run sql:postgres` |
 
 ## Como rodar
 

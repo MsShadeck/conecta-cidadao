@@ -21,17 +21,29 @@ import { apiAtiva, urlDaApi } from '../services/api.js';
 const cache = new Map();
 
 /**
- * PI 2: com a API ligada (VITE_API_URL), os locais vêm do banco MySQL, no mesmo
+ * PI 2: com a API ligada (VITE_API_URL), os locais vêm do banco de dados, no mesmo
  * formato do arquivo. Se a API não responder, o site cai para o arquivo estático,
  * então continua funcionando (e offline, pelo PWA).
  */
 const NA_API = { '/api/locais.json': '/locais' };
 
+// A API gratuita (Render) "dorme" sem uso e leva até ~1 min para acordar. Depois deste
+// tempo, a página usa o arquivo estático; o pedido já serve para acordar a API.
+const ESPERA_API_MS = 8000;
+
+/** Junta o cancelamento da página com o limite de tempo (se o navegador suportar). */
+function comLimite(signal) {
+  if (typeof AbortSignal.any !== 'function' || typeof AbortSignal.timeout !== 'function')
+    return signal;
+  return AbortSignal.any([signal, AbortSignal.timeout(ESPERA_API_MS)]);
+}
+
 async function buscarJson(url, signal) {
   const enderecos = apiAtiva && NA_API[url] ? [urlDaApi(NA_API[url]), url] : [url];
   for (const [i, endereco] of enderecos.entries()) {
     try {
-      const resposta = await fetch(endereco, { signal });
+      const ultimo = i === enderecos.length - 1;
+      const resposta = await fetch(endereco, { signal: ultimo ? signal : comLimite(signal) });
       if (!resposta.ok) throw new Error(`Não foi possível carregar os dados (${resposta.status}).`);
       return await resposta.json();
     } catch (erro) {

@@ -16,7 +16,8 @@
     "imagens": "node scripts/otimizar-imagens.mjs",
     "dados": "node scripts/atualizar-dados.mjs",
     "dados:prefeitura": "node scripts/dados/coletar-prefeitura.mjs",
-    "sql": "node scripts/gerar-sql.mjs",
+    "sql": "node scripts/gerar-sql.mjs && node scripts/gerar-sql-postgres.mjs",
+    "sql:postgres": "node scripts/gerar-sql-postgres.mjs",
     "integra": "node scripts/sincronizar-integra.mjs",
     "contraste": "node scripts/contraste.mjs"
   },
